@@ -31,5 +31,77 @@
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->
 
+  <!-- Explicit language for translations -->
+  <language>fr-FR</language>
+
+  <!-- Traductions françaises utiles -->
+  <rename element="frontmatter" xml:lang="fr">Avant-propos</rename>
+  <rename element="colophon" xml:lang="fr">Colophon</rename>
+  <rename element="section" xml:lang="fr">Section</rename>
+  <rename element="definition" xml:lang="fr">Définition</rename>
+  <rename element="example" xml:lang="fr">Exemple</rename>
+  <rename element="proposition" xml:lang="fr">Proposition</rename>
+  <rename element="corollary" xml:lang="fr">Corollaire</rename>
+  <rename element="proof" xml:lang="fr">Démonstration</rename>
+  <rename element="lemma" xml:lang="fr">Lemme</rename>
+  <rename element="fn" xml:lang="fr">Note</rename>
+  <rename element="backmatter" xml:lang="fr">Annexes</rename>
+
+  <!-- Éléments / UI -->
+  <rename element="permalink-tooltip" xml:lang="fr">Permalien</rename>
+  <rename element="toc" xml:lang="fr">Table des matières</rename>
+  <rename element="search-results-heading" xml:lang="fr">Résultats de la recherche</rename>
+  <rename element="no-search-results" xml:lang="fr">Aucun résultat</rename>
+  <rename element="previous" xml:lang="fr">Précédent</rename>
+  <rename element="next" xml:lang="fr">Suivant</rename>
+  <rename element="up" xml:lang="fr">Haut</rename>
+  <rename element="evaluate" xml:lang="fr">Évaluer</rename>
+  <rename element="skip-to-content" xml:lang="fr">Aller au contenu</rename>
+
+  <!-- Fallback translations (no xml:lang) -->
+  <rename element="frontmatter">Avant-propos</rename>
+  <rename element="colophon">Colophon</rename>
+  <rename element="section">Section</rename>
+  <rename element="definition">Définition</rename>
+  <rename element="example">Exemple</rename>
+  <rename element="proposition">Proposition</rename>
+  <rename element="corollary">Corollaire</rename>
+  <rename element="proof">Démonstration</rename>
+  <rename element="lemma">Lemme</rename>
+  <rename element="fn">Note</rename>
+  <rename element="backmatter">Annexes</rename>
+  <rename element="permalink-tooltip">Permalien</rename>
+  <rename element="book">Livre</rename>
+  <rename element="website">Site web</rename>
+  <rename element="chapter">Chapitre</rename>
+  <rename element="p">Paragraphe</rename>
+  <rename element="li">Élément</rename>
+  <rename element="incontext">Contexte</rename>
+  <rename element="previous-short">Préc.</rename>
+  <rename element="up-short">Haut</rename>
+  <rename element="next-short">Suiv.</rename>
+
+  <!-- FR (alternate code) -->
+  <rename element="frontmatter" xml:lang="fr-FR">Avant-propos</rename>
+  <rename element="colophon" xml:lang="fr-FR">Colophon</rename>
+  <rename element="section" xml:lang="fr-FR">Section</rename>
+  <rename element="definition" xml:lang="fr-FR">Définition</rename>
+  <rename element="example" xml:lang="fr-FR">Exemple</rename>
+  <rename element="proposition" xml:lang="fr-FR">Proposition</rename>
+  <rename element="corollary" xml:lang="fr-FR">Corollaire</rename>
+  <rename element="proof" xml:lang="fr-FR">Démonstration</rename>
+  <rename element="lemma" xml:lang="fr-FR">Lemme</rename>
+  <rename element="fn" xml:lang="fr-FR">Note</rename>
+  <rename element="backmatter" xml:lang="fr-FR">Annexes</rename>
+  <rename element="permalink-tooltip" xml:lang="fr-FR">Permalien</rename>
+  <rename element="book" xml:lang="fr-FR">Livre</rename>
+  <rename element="website" xml:lang="fr-FR">Site web</rename>
+  <rename element="chapter" xml:lang="fr-FR">Chapitre</rename>
+  <rename element="p" xml:lang="fr-FR">Paragraphe</rename>
+  <rename element="li" xml:lang="fr-FR">Élément</rename>
+  <rename element="incontext" xml:lang="fr-FR">Contexte</rename>
+  <rename element="previous-short" xml:lang="fr-FR">Préc.</rename>
+  <rename element="up-short" xml:lang="fr-FR">Haut</rename>
+  <rename element="next-short" xml:lang="fr-FR">Suiv.</rename>
 
 </docinfo>

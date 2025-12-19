@@ -31,24 +31,143 @@
         <example xml:id="ex-nombres-et-entiers-algebriques">
           <title>Exemples de nombres et entiers algébriques</title>
           <p> Voici quelques exemples de nombres algébriques et d'entiers algébriques : </p>
-          <itemizedlist>
-            <item>
+          <ul>
+            <li>
               <p> Le nombre <m>\sqrt{2}</m> est un entier algébrique car il est racine du polynôme unitaire <m>X^2 - 2 \in \mathbb{Z}[X]</m>. </p>
-            </item>
-            <item>
+            </li>
+            <li>
               <p> Le nombre <m>\frac{1 + \sqrt{-3}}{2}</m> est un entier algébrique car il est racine du polynôme unitaire <m>X^2 - X + 1 \in \mathbb{Z}[X]</m>. </p>
-            </item>
-            <item>
+            </li>
+            <li>
               <p> Le nombre <m>\frac{3}{2}</m> est un nombre algébrique car il est racine du polynôme <m>2X - 3 \in \mathbb{Q}[X]</m>, mais ce n'est pas un entier algébrique. </p>
-            </item>
-            <item>
+            </li>
+            <li>
               <p> Le nombre <m>\pi</m> n'est pas un nombre algébrique, c'est un nombre transcendant. </p>
-            </item>
-          </itemizedlist>
+            </li>
+          </ul>
         </example>
 
-      <p> Nous désignerons par <m>$\overline{\mathbb{Q}} \subset \mathbb{C}$</m> le sous-ensemble des nombres algébriques et par <m>\overline{\mathbb{Z}}\subset \mathbb{C}</m> le sous-ensemble des entiers algébriques. Nous avons <m>\overline{\mathbb{Z}}\subset \overline{\mathbb{Q}}</m>. Nous énumérons quelques propriétés immédiates de ces sous-ensembles: </p>
+      <p> Nous désignerons par <m>\overline{\mathbb{Q}} \subset \mathbb{C}</m> le sous-ensemble des nombres algébriques et par <m>\overline{\mathbb{Z}}\subset \mathbb{C}</m> le sous-ensemble des entiers algébriques. Nous avons <m>\overline{\mathbb{Z}}\subset \overline{\mathbb{Q}}</m>. Nous énumérons quelques propriétés immédiates de ces sous-ensembles: </p>
+<ol>
+  <li><m>(\mathbb{Q}\subset \overline{\mathbb{Q}})</m>. Les nombres rationels sont algébriques. En effet, si <m>q\in \mathbb{Q}</m> est un nombre rationel, alors le polynôme <m>P(X)=X-q</m> est à coefficients rationels et vérifie <m>P(q)=0</m>. 
+  </li>
+  <li><m>(\mathbb{Z}\subset \overline{\mathbb{Z}})</m>. Le même argument montre que les nombres entiers sont des entiers algébriques.
+  </li>
+</ol>
 
-  </section>
+<p>
+  L'opposé d'un nombre/entier algébrique est encore un nombre/entier algébrique. En effet si <m>\alpha\in \overline{\mathbb{Q}}</m> (respectivement <m>\overline{\mathbb{Z}}</m>) est annulé par un polynôme non nul <m>P(X)\in \mathbb{Q}[X]</m>, alors le polynôme <m>P(-X)</m> annule <m>-\alpha</m>.
+</p>
+
+<p>
+  Plus généralement, les opérations algébriques élémentaires stabilisent <m>\overline{\mathbb{Q}}</m>. 
+</p>
+
+<proposition xml:id="prop-stabilite-par-operations">
+  <statement>
+    <p>
+      La somme et le produit de deux nombres/entiers algébriques est un nombre/entier algébrique. L'inverse d'un nombre algébrique non nul est un nombre algébrique.
+    </p>
+  </statement>
+</proposition>
+
+<proof>
+  <p>
+<em>Inverse.</em> Soit <m>\alpha\in \overline{\mathbb{Q}}^{\times}</m>. Si <m>P(X)=a_nX^n+\cdots +a_0 \in \mathbb{Q}[X]</m> est un polynôme non nul tel que <m>P(\alpha)=0</m>, alors
+<me>
+0 = a_n\alpha^n+a_{n-1}\alpha^n \cdots +a_1\alpha +a_0
+</me>
+et en divisant cette relation par <m>\alpha^n</m>, on obtient:
+<me>
+0 = a_n+a_{n-1}\frac{1}{\alpha} \cdots +a_1\frac{1}{\alpha^{n-1}} +a_0\frac{1}{\alpha^n}.
+</me>
+En conséquence, le polynôme <m>Q(X):=a_0 X^n+a_1 X^{n-1}+\ldots+a_n</m> est non nul, à coefficients rationels et annulateur de <m>1/\alpha</m>. Ainsi <m>1/\alpha\in \overline{\mathbb{Q}}</m>.
+</p>
+
+<p>
+<em>Somme et produit.</em> Pour démontrer que la somme de deux nombres/entiers algébriques est algébrique, on fait appel au lemme suivant qui généralise légérement  le théorème de Cayley-Hamilton:
+</p>
+<lemma xml:id="lem-generalisation-CH">
+  <statement>
+Soit <m>V</m> un espace vectoriel sur un corps <m>k</m> et <m>(v_1,\ldots,v_n)</m> une famille génératrice de <m>V</m>. Soit <m>f:V\to V</m> un endomorphisme <m>k</m>-linéaire et soit <m>A=(a_{ij})\in M_n(k)</m> une matrice carrée telle que
+<me>
+\text{pour tout j}\in \{1,\ldots,n\}:\quad f(v_j)=\sum_{i=1}^n{a_{ij} v_i}.
+</me>
+Si <m>\Pi(X)\in k[X]</m> est le polynôme caractéristique de <m>A</m>, alors <m>\Pi(f)=0</m>.
+  </statement>
+</lemma>  
+
+<proof>
+  <title>Preuve du <xref ref="lem-generalisation-CH"/></title>
+<p>
+  Si <m>(v_1,\ldots, v_n)</m> formait une base de <m>V</m>, alors <m>A</m> serait la matrice de <m>f</m> dans cette base et l'on pourrait conclure par le théorème de Cayley-Hamilton. Pour le cas général, on considère le morphisme <m>k</m>-linéaire <m>u:K^n \to V</m> qui envoie les vecteurs de la base canonique vers ceux de <m>(v_1,\ldots, v_n)</m> et considère l'endormorphisme <m>F:K^n \to K^n</m> représenté par <m>A</m>. Par construction, on a <m>u\circ F=f\circ u</m>.
+
+Par Cayley-Hamilton, on a <m>\Pi(F)=0</m> et donc:
+<me>
+0=u\circ \Pi(F)=\Pi(f)\circ u.
+</me>
+Mais <m>u</m> est surjective car <m>(v_1,\ldots, v_n)</m> est génératrice, et donc l'opération ``composition par <m>u</m>'' est simplifiable à droite. Ainsi <m>P(f)=0</m>.
+</p>
+</proof>
+
+<p>
+Soient <m>x</m> et <m>y</m> deux nombres algébriques. Soient <m>P(X), Q(X)\in \mathbb{Q}[X]\setminus\{0\}</m> des polynômes annulateurs de <m>x</m> et <m>y</m> respectivement. On considère le sous-<m>\mathbb{Q}</m>-espace vectoriel <m>V\subset \mathbb{C}</m> engendré par les <m>x^{n}y^{m}</m> pour <m>n,m\geq 0</m>. C'est un espace de dimension finie: en effet, une famille génératrice consiste en les <m>x^n y^m</m> avec<fn>Pour le voir, remarque que la relation <m>P(x)=0</m> montre que <m>x^{\deg(P)}</m> s'écrit comme combinaison linéaire de <m>x^n</m> avec <m>n&lt;\deg(P)</m>, et de même pour <m>y^{\deg(Q)}</m>. Puis raisonne par récurrence sur la puissance de <m>x</m>. Alternativement, écris la division euclidienne de <m>X^n</m> par <m>P(X)</m>.</fn> <m>n\in \{0,\ldots,\deg(P)-1\}</m> et <m>m\in \{0,\ldots,\deg(Q)-1\}</m>.
+</p>
+
+<p>
+Soit <m>z=x+y</m> ou <m>z=xy</m>. La multiplication par <m>z</m> stabilise l'espace <m>V</m> et en définit donc un endomorphisme <m>\mathbb{Q}</m>-linéaire. Soit <m>A</m> la matrice carrée <m>(a_{(i,j),(k,l)})</m> de taille <m>\deg(P)\deg(Q)</m> où les coefficients <m>a_{(i,j),(k,l)}</m> sont tels que
+<me>
+z\cdot x^iy^j=\sum_{\substack{(k,l) \\ 0\leq k&lt; \deg(P) \\ 0\leq j &lt; \deg(Q)}}{a_{(i,j),(k,l)} x^k y^l}.
+</me>
+On peut alors appliquer le <xref ref="lem-generalisation-CH"/> à l'endomorphisme <m>f=z\cdot </m> de l'espace <m>V</m> pour en déduire que la multiplication par <m>\Pi(z)</m> sur <m>V</m> est l'endomorphisme nul, où <m>\Pi(X)\in \mathbb{Q}[X]</m> est le polynôme caractéristique de <m>A</m>. En particulier, <m>\Pi(z)=0</m> comme nombre et <m>z\in \overline{\mathbb{Q}}</m>. 
+</p>
+
+<p>
+Si <m>x</m> et <m>y</m> sont des entiers algébriques, alors <m>A</m> est une matrice à coefficients entiers et comme <m>\Pi(X)</m> est unitaire on obtient <m>z\in \overline{\mathbb{Z}}</m>.
+</p>
+</proof>
+
+<example xml:id="ex-calcul-polynome-annulateur">
+  <title>Calcul de polynômes annulateurs</title>
+<p>
+  La preuve de la <xref ref="prop-stabilite-par-operations"/> suggère une méthode pour trouver les polynômes annulateurs de nombres algébriques. Cherchons par exemple un polynôme annulateur de <m>z:=\sqrt{2}+\sqrt{3}</m>. On considère alors le sous-espace vectoriel de <m>\mathbb{C}</m> engendré par les produits de <m>\sqrt{2}</m> et <m>\sqrt{3}</m>: il est engendré par la famille <m>(1, \sqrt{2}, \sqrt{3},\sqrt{6})</m>. Or on a:
+  <me> z\cdot 1 = \sqrt{2}+\sqrt{3}, </me>
+<me> z\cdot \sqrt{2} = 2+\sqrt{6}, </me>
+<me> z\cdot \sqrt{3} =3+\sqrt{6}, </me>
+<me> z\cdot \sqrt{6} =3\sqrt{2}+2\sqrt{3}. </me>
+Le polynôme caractéristique de la matrice
+<me>
+\begin{pmatrix}
+0 &amp; 2 &amp; 3 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 3 \\
+1 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 1 &amp; 0
+\end{pmatrix},
+</me>
+à savoir <m>X^4-10X^2+1</m>, est donc annulateur de <m>z</m>. Autrement dit,
+<me>
+(\sqrt{2}+\sqrt{3})^4-10(\sqrt{2}+\sqrt{3})^2+1=0. 
+</me>
+</p>
+</example>
+
+  <corollary xml:id="cor-corollaire-nombres-algebriques-corps">
+    <statement>
+      <p>
+       L'ensemble des nombres algébriques <m>\overline{\mathbb{Q}}</m> est un sous-corps de <m>\mathbb{C}</m>. L'ensemble des entiers algébrique est un sous-anneau de <m>\mathbb{C}</m>.
+      </p>
+    </statement>
+  </corollary>
+
+  
+
+  <exercise xml:id="ex-nombres-entiers-algebriques">
+    <title>Exercice sur les nombres et entiers algébriques</title>
+    <p> Montrer que <m>\overline{\mathbb{Z}}\cap \mathbb{Q}=\mathbb{Z}</m>. En déduire que <m>\overline{\mathbb{Z}}</m> n'est pas un corps. </p>
+  </exercise>
+
+</section>
+
+
 
 </chapter>

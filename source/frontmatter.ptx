@@ -29,8 +29,22 @@
   </bibinfo>
 
   <titlepage>
-    <titlepage-items/>
+    <titlepage-items>
+      
+    </titlepage-items>
   </titlepage>
+
+
+
+  <preface xml:id="front-preface">
+    <p>
+    Ces notes sont destinées aux étudiant·e·s du module <em>UM4MA234</em> de Sorbonne Université. Elles complètent le cours magistral et les TD, et peuvent servir de support à la préparation des examens.
+    </p>
+
+    <p>
+      Je m'inspire largement des notes de cours de mes prédécesseurs, notamment celles d'Antoine Chambert-Loir, Pierre Charollois, Gaëtan Chenevier et Javier Fresán. Je les remercie vivement pour leur travail. Les erreurs et imprécisions qui subsistent sont miennes.
+    </p>
+  </preface>
 
   <colophon xml:id="front-colophon">
     <colophon-items/>
