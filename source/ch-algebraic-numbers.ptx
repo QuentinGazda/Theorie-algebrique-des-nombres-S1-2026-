@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-chapter-title" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Nombres algébriques et entiers algébriques</title>
+
+  <introduction>
+    <p> Le but de ce chapitre est d'introduire les notions de nombres algébriques et d'entiers algébriques, ainsi que leurs propriétés fondamentales. </p>
+  </introduction>
+   
+  <section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Nombres algébriques</title>
+
+        <definition xml:id="def-nombres-et-entiers-algebriques">
+            <title>Nombres et entiers algébriques</title>
+          <statement>
+            <p>
+              Soit <m>z\in \mathbb{C}</m> un nombre complexe.
+              On dit que <em><m>z</m> est un nombre algébrique</em> s'il existe un polynôme
+              <m>P(X)\in \mathbb{Q}[X]</m> non nul à coefficients rationnels dont <m>z</m> est racine; <em> i.e. </em> <m>P(z)=0</m>.
+            </p>
+            <p>
+              On dit que <em><m>z</m> est un entier algébrique</em> s'il existe un polynôme <b>unitaire</b> <m>P(X)\in \mathbb{Z}[X]</m>
+              à coefficients entiers tel que <m>P(z)=0</m>.
+            </p>
+            <p>
+              Dans les définitions ci-dessus, un tel polynôme <m>P(X)</m> est appelé <em>un polynôme annulateur</em> de <m>z</m>.
+            </p>
+          </statement>
+        </definition>
+
+        <example xml:id="ex-nombres-et-entiers-algebriques">
+          <title>Exemples de nombres et entiers algébriques</title>
+          <p> Voici quelques exemples de nombres algébriques et d'entiers algébriques : </p>
+          <itemizedlist>
+            <item>
+              <p> Le nombre <m>\sqrt{2}</m> est un entier algébrique car il est racine du polynôme unitaire <m>X^2 - 2 \in \mathbb{Z}[X]</m>. </p>
+            </item>
+            <item>
+              <p> Le nombre <m>\frac{1 + \sqrt{-3}}{2}</m> est un entier algébrique car il est racine du polynôme unitaire <m>X^2 - X + 1 \in \mathbb{Z}[X]</m>. </p>
+            </item>
+            <item>
+              <p> Le nombre <m>\frac{3}{2}</m> est un nombre algébrique car il est racine du polynôme <m>2X - 3 \in \mathbb{Q}[X]</m>, mais ce n'est pas un entier algébrique. </p>
+            </item>
+            <item>
+              <p> Le nombre <m>\pi</m> n'est pas un nombre algébrique, c'est un nombre transcendant. </p>
+            </item>
+          </itemizedlist>
+        </example>
+
+      <p> Nous désignerons par <m>$\overline{\mathbb{Q}} \subset \mathbb{C}$</m> le sous-ensemble des nombres algébriques et par <m>\overline{\mathbb{Z}}\subset \mathbb{C}</m> le sous-ensemble des entiers algébriques. Nous avons <m>\overline{\mathbb{Z}}\subset \overline{\mathbb{Q}}</m>. Nous énumérons quelques propriétés immédiates de ces sous-ensembles: </p>
+
+  </section>
+
+</chapter>
