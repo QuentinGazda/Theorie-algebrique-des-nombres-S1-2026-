@@ -159,14 +159,406 @@ Le polynôme caractéristique de la matrice
     </statement>
   </corollary>
 
-  
+</section>
 
-  <exercise xml:id="ex-nombres-entiers-algebriques">
-    <title>Exercice sur les nombres et entiers algébriques</title>
-    <p> Montrer que <m>\overline{\mathbb{Z}}\cap \mathbb{Q}=\mathbb{Z}</m>. En déduire que <m>\overline{\mathbb{Z}}</m> n'est pas un corps. </p>
-  </exercise>
+
+
+
+<section xml:id="sec-polynome-minimal">
+  <title>Polynôme minimal d'un nombre algébrique</title>
+
+  <p>Un polynôme annulateur d'un nombre algébrique n'est jamais unique. Si <m>z</m> est un nombre algébrique, l'ensemble des polynômes à coefficients rationels qui s'annulent en <m>z</m> forme un idéal <m>I_z</m> de <m>\mathbb{Q}[X]</m>. Comme <m>\mathbb{Q}[X]</m> est un anneau euclidien, ses idéaux, et en particulier <m>I_z</m>, sont principaux.</p>
+
+  <definition>
+    <title>Polynôme minimal</title>
+    <statement>
+      <p>Le <em>polynôme minimal</em> d'un nombre algébrique <m>z</m> est l'unique polynôme unitaire qui engendre <m>I_z</m>. </p>
+      <p>De manière équivalente, c'est le polynôme unitaire de de plus bas degré qui annule <m>z</m>. Son degré est appelé <em>degré</em> du nombre algébrique.</p>
+    </statement>
+  </definition>
+
+  <p>Quelques commentaires:</p>
+
+  <ul>
+    <li><p>Tout polynôme annulateur de <m>z</m> est donc multiple de son polynôme minimal.</p></li>
+    <li><p>Les polynômes minimaux sont irréductibles dans <m>\mathbb{Q}[X]</m> (et dans <m>\mathbb{Z}[X]</m>). En effet, si le polynôme minimal se décompose comme produit de deux polynômes de degrés strictement positifs, alors l'un deux doit annuler <m>z</m>; mais, en comparant les degrés, il ne peut être multiple du polynôme minimal, d'où la contradiction.</p></li>
+    <li>
+      <p>
+        Un polynôme unitaire annulateur de <m>z</m> qui est irréductible est forcément le polynôme minimal de <m>z</m>. En effet, s'il n'était pas le polynôme minimal, ce dernier le diviserait strictement, contredisant ainsi son irréductibilité.
+      </p>
+    </li>
+  </ul>
+
+  <example>
+    <title>Exemples de polynômes minimaux</title>
+    <p> Voici quelques exemples de polynômes minimaux: </p>
+    <ul>
+      <li>
+        <p> Le polynôme minimal de <m>\sqrt{2}</m> est <m>X^2 - 2</m>. </p>
+      </li>
+      <li>
+        <p> Le polynôme minimal de <m>\frac{1 + \sqrt{-3}}{2}</m> est <m>X^2 - X + 1</m>. </p>
+      </li>
+      <li>
+        <p> Le polynôme minimal de <m>\frac{3}{2}</m> est <m>2X - 3</m>. </p>
+      </li>
+      <li>
+        <p> Le polynôme minimal de <m>\sqrt{2} + \sqrt{3}</m> est <m>X^4 - 10X^2 + 1</m>. </p>
+      </li>
+    </ul>
+    <p> En effet, dans chaque cas, il est facile de vérifier que le polynôme considéré est unitaire, annule le nombre en question, et est de plus bas degré parmi les polynômes unitaires qui l'annulent. Dans les deux premiers cas, c'est parce que ces nombres ne sont pas rationnels. Dans le dernier cas, c'est parce que le polynôme <m>X^4 - 10X^2 + 1</m> est irréductible dans <m>\mathbb{Q}[X]</m> (Pourquoi ?).</p>
+  </example>
+
+  <p>Le critère suivant s'avère utile pour détecter à partir du polynôme minimal, dans <m>\overline{\mathbb{Q}}</m>, les éléments de <m>\overline{\mathbb{Z}}</m>.</p>
+
+  <proposition xml:id="prop-polynome-minimal">
+    <title> Critère d'intégralité </title>
+    <statement>
+      <p>Soit <m>z</m> un nombre algébrique. Alors <m>z</m> est un entier algébrique si, et seulement si son polynôme minimal est à coefficients entiers.</p>
+    </statement>
+  </proposition>
+
+  <proof>
+  <p>La preuve de la <xref ref="prop-polynome-minimal"/> repose sur un quelques faits clés sur l'arithmétique de l'anneau <m>\mathbb{Z}[X]</m>.</p>
+
+  <lemma xml:id="lem-arithmetique-Z-X">
+    <statement>
+      <p>Soient <m>A(X)</m> et <m>B(X)</m> deux polynômes de <m>\mathbb{Q}[X]</m> tels que <m>B(X)</m> divise <m>A(X)</m>.</p>
+      <ol>
+        <li xml:id="item-divisibilite-dans-Z-X">
+          <p>Supposons <m>A(X)</m> et <m>B(X)</m> à coefficients entiers. Si <m>B(X)</m> est <em>primitif</em>, c-à-d que le pgcd de ses coefficients vaut <m>1</m>, alors <m>B(X)</m> divise <m>A(X)</m> dans <m>\mathbb{Z}[X]</m>.</p>
+        </li>
+        <li xml:id="item-integralite">
+          <p>Supposons <m>A(X)</m> à coefficients entiers ainsi que <m>A(X)</m> et <m>B(X)</m> unitaires. Alors <m>B(X)\in \mathbb{Z}[X]</m>.</p>
+        </li>
+      </ol>
+    </statement>
+  </lemma>
+
+  <proof>
+    <title>Démonstration du <xref ref="lem-arithmetique-Z-X"/></title>
+    
+    <p>Démontrons la première assertion. Par hypothèse, il existe un polynôme <m>Q(X)</m> à coefficients rationnels tel que <m>A(X)=Q(X)B(X)</m>. Soit <m>d</m> le plus petit entier positif tel que <m>dQ(X)</m> soit à coefficients entiers, c-à-d le dénominateur commun aux coefficients de <m>Q(X)</m>.</p>
+
+    <p>Supposons que <m>d</m> soit divisible par un nombre premier <m>p</m>. Alors on peut réduire la relation <m>dA(X)=(dQ(X))\cdot B(X)</m>, qui prend maintenant place dans <m>\mathbb{Z}[X]</m>, modulo <m>p</m>.</p>
+
+    <me>(dQ(X)\pmod{p})\cdot (B(X)\pmod{p})= 0</me>
+
+    <p>dans l'anneau <m>(\mathbb{Z}/p\mathbb{Z})[X]</m>. Cet anneau est intègre <m>\mathbb{Z}/p\mathbb{Z}</m> est un corps) et <m>B(X)\pmod{p}</m> non nul (car <m>B(X)</m> fut supposé primitif). Cela implique <m>dQ(X)\equiv 0\pmod{p}</m>, soit que tous ses coefficients sont divisibles par <m>p</m>. Mais cela contredit la minimalité de <m>d</m>.</p>
+
+    <p>En conclusion, <m>d\geq 1</m> n'est divisible par aucun nombre premier, et donc <m>d=1</m>. Cela démontre l'<xref ref="item-divisibilite-dans-Z-X"/>.</p>
+
+    <p>Démontrons l'<xref ref="item-integralite"/>. Il existe un entier <m>d</m> tel que <m>d\cdot B(X)</m> soit à coefficients entiers et un entier <m>c</m> tel que <m>\frac{d}{c}\cdot B(X)</m> soit à coefficients entiers et primitif. On écrit <m>\frac{d}{c}</m> en fraction irréductible <m>\frac{a}{b}</m>. D'après l'<xref ref="item-divisibilite-dans-Z-X"/>, on a que <m>\frac{a}{b}\cdot B(X)</m> divise <m>A(X)</m> dans <m>\mathbb{Z}[X]</m>. En particulier, il existe <m>Q(X)\in \mathbb{Z}[X]</m> tel que <m>A(X)= \frac{a}{b}\cdot B(X)\cdot Q(X)</m> et donc</p>
+
+<me>bA(X)=aB(X)Q(X).</me>
+
+<p>Comme <m>A(X)</m> et <m>B(X)</m> sont unitaires, on trouve que <m>a</m> divise <m>b</m> en comparant les coefficients dominants. Puis, comme ils sont premiers entre eux, <m>a=1</m>. En particulier, <m>\frac{1}{b}\cdot B(X)</m> est à coefficients entiers et il en est de même pour <m>B(X)</m>.</p>
+
+</proof>
+
+  <p>Soit <m>z\in \overline{\mathbb{Q}}</m>. Si le polynôme minimal de <m>z</m> est à coefficients entiers, alors c'est un polynôme unitaire à coefficients entiers qui annule <m>z</m>. C'est donc un entier algébrique.</p>
+
+  <p>Réciproquement, supposons <m>z\in \overline{\mathbb{Z}}</m>. Il existe alors un polynôme unitaire à coefficients entiers <m>P(X)\in \mathbb{Z}[X]</m> tel que <m>P(z)=0</m>. Il est en particulier divisible par le polynôme minimal de <m>z</m>, et on conclut que ce dernier appartient à <m>\mathbb{Z}[X]</m> par le <xref ref="lem-arithmetique-Z-X"/>.<xref ref="item-integralite"/>.</p>
+</proof>
+
+<example>
+  <title>Exemple d'application du critère d'intégralité</title>
+  <p>Considérons le nombre d'or <m>\varphi=\frac{1+\sqrt{5}}{2}</m>. Son polynôme minimal est <m>X^2 - X - 1</m>, qui est à coefficients entiers. Par conséquent, <m>\varphi</m> est un entier algébrique.</p>
+
+  <p> Par contre, le polynôme minimal de <m>\frac{1+\sqrt{2}}{2}</m> est <m>2X^2 - 2X - 1</m>, qui n'est pas à coefficients entiers. Donc <m>\frac{1+\sqrt{2}}{2}</m> n'est pas un entier algébrique.</p>
+</example>
+
+<p>Poursuivons avec quelques corrolaires d'intégralité.</p>
+
+<corollary>
+  <statement>
+    <p>Soit <m>z</m> un nombre algébrique de polynôme minimal <m>a_n X^n+\ldots+a_1 X+a_0</m>.</p>
+    <ol>
+      <li xml:id="item-dz">
+        <p>Soit <m>d</m> un entier. Alors <m>dz</m> est un entier algébrique si, et seulement si <m>d^i a_{n-i}</m> est un entier pour tout <m>i\in \{0,\ldots,n\}</m>.</p>
+      </li>
+      <li xml:id="item-inverse">
+        <p>Si <m>z\neq 0</m> est un entier algébrique, alors <m>1/z</m> est aussi un entier algébrique si, et seulement si <m>a_0\in \{-1,1\}</m>.</p>
+      </li>
+    </ol>
+  </statement>
+</corollary>
+
+<proof>
+  <p>Si l'on note <m>P(X)</m> le polynôme minimal de <m>z</m>, alors celui de <m>dz</m> est</p>
+
+  <me>d^n P\left(\frac{X}{d}\right)=X^n+da_{n-1}X^{n-1}+\ldots+d^n a_0.</me>
+
+  <p>et celui de <m>1/z</m> est</p>
+
+  <me>\frac{1}{a_0}X^n P\left(\frac{1}{X}\right)=X^n+\frac{a_1}{a_0} X^{n-1}+\ldots+\frac{1}{a_0}.</me>
+
+  <p>Les deux assertions découlent alors de la Proposition <xref ref="prop-polynome-minimal"/>.</p>
+</proof>
+
+<corollary xml:id="cor-Z-comme-QcapbarZ">
+  <statement>
+    <p>En tant que sous-ensembles de <m>\mathbb{C}</m>, on a <m>\overline{\mathbb{Z}}\cap \mathbb{Q}=\mathbb{Z}</m>.</p>
+  </statement>
+</corollary>
+
+<proof>
+  <p>L'inclusion ``<m>\supset</m>'' est claire. Si <m>z\in \overline{\mathbb{Z}}\cap \mathbb{Q}</m>, son polynôme minimal qui n'est autre que <m>X-z</m> est entier d'après la Proposition <xref ref="prop-polynome-minimal"/>; donc <m>z\in \mathbb{Z}</m>.</p>
+</proof>
+
+<p>Avant de présenter la notion de conjugué d'un entier algébrique, on rappelle l'énoncé suivant.</p>
+
+<lemma>
+  <statement>
+    <p>Les racines complexes d'un polynôme irréducible de <m>\mathbb{Q}[X]</m> sont simples.</p>
+  </statement>
+</lemma>
+
+<proof>
+  <p>Rappelons qu'un polynôme est à racines simples dans <m>\mathbb{C}</m> si, et seulement si il n'a pas de racine commune avec sa dérivée (pour le voir, il suffit d'écrire sa factorisation dans <m>\mathbb{C}[X]</m> et sa dérivée).</p>
+
+  <p>Soit <m>P(X)</m> un polynôme irréductible et <m>D(X)</m> le pgcd des polynômes <m>P(X)</m> et <m>P'(X)</m>, sa dérivée. Comme <m>P(X)</m> est irréductible, soit <m>D(X)=P(X)</m>, soit <m>D(X)=1</m>. Mais si <m>P(X)=X^n+\ldots</m>, sa dérivée <m>P'(X)=nX^{n-1}+\ldots</m>, étant de plus bas degré, ne peut pas être divisible par <m>P(X)</m>. Ainsi <m>D(X)=1</m>, c'est à dire que <m>P(X)</m> et <m>P'(X)</m> n'ont pas de racines communes.</p>
+</proof>
+
+<p>En particulier, le polynôme minimal d'un nombre algébrique - qui est irréductible - possède autant de racines que le degré de ce nombre algébrique.</p>
+
+<definition>
+  <title> Conjugués d'un nombre algébrique</title>
+  <statement>
+    <p>Soit <m>z</m> un nombre algébrique. Les racines du polynôme minimal de <m>z</m> sont appelés <em>les conjugués de <m>z</m></em>.</p>
+  </statement>
+</definition>
+
+<p>On a en particulier que les conjugués d'un entier algébrique sont des entiers algébriques.</p>
 
 </section>
+
+<section>
+  <title>Théorème de Cantor</title>
+
+  <p>Dans cette section, on démontre le théorème de Cantor qui stipule que l'ensemble des nombres algébriques est dénombrable. Pour ``compter'' les nombres algébriques, on utilise leur <em>taille</em>; dans cette section, ce sera donc la taille qui compte.</p>
+
+  <definition>
+    <title> Taille d'un nombre algébrique</title>
+    <statement>
+      <p>Soit <m>z</m> un nombre algébrique de degré <m>n</m> et <m>z_1,\ldots,z_n</m> ses conjugués. On appelle <em>dénominateur de <m>z</m></em> et l'on note <m>\mathrm{den}(z)</m> le plus petit entier <m>d\geq 1</m> tel que <m>dz\in \overline{\mathbb{Z}}</m>. On appelle <em>taille de <m>z</m></em> le nombre réel:</p>
+
+      <me>t(z)=\max\{\mathrm{den}(z),|z_1|,\ldots,|z_n|\}.</me>
+    </statement>
+  </definition>
+
+  <p>L'assertion suivante énonce qu'il n'y a qu'un nombre fini de nombres algébriques de degré et taille fixés.</p>
+
+  <proposition xml:id="prop-taille-compte">
+    <statement>
+      <p>Soit <m>r</m> un nombre réel positif. L'ensemble des nombres algébriques de degré <m>n</m> et de taille <m>\leq r</m> est fini.</p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>Soit <m>z</m> un nombre algébrique de degré <m>n</m> et de taille <m>\leq T</m>. On note <m>d:=\mathrm{den}(z)</m> son dénominateur et <m>z_1,\ldots,z_n</m> ses conjugués. Alors <m>d,|z_1|,\ldots,|z_n|\leq r</m>. Le polynôme minimal de l'entier algébrique <m>dz</m> s'écrit dans <m>\mathbb{C}[X]</m>:</p>
+
+    <me>\prod_{i=1}^n{(X-dz_i)}=X^n+a_{n-1}X^{n-1}+\ldots+a_1 X+a_0\in \mathbb{Z}[X].</me>
+
+    <p>En développant le terme de gauche, on trouve</p>
+
+    <me>\text{pour~tout~}k\in \{0,\ldots,n-1\}:\quad (-1)^k a_k=\sum_{1\leq i_1&lt;\ldots &lt;i_k\leq n}{dz_{i_1}\cdots dz_{i_k}},</me>
+
+    <p>puis, en utilisant l'inégalité triangulaire sur cette somme à <m>k</m> parmi <m>n</m> termes,</p>
+
+    <men xml:id="eq-borne">|a_k|\leq  \binom{n}{k} r^{2k}.</men>
+
+    <p>Comme <m>a_k\in \mathbb{Z}</m>, il n'y a qu'un nombre fini tels polynômes. On note <m>S_{n}(r)\subset \mathbb{C}</m> l'ensemble fini des racines complexes polynômes unitaires dont les coefficients sont entiers et vérifient les inégalités <xref ref="eq-borne"/>. Comme <m>cz\in S_n(r)</m> pour un certain entier <m>c\leq r</m> (prendre pour c le dénominateur de <m>z</m>), on trouve:</p>
+
+    <me>z\in \bigcup_{\substack{c\in \mathbb{N}_{&gt;0} \\ c\leq r}}{\frac{1}{c}S_{n}(r)}</me>
+
+    <p>qui est un ensemble fini indépendant de <m>z</m>.</p>
+  </proof>
+
+  <p>Le Théorème de Cantor s'obtient comme un corollaire de la proposition précédente.</p>
+
+  <theorem>
+    <title> Théorème de Cantor</title>
+    <statement>
+      <p>L'ensemble des nombres algébriques est dénombrable.</p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>Comme une union dénombrable d'ensembles dénombrables est dénombrable, il suffit de montrer que l'ensemble des nombres algébriques de degré <m>n</m> est dénombrable. Pour cela, on écrit:</p>
+
+    <men xml:id="eq-barQ-comme-union">\overline{\mathbb{Q}}=\bigcup_{r\in \mathbb{N}}{\{\text{nombres algébriques de taille }\leq r\}}</men>
+
+    <p>Chaque terme de l'union est un ensemble fini d'après la Proposition <xref ref="prop-taille-compte"/>; <m>\overline{\mathbb{Q}}</m> s'écrit donc comme une union dénombrable d'ensembles finis et est donc dénombrable.</p>
+  </proof>
+
+  <remark>
+    <statement>
+      <p>Les nombres complexes qui n'appartiennent pas à <m>\overline{\mathbb{Q}}</m> sont dits <em>transcendants</em>. Puisque <m>\mathbb{C}</m> est indénombrable, le théorème de Georg Cantor permet de démontrer l'existence de nombres transcendants sans même en construire un seul !</p>
+
+      <p>Notez qu'il est réputé difficile de démontrer qu'un nombre donné est transcendant. C'est Joseph Liouville qui, vers 1844, construit le premier nombre transcendant connu :</p>
+
+      <me>L=\sum_{n=0}^{\infty}{\frac{1}{10^{n!}}}.</me>
+
+      <p>Charles Hermite (1873) démontrera que le ``nombre d'Euler'' <m>e</m> est transcendant, puis Ferdinand von Lindemann (1882) généralisera sa méthode pour démontrer la transcendance de <m>\pi</m>.</p>
+    </statement>
+  </remark>
+
+</section>
+
+<section>
+  <title>Nombres algébriques de degré <m>2</m></title>
+
+  <p>Dans cette section, on s'intéresse aux nombres algébriques de degré <m>2</m>. Les exemples élémentaires sont les <m>\sqrt{d}</m> où <m>d\neq 0</m> est un entier, positif ou négatif. Ici <m>\sqrt{d}</m> désignera la racine réelle positive si <m>d&gt;0</m> et <m>i\sqrt{-d}</m> si <m>d&lt;0</m>.</p>
+
+  <p> On désignera par <m>\mathbb{Q}(\sqrt{d})</m> le sous-ensemble de <m> \mathbb{C}</m> formé des nombres de la forme <m>a+b\sqrt{d}</m> avec <m>a,b\in \mathbb{Q}</m>. C'est un sous-anneau de <m>\mathbb{C}</m> qui est un corps (voir <xref ref="prop-corps"/> pour le cas général); l'inverse de l'élément <m>a+b\sqrt{d}</m> est <md>\frac{a-b\sqrt{d}}{a^2-b^2d} \qquad (a,b)\neq (0,0)</md>. </p>
+
+  <p>Les nombres algébriques de degré <m>2</m> sont déterminés par la proposition suivante.</p>
+
+  <proposition>
+    <statement>
+      <p>Soit <m>z</m> un nombre algébrique de degré <m>2</m>. Alors il existe un unique entier relatif <m>d</m> sans facteur carré<fn><p>Cela signifie que <m>1</m> est l'unique carré positif qui divise <m>d</m>; autrement dit, les nombres premiers qui divisent <m>d</m> ne le divise qu'une fois.</p></fn> et deux uniques nombres rationels <m>a</m> et <m>b</m> tels que</p>
+
+      <me>z=a+b\sqrt{d}.</me>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>Par hypothèse, le polynôme minimal de <m>z</m> est de degré <m>2</m>: notons le <m>X^2+\alpha X+\beta</m> avec <m>\alpha,\beta\in \mathbb{Q}</m>. On a alors</p>
+
+    <men xml:id="eq-forme-factorisee">\left(z+\frac{\alpha}{2}\right)^2=-\beta+\frac{\alpha^2}{4}</men>
+
+    <p>Notons <m>D</m> pour ``discriminant'' le terme de droite. C'est un rationel non nul car <m>z\notin \mathbb{Q}</m> (sinon <m>z</m> serait de degré <m>1</m>). Écrivons <m>D</m> en produit de nombres premiers <m>D=\pm \prod_{i}{p_i^{n_i}}</m>, les <m>n_i</m> pouvant être négatifs, et posons</p>
+
+    <me>d=\pm \prod_{i}{p_i^{m_i}} \quad \text{où}\quad \begin{cases} m_i=1 \text{ si } n_i \text{ est impaire}, \\ m_i=0 \text{ si } n_i \text{ est paire}.\end{cases}</me>
+
+    <p>Alors <m>d</m> est sans facteur carré par construction, et</p>
+
+    <me>\frac{D}{d}=\prod_{i}{p_i^{n_i-m_i}}</me>
+
+    <p>est un carré car <m>n_i-m_i</m> est toujours paire. On a donc <m>D=dr^2</m> pour un certain <m>r\in \mathbb{Q}</m>. En reprenant l'équation <xref ref="eq-forme-factorisee"/>, on trouve:</p>
+
+    <me>z=-\frac{\alpha}{2}\pm r\sqrt{d}.</me>
+
+    <p>Cela démontre l'existence de l'écriture, avec <m>a=-\alpha/2</m> et <m>b=\pm r</m>. </p> 
+    <p> Comme <m>d</m> est sans facteur carré, <m>\sqrt{d}</m> est irrationel et les éléments <m>1,\sqrt{d}\in \mathbb{C}</m> sont linéairement indépendants sur <m>\mathbb{Q}</m>. Cela démontre l'unicité de <m>a</m> et <m>b</m>.</p>
+
+    <p>Montrons enfin l'unicité de <m>d</m>. Soit <m>d'</m> un entier sans facteur carré tel que <m>z\in \mathbb{Q}(\sqrt{d'})</m>. Alors <m>\sqrt{d}\in \mathbb{Q}(\sqrt{d'})</m> et il existe <m>a,b\in \mathbb{Q}</m> tels que</p>
+
+    <md> <mrow>\amp \sqrt{d}=a+b\sqrt{d'} </mrow> <mrow> \amp d=(a^2+b^2d')+2ab\sqrt{d'}. </mrow> </md>
+
+    <p>Comme <m>\sqrt{d'}</m> est irrationel, cela impose <m>ab=0</m> puis, comme <m>b\neq 0</m> car <m>\sqrt{d}</m> est également irrationel, <m>a=0</m>. Ainsi <m>d=b^2d'</m> ce qui n'est possible que si <m>b^2=1</m>, et donc <m>d'=d</m>.</p>
+  </proof>
+
+  <proposition xml:id="prop-integralite-quadratique">
+    <statement>
+      <p>Soit <m>d</m> un entier non nul sans facteur carré. Un élement <m>z=a+b\sqrt{d}</m> de <m>\mathbb{Q}(\sqrt{d})</m> est un entier algébrique si, et seulement si</p>
+      <ol>
+        <li xml:id="item-d-1mod4">
+          <p><m>a,b\in \mathbb{Z}</m> si <m>d\not \equiv 1 \pmod{4}</m>,</p>
+        </li>
+        <li xml:id="item-dnot-1mod4">
+          <p><m>2a,2b\in \mathbb{Z}</m> et <m>a-b\in \mathbb{Z}</m> si <m>d\equiv 1\pmod{4}</m>.</p>
+        </li>
+      </ol>
+    </statement>
+  </proposition>
+
+  <proof>
+  <p>Soit <m>z=a+b\sqrt{d}</m> avec <m>a,b\in \mathbb{Q}</m>. Si <m>b=0</m>, les deux conditions reviennent à <m>a\in \mathbb{Z}</m> et la proposition découle du <xref ref="cor-Z-comme-QcapbarZ"/>. </p>
+  <p>On suppose donc <m>b\neq 0</m> auquel cas <m>z</m> est irrationel. Le polynôme minimal de <m>z=a+b\sqrt{d}</m> est alors <m>X^2-2aX+a^2-db^2</m>. On utilise ensuite le critère de la Proposition <xref ref="prop-polynome-minimal"/>:</p>
+
+  <me xml:id="eq-equivalence-integralite">z\in \overline{\mathbb{Z}} \quad \Longleftrightarrow \quad \begin{cases} 2a\in \mathbb{Z}, \\ a^2-db^2 \in \mathbb{Z}. \end{cases}</me>
+
+  <p>Vérifions que les condtions <xref ref="item-d-1mod4"/> et <xref ref="item-dnot-1mod4"/> imposent l'intégralité de <m>z</m>. Le cas <xref ref="item-d-1mod4"/> est clair : si <m>a,b\in \mathbb{Z}</m>, alors <m>2a,a^2-db^2\in \mathbb{Z}</m> et donc <m>z</m> est un entier algébrique. Dans le cas <xref ref="item-dnot-1mod4"/>, on peut supposer <m>a,b\in \frac{1}{2}+\mathbb{Z}</m> (sinon c'est le cas précédent), auquel cas <m>2a\in \mathbb{Z}</m>. Pour le coefficient constant <m>n=a^2-db^2</m>, on a</p>
+
+  <me>4n=(2a)^2-d(2b)^2\in \mathbb{Z}</me>
+
+  <p>Comme <m>a-b\in \mathbb{Z}</m>, on a <m>(2a)^2-(2b)^2=(2a-2b)(2a+2b)\equiv 0 \pmod{4}</m>. Or <m>0</m> et <m>1</m> sont les seuls carrés modulo <m>4</m>, et alors <m>(2a)^2\equiv (2b)^2\equiv 0,1 \pmod{4}</m>. Comme <m>d\equiv 1 \pmod{4}</m>, on trouve <m>4n \equiv 0 \pmod{4}</m> et donc <m>n\in \mathbb{Z}</m>.</p>
+
+  <p>Démontrons la réciproque. On commence par une observation: si <m>x</m> est un nombre rationel tel que <m>dx^2\in \mathbb{Z}</m>, alors <m>x\in \mathbb{Z}</m>. En effet, posons <m>n=dx^2</m>. Si l'on écrit <m>x=p/q</m> sous forme irréductible, alors on trouve <m>q^2 n=dp^2</m>. En particulier, <m>q^2|dp^2</m> puis <m>q^2|d</m> car <m>p</m> et <m>q</m> sont premiers entre eux. Comme <m>d</m> est sans facteur carré, cela impose <m>q^2=1</m>, donc <m>q=\pm 1</m>, donc <m>x=\pm p</m> un entier.</p>
+
+  <p>on suppose que <m>z\in \overline{\mathbb{Z}}</m>. La première implication <xref ref="eq-equivalence-integralite"/> donne <m>a\in \mathbb{Z}</m> ou <m>a+\frac{1}{2}\in \mathbb{Z}</m>. On distingue ces deux cas:</p>
+
+  <ol>
+    <li xml:id="item-a-b-Z">
+      <p>Si <m>a\in \mathbb{Z}</m>, alors <m>db^2\in \mathbb{Z}</m> et donc <m>b\in \mathbb{Z}</m> d'après notre observation.</p>
+    </li>
+    <li xml:id="item-autre">
+      <p>Si <m>a+\frac{1}{2}\in \mathbb{Z}</m>, on a</p>
+
+      <me>4n=(2a)^2-d(2b)^2</me>
+
+      <p>et donc <m>d(2b)^2</m> est un entier. Toujours par notre observation, <m>2b\in \mathbb{Z}</m>. Posons alors <m>A=2a</m> et <m>B=2b</m>. Comme <m>a\in \frac{1}{2}+\mathbb{Z}</m>, <m>A</m> est un entier impair. Comme <m>dB^2=A^2-4n</m> est également impair, il en est de même pour <m>d</m> et <m>B</m>. Ainsi <m>b\in \frac{1}{2}+\mathbb{Z}</m> et <m>a-b\in \mathbb{Z}</m>.</p>
+    </li>
+  </ol>
+
+  <p>Enfin, on prétend que la condition <xref ref="item-autre"/> n'est possible que si <m>d\equiv 1 \pmod{4}</m>. En effet, <xref ref="item-autre"/> entraîne que</p>
+
+  <me>\frac{A-1}{2}+\frac{B-1}{2}\sqrt{d}</me>
+
+  <p>est un entier algébrique, et donc que</p>
+
+  <me>z-\left(\frac{A-1}{2}+\frac{B-1}{2}\sqrt{d}\right)=\frac{1+\sqrt{d}}{2}</me>
+
+  <p>est un entier algébrique. Son polynôme minimal est <m>X^2-X+\frac{1-d}{4}</m>, d'où <m>d\equiv 1 \pmod{4}</m>. Cela conclut.</p>
+</proof>
+
+<p>Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. On note <m>\mathcal{O}_K</m> l'anneau <m>K\cap \overline{\mathbb{Z}}</m>. L'étude de l'arithmétique de cet anneau, et de ses généralisations pour divers corps de nombres <m>K</m>, est l'un des enjeux de ce cours. Dans le cas des extensions quadratiques, on a le corollaire suivant:</p>
+
+<corollary>
+  <statement>
+    <p><m>\displaystyle \mathcal{O}_K=\begin{cases} \mathbb{Z} \oplus \mathbb{Z} \sqrt{d} &amp; \text{si~}d\not \equiv 1 \pmod{4} \\  \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2} &amp; \text{si~}d\equiv 1 \pmod{4} \end{cases}</m>. \\</p>
+    <p>En particulier, <m>\mathcal{O}_K</m> est un module libre de rang <m>2</m>.</p>
+  </statement>
+</corollary>
+
+<proof>
+  <p>Seul le cas <m>d\equiv 1\pmod{4}</m> est à étudier. Dans ce cas, <m>\frac{1+\sqrt{d}}{4}\in \mathcal{O}_K</m> et on peut écrire</p>
+
+  <me>a+b\sqrt{d}=(a-b)+2b\left(\frac{1+\sqrt{d}}{2}\right).</me>
+
+  <p>C'est cette formule qui donne l'équivalence entre les assertions ``<m>a,b</m> vérifient <xref ref="item-dnot-1mod4"/> de la Proposition <xref ref="prop-integralite-quadratique"/>'' et ``<m>z\in \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2}</m>''.</p>
+</proof>
+
+<remark>
+  <statement>
+    <p>Notez que l'inclusion <m>\mathbb{Z}[\sqrt{d}]\subset \mathcal{O}_K</m> n'est en général pas une égalité ! Nous verrons dans ce cours la différence entre ces deux anneaux.</p>
+  </statement>
+</remark>
+
+<remark>
+  <statement>
+    <p>Soit <m>z</m> un nombre algébrique de degré <m>d</m>. On démontrera plus tard dans ce cours que, si <m>K=\mathbb{Q}(z)</m>, alors <m>\mathcal{O}_K=K\cap \overline{\mathbb{Z}}</m> est libre de rang <m>d</m> comme groupe abélien.</p>
+  </statement>
+</remark>
+
+<section>
+  <title>Corps de nombres</title>
+
+  <p>L'application <m>\mathbb{Q}[X]\to \mathbb{C}</m>, <m>P(X)\mapsto P(z)</m> d'<em>évaluation en <m>X=z</m></em> est un morphisme d'anneaux. Son noyau est l'idéal des polynômes qui s'annulent en <m>z</m>, noté <m>I_z</m> ci-dessus. Son image est le plus petit sous-anneau de <m>\mathbb{C}</m> qui contient <m>\mathbb{Q}</m> et <m>z</m>: on le note <m>\mathbb{Q}[z]</m>, ou encore <m>\mathbb{Q}(z)</m> pour insister sur le fait que c'est un corps:</p>
+
+  <proposition xml:id="prop-corps">
+    <statement>
+      <p>Soit <m>z</m> un nombre algébrique de degré <m>d</m>. L'anneau <m>\mathbb{Q}(z)</m> est un corps. C'est aussi un <m>\mathbb{Q}</m>-espace vectoriel de dimension <m>d</m> et <m>(1,z,\ldots,z^{d-1})</m> forme une base de celui\nobreakdash-ci.</p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>Notons <m>\Pi_z(X)</m> le polynôme minimal de <m>z</m>. Comme <m>I_z=(\Pi_z(X))</m>, il résulte du théorème d'isomorphisme que <m>\mathbb{Q}[X]/\Pi_z(X) \stackrel{\sim}{\to} \mathbb{Q}(z)</m>. Comme <m>\Pi_z(X)</m> est irréductible, l'anneau <m>\mathbb{Q}[X]/\Pi_z(X)</m> est un corps. Il en est donc de même pour <m>\mathbb{Q}(z)</m>. Par division euclidienne, le <m>\mathbb{Q}</m>-espace vectoriel <m>\mathbb{Q}[X]/\Pi_z(X)</m> a pour base les classes de <m>1,X,\ldots,X^{d-1}</m>. L'isomorphisme ci-dessus envoie la classe de <m>X</m> sur celle de <m>z</m>, donc la classe de la base <m>(1,X,\ldots,X^{d-1})</m> vers la famille <m>(1,z,\ldots,z^{d-1})</m>.</p>
+  </proof>
+</section>
+  
+</section>
+
+
+
+
+
+
+
+
+
 
 
 

@@ -75,7 +75,7 @@
   <rename element="website">Site web</rename>
   <rename element="chapter">Chapitre</rename>
   <rename element="p">Paragraphe</rename>
-  <rename element="li">Élément</rename>
+  <rename element="li">Assertion</rename>
   <rename element="incontext">Contexte</rename>
   <rename element="previous-short">Préc.</rename>
   <rename element="up-short">Haut</rename>
@@ -98,7 +98,7 @@
   <rename element="website" xml:lang="fr-FR">Site web</rename>
   <rename element="chapter" xml:lang="fr-FR">Chapitre</rename>
   <rename element="p" xml:lang="fr-FR">Paragraphe</rename>
-  <rename element="li" xml:lang="fr-FR">Élément</rename>
+  <rename element="li" xml:lang="fr-FR">Assertion</rename>
   <rename element="incontext" xml:lang="fr-FR">Contexte</rename>
   <rename element="previous-short" xml:lang="fr-FR">Préc.</rename>
   <rename element="up-short" xml:lang="fr-FR">Haut</rename>

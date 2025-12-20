@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix xml:id="app-A">
+  <title>Compléments</title>
+
+  <section xml:id="app-irreducibilite-polynome">
+    <title>Démontrer l'irréductibilité d'un polynôme</title>
+
+    <p>
+      Étant donné un polynôme unitaire <m>P(X)\in \mathbb{Z}[X]</m>, il n'y a pas une méthode générale pour déterminer son irréductibilité dans <m>\mathbb{Z}[X]</m>. Nous rassemblons ici quelques techniques pour montrer l'irréductibilité dans des cas favorables.
+    </p>
+
+    <lemma xml:id="lem-">
+        <statement>
+            <p>
+                Soit <m>P(X)\in \mathbb{Z}[X]</m> un polynôme unitaire. Supposons qu'il existe un nombre premier <m>p</m> tel que <m> \overline{P}(X)</m> est<fn> <m>\overline{P}(X)</m> désigne l'image de <m>P(X)</m> par la réduction modulo <m>p</m>.</fn> irréductible dans <m>(\mathbb{Z}/p\mathbb{Z})[X]</m>. Alors <m>P(X)</m> est irréductible dans <m>\mathbb{Z}[X]</m>. 
+            </p>
+        </statement>
+    </lemma>
+    <proof>
+        <p> La preuve est presque immédiate : si <m>P(X)</m> était réductible dans <m>\mathbb{Z}[X]</m>, alors il existerait une factorisation non triviale <m>P(X)=Q_1(X)Q_2(X)</m> avec <m>Q_1,Q_2\in \mathbb{Z}[X]</m> unitaires de degré strictement positif. En réduisant modulo <m>p</m>, on obtiendrait une factorisation non triviale de <m>\overline{P}(X)</m> dans <m>(\mathbb{Z}/p\mathbb{Z})[X]</m>, ce qui contredit l'irréductibilité de <m>\overline{P}(X)</m>. </p>
+    </proof>
+
+    <p> On peut utiliser ce lemme pour prouver l'irréductibilité de certains polynômes en choisissant astucieusement le nombre premier <m>p</m>. Par exemple, le polynôme <m>X^3 - 2</m> est irréductible dans <m>\mathbb{Z}[X]</m> car sa réduction modulo <m>3</m> est <m>\overline{X}^3 - \overline{2}</m>, qui n'a pas de racine dans <m>\mathbb{Z}/3\mathbb{Z}</m> et est donc irréductible. </p>
+
+  <example>
+    <title>Quelques polynômes unitaires irréductibles dans <m>(\mathbb{Z}/p\mathbb{Z})[X]</m></title>
+  
+  <p>Dans les tables suivantes, on liste les polynômes unitaires irréductibles de degré <m>\leq 3</m> dans <m>(\mathbb{Z}/p\mathbb{Z})[X]</m>, pour <m>p\in\{2,3,5\}</m>.</p>
+
+    <table xml:id="tab-irred-f2-deg1">
+      <title>Polynômes irréductibles de degré <m>1</m> dans <m>(\mathbb{Z}/2\mathbb{Z})[X]</m></title>
+      <tabular cols="l">
+        <row><cell><m>X</m></cell></row>
+        <row><cell><m>X + 1</m></cell></row>
+      </tabular>
+    </table>
+
+    <table xml:id="tab-irred-f2-deg2">
+      <title>Polynômes irréductibles de degré <m>2</m> dans <m>(\mathbb{Z}/2\mathbb{Z})[X]</m></title>
+      <tabular cols="l">
+        <row><cell><m>X^2 + X + 1</m></cell></row>
+      </tabular>
+    </table>
+
+    <table xml:id="tab-irred-f2-deg3">
+      <title>Polynômes irréductibles de degré <m>3</m> dans <m>(\mathbb{Z}/2\mathbb{Z})[X]</m></title>
+      <tabular cols="l">
+        <row><cell><m>X^3 + X^2 + 1</m></cell></row>
+        <row><cell><m>X^3 + X + 1</m></cell></row>
+      </tabular>
+    </table>
+
+    <table xml:id="tab-irred-f3-deg1">
+      <title>Polynômes irréductibles de degré <m>1</m> dans <m>(\mathbb{Z}/3\mathbb{Z})[X]</m></title>
+      <tabular cols="l">
+        <row><cell><m>X</m></cell></row>
+        <row><cell><m>X + 1</m></cell></row>
+        <row><cell><m>X + 2</m></cell></row>
+      </tabular>
+    </table>
+
+    <table xml:id="tab-irred-f3-deg2">
+      <title>Polynômes irréductibles de degré <m>2</m> dans <m>(\mathbb{Z}/3\mathbb{Z})[X]</m></title>
+      <tabular cols="l">
+        <row><cell><m>X^2 + 1</m></cell></row>
+        <row><cell><m>X^2 + X + 2</m></cell></row>
+        <row><cell><m>X^2 + 2X + 2</m></cell></row>
+      </tabular>
+    </table>
+
+    <table xml:id="tab-irred-f3-deg3">
+      <title>Polynômes irréductibles de degré <m>3</m> dans <m>(\mathbb{Z}/3\mathbb{Z})[X]</m></title>
+      <tabular cols="l">
+        <row><cell><m>X^3 + 2X^2 + 1</m></cell></row>
+        <row><cell><m>X^3 + 2X^2 + X + 1</m></cell></row>
+        <row><cell><m>X^3 + 2X + 1</m></cell></row>
+        <row><cell><m>X^3 + X^2 + 2X + 1</m></cell></row>
+        <row><cell><m>X^3 + X^2 + 2</m></cell></row>
+        <row><cell><m>X^3 + X^2 + X + 2</m></cell></row>
+        <row><cell><m>X^3 + 2X + 2</m></cell></row>
+        <row><cell><m>X^3 + 2X^2 + 2X + 2</m></cell></row>
+      </tabular>
+    </table>
+
+    <table xml:id="tab-irred-f5-deg1">
+      <title>Polynômes irréductibles de degré <m>1</m> dans <m>(\mathbb{Z}/5\mathbb{Z})[X]</m></title>
+      <tabular cols="l">
+        <row><cell><m>X</m></cell></row>
+        <row><cell><m>X + 1</m></cell></row>
+        <row><cell><m>X + 2</m></cell></row>
+        <row><cell><m>X + 3</m></cell></row>
+        <row><cell><m>X + 4</m></cell></row>
+      </tabular>
+    </table>
+
+    <table xml:id="tab-irred-f5-deg2">
+      <title>Polynômes irréductibles de degré <m>2</m> dans <m>(\mathbb{Z}/5\mathbb{Z})[X]</m></title>
+      <tabular cols="l">
+        <row><cell><m>X^2 + X + 1</m></cell></row>
+        <row><cell><m>X^2 + 4X + 1</m></cell></row>
+        <row><cell><m>X^2 + 2</m></cell></row>
+        <row><cell><m>X^2 + X + 2</m></cell></row>
+        <row><cell><m>X^2 + 4X + 2</m></cell></row>
+        <row><cell><m>X^2 + 3</m></cell></row>
+        <row><cell><m>X^2 + 2X + 3</m></cell></row>
+        <row><cell><m>X^2 + 3X + 3</m></cell></row>
+        <row><cell><m>X^2 + 2X + 4</m></cell></row>
+        <row><cell><m>X^2 + 3X + 4</m></cell></row>
+      </tabular>
+    </table>
+  </example>
+
+On dispose également du critère d'Eisenstein, qui permet de prouver l'irréductibilité de certains polynômes unitaires à coefficients entiers en regardant la divisibilité de leurs coefficients par un nombre premier donné.
+  <definition xml:id="def-">
+    <title> Polynôme d'Eisenstein</title>
+    <statement>
+      <p>
+        Soit <m>p</m> un nombre premier. Un polynôme unitaire <m>P(X)=X^n+a_{n-1}X^{n-1}+\ldots +a_0 \in \mathbb{Z}[X]</m> est dit <em> <m>p</m>-Eisenstein</em> si :
+        <ul>
+          <li><m>p</m> divise tous les coefficients <m>a_0,\ldots,a_{n-1}</m>,</li>
+          <li><m>p^2</m> ne divise pas le coefficient constant <m>a_0</m>.</li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  
+  <proposition xml:id="prop-">
+    <title> critère d'Eisenstein</title>
+    <statement>
+      <p>
+        Soit <m>P(X)\in \mathbb{Z}[X]</m> un polynôme unitaire tel qu'il existe un nombre premier <m>p</m> pour lequel <m>P(X)</m> est <m>p</m>-Eisenstein. Alors <m>P(X)</m> est irréductible dans <m>\mathbb{Z}[X]</m>.
+      </p>
+    </statement>
+  </proposition>
+
+  <example>
+    <title>Exemples de polynômes irréductibles par le critère d'Eisenstein</title>
+  
+    <p> Le polynôme <m>X^4 + 6X^3 + 12X^2 + 18X + 9</m> est irréductible dans <m>\mathbb{Z}[X]</m> car il est <m>3</m>-Eisenstein. </p>
+
+    <p>
+      Le <m>p</m>ème polynôme cyclotomique <me>\Phi_p(X)=\frac{X^p - 1}{X - 1} = X^{p-1} + X^{p-2} + \ldots + X + 1</me> est irréductible dans <m>\mathbb{Z}[X]</m> pour tout nombre premier <m>p</m>. Pour le vérifier, on montre que <m>\Phi_p(X+1)</m> est <m>p</m>-Eisenstein; En effet, étant donné un polynôme <m>P(X)</m>, l'irréductibilité de <m>P(X)</m> est équivalente à celle de ses translatées, par exemple <m>P(X+1)</m>. En effectuant le changement de variable <m>X \mapsto X + 1</m>, on obtient <m>\Phi_p(X + 1) = \frac{(X + 1)^p - 1}{X} = X^{p-1} + \binom{p}{1}X^{p-2} + \ldots + \binom{p}{p-1}</m>. Or, pour <m>1 \leq k \leq p - 1</m>, le coefficient binomial <m>\binom{p}{k}</m> est divisible par <m>p</m>, tandis que le terme constant <m>\binom{p}{p} = 1</m> n'est pas divisible par <m>p^2</m>. Ainsi, <m>\Phi_p(X + 1)</m> est <m>p</m>-Eisenstein, et donc irréductible dans <m>\mathbb{Z}[X]</m>. Par conséquent, <m>\Phi_p(X)</m> est également irréductible dans <m>\mathbb{Z}[X]</m>.
+    </p>
+  </example>
+
+  </section>
+
+
+
+</appendix>
