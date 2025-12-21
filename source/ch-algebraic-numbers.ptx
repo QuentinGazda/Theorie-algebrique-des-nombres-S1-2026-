@@ -612,6 +612,30 @@ Le polynôme caractéristique de la matrice
     </statement>
   </definition>
 
+  <p>
+    Plus généralement, soit <m> K\subset L</m> une inclusion de corps de nombres; on dit que <m>L</m> est une <em>extension de <m>K</m></em>. Le <em>degré de l'extension <m>L/K</m></em> est la dimension de <m>L</m> vu comme <m>K</m>-espace vectoriel et se note <m>[L:K]</m>. 
+  </p>
+
+  On rappelle l'énoncé suivant:
+  <lemma xml:id="lem-multiplicativite-degres-extensions">
+    <title> Multiplicativité des degrés d'extensions</title>
+    <statement>
+      <p>
+        Soit <m>K\subset L \subset M</m> une tour d'extensions de corps de nombres. Alors
+        <me>[M:K]=[M:L][L:K].</me>
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <p>
+      Soit <m>(e_1,\ldots,e_m)</m> une base de <m>M</m> sur <m>L</m> et <m>(f_1,\ldots,f_n)</m> une base de <m>L</m> sur <m>K</m>. Alors la famille
+      <me>
+        (e_i f_j)_{1\leq i \leq m, 1\leq j \leq n}
+      </me>
+      est une base de <m>M</m> sur <m>K</m>. En effet, tout élément de <m>M</m> s'écrit comme une combinaison linéaire à coefficients dans <m>L</m> des <m>e_i</m>, et chaque coefficient s'écrit comme une combinaison linéaire à coefficients dans <m>K</m> des <m>f_j</m>. La famille est libre car toute relation linéaire à coefficients dans <m>K</m> s'écrit comme une combinaison linéaire à coefficients dans <m>L</m> des <m>e_i</m> dont les coefficients sont des combinaisons linéaires à coefficients dans <m>K</m> des <m>f_j</m>.
+    </p>
+  </proof>
+
   <proposition xml:id="prop-corps-de-nombres-algebriques">
     <statement>
       <p>
@@ -695,7 +719,7 @@ Le polynôme caractéristique de la matrice
   </proof>
 
   <p>
-    Un morphisme de corps est une application qui préserve les opérations d'addition et de multiplication, et qui envoie <m>1</m> sur <m>1</m>. Nous désignerons par <m>\mathrm{Hom}(K,L)</m> l'ensemble des morphismes d'un corps <m>K</m> vers un corps <m>L</m>.
+    Un morphisme de corps est une application qui préserve les opérations d'addition et de multiplication, et qui envoie <m>1</m> sur <m>1</m>. Nous désignerons par <m>\mathrm{Hom}(K,L)</m> l'ensemble des morphismes d'un corps <m>K</m> vers un corps <m>L</m>. Un élément de <m>\mathrm{Hom}(K,\mathbb{C})</m> est aussi appelé<fn> On rappelle qu'un morphisme de corps est nécessairement injectif (son noyau est un idéal d'un corps - donc zéro ou tout le corps - mais un tel morphisme envoit <m>1</m> sur <m>1</m> donc n'est pas trivial). D'où le terme de "plongement".</fn> un <em>plongement complexe de <m>K</m></em>.
   </p>
 
   <proposition xml:id="prop-nombre-de-morphismes-de-corps">
@@ -704,17 +728,45 @@ Le polynôme caractéristique de la matrice
         Soit <m>K</m> un corps de nombres de degré <m>d</m>. Alors <m>\mathrm{Hom}(K,\mathbb{C})</m> est un ensemble fini de cardinal <m>d</m>.
       </p>
       <p>
-        Plus généralement, soit <m> L\subset K</m> est une inclusion de corps de nombres et <m>\varphi: L\to \mathbb{C}</m> un morphisme de corps. L'ensemble des morphismes <m>\widetilde{\varphi}: K\to \mathbb{C}</m> qui prolongent <m>\varphi</m>
+        Plus généralement, soit <m> L\subset K</m> est une inclusion de corps de nombres et <m>\varphi: L\to \mathbb{C}</m> un morphisme de corps. L'ensemble des morphismes <m>\Psi: K\to \mathbb{C}</m> qui prolongent <m>\varphi</m>:
         <md>
-          \{\Psi\in \Hom(K,\mathbb{C}) | \Psi|_L=\varphi\}
+          \{\Psi\in \mathrm{Hom}(K,\mathbb{C})~|~\Psi|_L=\varphi\}
         </md>
-        est de cardinal au plus <m>[K:L]</m>.
+        est de cardinal <m>[K:L]</m>.
       </p>
     </statement>
   </proposition>
   <proof>
     <p>
-      
+      Remarquons que <m>\mathrm{Hom}(\mathbb{Q},\mathbb{C})</m> est réduit au seul morphisme d'inclusion canonique<fn> En effet, si <m>\varphi\in \mathrm{Hom}(\mathbb{Q},\mathbb{C})</m>, alors pour tout entier naturel <m>n</m>, on a <m>\varphi(n)=\varphi(1+\cdots +1)=n</m> et donc, pour tout rationnel <m>p/q</m>, <m>\varphi(p/q)=\varphi(p)\varphi(q)^{-1}=p/q</m>.
+      </fn> <m>\mathrm{id}_{\mathbb{Q}}</m>. En particulier, la première assertion est un cas particulier de la seconde en prenant <m>L=\mathbb{Q}</m> et <m>\varphi=\mathrm{id}_{\mathbb{Q}}</m>.
+    </p>
+
+    <p>
+      Il suffit donc de démontrer la seconde assertion, et on procède par récurrence sur le degré <m>[K:L]</m>. Si <m>[K:L]=1</m>, alors <m>K=L</m> et il n'y a qu'un seul prolongement possible, à savoir <m>\varphi</m> lui-même.
+    </p>  
+    <p>
+      Supposons maintenant que <m>[K:L]=n&gt;1</m> et que le résultat est démontré pour les extensions de degré strictement inférieur à <m>n</m>. Soit <m>\alpha\in K\setminus L</m>. Notons <m>L(\alpha)</m> le plus petit sous-corps de <m>K</m> contenant à la fois <m>L</m> et <m>\alpha</m> :
+    </p>
+    <me>
+      L\subset L(\alpha) \subset K \quad (\text{avec}\quad L(\alpha)=\{Q(\alpha)~|~Q(X)\in L[X]\}).
+    </me>
+    <p>
+      Si <m>\Psi</m> satisfait à <m>\Psi|_L=\varphi</m>, alors il en est de même pour <m>\Psi|_{L(\alpha)}</m>. Ainsi, on dispose d'une application de restriction
+      <md>
+        <mrow> \{\Psi\in\mathrm{Hom}(K,\mathbb{C})~|~\Psi|_L=\varphi\} \amp \to \{\Psi\in\mathrm{Hom}(L(\alpha),\mathbb{C})~|~\Psi|_L=\varphi\},</mrow>
+        <mrow>   \Psi \amp \mapsto \Psi|_{L(\alpha)} </mrow>
+      </md>
+      L'image inverse d'un élément <m>\sigma</m> par cette application correspond à l'ensemble<m>\{\Psi\in\mathrm{Hom}(K,\mathbb{C})~|~\Psi|_L=\varphi\}</m>. Par hypothèse de récurrence, il est de cardinal <m>[K:L(\alpha)]</m>. D'après la multiplicativité des degrés d'extensions (voir le <xref ref="lem-multiplicativite-degres-extensions"/>), il reste à montrer que<fn> En effet, si <m>f:A\to B</m> est une application, alors <me>|A|=\bigsqcup_{b\in B}|f^{-1}(\{b\})|</me>. Dans notre cas, le cardinal <m>|f^{-1}(b)|</m> est constant en <m>b</m> et donc <m>|A|=|B|\cdot |f^{-1}(b)|</m> pour n'importe quel <m>b\in B</m>.</fn> le cardinal de l'ensemble d'arrivée est <m>[L(\alpha):L]</m>.
+    </p>
+
+    <p>
+      Pour compter le cardinal de <m>B:=\{\Psi\in\mathrm{Hom}(L(\alpha),\mathbb{C})~|~\Psi|_L=\varphi\}</m>, on utilise l'isomorphisme <m> L(\alpha)\cong L[X]/\Pi_{L,\alpha}(X)</m> où <m>\Pi_{L,\alpha}(X)</m> désigne le polynôme minimal de <m>\alpha</m> sur <m>L</m>. Un morphisme de corps <m>\sigma:L(\alpha)\to \mathbb{C}</m> qui prolonge <m>\varphi</m> est donc équivalent à la donnée un morphisme d'anneaux
+      <md>
+        <mrow>L[X] \amp \to \mathbb{C},</mrow>
+        <mrow> a_0+a_1X+a_2 X^2+\ldots \amp \mapsto  \varphi(a_0)+\varphi(a_1)\sigma(\alpha)+\varphi(a_2) \sigma(\alpha)^2+\ldots </mrow>
+      </md>
+      qui envoit <m>\Pi_{L,\alpha}(X)</m> sur <m>0</m>. Autrement dit, <m>\sigma(\alpha)</m> est une racine complexe de <m>\varphi(\Pi_{L,\alpha})(X)</m>. Comme <m>\Pi_{L,\alpha}(X)</m> est irréductible dans <m>L[X]</m>, il en est de même pour <m>\varphi(\Pi_{L,\alpha})(X)</m> dans <m>\varphi(L)[X]</m> et possède donc <m>[L(\alpha):L]</m> racines complexes distinctes. Ainsi, il y a exactement <m>\deg \Pi_{L,\alpha}(X)=[L(\alpha):L]</m> choix possibles pour <m>\sigma(\alpha)</m>, ce qui conclut la démonstration.
     </p>
   </proof>
 
@@ -725,7 +777,127 @@ Le polynôme caractéristique de la matrice
 
   </example>
 
-</section>
+  <definition xml:id="def-plongements-reels-et-complexes">
+    <title> Plongements réels et complexes</title>
+    <statement>
+      <p>
+        Soit <m>K</m> un corps de nombres. Un <em>plongement réel</em> de <m>K</m> est un plongement complexe <m>\sigma:K\to \mathbb{C}</m> de <m>K</m> dont l'image <m>\sigma(K)</m> est contenue dans <m>\mathbb{R}</m>.
+      </p>
+      <p>  
+        Un <em>plongement complexe</em> de <m>K</m> est un plongement complexe de <m>K</m> qui n'est pas réel.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Étant donné un plongement complexe <m>\sigma:K\to \mathbb{C}</m>, on peut définir son conjugué <m>\overline{\sigma}:K\to \mathbb{C}</m> par <m>\overline{\sigma}(x)=\overline{\sigma(x)}</m> où le second conjugué est le conjugué complexe usuel dans <m>\mathbb{C}</m>. Alors <m>\overline{\sigma}</m> est aussi un plongement complexe de <m>K</m> différent de <m>\sigma</m>. De plus, <m>\sigma</m> est réel si, et seulement si, <m>\overline{\sigma}=\sigma</m>. Ainsi, les plongements complexes non réels de <m>K</m> se regroupent par paires <m>(\sigma,\overline{\sigma})</m>. On note <m>r_1</m> le nombre de plongements réels de <m>K</m> et <m>r_2</m> le nombre de paires de plongements complexes non réels. On a donc la relation
+    <me>[K:\mathbb{Q}]=r_1+2r_2.</me>
+  </p>
 
+<example>
+  <title> Corps quadratiques réels et imaginaires </title>
+  <p> 
+  Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. Alors:
+  </p>
+    <ul>
+      <li>
+        <p>
+         Si <m>d&gt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique réel</em> et possède deux plongements réels: l'inclusion canonique <m>\mathrm{id}_K</m> et le morphisme <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m>. Si <m>d&lt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique imaginaire</em> et ne possède pas de plongement réel: les deux plongements complexes <m>\mathrm{id}_K</m> et <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> sont conjugués l'un de l'autre.
+        </p>
+      </li>
+      <li>
+        <p>
+          Si <m>d&lt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique imaginaire</em> et ne possède pas de plongement réel: les deux plongements complexes <m>\mathrm{id}_K</m> et <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> sont conjugués l'un de l'autre.
+        </p>
+      </li>
+    </ul>  
+</example>
+
+<example>
+  <p>
+    Soit <m>K=\mathbb{Q}(\sqrt[3]{2})</m>. Le polynôme minimal de <m>\sqrt[3]{2}</m> est <m>X^3-2</m> qui possède comme racines complexes <m>\sqrt[3]{2}</m>, <m>\sqrt[3]{2}\omega</m>, et <m>\sqrt[3]{2}\omega^2</m> où <m>\omega=e^{2i\pi/3}</m> est une racine cubique primitive de l'unité. <m>K</m> est un corps de nombres de degré <m>3</m> qui possède un seul plongement réel, l'inclusion canonique, et un seul plongement complexe non réel, défini par <m>\sigma:\sqrt[3]{2}\mapsto \sqrt[3]{2}\omega</m>. On a donc <m>r_1=1</m> et <m>r_2=1</m>.
+  </p>
+</example>
+
+<p>
+  UTILITÉ DE LA PROPOSITION ? UTILE POUR LA TRACE ET LA NORME, DEPLACER EN SECTION SUIVANTE.
+</p>
+<proposition xml:id="prop-polynome-minimal-et-plongements">
+  <title> Polynôme minimal et plongements </title>
+  <statement>
+    <p>
+      Soit <m>K</m> un corps de nombres de degré <m>n</m> avec comme plongements <m> \mathrm{Hom}(K,\mathbb{C})=\{\sigma_1,\ldots,\sigma_n\}</m>. Soit <m>\alpha\in K</m> un élément de <m>K</m> de degré <m>d</m> et soit <m>\Pi_{\alpha}(X)</m> son polynôme minimal sur <m>K</m>. Alors
+      <md>
+        \Pi_{\alpha}(X)^{n/d}=\prod_{i=1}^n{(X-\sigma_i(\alpha))}
+      </md>
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    On prétend que, dans la suite <m>(\sigma_i(\alpha))_{1\leq i\leq n}</m>, chaque racine de <m>\Pi_{\alpha}(X)</m> apparaît exactement <m>n/d</m> fois. En effet, chaque racine <m>\beta</m> de <m>\Pi_{\alpha}(X)</m> fournit un plongement
+    <md>
+      <mrow> \mathbb{Q}(\alpha) \amp \to \mathbb{C}</mrow>
+      <mrow> \alpha \amp \mapsto \beta</mrow>
+    </md>
+    qui se prolonge en <m>[K:\mathbb{Q}(\alpha)]=\frac{n}{d}</m> plongements de <m>K</m> dans <m>\mathbb{C}</m>. On a donc
+    <md>
+      \prod_{i=1}^n{(X-\sigma_i(\alpha))}=\prod_{j=1}^d{(X-\beta_j)}^{n/d}=\Pi_{\alpha}(X)^{n/d}.
+    </md>
+  </p>
+</proof>
+
+<theorem xml:id="thm-element-primitif">
+  <title> de l'élément primitif </title>
+  <statement>
+    <p>
+      Soit <m> K</m> un corps de nombres. Il existe un élément <m>\alpha\in K</m> tel que <m>K=\mathbb{Q}(\alpha)</m>.
+    </p>
+  </statement>
+</theorem>
+<p>
+L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est appelé un <em>élément primitif</em> de l'extension de corps de nombres <m>K/\mathbb{Q}</m> (il n'est en général pas unique).
+</p>
+<proof>
+<title>Démonstration du <xref ref="thm-element-primitif"/></title>
+  <p>
+    La démonstration repose sur le lemme suivant:
+  </p>
+<lemma xml:id="lem-differents-plongements-engendrent-le-corps">
+  <statement>
+    <p>
+      Si <m>\sigma_i(\alpha)\neq \sigma_1(\alpha)</m> pour tout <m>i=2,\ldots,n</m>, alors <me>K=\mathbb{Q}(\alpha)</me>. 
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    L'ensemble des <m>i\in \{1,\ldots,n\} </m> tels que <m>\sigma_i(\alpha)=\sigma_1(\alpha)</m> est en bijection avec l'ensemble des plongements complexes de <m>K</m> qui coincident avec <m>\sigma_1</m> sur <m>\mathbb{Q}(\alpha)</m>. Son cardinal est égal à <m>[K:\mathbb{Q}(\alpha)]</m> d'après la <xref ref="prop-nombre-de-morphismes-de-corps"/>. Donc, si tous les <m>\sigma_i(\alpha)</m> sont distincts, alors <m>[K:\mathbb{Q}(\alpha)]=1</m>, ce qui implique <m>K=\mathbb{Q}(\alpha)</m>.
+  </p>
+</proof>
+  <p>
+    D'après le <xref ref="lem-differents-plongements-engendrent-le-corps"/>, il suffit de démontrer qu'il existe <m>\alpha\in K</m> tel que <m>\sigma_i(\alpha)\neq \sigma_1(\alpha)</m> pour tout <m>i=2,\ldots,n</m>. Notons
+    <md>
+      V_i=\{\alpha\in K~|~\sigma_i(\alpha)=\sigma_1(\alpha)\} \quad \text{pour } i=2,\ldots,n.
+    </md>
+    C'est un sous-espace vectoriel strict de <m>K</m> car <m>\sigma_i\neq \sigma_1</m>. On est alors réduit à démontrer que <m> V_2\cup \ldots \cup V_n</m> n'est pas <m> K</m> tout entier. On le déduit du lemme qui suit.
+  </p>
+  <lemma xml:id="lem-union-de-sous-espaces-stricts-n-est-pas-tout-le-espace">
+    <statement>
+      <p>
+        Soit <m>F</m> un corps infini et <m>V</m> un <m>F</m>-espace vectoriel de dimension finie. Si <m>W_1,\ldots,W_m</m> sont des sous-espaces vectoriels stricts de <m>V</m>, alors <m>W_1\cup \ldots \cup W_m \neq V</m>.
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <title>Démonstration du <xref ref="lem-union-de-sous-espaces-stricts-n-est-pas-tout-le-espace"/></title>
+    <p>
+    On raisonne par récurrence sur <m>m</m>, le nombre de sous-espaces. Si <m>m=1</m>, c'est évident car <m>W_1</m> est strict dans <m>V</m>. Supposons le résultat démontré pour un certain <m>m\geq 1</m> et montrons-le pour <m>m+1</m>. Par hypothèse de récurrence, il existe <m>v\in V\setminus (W_1\cup \ldots \cup W_m)</m>. Comme <m>W_{m+1}</m> est strict dans <m>V</m>, il existe <m>w\in V\setminus W_{m+1}</m>. Pour tout <m>\lambda \in F</m>, on a
+    <me>v+\lambda w\in W_1\cup \ldots \cup W_{m+1}</me>
+    si, et seulement si, il existe <m>i\in \{1,\ldots,m+1\}</m> tel que <m>v+\lambda w\in W_i</m>. Si <m>i=m+1</m>, alors <m>\lambda=(v - u)/w</m> où <m>u\in W_{m+1}</m> est quelconque. Comme <m>F</m> est infini, il existe une infinité de tels <m>\lambda</m>. Si <m>i\leq m</m>, alors <m>\lambda=(u - v)/w</m> où <m>u\in W_i</m> est quelconque. Comme <m>F</m> est infini, il existe une infinité de tels <m>\lambda</m>. Ainsi, il existe au plus <m>m</m> valeurs de <m>\lambda</m> telles que <m>v+\lambda w\in W_1\cup \ldots \cup W_{m+1}</m>. En particulier, il en existe au moins une telle que <m>v+\lambda w\notin W_1\cup \ldots \cup W_{m+1}</m>, ce qui conclut la démonstration.
+    </p>
+  </proof>
+</proof>
+
+</section>
 
 </chapter>
