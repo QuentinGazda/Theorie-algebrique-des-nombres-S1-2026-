@@ -8,6 +8,14 @@
     <title>Théorie algébrique des nombres</title>
     <subtitle>UM4MA234 - Sorbonne Université</subtitle>
 
+    <custom>
+      <theorem-like
+        name="fact"
+        title="Fait"
+        counter="theorem"
+        numbering="shared"/>
+    </custom>
+
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 

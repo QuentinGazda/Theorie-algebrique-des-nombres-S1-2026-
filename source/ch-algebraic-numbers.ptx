@@ -409,15 +409,25 @@ Le polynôme caractéristique de la matrice
 <section>
   <title>Nombres algébriques de degré <m>2</m></title>
 
-  <p>Dans cette section, on s'intéresse aux nombres algébriques de degré <m>2</m>. Les exemples élémentaires sont les <m>\sqrt{d}</m> où <m>d\neq 0</m> est un entier, positif ou négatif. Ici <m>\sqrt{d}</m> désignera la racine réelle positive si <m>d&gt;0</m> et <m>i\sqrt{-d}</m> si <m>d&lt;0</m>.</p>
+  <p>
+    Dans cette section, on s'intéresse aux nombres algébriques de degré <m>2</m>. Les exemples élémentaires sont les <m>\sqrt{d}</m> où <m>d\neq 0</m> est un entier, positif ou négatif. Ici <m>\sqrt{d}</m> désignera la racine réelle positive si <m>d&gt;0</m> et <m>i\sqrt{-d}</m> si <m>d&lt;0</m>.
+  </p>
 
-  <p> On désignera par <m>\mathbb{Q}(\sqrt{d})</m> le sous-ensemble de <m> \mathbb{C}</m> formé des nombres de la forme <m>a+b\sqrt{d}</m> avec <m>a,b\in \mathbb{Q}</m>. C'est un sous-anneau de <m>\mathbb{C}</m> qui est un corps (voir <xref ref="prop-corps"/> pour le cas général); l'inverse de l'élément <m>a+b\sqrt{d}</m> est <md>\frac{a-b\sqrt{d}}{a^2-b^2d} \qquad (a,b)\neq (0,0)</md>. </p>
+  <p>
+    On désignera par <m>\mathbb{Q}(\sqrt{d})</m> le sous-ensemble de <m> \mathbb{C}</m> formé des nombres de la forme <m>a+b\sqrt{d}</m> avec <m>a,b\in \mathbb{Q}</m>. Comme <m>\mathbb{Q}(\sqrt{r^2d})=\mathbb{Q}(\sqrt{d})</m> pour <m>r</m> entier, on peut supposer que <m>d</m> est un entier sans facteur carré<fn><p>Cela signifie que <m>1</m> est l'unique carré positif qui divise <m>d</m>; autrement dit, les nombres premiers qui divisent <m>d</m> ne le divise qu'une fois.</p></fn>, ce que l'on fera ici.
+  </p>
+    
+  <p>
+    <m>\mathbb{Q}(\sqrt{d})</m> est un sous-anneau de <m>\mathbb{C}</m> qui est un corps (voir <xref ref="prop-corps"/> pour le cas général); si <m>d</m> est sans facteur carré, l'inverse de l'élément <m>a+b\sqrt{d}</m> est <md>\frac{a-b\sqrt{d}}{a^2-b^2d} \qquad (a,b)\neq (0,0)</md>.
+  </p>
 
-  <p>Les nombres algébriques de degré <m>2</m> sont déterminés par la proposition suivante.</p>
+  <p>
+    Les nombres algébriques de degré <m>2</m> sont déterminés par la proposition suivante.
+  </p>
 
   <proposition>
     <statement>
-      <p>Soit <m>z</m> un nombre algébrique de degré <m>2</m>. Alors il existe un unique entier relatif <m>d</m> sans facteur carré<fn><p>Cela signifie que <m>1</m> est l'unique carré positif qui divise <m>d</m>; autrement dit, les nombres premiers qui divisent <m>d</m> ne le divise qu'une fois.</p></fn> et deux uniques nombres rationels <m>a</m> et <m>b</m> tels que</p>
+      <p>Soit <m>z</m> un nombre algébrique de degré <m>2</m>. Alors il existe un unique entier relatif <m>d</m> sans facteur carré et deux uniques nombres rationels <m>a</m> et <m>b</m> tels que</p>
 
       <me>z=a+b\sqrt{d}.</me>
     </statement>
@@ -443,16 +453,34 @@ Le polynôme caractéristique de la matrice
     <p>Cela démontre l'existence de l'écriture, avec <m>a=-\alpha/2</m> et <m>b=\pm r</m>. </p> 
     <p> Comme <m>d</m> est sans facteur carré, <m>\sqrt{d}</m> est irrationel et les éléments <m>1,\sqrt{d}\in \mathbb{C}</m> sont linéairement indépendants sur <m>\mathbb{Q}</m>. Cela démontre l'unicité de <m>a</m> et <m>b</m>.</p>
 
-    <p>Montrons enfin l'unicité de <m>d</m>. Soit <m>d'</m> un entier sans facteur carré tel que <m>z\in \mathbb{Q}(\sqrt{d'})</m>. Alors <m>\sqrt{d}\in \mathbb{Q}(\sqrt{d'})</m> et il existe <m>a,b\in \mathbb{Q}</m> tels que</p>
+    <p>Montrons enfin l'unicité de <m>d</m>. Soit <m>d'</m> un entier sans facteur carré tel que <m>z\in \mathbb{Q}(\sqrt{d'})</m>. Alors <m>\sqrt{d}\in \mathbb{Q}(\sqrt{d'})</m> et il existe <m>u,v\in \mathbb{Q}</m> tels que</p>
 
-    <md> <mrow>\amp \sqrt{d}=a+b\sqrt{d'} </mrow> <mrow> \amp d=(a^2+b^2d')+2ab\sqrt{d'}. </mrow> </md>
+    <md> <mrow>\amp \sqrt{d}=u+v\sqrt{d'} </mrow> <mrow> \amp d=(u^2+v^2d')+2uv\sqrt{d'}. </mrow> </md>
 
-    <p>Comme <m>\sqrt{d'}</m> est irrationel, cela impose <m>ab=0</m> puis, comme <m>b\neq 0</m> car <m>\sqrt{d}</m> est également irrationel, <m>a=0</m>. Ainsi <m>d=b^2d'</m> ce qui n'est possible que si <m>b^2=1</m>, et donc <m>d'=d</m>.</p>
+    <p>
+      Comme <m>\sqrt{d'}</m> est irrationel, cela impose <m>uv=0</m> puis, comme <m>v\neq 0</m> car <m>\sqrt{d}</m> est également irrationel, <m>u=0</m>. Ainsi <m>d=v^2d'</m> ce qui n'est possible que si <m>v^2=1</m>, et donc <m>d'=d</m>.
+    </p>
   </proof>
+
+  <p>
+    On va maintenant caractériser les entiers algébriques dans les corps quadratiques <m>\mathbb{Q}(\sqrt{d})</m>. 
+  </p>
+
+  <p>
+    Soit <m>z=a+b\sqrt{d}\in\mathbb{Q}(\sqrt{d})</m> avec <m>a,b\in \mathbb{Q}</m>. Si <m>b\neq 0</m>, le polynôme minimal de <m>z</m> est
+      <me>\Pi_z(X):=X^2-2aX+a^2-db^2.</me>
+    En effet, <m>\Pi_z(X)</m> est unitaire, annule <m>z</m> car:
+    <md>
+      <mrow>z^2 =a^2+ 2ab\sqrt{d}+b^2 d, </mrow>
+      <mrow>z^2-2az =-a^2+b^2d,</mrow>
+      <mrow>z^2-2az+(a^2-b^2d) =0,</mrow>
+    </md>
+    et, comme <m>z</m> est irrationel, aucun polynôme de degré <m>1</m> ne l'annule. On va alors utiliser le critère de la <xref ref="prop-polynome-minimal"/> pour déterminer quand est-ce que <m>z</m> est un entier algébrique.
+  </p>
 
   <proposition xml:id="prop-integralite-quadratique">
     <statement>
-      <p>Soit <m>d</m> un entier non nul sans facteur carré. Un élement <m>z=a+b\sqrt{d}</m> de <m>\mathbb{Q}(\sqrt{d})</m> est un entier algébrique si, et seulement si</p>
+      <p>Soit <m>d</m> un entier non nul sans facteur carré. Un élement <m>z=a+b\sqrt{d}\in\mathbb{Q}(\sqrt{d})</m> est un entier algébrique si, et seulement si</p>
       <ol>
         <li xml:id="item-d-1mod4">
           <p><m>a,b\in \mathbb{Z}</m> si <m>d\not \equiv 1 \pmod{4}</m>,</p>
@@ -466,64 +494,94 @@ Le polynôme caractéristique de la matrice
 
   <proof>
   <p>Soit <m>z=a+b\sqrt{d}</m> avec <m>a,b\in \mathbb{Q}</m>. Si <m>b=0</m>, les deux conditions reviennent à <m>a\in \mathbb{Z}</m> et la proposition découle du <xref ref="cor-Z-comme-QcapbarZ"/>. </p>
-  <p>On suppose donc <m>b\neq 0</m> auquel cas <m>z</m> est irrationel. Le polynôme minimal de <m>z=a+b\sqrt{d}</m> est alors <m>X^2-2aX+a^2-db^2</m>. On utilise ensuite le critère de la Proposition <xref ref="prop-polynome-minimal"/>:</p>
+  <p>On suppose donc <m>b\neq 0</m> auquel cas <m>z</m> est irrationel. Le polynôme minimal de <m>z=a+b\sqrt{d}</m> est alors <m>X^2-2aX+a^2-db^2</m>. On utilise ensuite le critère de la <xref ref="prop-polynome-minimal"/>:</p>
 
-  <me xml:id="eq-equivalence-integralite">z\in \overline{\mathbb{Z}} \quad \Longleftrightarrow \quad \begin{cases} 2a\in \mathbb{Z}, \\ a^2-db^2 \in \mathbb{Z}. \end{cases}</me>
+  <men xml:id="eq-equivalence-integralite">
+    z\in \overline{\mathbb{Z}} \quad \Longleftrightarrow \quad \begin{cases} 2a\in \mathbb{Z}, \\ a^2-db^2 \in \mathbb{Z}. \end{cases}
+  </men>
 
-  <p>Vérifions que les condtions <xref ref="item-d-1mod4"/> et <xref ref="item-dnot-1mod4"/> imposent l'intégralité de <m>z</m>. Le cas <xref ref="item-d-1mod4"/> est clair : si <m>a,b\in \mathbb{Z}</m>, alors <m>2a,a^2-db^2\in \mathbb{Z}</m> et donc <m>z</m> est un entier algébrique. Dans le cas <xref ref="item-dnot-1mod4"/>, on peut supposer <m>a,b\in \frac{1}{2}+\mathbb{Z}</m> (sinon c'est le cas précédent), auquel cas <m>2a\in \mathbb{Z}</m>. Pour le coefficient constant <m>n=a^2-db^2</m>, on a</p>
+  <p>Vérifions que les condtions <xref ref="item-d-1mod4"/> et <xref ref="item-dnot-1mod4"/> imposent l'intégralité de <m>z</m>. Le cas <xref ref="item-d-1mod4"/> est clair : si <m>a,b\in \mathbb{Z}</m>, alors <m>2a,a^2-db^2\in \mathbb{Z}</m> et donc <m>z</m> est un entier algébrique. Dans le cas <xref ref="item-dnot-1mod4"/>, on peut supposer <m>a,b\in \frac{1}{2}+\mathbb{Z}</m> (sinon c'est le cas précédent), auquel cas <m>2a\in \mathbb{Z}</m>. Pour le coefficient constant <m>n=a^2-db^2</m>, on remarque d'abord que</p>
 
   <me>4n=(2a)^2-d(2b)^2\in \mathbb{Z}</me>
 
-  <p>Comme <m>a-b\in \mathbb{Z}</m>, on a <m>(2a)^2-(2b)^2=(2a-2b)(2a+2b)\equiv 0 \pmod{4}</m>. Or <m>0</m> et <m>1</m> sont les seuls carrés modulo <m>4</m>, et alors <m>(2a)^2\equiv (2b)^2\equiv 0,1 \pmod{4}</m>. Comme <m>d\equiv 1 \pmod{4}</m>, on trouve <m>4n \equiv 0 \pmod{4}</m> et donc <m>n\in \mathbb{Z}</m>.</p>
+  <p>De plus, comme <m>a-b\in \mathbb{Z}</m>, on a
 
-  <p>Démontrons la réciproque. On commence par une observation: si <m>x</m> est un nombre rationel tel que <m>dx^2\in \mathbb{Z}</m>, alors <m>x\in \mathbb{Z}</m>. En effet, posons <m>n=dx^2</m>. Si l'on écrit <m>x=p/q</m> sous forme irréductible, alors on trouve <m>q^2 n=dp^2</m>. En particulier, <m>q^2|dp^2</m> puis <m>q^2|d</m> car <m>p</m> et <m>q</m> sont premiers entre eux. Comme <m>d</m> est sans facteur carré, cela impose <m>q^2=1</m>, donc <m>q=\pm 1</m>, donc <m>x=\pm p</m> un entier.</p>
+    <me>(2a)^2-(2b)^2=(2a-2b)(2a+2b)\equiv 0 \pmod{4}.</me>
+    
+    Or <m>0</m> et <m>1</m> sont les seuls carrés modulo <m>4</m>, et alors <m>(2a)^2\equiv (2b)^2\equiv 0,1 \pmod{4}</m>. Comme <m>d\equiv 1 \pmod{4}</m>, on trouve <m>4n \equiv 0 \pmod{4}</m> et donc <m>n\in \mathbb{Z}</m>.</p>
 
-  <p>on suppose que <m>z\in \overline{\mathbb{Z}}</m>. La première implication <xref ref="eq-equivalence-integralite"/> donne <m>a\in \mathbb{Z}</m> ou <m>a+\frac{1}{2}\in \mathbb{Z}</m>. On distingue ces deux cas:</p>
+  <p>Démontrons la réciproque. On commence par une observation:</p>
+    
+    <fact xml:id="fact-rationnel-entier">
+      <statement>
+        <p>
+          Si <m>x</m> est un nombre rationel tel que <m>dx^2\in \mathbb{Z}</m>, alors <m>x\in \mathbb{Z}</m>.
+        </p>
+      </statement>
+    </fact>
+    <proof>
+      <title> Démonstration du <xref ref="fact-rationnel-entier"/> </title>
+      <p>
+        En effet, posons <m>n=dx^2</m>. Si l'on écrit <m>x=p/q</m> sous forme irréductible, alors on trouve <m>q^2 n=dp^2</m>. En particulier, <m>q^2|dp^2</m> puis <m>q^2|d</m> car <m>p</m> et <m>q</m> sont premiers entre eux. Comme <m>d</m> est sans facteur carré, cela impose <m>q^2=1</m>, donc <m>q=\pm 1</m>, donc <m>x=\pm p</m> un entier.
+      </p>
+    </proof> 
 
-  <ol>
+  <p>
+    On suppose que <m>z\in \overline{\mathbb{Z}}</m>. La première implication <xref ref="eq-equivalence-integralite"/> donne <m>a\in \mathbb{Z}</m> ou <m>a+\frac{1}{2}\in \mathbb{Z}</m>. On distingue ces deux cas:
+  </p>
+
+  <ol marker="(i)">
     <li xml:id="item-a-b-Z">
-      <p>Si <m>a\in \mathbb{Z}</m>, alors <m>db^2\in \mathbb{Z}</m> et donc <m>b\in \mathbb{Z}</m> d'après notre observation.</p>
+      <p>Si <m>a\in \mathbb{Z}</m>, alors <m>db^2\in \mathbb{Z}</m> et donc <m>b\in \mathbb{Z}</m> d'après le <xref ref="fact-rationnel-entier"/>.</p>
     </li>
     <li xml:id="item-autre">
       <p>Si <m>a+\frac{1}{2}\in \mathbb{Z}</m>, on a</p>
 
       <me>4n=(2a)^2-d(2b)^2</me>
 
-      <p>et donc <m>d(2b)^2</m> est un entier. Toujours par notre observation, <m>2b\in \mathbb{Z}</m>. Posons alors <m>A=2a</m> et <m>B=2b</m>. Comme <m>a\in \frac{1}{2}+\mathbb{Z}</m>, <m>A</m> est un entier impair. Comme <m>dB^2=A^2-4n</m> est également impair, il en est de même pour <m>d</m> et <m>B</m>. Ainsi <m>b\in \frac{1}{2}+\mathbb{Z}</m> et <m>a-b\in \mathbb{Z}</m>.</p>
+      <p>et donc <m>d(2b)^2</m> est un entier. Toujours par notre <xref ref="fact-rationnel-entier"/>, <m>2b\in \mathbb{Z}</m>. Posons alors <m>A=2a</m> et <m>B=2b</m>. Comme <m>a\in \frac{1}{2}+\mathbb{Z}</m>, <m>A</m> est un entier impair. Comme <m>dB^2=A^2-4n</m> est également impair, il en est de même pour <m>d</m> et <m>B</m>. Ainsi <m>b\in \frac{1}{2}+\mathbb{Z}</m> et <m>a-b\in \mathbb{Z}</m>.</p>
     </li>
   </ol>
 
-  <p>Enfin, on prétend que la condition <xref ref="item-autre"/> n'est possible que si <m>d\equiv 1 \pmod{4}</m>. En effet, <xref ref="item-autre"/> entraîne que</p>
+  <p>
+    Enfin, on prétend que la condition <xref ref="item-autre"/> n'est possible que si <m>d\equiv 1 \pmod{4}</m>. En effet, <xref ref="item-autre"/> entraîne que
+  </p>
 
   <me>\frac{A-1}{2}+\frac{B-1}{2}\sqrt{d}</me>
 
-  <p>est un entier algébrique, et donc que</p>
+  <p>
+    est un entier algébrique, et donc que
+  </p>
 
   <me>z-\left(\frac{A-1}{2}+\frac{B-1}{2}\sqrt{d}\right)=\frac{1+\sqrt{d}}{2}</me>
 
-  <p>est un entier algébrique. Son polynôme minimal est <m>X^2-X+\frac{1-d}{4}</m>, d'où <m>d\equiv 1 \pmod{4}</m>. Cela conclut.</p>
+  <p>
+    est un entier algébrique. Son polynôme minimal est <m>X^2-X+\frac{1-d}{4}</m>, d'où <m>d\equiv 1 \pmod{4}</m>. Cela conclut.
+  </p>
 </proof>
 
-<p>Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. On note <m>\mathcal{O}_K</m> l'anneau <m>K\cap \overline{\mathbb{Z}}</m>. L'étude de l'arithmétique de cet anneau, et de ses généralisations pour divers corps de nombres <m>K</m>, est l'un des enjeux de ce cours. Dans le cas des extensions quadratiques, on a le corollaire suivant:</p>
+<p>
+  Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. On note <m>\mathcal{O}_K</m> l'anneau <m>K\cap \overline{\mathbb{Z}}</m>. L'étude de l'arithmétique de cet anneau, et de ses généralisations pour divers corps de nombres <m>K</m>, est l'un des enjeux de ce cours. Dans le cas des extensions quadratiques, on a le corollaire suivant:
+</p>
 
 <corollary>
   <statement>
-    <p><m>\displaystyle \mathcal{O}_K=\begin{cases} \mathbb{Z} \oplus \mathbb{Z} \sqrt{d} &amp; \text{si~}d\not \equiv 1 \pmod{4} \\  \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2} &amp; \text{si~}d\equiv 1 \pmod{4} \end{cases}</m>. \\</p>
-    <p>En particulier, <m>\mathcal{O}_K</m> est un module libre de rang <m>2</m>.</p>
+    <p><m>\displaystyle \mathcal{O}_K=\begin{cases} \mathbb{Z} \oplus \mathbb{Z} \sqrt{d} \amp \text{si }d\not \equiv 1 \pmod{4} \\  \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2} \amp \text{si }d\equiv 1 \pmod{4} \end{cases}</m>. </p>
+    <p>En particulier, <m>\mathcal{O}_K</m> est un module libre de rang <m>2</m> sur <m>\mathbb{Z}</m>.</p>
   </statement>
 </corollary>
 
 <proof>
-  <p>Seul le cas <m>d\equiv 1\pmod{4}</m> est à étudier. Dans ce cas, <m>\frac{1+\sqrt{d}}{4}\in \mathcal{O}_K</m> et on peut écrire</p>
+  <p>Seul le cas <m>d\equiv 1\pmod{4}</m> est à étudier. Dans ce cas, <m>\frac{1+\sqrt{d}}{2}\in \mathcal{O}_K</m> et on peut écrire</p>
 
   <me>a+b\sqrt{d}=(a-b)+2b\left(\frac{1+\sqrt{d}}{2}\right).</me>
 
-  <p>C'est cette formule qui donne l'équivalence entre les assertions ``<m>a,b</m> vérifient <xref ref="item-dnot-1mod4"/> de la Proposition <xref ref="prop-integralite-quadratique"/>'' et ``<m>z\in \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2}</m>''.</p>
+  <p>C'est cette formule qui donne l'équivalence entre les assertions ``<m>a,b</m> vérifient <xref ref="item-dnot-1mod4"/> de la <xref ref="prop-integralite-quadratique"/>'' et ``<m>z\in \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2}</m>''.</p>
 </proof>
 
 <remark>
   <statement>
-    <p>Notez que l'inclusion <m>\mathbb{Z}[\sqrt{d}]\subset \mathcal{O}_K</m> n'est en général pas une égalité ! Nous verrons dans ce cours la différence entre ces deux anneaux.</p>
+    <p>Notez que l'inclusion <m>\mathbb{Z}[\sqrt{d}]\subset \mathcal{O}_K</m> n'est en général pas une égalité ! Nous verrons dans ce cours comment "calculer" la différence entre ces deux anneaux.</p>
   </statement>
 </remark>
 
@@ -532,34 +590,142 @@ Le polynôme caractéristique de la matrice
     <p>Soit <m>z</m> un nombre algébrique de degré <m>d</m>. On démontrera plus tard dans ce cours que, si <m>K=\mathbb{Q}(z)</m>, alors <m>\mathcal{O}_K=K\cap \overline{\mathbb{Z}}</m> est libre de rang <m>d</m> comme groupe abélien.</p>
   </statement>
 </remark>
+</section>
+
+<p>
+  AJOUTER UNE ETUDE DES ENTIERS DE GAUSS ICI ?
+</p>
 
 <section>
   <title>Corps de nombres</title>
 
-  <p>L'application <m>\mathbb{Q}[X]\to \mathbb{C}</m>, <m>P(X)\mapsto P(z)</m> d'<em>évaluation en <m>X=z</m></em> est un morphisme d'anneaux. Son noyau est l'idéal des polynômes qui s'annulent en <m>z</m>, noté <m>I_z</m> ci-dessus. Son image est le plus petit sous-anneau de <m>\mathbb{C}</m> qui contient <m>\mathbb{Q}</m> et <m>z</m>: on le note <m>\mathbb{Q}[z]</m>, ou encore <m>\mathbb{Q}(z)</m> pour insister sur le fait que c'est un corps:</p>
+  <p>
+    Soit <m>K</m> un sous-corps de <m>\mathbb{C}</m>. Comme <m>K</m> contient <m>1</m> et est stable par addition, opposé et inverse, il contient aussi <m>\mathbb{Q}</m>. En particulier, <m>K</m> possède une structure canonique de <m>\mathbb{Q}</m>-espace vectoriel. On notera <m>[K:\mathbb{Q}]</m> sa dimension (éventuellement infinie).
+  </p>
+
+  <definition>
+    <title> Corps de nombres</title>
+    <statement>
+      <p>Un <em>corps de nombres</em> est un sous-corps <m>K</m> de <m>\mathbb{C}</m> de dimension finie sur <m>\mathbb{Q}</m>.</p>
+
+      <p>On appelle <em>degré du corps de nombres <m>K</m></em> et on notera <m>[K:\mathbb{Q}]</m>la dimension de <m>K</m> vu comme <m>\mathbb{Q}</m>-espace vectoriel.</p>
+    </statement>
+  </definition>
+
+  <proposition xml:id="prop-corps-de-nombres-algebriques">
+    <statement>
+      <p>
+        Si <m>K</m> est un corps de nombres, alors tout élément de <m>K</m> est un nombre algébrique de degré au plus <m>[K:\mathbb{Q}]</m>. En particulier, <m>K\subset \overline{\mathbb{Q}}</m>.
+      </p>
+    </statement>
+  </proposition>
+  <proof>
+    <p>
+     Notons <m>d=[K:\mathbb{Q}]</m>. Si <m>z\in K</m>, alors la famille <m>(1,z,z^2,\ldots,z^{d})</m> qui possède <m>d+1</m> éléments est linéairement dépendante sur <m>\mathbb{Q}</m>. Il existe donc une relation non triviale de la forme
+    </p> 
+     <me>
+        a_0+a_1 z+a_2 z^2+\ldots +a_d z^{d}=0 \quad (a_i\in \mathbb{Q}, \text{ pas tous nuls}).
+     </me>
+      <p>
+        Le polynôme <m>P(X)=a_0+a_1 X+a_2 X^2+\ldots +a_d X^{d}</m> est non nul et la relation ci-dessus s'écrit <m>P(z)=0</m>. Ainsi, <m>z</m> est algébrique de degré au plus <m>d</m>.
+      </p>
+  </proof>
+
+  <example>
+    <p>Les exemples élémentaires de corps de nombres sont les extensions quadratiques <m>\mathbb{Q}(\sqrt{d})</m> étudiées dans la section précédente. En effet, si <m>d</m> est un entier non carré, alors <m>\mathbb{Q}(\sqrt{d})</m> est un corps qui est de dimension <m>2</m> sur <m>\mathbb{Q}</m> car <m>(1,\sqrt{d})</m> en est une base.</p>
+  </example>
+
+  <p>
+    Soit <m>z</m> un nombre algébrique. On désigne par <m>\mathbb{Q}[z]</m> le plus petit sous-anneau de <m>\mathbb{C}</m> qui contient <m>\mathbb{Q}</m> et <m>z</m>. C'est aussi<fn>  En effect, si <m>A</m> est un sous-anneau de <m>\mathbb{C}</m> qui contient <m>\mathbb{Q}</m> et <m>z</m>, alors il contient aussi tous les polynômes en <m>z</m> à coefficients rationnels car il est stable par addition et multiplication.
+    </fn> l'ensemble des polynômes en <m>z</m> à coefficients rationnels :
+    <me>
+    \mathbb{Q}[z]=\{Q(z) \mid Q(X)\in \mathbb{Q}[X]\}.
+    </me> 
+    On va montrer que c'est en fait un corps, appelé <em>corps engendré par <m>z</m></em>. C'est pourquoi on le notera surtout <m>\mathbb{Q}(z)</m>. L'enjeu de cette section est d'étudier les corps de cette forme et de montrer que tout corps de nombres s'écrit ainsi.
+  </p> 
 
   <proposition xml:id="prop-corps">
     <statement>
-      <p>Soit <m>z</m> un nombre algébrique de degré <m>d</m>. L'anneau <m>\mathbb{Q}(z)</m> est un corps. C'est aussi un <m>\mathbb{Q}</m>-espace vectoriel de dimension <m>d</m> et <m>(1,z,\ldots,z^{d-1})</m> forme une base de celui\nobreakdash-ci.</p>
+      <p>
+        Soit <m>z</m> un nombre algébrique de degré <m>d</m>. L'anneau <m>\mathbb{Q}(z)</m> est un corps. C'est aussi un <m>\mathbb{Q}</m>-espace vectoriel de dimension <m>d</m> et <m>(1,z,\ldots,z^{d-1})</m> forme une base de celui\nobreakdash-ci.
+      </p>
     </statement>
   </proposition>
 
   <proof>
-    <p>Notons <m>\Pi_z(X)</m> le polynôme minimal de <m>z</m>. Comme <m>I_z=(\Pi_z(X))</m>, il résulte du théorème d'isomorphisme que <m>\mathbb{Q}[X]/\Pi_z(X) \stackrel{\sim}{\to} \mathbb{Q}(z)</m>. Comme <m>\Pi_z(X)</m> est irréductible, l'anneau <m>\mathbb{Q}[X]/\Pi_z(X)</m> est un corps. Il en est donc de même pour <m>\mathbb{Q}(z)</m>. Par division euclidienne, le <m>\mathbb{Q}</m>-espace vectoriel <m>\mathbb{Q}[X]/\Pi_z(X)</m> a pour base les classes de <m>1,X,\ldots,X^{d-1}</m>. L'isomorphisme ci-dessus envoie la classe de <m>X</m> sur celle de <m>z</m>, donc la classe de la base <m>(1,X,\ldots,X^{d-1})</m> vers la famille <m>(1,z,\ldots,z^{d-1})</m>.</p>
+    <title>Démonstration "à la main"</title>
+    <p>
+     Montrons que tout élément de <m>\mathbb{Q}[z]</m> non nul est inversible. Soit <m>x\in \mathbb{Q}(z), x\neq 0</m>. Par définition, il existe un polynôme <m>Q(X)\in \mathbb{Q}[X]</m> tel que <m>x=Q(z)</m>. Comme <m>x</m> est non nul, il n'est pas divisible par le polynôme minimal <m>\Pi_z(X)</m>de <m>z</m> et donc est premier avec ce dernier. Il existe donc une identité de Bézout dans <m>\mathbb{Q}[X]</m>:
+    <me>
+      A(X)\Pi_z(X)+B(X)Q(X)=1 \quad \text{pour certains } A(X),B(X)\in \mathbb{Q}[X].
+    </me>
+    et, en évaluant en <m>X=z</m>, on trouve <m>B(z)x=1</m>. L'élément <m>x</m> admet donc <m>B(z)</m> pour inverse.
+    </p>
+
+    <p>
+      Montrons que <m>(1,z,\ldots,z^{d-1})</m> est une base de <m>\mathbb{Q}(z)</m> comme <m>\mathbb{Q}</m>-espace vectoriel. La famille est libre car, si il existe une relation non triviale de la forme
+      <md>
+        a_0 + a_1 z + \cdots + a_{d-1} z^{d-1} = 0 \quad \text{avec } a_i\in\mathbb{Q} non tous nuls,
+      </md>
+      alors le polynôme <m>P(X)=a_0 + a_1 X + \cdots + a_{d-1} X^{d-1}</m> est non nul de degré strictement inférieur à <m>d</m> et annule <m>z</m>. En particulier, <m>\Pi_z(X)|P(X)</m>, avec <m>\Pi_z(X)</m> le polynôme minimal de <m>z</m>. Mais <m>d</m> est, par définition, le degré de <m>\Pi_z(X)</m> d'où la contradiction.
+    </p>
+    <p>
+      Pour montrer que la famille est génératrice, soit <m>x\in \mathbb{Q}(z)</m>. Il existe un polynôme <m>P(X)\in \mathbb{Q}[X]</m> tel que <m>x=P(z)</m>. Par division euclidienne de <m>P(X)</m> par <m>\Pi_z(X)</m>, il existe des polynômes <m>Q(X),R(X)\in \mathbb{Q}[X]</m> tels que <m>\deg(R)&lt;d</m> et
+      <md>
+        P(X)=Q(X)\Pi_z(X)+R(X) \quad \text{donc}\quad x=R(z).
+      </md>
+      Si <m>R(X)</m> s'écrit <m>\sum_{i=0}^{d-1}{r_i X^i}</m>, alors <m>x=\sum_{i=0}^{d-1}{r_i z^i}</m>. Cela montre que la famille <m>(1,z,\ldots,z^{d-1})</m> est génératrice.
+    </p>
   </proof>
+
+  <proof>
+    <title> Démonstration plus conceptuelle </title>
+    <p>
+      Il s'agit d'une preuve équivalente à la précédente, mais en utilisant les résultats de bases sur les anneaux. On commence par observer qu'on dispose d'une application d'évaluation en <m>X=z</m>:
+      <me>\mathbb{Q}[X]\to \mathbb{C}, \quad Q(X)\mapsto Q(z)</me>
+      C'est un morphisme d'anneaux d'image <m>\mathbb{Q}(z)</m>. Son noyau est l'idéal des polynômes qui s'annulent en <m>z</m> que l'on avait noté <m>I_z</m> plus haut.
+    </p>
+
+    <p>
+      Notons <m>\Pi_z(X)</m> le polynôme minimal de <m>z</m>. Comme <m>I_z=(\Pi_z(X))</m>, il résulte du théorème d'isomorphisme que <m>\mathbb{Q}[X]/\Pi_z(X) \stackrel{\sim}{\to} \mathbb{Q}(z)</m>. Comme <m>\Pi_z(X)</m> est irréductible, l'anneau <m>\mathbb{Q}[X]/\Pi_z(X)</m> est un corps. Il en est donc de même pour <m>\mathbb{Q}(z)</m>.
+    </p>  
+    <p>
+      Par division euclidienne, le <m>\mathbb{Q}</m>-espace vectoriel <m>\mathbb{Q}[X]/\Pi_z(X)</m> admet pour base les classes de <m>1,X,\ldots,X^{d-1}</m>. L'isomorphisme ci-dessus envoie la classe de <m>X</m> vers <m>z</m>, donc la classe de la base <m>(1,X,\ldots,X^{d-1})</m> vers la famille <m>(1,z,\ldots,z^{d-1})</m>.
+    </p>
+  </proof>
+
+  <p>
+    Un morphisme de corps est une application qui préserve les opérations d'addition et de multiplication, et qui envoie <m>1</m> sur <m>1</m>. Nous désignerons par <m>\mathrm{Hom}(K,L)</m> l'ensemble des morphismes d'un corps <m>K</m> vers un corps <m>L</m>.
+  </p>
+
+  <proposition xml:id="prop-nombre-de-morphismes-de-corps">
+    <statement>
+      <p>
+        Soit <m>K</m> un corps de nombres de degré <m>d</m>. Alors <m>\mathrm{Hom}(K,\mathbb{C})</m> est un ensemble fini de cardinal <m>d</m>.
+      </p>
+      <p>
+        Plus généralement, soit <m> L\subset K</m> est une inclusion de corps de nombres et <m>\varphi: L\to \mathbb{C}</m> un morphisme de corps. L'ensemble des morphismes <m>\widetilde{\varphi}: K\to \mathbb{C}</m> qui prolongent <m>\varphi</m>
+        <md>
+          \{\Psi\in \Hom(K,\mathbb{C}) | \Psi|_L=\varphi\}
+        </md>
+        est de cardinal au plus <m>[K:L]</m>.
+      </p>
+    </statement>
+  </proposition>
+  <proof>
+    <p>
+      
+    </p>
+  </proof>
+
+  <example>
+    <p>
+      Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. C'est un corps de nombres de degré <m>2</m> et donc il existe exactement deux morphismes de corps de <m>K</m> vers <m>\mathbb{C}</m>: l'inclusion canonique <m>\mathrm{id}_K</m> et le morphisme <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> qui échange les deux racines du polynôme minimal de <m>\sqrt{d}</m>.
+    </p>
+
+  </example>
+
 </section>
-  
-</section>
-
-
-
-
-
-
-
-
-
-
 
 
 </chapter>
