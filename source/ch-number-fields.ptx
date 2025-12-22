@@ -1,0 +1,476 @@
+<chapter xml:id="ch-number-fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Corps de nombres</title>
+
+<section>
+  <title>Structure des corps de nombres</title>
+
+  <p>
+    Soit <m>K</m> un sous-corps de <m>\mathbb{C}</m>. Comme <m>K</m> contient <m>1</m> et est stable par addition, opposé et inverse, il contient aussi <m>\mathbb{Q}</m>. En particulier, <m>K</m> possède une structure canonique de <m>\mathbb{Q}</m>-espace vectoriel. On notera <m>[K:\mathbb{Q}]</m> sa dimension (éventuellement infinie).
+  </p>
+
+  <definition>
+    <title> Corps de nombres</title>
+    <statement>
+      <p>Un <em>corps de nombres</em> est un sous-corps <m>K</m> de <m>\mathbb{C}</m> de dimension finie sur <m>\mathbb{Q}</m>.</p>
+
+      <p>On appelle <em>degré du corps de nombres <m>K</m></em> et on notera <m>[K:\mathbb{Q}]</m>la dimension de <m>K</m> vu comme <m>\mathbb{Q}</m>-espace vectoriel.</p>
+    </statement>
+  </definition>
+
+  <p>
+    Plus généralement, soit <m> K\subset L</m> une inclusion de corps de nombres; on dit que <m>L</m> est une <em>extension de <m>K</m></em>. Le <em>degré de l'extension <m>L/K</m></em> est la dimension de <m>L</m> vu comme <m>K</m>-espace vectoriel et se note <m>[L:K]</m>. 
+  </p>
+
+  On rappelle l'énoncé suivant:
+  <lemma xml:id="lem-multiplicativite-degres-extensions">
+    <title> Multiplicativité des degrés d'extensions</title>
+    <statement>
+      <p>
+        Soit <m>K\subset L \subset M</m> une tour d'extensions de corps de nombres. Soit <m>(e_1,\ldots,e_m)</m> une base de <m>M</m> sur <m>L</m> et <m>(f_1,\ldots,f_n)</m> une base de <m>L</m> sur <m>K</m>. Alors la famille
+      <m> (e_i f_j)_{1\leq i \leq m, 1\leq j \leq n} </m> est une base de <m>M</m> sur <m>K</m>. En particulier,
+        <me>[M:K]=[M:L][L:K].</me>
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <p>
+      Tout élément de <m>M</m> s'écrit comme une combinaison linéaire à coefficients dans <m>L</m> des <m>e_i</m>, et chaque coefficient s'écrit comme une combinaison linéaire à coefficients dans <m>K</m> des <m>f_j</m>. La famille est libre car toute relation linéaire à coefficients dans <m>K</m> s'écrit comme une combinaison linéaire à coefficients dans <m>L</m> des <m>e_i</m> dont les coefficients sont des combinaisons linéaires à coefficients dans <m>K</m> des <m>f_j</m>.
+    </p>
+  </proof>
+
+  <proposition xml:id="prop-corps-de-nombres-algebriques">
+    <statement>
+      <p>
+        Si <m>K</m> est un corps de nombres, alors tout élément de <m>K</m> est un nombre algébrique de degré au plus <m>[K:\mathbb{Q}]</m>. En particulier, <m>K\subset \overline{\mathbb{Q}}</m>.
+      </p>
+    </statement>
+  </proposition>
+  <proof>
+    <p>
+     Notons <m>d=[K:\mathbb{Q}]</m>. Si <m>z\in K</m>, alors la famille <m>(1,z,z^2,\ldots,z^{d})</m> qui possède <m>d+1</m> éléments est linéairement dépendante sur <m>\mathbb{Q}</m>. Il existe donc une relation non triviale de la forme
+    </p> 
+     <me>
+        a_0+a_1 z+a_2 z^2+\ldots +a_d z^{d}=0 \quad (a_i\in \mathbb{Q}, \text{ pas tous nuls}).
+     </me>
+      <p>
+        Le polynôme <m>P(X)=a_0+a_1 X+a_2 X^2+\ldots +a_d X^{d}</m> est non nul et la relation ci-dessus s'écrit <m>P(z)=0</m>. Ainsi, <m>z</m> est algébrique de degré au plus <m>d</m>.
+      </p>
+  </proof>
+
+  <example>
+    <p>Les exemples élémentaires de corps de nombres sont les extensions quadratiques <m>\mathbb{Q}(\sqrt{d})</m> étudiées dans la section précédente. En effet, si <m>d</m> est un entier non carré, alors <m>\mathbb{Q}(\sqrt{d})</m> est un corps qui est de dimension <m>2</m> sur <m>\mathbb{Q}</m> car <m>(1,\sqrt{d})</m> en est une base.</p>
+  </example>
+
+  <p>
+    Soit <m>z</m> un nombre algébrique. On désigne par <m>\mathbb{Q}[z]</m> le plus petit sous-anneau de <m>\mathbb{C}</m> qui contient <m>\mathbb{Q}</m> et <m>z</m>. C'est aussi<fn>  En effect, si <m>A</m> est un sous-anneau de <m>\mathbb{C}</m> qui contient <m>\mathbb{Q}</m> et <m>z</m>, alors il contient aussi tous les polynômes en <m>z</m> à coefficients rationnels car il est stable par addition et multiplication.
+    </fn> l'ensemble des polynômes en <m>z</m> à coefficients rationnels :
+    <me>
+    \mathbb{Q}[z]=\{Q(z) \mid Q(X)\in \mathbb{Q}[X]\}.
+    </me> 
+    On va montrer que c'est en fait un corps, appelé <em>corps engendré par <m>z</m></em>. C'est pourquoi on le notera surtout <m>\mathbb{Q}(z)</m>. L'enjeu de cette section est d'étudier les corps de cette forme et de montrer que tout corps de nombres s'écrit ainsi.
+  </p> 
+
+  <proposition xml:id="prop-corps">
+    <statement>
+      <p>
+        Soit <m>z</m> un nombre algébrique de degré <m>d</m>. L'anneau <m>\mathbb{Q}(z)</m> est un corps. C'est aussi un <m>\mathbb{Q}</m>-espace vectoriel de dimension <m>d</m> et <m>(1,z,\ldots,z^{d-1})</m> forme une base de celui\nobreakdash-ci.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <title>Démonstration "à la main"</title>
+    <p>
+     Montrons que tout élément de <m>\mathbb{Q}[z]</m> non nul est inversible. Soit <m>x\in \mathbb{Q}(z), x\neq 0</m>. Par définition, il existe un polynôme <m>Q(X)\in \mathbb{Q}[X]</m> tel que <m>x=Q(z)</m>. Comme <m>x</m> est non nul, il n'est pas divisible par le polynôme minimal <m>\Pi_z(X)</m>de <m>z</m> et donc est premier avec ce dernier. Il existe donc une identité de Bézout dans <m>\mathbb{Q}[X]</m>:
+    <me>
+      A(X)\Pi_z(X)+B(X)Q(X)=1 \quad \text{pour certains } A(X),B(X)\in \mathbb{Q}[X].
+    </me>
+    et, en évaluant en <m>X=z</m>, on trouve <m>B(z)x=1</m>. L'élément <m>x</m> admet donc <m>B(z)</m> pour inverse.
+    </p>
+
+    <p>
+      Montrons que <m>(1,z,\ldots,z^{d-1})</m> est une base de <m>\mathbb{Q}(z)</m> comme <m>\mathbb{Q}</m>-espace vectoriel. La famille est libre car, si il existe une relation non triviale de la forme
+      <md>
+        a_0 + a_1 z + \cdots + a_{d-1} z^{d-1} = 0 \quad \text{avec } a_i\in\mathbb{Q} non tous nuls,
+      </md>
+      alors le polynôme <m>P(X)=a_0 + a_1 X + \cdots + a_{d-1} X^{d-1}</m> est non nul de degré strictement inférieur à <m>d</m> et annule <m>z</m>. En particulier, <m>\Pi_z(X)|P(X)</m>, avec <m>\Pi_z(X)</m> le polynôme minimal de <m>z</m>. Mais <m>d</m> est, par définition, le degré de <m>\Pi_z(X)</m> d'où la contradiction.
+    </p>
+    <p>
+      Pour montrer que la famille est génératrice, soit <m>x\in \mathbb{Q}(z)</m>. Il existe un polynôme <m>P(X)\in \mathbb{Q}[X]</m> tel que <m>x=P(z)</m>. Par division euclidienne de <m>P(X)</m> par <m>\Pi_z(X)</m>, il existe des polynômes <m>Q(X),R(X)\in \mathbb{Q}[X]</m> tels que <m>\deg(R)&lt;d</m> et
+      <md>
+        P(X)=Q(X)\Pi_z(X)+R(X) \quad \text{donc}\quad x=R(z).
+      </md>
+      Si <m>R(X)</m> s'écrit <m>\sum_{i=0}^{d-1}{r_i X^i}</m>, alors <m>x=\sum_{i=0}^{d-1}{r_i z^i}</m>. Cela montre que la famille <m>(1,z,\ldots,z^{d-1})</m> est génératrice.
+    </p>
+  </proof>
+
+  <proof>
+    <title> Démonstration plus conceptuelle </title>
+    <p>
+      Il s'agit d'une preuve équivalente à la précédente, mais en utilisant les résultats de bases sur les anneaux. On commence par observer qu'on dispose d'une application d'évaluation en <m>X=z</m>:
+      <me>\mathbb{Q}[X]\to \mathbb{C}, \quad Q(X)\mapsto Q(z)</me>
+      C'est un morphisme d'anneaux d'image <m>\mathbb{Q}(z)</m>. Son noyau est l'idéal des polynômes qui s'annulent en <m>z</m> que l'on avait noté <m>I_z</m> plus haut.
+    </p>
+
+    <p>
+      Notons <m>\Pi_z(X)</m> le polynôme minimal de <m>z</m>. Comme <m>I_z=(\Pi_z(X))</m>, il résulte du théorème d'isomorphisme que <m>\mathbb{Q}[X]/\Pi_z(X) \stackrel{\sim}{\to} \mathbb{Q}(z)</m>. Comme <m>\Pi_z(X)</m> est irréductible, l'anneau <m>\mathbb{Q}[X]/\Pi_z(X)</m> est un corps. Il en est donc de même pour <m>\mathbb{Q}(z)</m>.
+    </p>  
+    <p>
+      Par division euclidienne, le <m>\mathbb{Q}</m>-espace vectoriel <m>\mathbb{Q}[X]/\Pi_z(X)</m> admet pour base les classes de <m>1,X,\ldots,X^{d-1}</m>. L'isomorphisme ci-dessus envoie la classe de <m>X</m> vers <m>z</m>, donc la classe de la base <m>(1,X,\ldots,X^{d-1})</m> vers la famille <m>(1,z,\ldots,z^{d-1})</m>.
+    </p>
+  </proof>
+
+  <p>
+    Un morphisme de corps est une application qui préserve les opérations d'addition et de multiplication, et qui envoie <m>1</m> sur <m>1</m>. Nous désignerons par <m>\mathrm{Hom}(K,L)</m> l'ensemble des morphismes d'un corps <m>K</m> vers un corps <m>L</m>. Un élément de <m>\mathrm{Hom}(K,\mathbb{C})</m> est aussi appelé<fn> On rappelle qu'un morphisme de corps est nécessairement injectif (son noyau est un idéal d'un corps - donc zéro ou tout le corps - mais un tel morphisme envoit <m>1</m> sur <m>1</m> donc n'est pas trivial). D'où le terme de "plongement".</fn> un <em>plongement complexe de <m>K</m></em>.
+  </p>
+
+  <proposition xml:id="prop-nombre-de-morphismes-de-corps">
+    <statement>
+      <p>
+        Soit <m>K</m> un corps de nombres de degré <m>d</m>. Alors <m>\mathrm{Hom}(K,\mathbb{C})</m> est un ensemble fini de cardinal <m>d</m>.
+      </p>
+      <p>
+        Plus généralement, soit <m> L\subset K</m> est une inclusion de corps de nombres et <m>\varphi: L\to \mathbb{C}</m> un morphisme de corps. L'ensemble des morphismes <m>\Psi: K\to \mathbb{C}</m> qui prolongent <m>\varphi</m>:
+        <md>
+          \{\Psi\in \mathrm{Hom}(K,\mathbb{C})~|~\Psi|_L=\varphi\}
+        </md>
+        est de cardinal <m>[K:L]</m>.
+      </p>
+    </statement>
+  </proposition>
+  <proof>
+    <p>
+      Remarquons que <m>\mathrm{Hom}(\mathbb{Q},\mathbb{C})</m> est réduit au seul morphisme d'inclusion canonique<fn> En effet, si <m>\varphi\in \mathrm{Hom}(\mathbb{Q},\mathbb{C})</m>, alors pour tout entier naturel <m>n</m>, on a <m>\varphi(n)=\varphi(1+\cdots +1)=n</m> et donc, pour tout rationnel <m>p/q</m>, <m>\varphi(p/q)=\varphi(p)\varphi(q)^{-1}=p/q</m>.
+      </fn> <m>\mathrm{id}_{\mathbb{Q}}</m>. En particulier, la première assertion est un cas particulier de la seconde en prenant <m>L=\mathbb{Q}</m> et <m>\varphi=\mathrm{id}_{\mathbb{Q}}</m>.
+    </p>
+
+    <p>
+      Il suffit donc de démontrer la seconde assertion, et on procède par récurrence sur le degré <m>[K:L]</m>. Si <m>[K:L]=1</m>, alors <m>K=L</m> et il n'y a qu'un seul prolongement possible, à savoir <m>\varphi</m> lui-même.
+    </p>  
+    <p>
+      Supposons maintenant que <m>[K:L]=n&gt;1</m> et que le résultat est démontré pour les extensions de degré strictement inférieur à <m>n</m>. Soit <m>\alpha\in K\setminus L</m>. Notons <m>L(\alpha)</m> le plus petit sous-corps de <m>K</m> contenant à la fois <m>L</m> et <m>\alpha</m> :
+    </p>
+    <me>
+      L\subset L(\alpha) \subset K \quad (\text{avec}\quad L(\alpha)=\{Q(\alpha)~|~Q(X)\in L[X]\}).
+    </me>
+    <p>
+      Si <m>\Psi</m> satisfait à <m>\Psi|_L=\varphi</m>, alors il en est de même pour <m>\Psi|_{L(\alpha)}</m>. Ainsi, on dispose d'une application de restriction
+      <md>
+        <mrow> \{\Psi\in\mathrm{Hom}(K,\mathbb{C})~|~\Psi|_L=\varphi\} \amp \to \{\Psi\in\mathrm{Hom}(L(\alpha),\mathbb{C})~|~\Psi|_L=\varphi\},</mrow>
+        <mrow>   \Psi \amp \mapsto \Psi|_{L(\alpha)} </mrow>
+      </md>
+      L'image inverse d'un élément <m>\sigma</m> par cette application correspond à l'ensemble<m>\{\Psi\in\mathrm{Hom}(K,\mathbb{C})~|~\Psi|_L=\varphi\}</m>. Par hypothèse de récurrence, il est de cardinal <m>[K:L(\alpha)]</m>. D'après la multiplicativité des degrés d'extensions (voir le <xref ref="lem-multiplicativite-degres-extensions"/>), il reste à montrer que<fn> En effet, si <m>f:A\to B</m> est une application, alors <me>|A|=\bigsqcup_{b\in B}|f^{-1}(\{b\})|</me>. Dans notre cas, le cardinal <m>|f^{-1}(b)|</m> est constant en <m>b</m> et donc <m>|A|=|B|\cdot |f^{-1}(b)|</m> pour n'importe quel <m>b\in B</m>.</fn> le cardinal de l'ensemble d'arrivée est <m>[L(\alpha):L]</m>.
+    </p>
+
+    <p>
+      Pour compter le cardinal de <m>B:=\{\Psi\in\mathrm{Hom}(L(\alpha),\mathbb{C})~|~\Psi|_L=\varphi\}</m>, on utilise l'isomorphisme <m> L(\alpha)\cong L[X]/\Pi_{L,\alpha}(X)</m> où <m>\Pi_{L,\alpha}(X)</m> désigne le polynôme minimal de <m>\alpha</m> sur <m>L</m>. Un morphisme de corps <m>\sigma:L(\alpha)\to \mathbb{C}</m> qui prolonge <m>\varphi</m> est donc équivalent à la donnée un morphisme d'anneaux
+      <md>
+        <mrow>L[X] \amp \to \mathbb{C},</mrow>
+        <mrow> a_0+a_1X+a_2 X^2+\ldots \amp \mapsto  \varphi(a_0)+\varphi(a_1)\sigma(\alpha)+\varphi(a_2) \sigma(\alpha)^2+\ldots </mrow>
+      </md>
+      qui envoit <m>\Pi_{L,\alpha}(X)</m> sur <m>0</m>. Autrement dit, <m>\sigma(\alpha)</m> est une racine complexe de <m>\varphi(\Pi_{L,\alpha})(X)</m>. Comme <m>\Pi_{L,\alpha}(X)</m> est irréductible dans <m>L[X]</m>, il en est de même pour <m>\varphi(\Pi_{L,\alpha})(X)</m> dans <m>\varphi(L)[X]</m> et possède donc <m>[L(\alpha):L]</m> racines complexes distinctes. Ainsi, il y a exactement <m>\deg \Pi_{L,\alpha}(X)=[L(\alpha):L]</m> choix possibles pour <m>\sigma(\alpha)</m>, ce qui conclut la démonstration.
+    </p>
+  </proof>
+
+  <example>
+    <p>
+      Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. C'est un corps de nombres de degré <m>2</m> et donc il existe exactement deux morphismes de corps de <m>K</m> vers <m>\mathbb{C}</m>: l'inclusion canonique <m>\mathrm{id}_K</m> et le morphisme <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> qui échange les deux racines du polynôme minimal de <m>\sqrt{d}</m>.
+    </p>
+
+  </example>
+
+  <definition xml:id="def-plongements-reels-et-complexes">
+    <title> Plongements réels et complexes</title>
+    <statement>
+      <p>
+        Soit <m>K</m> un corps de nombres. Un <em>plongement réel</em> de <m>K</m> est un plongement complexe <m>\sigma:K\to \mathbb{C}</m> de <m>K</m> dont l'image <m>\sigma(K)</m> est contenue dans <m>\mathbb{R}</m>.
+      </p>
+      <p>  
+        Un <em>plongement complexe</em> de <m>K</m> est un plongement complexe de <m>K</m> qui n'est pas réel.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Étant donné un plongement complexe <m>\sigma:K\to \mathbb{C}</m>, on peut définir son conjugué <m>\overline{\sigma}:K\to \mathbb{C}</m> par <m>\overline{\sigma}(x)=\overline{\sigma(x)}</m> où le second conjugué est le conjugué complexe usuel dans <m>\mathbb{C}</m>. Alors <m>\overline{\sigma}</m> est aussi un plongement complexe de <m>K</m> différent de <m>\sigma</m>. De plus, <m>\sigma</m> est réel si, et seulement si, <m>\overline{\sigma}=\sigma</m>. Ainsi, les plongements complexes non réels de <m>K</m> se regroupent par paires <m>(\sigma,\overline{\sigma})</m>. On note <m>r_1</m> le nombre de plongements réels de <m>K</m> et <m>r_2</m> le nombre de paires de plongements complexes non réels. On a donc la relation
+    <me>[K:\mathbb{Q}]=r_1+2r_2.</me>
+  </p>
+
+<example>
+  <title> Corps quadratiques réels et imaginaires </title>
+  <p> 
+  Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. Alors:
+  </p>
+    <ul>
+      <li>
+        <p>
+         Si <m>d&gt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique réel</em> et possède deux plongements réels: l'inclusion canonique <m>\mathrm{id}_K</m> et le morphisme <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m>. Si <m>d&lt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique imaginaire</em> et ne possède pas de plongement réel: les deux plongements complexes <m>\mathrm{id}_K</m> et <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> sont conjugués l'un de l'autre.
+        </p>
+      </li>
+      <li>
+        <p>
+          Si <m>d&lt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique imaginaire</em> et ne possède pas de plongement réel: les deux plongements complexes <m>\mathrm{id}_K</m> et <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> sont conjugués l'un de l'autre.
+        </p>
+      </li>
+    </ul>  
+</example>
+
+<example>
+  <p>
+    Soit <m>K=\mathbb{Q}(\sqrt[3]{2})</m>. Le polynôme minimal de <m>\sqrt[3]{2}</m> est <m>X^3-2</m> qui possède comme racines complexes <m>\sqrt[3]{2}</m>, <m>\sqrt[3]{2}\omega</m>, et <m>\sqrt[3]{2}\omega^2</m> où <m>\omega=e^{2i\pi/3}</m> est une racine cubique primitive de l'unité. <m>K</m> est un corps de nombres de degré <m>3</m> qui possède un seul plongement réel, l'inclusion canonique, et un seul plongement complexe non réel, défini par <m>\sigma:\sqrt[3]{2}\mapsto \sqrt[3]{2}\omega</m>. On a donc <m>r_1=1</m> et <m>r_2=1</m>.
+  </p>
+</example>
+
+<p>
+  UTILITÉ DE LA PROPOSITION ? UTILE POUR LA TRACE ET LA NORME, DEPLACER EN SECTION SUIVANTE.
+</p>
+
+<theorem xml:id="thm-element-primitif">
+  <title> de l'élément primitif </title>
+  <statement>
+    <p>
+      Soit <m> K</m> un corps de nombres. Il existe un élément <m>\alpha\in K</m> tel que <m>K=\mathbb{Q}(\alpha)</m>.
+    </p>
+  </statement>
+</theorem>
+<p>
+L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est appelé un <em>élément primitif</em> de l'extension de corps de nombres <m>K/\mathbb{Q}</m> (il n'est en général pas unique).
+</p>
+<proof>
+<title>Démonstration du <xref ref="thm-element-primitif"/></title>
+  <p>
+    La démonstration repose sur le lemme suivant:
+  </p>
+<lemma xml:id="lem-differents-plongements-engendrent-le-corps">
+  <statement>
+    <p>
+      Si <m>\sigma_i(\alpha)\neq \sigma_1(\alpha)</m> pour tout <m>i=2,\ldots,n</m>, alors <me>K=\mathbb{Q}(\alpha)</me>. 
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    L'ensemble des <m>i\in \{1,\ldots,n\} </m> tels que <m>\sigma_i(\alpha)=\sigma_1(\alpha)</m> est en bijection avec l'ensemble des plongements complexes de <m>K</m> qui coincident avec <m>\sigma_1</m> sur <m>\mathbb{Q}(\alpha)</m>. Son cardinal est égal à <m>[K:\mathbb{Q}(\alpha)]</m> d'après la <xref ref="prop-nombre-de-morphismes-de-corps"/>. Donc, si tous les <m>\sigma_i(\alpha)</m> sont distincts, alors <m>[K:\mathbb{Q}(\alpha)]=1</m>, ce qui implique <m>K=\mathbb{Q}(\alpha)</m>.
+  </p>
+</proof>
+  <p>
+    D'après le <xref ref="lem-differents-plongements-engendrent-le-corps"/>, il suffit de démontrer qu'il existe <m>\alpha\in K</m> tel que <m>\sigma_i(\alpha)\neq \sigma_1(\alpha)</m> pour tout <m>i=2,\ldots,n</m>. Notons
+    <md>
+      V_i=\{\alpha\in K~|~\sigma_i(\alpha)=\sigma_1(\alpha)\} \quad \text{pour } i=2,\ldots,n.
+    </md>
+    C'est un sous-espace vectoriel strict de <m>K</m> car <m>\sigma_i\neq \sigma_1</m>. On est alors réduit à démontrer que <m> V_2\cup \ldots \cup V_n</m> n'est pas <m> K</m> tout entier. On le déduit du lemme qui suit.
+  </p>
+  <lemma xml:id="lem-union-de-sous-espaces-stricts-n-est-pas-tout-le-espace">
+    <statement>
+      <p>
+        Soit <m>F</m> un corps infini et <m>V</m> un <m>F</m>-espace vectoriel de dimension finie. Si <m>W_1,\ldots,W_m</m> sont des sous-espaces vectoriels stricts de <m>V</m>, alors <m>W_1\cup \ldots \cup W_m \neq V</m>.
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <title>Démonstration du <xref ref="lem-union-de-sous-espaces-stricts-n-est-pas-tout-le-espace"/></title>
+    <p>
+    On raisonne par récurrence sur <m>m</m>, le nombre de sous-espaces. Si <m>m=1</m>, c'est évident car <m>W_1</m> est strict dans <m>V</m>. Supposons le résultat démontré pour un certain <m>m\geq 1</m> et montrons-le pour <m>m+1</m>. Par hypothèse de récurrence, il existe <m>v\in V\setminus (W_1\cup \ldots \cup W_m)</m>. Comme <m>W_{m+1}</m> est strict dans <m>V</m>, il existe <m>w\in V\setminus W_{m+1}</m>. Pour tout <m>\lambda \in F</m>, on a
+    <me>v+\lambda w\in W_1\cup \ldots \cup W_{m+1}</me>
+    si, et seulement si, il existe <m>i\in \{1,\ldots,m+1\}</m> tel que <m>v+\lambda w\in W_i</m>. Si <m>i=m+1</m>, alors <m>\lambda=(v - u)/w</m> où <m>u\in W_{m+1}</m> est quelconque. Comme <m>F</m> est infini, il existe une infinité de tels <m>\lambda</m>. Si <m>i\leq m</m>, alors <m>\lambda=(u - v)/w</m> où <m>u\in W_i</m> est quelconque. Comme <m>F</m> est infini, il existe une infinité de tels <m>\lambda</m>. Ainsi, il existe au plus <m>m</m> valeurs de <m>\lambda</m> telles que <m>v+\lambda w\in W_1\cup \ldots \cup W_{m+1}</m>. En particulier, il en existe au moins une telle que <m>v+\lambda w\notin W_1\cup \ldots \cup W_{m+1}</m>, ce qui conclut la démonstration.
+    </p>
+  </proof>
+</proof>
+
+<exercise>
+    <ol>
+    <li> <p>Soient <m>a,b\in\mathbb{Z}</m> deux entiers distincts. Montrer que <m>\mathbb{Q}(\sqrt{a},\sqrt{b})=\mathbb{Q}(\sqrt{a}+\sqrt{b}).</m></p></li>
+    <li> <p>En déduire que si <m>a,b\neq 1</m> sont deux entiers sans facteur carré distincts, alors le polynôme <m>X^4-2(a+b)X^2+(a-b)^2</m> est irréductible dans  <m>\mathbb{Z}[X]</m>.</p></li>
+    </ol>
+
+    <solution>
+      <p>
+        Il est clair que <m>\mathbb{Q}(\sqrt{a}+\sqrt{b})\subset \mathbb{Q}(\sqrt{a},\sqrt{b})</m>. Pour l'inclusion réciproque, il suffit de montrer que <m>\sqrt{a}\in \mathbb{Q}(\sqrt{a}+\sqrt{b})</m> (quitte à inverser les rôles de <m>a</m> et <m>b</m>). On a
+      <me>
+        (\sqrt{a}+\sqrt{b})^2=a+b+2\sqrt{ab}
+      </me>
+      et donc <m>\sqrt{ab}\in \mathbb{Q}(\sqrt{a}+\sqrt{b})</m>. De l'égalité
+      <me>
+        (\sqrt{ab}-a)(\sqrt{a}+\sqrt{b})=(b-a)\sqrt{a} 
+      </me>
+      on déduit que <m>\sqrt{a}\in \mathbb{Q}(\sqrt{a}+\sqrt{b})</m>, ce qui conclut.
+    </p>
+
+    <p>
+      Si <m>a,b</m> sont deux entiers qui ne sont pas des carrés et qui n'ont pas de facteur carré commun différents de <m>1</m>, alors les corps <m>\mathbb{Q}(\sqrt{a}),\mathbb{Q}(\sqrt{b})</m> sont de degré <m>2</m> et distincts. Donc <m>[\mathbb{Q}(\sqrt{a},\sqrt{b}):\mathbb{Q}]=4</m>. Par le premier point, on en déduit que <m>[\mathbb{Q}(\sqrt{a}+\sqrt{b}):\mathbb{Q}]=4</m> et donc que le polynôme minimal de <m>\sqrt{a}+\sqrt{b}</m> est de degré <m>4</m>. Or, le polynôme <m>X^4-2(a+b)X^2+(a-b)^2</m> annule <m>\sqrt{a}+\sqrt{b}</m>, il est donc le polynôme minimal de <m>\sqrt{a}+\sqrt{b}</m> et en particulier irréductible dans <m>\mathbb{Q}[X]</m>. Comme ses coefficients sont entiers et qu'il est primitif, il est aussi irréductible dans <m>\mathbb{Z}[X]</m>.
+    </p>
+    </solution>
+</exercise>
+
+</section>
+
+
+
+
+<section xml:id="sec-normes-traces-et-discriminants">
+    <title>Normes, traces et discriminants</title>
+    
+<p>
+    Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m>. On rappelle que <m>K</m> est en particulier un <m>\mathbb{Q}</m>-espace vectoriel de dimension finie <m>n=[K:\mathbb{Q}]</m>. Pour tout <m>\alpha\in K</m>, la multiplication par <m>\alpha</m> définit une application linéaire de <m>K</m> dans lui-même:
+    <me>
+      m_{\alpha}: K\to K, \quad x\mapsto \alpha x.
+    </me>
+</p>
+
+    <definition xml:id="def-trace-et-norme">
+      <statement>
+        <p>
+          La <em>trace</em> de <m>\alpha</m> est la trace de l'application linéaire <m>m_{\alpha}</m>:
+          <me>
+            \mathrm{Tr}_{K}(\alpha):=\mathrm{Tr}(m_{\alpha}).
+          </me>
+        </p>
+        <p>
+          La <em>norme</em> de <m>\alpha</m> est le déterminant de l'application linéaire <m>m_{\alpha}</m>:
+          <me>
+            \mathrm{N}_{K}(\alpha):=\mathrm{det}(m_{\alpha}).
+          </me>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+        Si <m>\alpha,\beta\in K</m>, alors <m>m_{\alpha+\beta}=m_{\alpha}+m_{\beta}</m> et <m>m_{\alpha\beta}=m_{\alpha}\circ m_{\beta}</m>. De même, pour <m>a\in \mathbb{Q}</m>, on a <m>m_{a\alpha}=a\cdot m_{\alpha}</m>. Par linéarité de la trace et multiplicativité du déterminant, on en déduit les relations suivantes:
+        <md>
+          <mrow> \mathrm{Tr}_{K}(\alpha+\beta) \amp = \mathrm{Tr}_{K}(\alpha)+\mathrm{Tr}_{K}(\beta) </mrow>
+          <mrow> \mathrm{N}_{K}(\alpha\beta) \amp = \mathrm{N}_{K}(\alpha)\mathrm{N}_{K}(\beta) </mrow>
+          <mrow> \mathrm{Tr}_{K}(a\alpha) \amp = a\cdot \mathrm{Tr}_{K}(\alpha) </mrow>
+          <mrow> \mathrm{N}_{K}(a\alpha) \amp = a^n\cdot \mathrm{N}_{K}(\alpha) </mrow>
+        </md>
+    </p>
+
+    <p>
+      On désigne par <m>\chi_{\alpha}(X):=\mathrm{det}(X\cdot I_n-m_{\alpha})</m> le polynôme caractéristique de l'endomorphisme <m>m_{\alpha}</m>. Sa relation au polynôme minimal de <m>\alpha</m> est donnée par la proposition suivante.
+    </p>
+
+    <proposition xml:id="prop-polynome-caracteristique-et-minimal">
+      <statement>
+        <p>
+          Si <m>\alpha\in K</m>, alors <m>\chi_{\alpha}(X)=\Pi_{\alpha}(X)^{r}</m> où <m>r=[K:\mathbb{Q}(\alpha)]</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        Soit <m>d</m> le degré de <m>\alpha</m>. Alors <m>(1,\alpha,\ldots,\alpha^{d-1})</m> est une base de <m>\mathbb{Q}(\alpha)</m> sur <m>\mathbb{Q}</m>. Si <m>(e_1,\ldots,e_r)</m> désigne une base de <m>K</m> sur <m>\mathbb{Q}(\alpha)</m>, alors <m>(e_i\alpha^j)_{1\leq i\leq r,0\leq j\leq d-1}</m> est une base de <m>K</m> sur <m>\mathbb{Q}</m>. Dans cette base, la matrice de <m>m_{\alpha}</m> est une matrice par blocs diagonale avec <m>r</m> blocs égaux à la matrice compagnon de <m>\Pi_{\alpha}(X)</m>. Le polynôme caractéristique de <m>m_{\alpha}</m> est donc <m>\Pi_{\alpha}(X)^{r}</m>.
+      </p>
+    </proof>
+
+    <proposition xml:id="prop-formule-traces-normes">
+      <statement>
+        <p>
+          Soit <m>\alpha\in K</m>. Alors
+          <ol>
+            <li>
+              <m>\mathrm{Tr}_{K/\mathbb{Q}}(\alpha)=\sum_{i=1}^n{\sigma_i(\alpha)}</m>
+            </li>
+            <li>
+              <m>\mathrm{N}_{K/\mathbb{Q}}(\alpha)=\prod_{i=1}^n{\sigma_i(\alpha)}</m>
+            </li>
+            <li>
+              <m>\chi_{\alpha}(X)=\prod_{\sigma\in \Sigma(K)}^n{(X-\sigma(\alpha))}</m>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        Les assertions (1) et (2) découlent de l'assertion (3) en utilisant le fait que la trace est la somme des valeurs propres et que le déterminant est le produit des valeurs propres. On démarre par la formule
+        <me>
+          \chi_{\alpha}(X)=\prod_{\sigma\in \Sigma(\mathbb{Q}(\alpha))}{(X-\sigma(\alpha))}
+        </me>
+        Étant donné <m>\sigma\in \Sigma(\mathbb{Q}(\alpha))</m>, on peut le prolonger en exactement <m>[K:\mathbb{Q}(\alpha)]</m> plongements distincts de <m>K</m> dans <m>\mathbb{C}</m> d'après la <xref ref="prop-nombre-de-morphismes-de-corps"/>. Ainsi, chaque facteur <m>(X-\sigma(\alpha))</m> apparaît exactement <m>[K:\mathbb{Q}(\alpha)]</m> fois dans le produit, et on trouve
+        <me>
+          \chi_{\alpha}(X)=\Pi_{\alpha}(X)^{[K:\mathbb{Q}(\alpha)]}=\prod_{\sigma\in \Sigma(K)}{(X-\sigma(\alpha))}
+        </me>
+        où la première égalité provient de la <xref ref="prop-polynome-caracteristique-et-minimal"/>.
+      </p>
+    </proof>
+
+    <proposition xml:id="prop-trace-et-norme-en-fonction-des-plongements">
+      <statement>
+        <p>
+          Soit <m>K</m> un corps de nombres de degré <m>n</m> avec comme plongements <m>\mathrm{Hom}(K,\mathbb{C})=\{\sigma_1,\ldots,\sigma_n\}</m>. Alors l'application <m> m_{\alpha}</m> est diagonalisable et ses valeurs propres sont les <m>\sigma_i(\alpha)</m> pour <m>i=1,\ldots,n</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+      Soit <m>\theta\in K</m> un élément primitif: cela signifie que <m>K=\mathbb{Q}(\theta)</m>. Le polynôme minimal de l'endomorphisme <m>m_{\theta}</m> est <m>\prod_{i=1}^n{(X-\sigma_i(\theta))}</m> et comme ses racines sont simples <m>m_{\theta}</m> est diagonalisable avec pour valeurs propres les <m>\sigma_i(\theta)</m>.
+      </p>
+
+      <p>
+        Plus généralement, pour <m>\alpha\in K</m> on peut trouver un polynôme <m>P(X)\in \mathbb{Q}[X]</m> tel que <m>\alpha=P(\theta)</m>. Par construction, on a <m>m_{\alpha}=P(m_{\theta})</m> et donc <m>m_{\alpha}</m> est diagonalisable de valeurs propres les <m>P(\sigma_i(\theta))=\sigma_i(P(\theta))=\sigma_i(\alpha)</m> pour <m>i=1,\ldots,n</m>.
+      </p>
+    </proof>
+
+      <corollary xml:id="cor-formule-trace-et-norme-en-fonction-des-plongements">
+        <statement>
+          <me>
+          \mathrm{Tr}_{K/\mathbb{Q}}(\alpha)=\sum_{i=1}^n{\sigma_i(\alpha)} \quad \text{et} \quad \mathrm{N}_{K/\mathbb{Q}}(\alpha)=\prod_{i=1}^n{\sigma_i(\alpha)}.
+        </me>
+        </statement>
+      </corollary>  
+
+      <proposition xml:id="prop-trace-et-norme-entiers-algebriques">
+        <statement>
+          <p>
+            Soit <m>\alpha\in K</m> un entier algébrique. Alors <m>\mathrm{Tr}_{K/\mathbb{Q}}(\alpha)</m> et <m>\mathrm{N}_{K/\mathbb{Q}}(\alpha)</m> sont des entiers.
+          </p>
+        </statement>
+      </proposition>
+      <proof>
+        <p> On commence par démontrer un lemme, utile en soi. </p>
+          <lemma xml:id="lem-polynome-minimal-et-plongements">
+            <title> Polynôme minimal et plongements </title>
+            <statement>
+            <p>
+             Soit <m>K</m> un corps de nombres de degré <m>n</m> avec comme plongements <m> \mathrm{Hom}(K,\mathbb{C})=\{\sigma_1,\ldots,\sigma_n\}</m>. Soit <m>\alpha\in K</m> un élément de <m>K</m> de degré <m>d</m> et soit <m>\Pi_{\alpha}(X)</m> son polynôme minimal sur <m>K</m>. Alors
+             <md>
+             \Pi_{\alpha}(X)^{n/d}=\prod_{i=1}^n{(X-\sigma_i(\alpha))}
+             </md>
+            </p>
+            </statement>
+          </lemma>
+          <title> Démonstration du <xref ref="lem-polynome-minimal-et-plongements"/> </title>
+          <proof>
+           <p>
+            On prétend que, dans la suite <m>(\sigma_i(\alpha))_{1\leq i\leq n}</m>, chaque racine de <m>\Pi_{\alpha}(X)</m> apparaît exactement <m>n/d</m> fois. En effet, chaque racine <m>\beta</m> de <m>\Pi_{\alpha}(X)</m> fournit un plongement
+           <md>
+            <mrow> \mathbb{Q}(\alpha) \amp \to \mathbb{C}</mrow>
+            <mrow> \alpha \amp \mapsto \beta</mrow>
+           </md>
+            qui se prolonge en <m>[K:\mathbb{Q}(\alpha)]=\frac{n}{d}</m> plongements de <m>K</m> dans <m>\mathbb{C}</m>. On a donc
+           <md>
+            \prod_{i=1}^n{(X-\sigma_i(\alpha))}=\prod_{j=1}^d{(X-\beta_j)}^{n/d}=\Pi_{\alpha}(X)^{n/d}.
+           </md>
+          </p>
+          </proof>
+        <p> 
+          Le polynôme caractéristique de l'endomorphisme <m>m_{\alpha}</m> est donc <m>\Pi_{\alpha}(X)^{n/d}</m> d'après le <xref ref="lem-polynome-minimal-et-plongements"/>, avec <m>d</m> le degré de <m>\alpha</m>. D'après le critère d'intégralité, <xref ref="prop-polynome-minimal"/>, les coefficients de <m>\Pi_{\alpha}(X)</m> sont des entiers. En écrivant <m>\Pi_{\alpha}(X)=X^d+a_{d-1}X^{d-1}+\ldots +a_0</m> avec <m>a_i\in \mathbb{Z}</m>, on obtient
+          <md>
+            \mathrm{Tr}_K(\alpha)=-\frac{n}{d}a_{d-1} \quad \text{et} \quad \mathrm{N}_K(\alpha)=a_0^{n/d}.
+          </md>
+          Ce sont donc des entiers.
+        </p>
+      </proof>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</chapter>

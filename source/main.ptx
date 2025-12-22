@@ -16,11 +16,21 @@
         numbering="shared"/>
     </custom>
 
+    <custom>
+      <theorem-like
+        name="solution"
+        title="Solution"
+        numbering="shared"/>
+    </custom>
+  
+
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
     <xi:include href="./ch-algebraic-numbers.ptx" />
+
+     <xi:include href="./ch-number-fields.ptx" />
 
     <!-- Include Appendice -->
     <xi:include href="./appendice.ptx" />
