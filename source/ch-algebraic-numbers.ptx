@@ -322,7 +322,7 @@ Le polynôme caractéristique de la matrice
 
 <p>En particulier, le polynôme minimal d'un nombre algébrique - qui est irréductible - possède autant de racines que le degré de ce nombre algébrique.</p>
 
-<definition>
+<definition xml:id="def-conjugues">
   <title> Conjugués d'un nombre algébrique</title>
   <statement>
     <p>Soit <m>z</m> un nombre algébrique. Les racines du polynôme minimal de <m>z</m> sont appelés <em>les conjugués de <m>z</m></em>.</p>
