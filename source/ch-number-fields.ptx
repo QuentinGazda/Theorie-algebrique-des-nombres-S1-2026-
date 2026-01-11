@@ -562,7 +562,7 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
     </me>
   </p>
 
-  <remark>
+  <remark xml:id="rem-trace-non-degeneree">
     <p>
       C'est une forme bilinéaire non dégénérée. En effet, pour tout <m>\alpha\in K</m> il existe <m>\beta\in K</m> tel que <m>\mathrm{Tr}_{K}(\alpha\beta)=1</m> (comme <m>\mathrm{Tr}_{K}(1)=[K:\mathbb{Q}]</m>, il suffit de prendre <m>\beta=[K:\mathbb{Q}]^{-1}\alpha^{-1}</m>).
     </p>
@@ -582,9 +582,9 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
 
   <p>
     Sa relation à la forme bilinéaire <m>\mathrm{Tr}_K</m> est la suivante: si <m>x_1,\ldots,x_n\in \mathbb{Q}</m> et si <m>x\in K</m> désigne l'élément <m>x=x_1e_1+\cdots +x_ne_n</m>, alors on a
-    <me>
+    <men xml:id="eq-discriminant-system">
       \mathrm{Tr}_{K}(e_ie_j)\begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}=\begin{pmatrix} \mathrm{Tr}_{K}(xe_1) \\ \vdots \\ \mathrm{Tr}_{K}(xe_n) \end{pmatrix}.
-    </me>
+    </men>
   </p>
 
   <proposition xml:id="prop-discriminants">
@@ -592,39 +592,100 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
       <p>
         Soit <m>(e_1,\ldots,e_n)</m> une famille d'éléments de <m>K</m>. 
       </p>
-      <ol>
-        <li>
+      <ol marker="(i)">
+        <li xml:id="item-discriminant-libre">
           <p>
             <m>\mathrm{disc}_K(e_1,\ldots,e_n)\neq 0</m> si, et seulement si <m>(e_1,\ldots,e_n)</m> est une base de <m>K</m> sur <m>\mathbb{Q}</m>.
           </p>
         </li>
-        <li>
+        <li xml:id="item-discriminant-changement-base">
           <p>
-            Soit <m>P</m> une matrice de taille <m>n</m> et soit <m>(f_1,\ldots,f_n)</m> la famille <m>P\cdot (e_1,\ldots,e_n)</m>. Alors 
+            Soit <m>P</m> une matrice de taille <m>n</m> à coefficients rationnels et soit <m>(f_1,\ldots,f_n)</m> la famille <m>P\cdot (e_1,\ldots,e_n)</m>. Alors 
             <md>
               \mathrm{disc}_K(f_1,\ldots,f_n)=\mathrm{det}(P)^2\mathrm{disc}_K(e_1,\ldots,e_n)
-            </md>
-          </p>
-        </li>
-        <li>
-          <p>
-            Si <m>\Sigma(K)=\{\sigma_1,\ldots,\sigma_n\}</m> sont les plongements complexes de <m>K</m>, alors 
-            <md>
-              \mathrm{disc}_K(e_1,\ldots,e_n)=\mathrm{det}((\sigma_i(e_j))_{1 \leq i,j \leq n})^2
-            </md>
-          </p>
-        </li>
-        <li>
-          <p>
-            Si <m>K=\mathbb{Q}(x)</m> et si <m>\{x_1,\ldots,x_n\}</m> désigne l'ensemble des conjugués de <m>x</m>, alors 
-            <md>
-            \mathrm{disc}_K(1,x,\ldots,x^{n-1})=\prod_{i &lt; j}{(x_i-x_j)}=(-1)^{\frac{n(n-1)}{2}} N_{K}(\Pi_{\alpha}'(\alpha)).
             </md>
           </p>
         </li>
       </ol>
     </statement>
   </proposition>
+
+  <proof>
+    <p>
+      Vérifions l'<xref ref="item-discriminant-libre"/>. Si la famille <m>(e_1,\ldots,e_n)</m> est liée sur <m>\mathbb{Q}</m>, alors il existe des <m>x_i\in \mathbb{Q}</m> non tous nuls tels que <m>x:=\sum_i{x_ie_i}=0</m>. La relation <xref ref="eq-discriminant-system"/> appliquée à <m>x</m> montre que la matrice <m>T:=(\mathrm{Tr}(e_ie_j))_{i,j}</m> a un noyau non trivial et que donc son déterminant, <m>\mathrm{disc}_K(e_1,\ldots,e_n)</m>, est nul. 
+    </p>
+    <p>
+      Réciproquement, si <m>\mathrm{disc}_K(e_1,\ldots,e_n)=0</m>, alors il existe un vecteur non nul <m>{}^{\mathsf{t}}(x_1,\ldots,x_n)</m> dans le noyau de <m>T</m>. Soit <m>x:=\sum_i{x_ie_i}</m>. La relation <xref ref="eq-discriminant-system"/> assure que <m>\mathrm{Tr}_K(xe_i)=0</m> pour tout <m>i\in \{1,\ldots,n\}</m>. Par la non dégénérescence de la forme bilinéaire <m>\mathrm{Tr}_K</m> (<xref ref="rem-trace-non-degeneree"/>), l'application <m>y\mapsto \mathrm{Tr}_K(xy)</m> est non nulle et donc la famille <m>(e_1,\ldots,e_n)</m> n'est pas une base. 
+    </p>
+
+    <p>
+      L'<xref ref="item-discriminant-changement-base"/> suit d'une propriété générale des formes bilinéaires. Pour tout <m>x_i,y_j\in \mathbb{Q}</m>, on a 
+      <md>
+        \mathrm{Tr}_K\left(\left(\sum_{i=1}^n{x_i e_i}\right)\left(\sum_{j=1}^n{y_j e_j}\right)\right)=(x_1,\ldots,x_n)\cdot T\cdot {}^{\mathsf{t}}(y_1,\ldots,y_n).
+      </md>
+      Dans la situation de l'énoncé, on a donc <m>(\mathrm{Tr}_K(f_if_j))_{i,j}={}^{\mathsf{t}}P T P</m>, d'où la formule en prenant les déterminants. 
+    </p>
+  </proof>
+
+  <proposition xml:id="prop-discriminant-conjugues">
+    <title>Discriminant et conjugués</title>
+    <statement>
+      <p>
+        Soit <m>(e_1,\ldots,e_n)</m> une famille de <m>K</m>. Si <m>\Sigma(K)=\{\sigma_1,\ldots,\sigma_n\}</m> désigne l'ensemble des plongements complexes de <m>K</m>, alors 
+            <md>
+              \mathrm{disc}_K(e_1,\ldots,e_n)=\mathrm{det}((\sigma_i(e_j))_{i,j})^2.
+            </md>
+      </p>
+    </statement>
+ </proposition>
+<proof>
+  <p>
+    Il suffit d'invoquer la formule <m>\mathrm{Tr}_K(x)=\sum_{i=1}^n{\sigma_i(x)}</m> (<xref ref="prop-formule-traces-normes"/>). On constate alors que 
+    <md>
+      (\mathrm{Tr}_K(e_ie_j))_{i,j}={}^{\mathsf{t}}(\sigma_i(e_j))_{i,j}\cdot (\sigma_i(e_j))_{i,j}
+    </md>
+    et on obtient la formule énoncée en prenant les déterminants. 
+  </p>
+</proof>
+
+
+<p>
+  On peut enfin relier le discriminant de certaines familles de <m>K</m> à la notion initiale de discriminant d'un polynôme. 
+</p>
+ <corollary xml:id="cor-discriminant-plongements">
+  <statement>
+    <p>
+      Soit <m>\alpha</m> un nombre algébrique et <m>K=\mathbb{Q}(\alpha)</m>. Si <m>\{\alpha_1,\ldots,\alpha_n\}</m> désigne l'ensemble des conjugués de <m>\alpha</m>, alors 
+        <md>
+        \mathrm{disc}_K(1,\alpha,\ldots,\alpha^{n-1})=\prod_{i &lt; j}{(\alpha_i-\alpha_j)}^2=(-1)^{\frac{n(n-1)}{2}} N_{K}(\Pi_{\alpha}'(\alpha)).
+        </md>
+    </p>
+    <p>
+      En particulier, <m>\mathrm{disc}_K(1,\alpha,\ldots,\alpha^{n-1})=\mathrm{disc}(\Pi_{\alpha}(X))</m>.
+    </p>
+  </statement>
+ </corollary>
+ <proof>
+  <p>
+    Soit <m>\Sigma(K)=\{\sigma_1,\ldots,\sigma_n\}</m> l'ensemble des plongements complexes de <m>K</m> numérotés de sorte que <m>\sigma_i(\alpha)=\alpha_i</m> (<em>cf.</em> <xref ref="prop-corps-engendres-par-nombre-algebrique"/>). La formule de la <xref ref="prop-discriminant-conjugues"/> appliquée dans cette situation donne
+    <md>
+      \mathrm{disc}_K(1,\alpha,\ldots,\alpha^{n-1})=\mathrm{det} \begin{pmatrix} 1 &amp; \alpha_1 &amp; \cdots &amp; \alpha_1^{n-1} \\ 1 &amp; \alpha_2 &amp; \cdots &amp; \alpha_2^{n-1} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; \alpha_n &amp; \cdots &amp; \alpha_n^{n-1} \end{pmatrix}^2.
+    </md>
+    On reconnaît un déterminant de Vandermonde, d'où la première identité. 
+  </p>
+
+  <p>
+    Le polynôme minimal de <m>\alpha</m> se factorise comme <m>\Pi_{\alpha}(X)=\prod_{j=1}^n{(X-\alpha_j)}</m>. Pour sa dérivée, la formule de Leibniz donne
+    <md>
+      \Pi_{\alpha}'(X)=\sum_{i=1}^n{\prod_{\substack{j=1\\ j\neq i}}^n{(X-\alpha_j)}}.
+    </md>
+    On en déduit : <m>\Pi_{\alpha}'(\alpha_i)=\prod_{\substack{j=1\\ j\neq i}}^n{(\alpha_i-\alpha_j)}</m>. Pour terminer, on fait appel à la <xref ref="prop-formule-traces-normes"/> :
+    <md>
+      N_K(\Pi_{\alpha}'(\alpha))=\prod_{i=1}^n{\Pi_{\alpha}'(\alpha_i)}=\prod_{i=1}^n{\prod_{\substack{j=1\\ j\neq i}}^n{(\alpha_i-\alpha_j)}}=\prod_{i\neq j}{(\alpha_i-\alpha_j)}.
+    </md>
+    Pour retrouver la formule de l'énoncé, il suffit de partitionner l'ensemble <m>\{(i,j)~|~i\neq j\}</m> à <m>n^2-n</m> éléments en l'union disjointe des deux ensembles <m>\{(i,j)~|~i &lt; j\}\sqcup \{(i,j)~|~i &gt; j\}</m>, chacun possédant <m>\frac{n(n-1)}{2}</m> éléments.
+  </p>
+ </proof>
 
 </section>
 

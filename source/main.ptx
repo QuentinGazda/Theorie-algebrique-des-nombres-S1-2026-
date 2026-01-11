@@ -30,7 +30,9 @@
     <!-- Include chapters -->
     <xi:include href="./ch-algebraic-numbers.ptx" />
 
-     <xi:include href="./ch-number-fields.ptx" />
+    <xi:include href="./ch-number-fields.ptx" />
+
+    <xi:include href="./ch-integer-rings.ptx" />
 
     <!-- Include Appendice -->
     <xi:include href="./appendice.ptx" />

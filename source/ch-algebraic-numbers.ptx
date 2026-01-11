@@ -55,6 +55,23 @@
   </li>
 </ol>
 
+<lemma xml:id="lem-denominateur">
+  <statement>
+    <p>
+      Soit <m>\alpha\in \overline{Q}</m> un nombre algébrique. Alors il existe un entier <m>d>0</m> tel que <m>d\alpha\in \overlline{Z}</m>.
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    Soit <m>P(X)=X^n+q_{n-1}X^{n-1}+\ldots+q_0\in \mathbb{Q}[X]</m> un polynôme unitaire qui annule <m>\alpha</m>. Soit <m>d>0</m> choisi de sorte que <m>dq_i\in \mathbb{Z}</m> pour tout <m>i\in \{0,\ldots,n-1\}</m> (autrement dit le dénominateur de chaque <m>d_i</m> divise <m>d</m>). Alors    Alors 
+    <md>
+      (d\alpha)^n +dq_{n-1}(d\alpha)^{n-1}+\ldots+d^n q_0=d^nP(\alpha)=0
+    </md>
+    En particulier <m>Q(X):=X^n+dq_{n-1}X^{n-1}+\ldots+d^n q_0</m> est un polynôme unitaire à coefficients entiers qui annule <m>d\alpha</m>. Ainsi <m>d\alpha</m> est un entier algébrique. 
+  </p>
+</proof>
+
 <p>
   L'opposé d'un nombre/entier algébrique est encore un nombre/entier algébrique. En effet si <m>\alpha\in \overline{\mathbb{Q}}</m> (respectivement <m>\overline{\mathbb{Z}}</m>) est annulé par un polynôme non nul <m>P(X)\in \mathbb{Q}[X]</m>, alors le polynôme <m>P(-X)</m> annule <m>-\alpha</m>.
 </p>
