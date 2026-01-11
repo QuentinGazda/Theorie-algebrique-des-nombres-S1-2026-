@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-FR" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Démontrer l’irréductibilité d’un polynôme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Théorie algébrique des nombres">
+<meta property="book:author" content="Quentin Gazda">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Sauter au contenu</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Théorie algébrique des nombres</span> <span class="subtitle">UM4MA234 - Sorbonne Université</span></a></h1>
+<p class="byline">Quentin Gazda</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Table des matières"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Table des matières</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Résultats de la recherche: </h2>
+<div id="searchempty" class="searchempty"><span>Aucun résultat.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="app-A.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="up-button button" href="app-A.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="sec-rappels-sur-les-anneaux.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Avant-propos</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="front-preface.html" class="internal"><span class="title">Préface</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-algebraic-numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Nombres algébriques et entiers algébriques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nombres algébriques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynome-minimal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Polynôme minimal d’un nombre algébrique</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Théorème de Cantor</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Nombres algébriques de degré deux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-number-fields.html" class="internal"><span class="codenumber">2</span> <span class="title">Corps de nombres</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-number-fields-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Structure des corps de nombres</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-normes-traces.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Traces et Normes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminants.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Discriminants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-integer-rings.html" class="internal"><span class="codenumber">3</span> <span class="title">Anneaux d’entiers</span></a></div></li>
+<li class="toc-item toc-appendix contains-active">
+<div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="app-irreducibilite-polynome.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Démontrer l’irréductibilité d’un polynôme</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rappels-sur-les-anneaux.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Rappels sur les anneaux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="app-irreducibilite-polynome"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Démontrer l’irréductibilité d’un polynôme</span>
+</h2>
+<div class="para" id="app-irreducibilite-polynome-2">Étant donné un polynôme unitaire <span class="process-math">\(P(X)\in \mathbb{Z}[X]\text{,}\)</span> il n’y a pas une méthode générale pour déterminer son irréductibilité dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span> Nous rassemblons ici quelques techniques pour montrer l’irréductibilité dans des cas favorables.<div class="autopermalink" data-description="Paragraphe"><a href="#app-irreducibilite-polynome-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-"><h3 class="heading">
+<span class="type">Lemme</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem--1-1">Soit <span class="process-math">\(P(X)\in \mathbb{Z}[X]\)</span> un polynôme unitaire. Supposons qu’il existe un nombre premier <span class="process-math">\(p\)</span> tel que <span class="process-math">\(\overline{P}(X)\)</span> est<details class="ptx-footnote" aria-live="polite" id="lem--1-1-4"><summary class="ptx-footnote__number" title="Note A.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="lem--1-1-4">
+<span class="process-math">\(\overline{P}(X)\)</span> désigne l’image de <span class="process-math">\(P(X)\)</span> par la réduction modulo <span class="process-math">\(p\text{.}\)</span>
+</div></details> irréductible dans <span class="process-math">\((\mathbb{Z}/p\mathbb{Z})[X]\text{.}\)</span> Alors <span class="process-math">\(P(X)\)</span> est irréductible dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#lem--1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemme A.1.1"><a href="#lem-" title="Permalien Lemme A.1.1" aria-label="Permalien Lemme A.1.1">🔗</a></div></article><details id="app-irreducibilite-polynome-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="app-irreducibilite-polynome-4-1">La preuve est presque immédiate : si <span class="process-math">\(P(X)\)</span> était réductible dans <span class="process-math">\(\mathbb{Z}[X]\text{,}\)</span> alors il existerait une factorisation non triviale <span class="process-math">\(P(X)=Q_1(X)Q_2(X)\)</span> avec <span class="process-math">\(Q_1,Q_2\in \mathbb{Z}[X]\)</span> unitaires de degré strictement positif. En réduisant modulo <span class="process-math">\(p\text{,}\)</span> on obtiendrait une factorisation non triviale de <span class="process-math">\(\overline{P}(X)\)</span> dans <span class="process-math">\((\mathbb{Z}/p\mathbb{Z})[X]\text{,}\)</span> ce qui contredit l’irréductibilité de <span class="process-math">\(\overline{P}(X)\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#app-irreducibilite-polynome-4-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration A.1.1"><a href="#app-irreducibilite-polynome-4" title="Permalien Démonstration A.1.1" aria-label="Permalien Démonstration A.1.1">🔗</a></div></article></details><div class="para" id="app-irreducibilite-polynome-5">On peut utiliser ce lemme pour prouver l’irréductibilité de certains polynômes en choisissant astucieusement le nombre premier <span class="process-math">\(p\text{.}\)</span> Par exemple, le polynôme <span class="process-math">\(X^3 - 2\)</span> est irréductible dans <span class="process-math">\(\mathbb{Z}[X]\)</span> car sa réduction modulo <span class="process-math">\(3\)</span> est <span class="process-math">\(\overline{X}^3 - \overline{2}\text{,}\)</span> qui n’a pas de racine dans <span class="process-math">\(\mathbb{Z}/3\mathbb{Z}\)</span> et est donc irréductible.<div class="autopermalink" data-description="Paragraphe"><a href="#app-irreducibilite-polynome-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<details id="app-irreducibilite-polynome-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exemple</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quelques polynômes unitaires irréductibles dans <span class="process-math">\((\mathbb{Z}/p\mathbb{Z})[X]\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="app-irreducibilite-polynome-6-2">Dans les tables suivantes, on liste les polynômes unitaires irréductibles de degré <span class="process-math">\(\leq 3\)</span> dans <span class="process-math">\((\mathbb{Z}/p\mathbb{Z})[X]\text{,}\)</span> pour <span class="process-math">\(p\in\{2,3,5\}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#app-irreducibilite-polynome-6-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<figure class="table table-like" id="tab-irred-f2-deg1"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Polynômes irréductibles de degré <span class="process-math">\(1\)</span> dans <span class="process-math">\((\mathbb{Z}/2\mathbb{Z})[X]\)</span><div class="autopermalink" data-description="Table A.1.3: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/2\mathbb{Z})[X]"><a href="#tab-irred-f2-deg1" title="Permalien Table A.1.3: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/2\mathbb{Z})[X]" aria-label="Permalien Table A.1.3: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/2\mathbb{Z})[X]">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X + 1\)</span></td></tr>
+</table></div></figure><figure class="table table-like" id="tab-irred-f2-deg2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Polynômes irréductibles de degré <span class="process-math">\(2\)</span> dans <span class="process-math">\((\mathbb{Z}/2\mathbb{Z})[X]\)</span><div class="autopermalink" data-description="Table A.1.4: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/2\mathbb{Z})[X]"><a href="#tab-irred-f2-deg2" title="Permalien Table A.1.4: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/2\mathbb{Z})[X]" aria-label="Permalien Table A.1.4: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/2\mathbb{Z})[X]">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular"><tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + X + 1\)</span></td></tr></table></div></figure><figure class="table table-like" id="tab-irred-f2-deg3"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Polynômes irréductibles de degré <span class="process-math">\(3\)</span> dans <span class="process-math">\((\mathbb{Z}/2\mathbb{Z})[X]\)</span><div class="autopermalink" data-description="Table A.1.5: Polynômes irréductibles de degré 3 dans (\mathbb{Z}/2\mathbb{Z})[X]"><a href="#tab-irred-f2-deg3" title="Permalien Table A.1.5: Polynômes irréductibles de degré 3 dans (\mathbb{Z}/2\mathbb{Z})[X]" aria-label="Permalien Table A.1.5: Polynômes irréductibles de degré 3 dans (\mathbb{Z}/2\mathbb{Z})[X]">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + X^2 + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + X + 1\)</span></td></tr>
+</table></div></figure><figure class="table table-like" id="tab-irred-f3-deg1"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Polynômes irréductibles de degré <span class="process-math">\(1\)</span> dans <span class="process-math">\((\mathbb{Z}/3\mathbb{Z})[X]\)</span><div class="autopermalink" data-description="Table A.1.6: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/3\mathbb{Z})[X]"><a href="#tab-irred-f3-deg1" title="Permalien Table A.1.6: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/3\mathbb{Z})[X]" aria-label="Permalien Table A.1.6: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/3\mathbb{Z})[X]">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X + 2\)</span></td></tr>
+</table></div></figure><figure class="table table-like" id="tab-irred-f3-deg2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Polynômes irréductibles de degré <span class="process-math">\(2\)</span> dans <span class="process-math">\((\mathbb{Z}/3\mathbb{Z})[X]\)</span><div class="autopermalink" data-description="Table A.1.7: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/3\mathbb{Z})[X]"><a href="#tab-irred-f3-deg2" title="Permalien Table A.1.7: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/3\mathbb{Z})[X]" aria-label="Permalien Table A.1.7: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/3\mathbb{Z})[X]">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + X + 2\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 2X + 2\)</span></td></tr>
+</table></div></figure><figure class="table table-like" id="tab-irred-f3-deg3"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Polynômes irréductibles de degré <span class="process-math">\(3\)</span> dans <span class="process-math">\((\mathbb{Z}/3\mathbb{Z})[X]\)</span><div class="autopermalink" data-description="Table A.1.8: Polynômes irréductibles de degré 3 dans (\mathbb{Z}/3\mathbb{Z})[X]"><a href="#tab-irred-f3-deg3" title="Permalien Table A.1.8: Polynômes irréductibles de degré 3 dans (\mathbb{Z}/3\mathbb{Z})[X]" aria-label="Permalien Table A.1.8: Polynômes irréductibles de degré 3 dans (\mathbb{Z}/3\mathbb{Z})[X]">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + 2X^2 + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + 2X^2 + X + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + 2X + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + X^2 + 2X + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + X^2 + 2\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + X^2 + X + 2\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + 2X + 2\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^3 + 2X^2 + 2X + 2\)</span></td></tr>
+</table></div></figure><figure class="table table-like" id="tab-irred-f5-deg1"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Polynômes irréductibles de degré <span class="process-math">\(1\)</span> dans <span class="process-math">\((\mathbb{Z}/5\mathbb{Z})[X]\)</span><div class="autopermalink" data-description="Table A.1.9: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/5\mathbb{Z})[X]"><a href="#tab-irred-f5-deg1" title="Permalien Table A.1.9: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/5\mathbb{Z})[X]" aria-label="Permalien Table A.1.9: Polynômes irréductibles de degré 1 dans (\mathbb{Z}/5\mathbb{Z})[X]">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X + 2\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X + 3\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X + 4\)</span></td></tr>
+</table></div></figure><figure class="table table-like" id="tab-irred-f5-deg2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Polynômes irréductibles de degré <span class="process-math">\(2\)</span> dans <span class="process-math">\((\mathbb{Z}/5\mathbb{Z})[X]\)</span><div class="autopermalink" data-description="Table A.1.10: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/5\mathbb{Z})[X]"><a href="#tab-irred-f5-deg2" title="Permalien Table A.1.10: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/5\mathbb{Z})[X]" aria-label="Permalien Table A.1.10: Polynômes irréductibles de degré 2 dans (\mathbb{Z}/5\mathbb{Z})[X]">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + X + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 4X + 1\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 2\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + X + 2\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 4X + 2\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 3\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 2X + 3\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 3X + 3\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 2X + 4\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(X^2 + 3X + 4\)</span></td></tr>
+</table></div></figure><div class="autopermalink" data-description="Exemple A.1.2: Quelques polynômes unitaires irréductibles dans (\mathbb{Z}/p\mathbb{Z})[X]"><a href="#app-irreducibilite-polynome-6" title="Permalien Exemple A.1.2: Quelques polynômes unitaires irréductibles dans (\mathbb{Z}/p\mathbb{Z})[X]" aria-label="Permalien Exemple A.1.2: Quelques polynômes unitaires irréductibles dans (\mathbb{Z}/p\mathbb{Z})[X]">🔗</a></div></article></details><article class="definition definition-like" id="def-"><h3 class="heading">
+<span class="type">Définition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynôme d’Eisenstein.</span>
+</h3>
+<div class="para logical" id="def--2-1">
+<div class="para">Soit <span class="process-math">\(p\)</span> un nombre premier. Un polynôme unitaire <span class="process-math">\(P(X)=X^n+a_{n-1}X^{n-1}+\ldots +a_0 \in \mathbb{Z}[X]\)</span> est dit <em class="emphasis"><span class="process-math">\(p\)</span>-Eisenstein</em> si :</div>
+<ul class="disc" id="def--2-1-4">
+<li id="def--2-1-4-1">
+<div class="para" id="p-derived-def--2-1-4-1">
+<span class="process-math">\(p\)</span> divise tous les coefficients <span class="process-math">\(a_0,\ldots,a_{n-1}\text{,}\)</span>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#def--2-1-4-1" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="def--2-1-4-2">
+<div class="para" id="p-derived-def--2-1-4-2">
+<span class="process-math">\(p^2\)</span> ne divise pas le coefficient constant <span class="process-math">\(a_0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#def--2-1-4-2" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraphe"><a href="#def--2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Définition A.1.11: Polynôme d’Eisenstein"><a href="#def-" title="Permalien Définition A.1.11: Polynôme d’Eisenstein" aria-label="Permalien Définition A.1.11: Polynôme d’Eisenstein">🔗</a></div></article><article class="proposition theorem-like" id="prop-"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">critère d’Eisenstein.</span>
+</h3>
+<div class="para" id="prop--2-1">Soit <span class="process-math">\(P(X)\in \mathbb{Z}[X]\)</span> un polynôme unitaire tel qu’il existe un nombre premier <span class="process-math">\(p\)</span> pour lequel <span class="process-math">\(P(X)\)</span> est <span class="process-math">\(p\)</span>-Eisenstein. Alors <span class="process-math">\(P(X)\)</span> est irréductible dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop--2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition A.1.12: critère d’Eisenstein"><a href="#prop-" title="Permalien Proposition A.1.12: critère d’Eisenstein" aria-label="Permalien Proposition A.1.12: critère d’Eisenstein">🔗</a></div></article><details id="app-irreducibilite-polynome-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exemple</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exemples de polynômes irréductibles par le critère d’Eisenstein.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="app-irreducibilite-polynome-9-2">Le polynôme <span class="process-math">\(X^4 + 6X^3 + 12X^2 + 18X + 9\)</span> est irréductible dans <span class="process-math">\(\mathbb{Z}[X]\)</span> car il est <span class="process-math">\(3\)</span>-Eisenstein.<div class="autopermalink" data-description="Paragraphe"><a href="#app-irreducibilite-polynome-9-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para logical" id="app-irreducibilite-polynome-9-3">
+<div class="para">Le <span class="process-math">\(p\)</span>ème polynôme cyclotomique</div>
+<div class="displaymath process-math" id="app-irreducibilite-polynome-9-3-2">
+\begin{equation*}
+\Phi_p(X)=\frac{X^p - 1}{X - 1} = X^{p-1} + X^{p-2} + \ldots + X + 1
+\end{equation*}
+</div>
+<div class="para">est irréductible dans <span class="process-math">\(\mathbb{Z}[X]\)</span> pour tout nombre premier <span class="process-math">\(p\text{.}\)</span> Pour le vérifier, on montre que <span class="process-math">\(\Phi_p(X+1)\)</span> est <span class="process-math">\(p\)</span>-Eisenstein; En effet, étant donné un polynôme <span class="process-math">\(P(X)\text{,}\)</span> l’irréductibilité de <span class="process-math">\(P(X)\)</span> est équivalente à celle de ses translatées, par exemple <span class="process-math">\(P(X+1)\text{.}\)</span> En effectuant le changement de variable <span class="process-math">\(X \mapsto X + 1\text{,}\)</span> on obtient <span class="process-math">\(\Phi_p(X + 1) = \frac{(X + 1)^p - 1}{X} = X^{p-1} + \binom{p}{1}X^{p-2} + \ldots + \binom{p}{p-1}\text{.}\)</span> Or, pour <span class="process-math">\(1 \leq k \leq p - 1\text{,}\)</span> le coefficient binomial <span class="process-math">\(\binom{p}{k}\)</span> est divisible par <span class="process-math">\(p\text{,}\)</span> tandis que le terme constant <span class="process-math">\(\binom{p}{p} = 1\)</span> n’est pas divisible par <span class="process-math">\(p^2\text{.}\)</span> Ainsi, <span class="process-math">\(\Phi_p(X + 1)\)</span> est <span class="process-math">\(p\)</span>-Eisenstein, et donc irréductible dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span> Par conséquent, <span class="process-math">\(\Phi_p(X)\)</span> est également irréductible dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#app-irreducibilite-polynome-9-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exemple A.1.13: Exemples de polynômes irréductibles par le critère d’Eisenstein"><a href="#app-irreducibilite-polynome-9" title="Permalien Exemple A.1.13: Exemples de polynômes irréductibles par le critère d’Eisenstein" aria-label="Permalien Exemple A.1.13: Exemples de polynômes irréductibles par le critère d’Eisenstein">🔗</a></div></article></details><div class="autopermalink" data-description="Section A.1: Démontrer l’irréductibilité d’un polynôme"><a href="#app-irreducibilite-polynome" title="Permalien Section A.1: Démontrer l’irréductibilité d’un polynôme" aria-label="Permalien Section A.1: Démontrer l’irréductibilité d’un polynôme">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="app-A.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-rappels-sur-les-anneaux.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

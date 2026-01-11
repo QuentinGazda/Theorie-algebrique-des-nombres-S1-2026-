@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-FR" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Normes, traces et discriminants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Théorie algébrique des nombres">
+<meta property="book:author" content="Quentin Gazda">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a3de768070907914.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.da61f94af95570ff.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Sauter au contenu</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Théorie algébrique des nombres</span> <span class="subtitle">UM4MA234 - Sorbonne Université</span></a></h1>
+<p class="byline">Quentin Gazda</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Table des matières"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Table des matières</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Résultats de la recherche: </h2>
+<div id="searchempty" class="searchempty"><span>Aucun résultat.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-number-fields-2.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="up-button button" href="ch-number-fields.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Avant-propos</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="front-preface.html" class="internal"><span class="title">Préface</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-algebraic-numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Nombres algébriques et entiers algébriques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nombres algébriques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynome-minimal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Polynôme minimal d’un nombre algébrique</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Théorème de Cantor</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Nombres algébriques de degré deux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-number-fields.html" class="internal"><span class="codenumber">2</span> <span class="title">Corps de nombres</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-number-fields-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Structure des corps de nombres</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-normes-traces-et-discriminants.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Normes, traces et discriminants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="app-irreducibilite-polynome.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Démontrer l’irréductibilité d’un polynôme</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rappels-sur-les-anneaux.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Rappels sur les anneaux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-normes-traces-et-discriminants"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Normes, traces et discriminants</span>
+</h2>
+<div class="para logical" id="sec-normes-traces-et-discriminants-2">
+<div class="para">Soit <span class="process-math">\(K\)</span> un corps de nombres de degré <span class="process-math">\(n=[K:\mathbb{Q}]\text{.}\)</span> On rappelle que <span class="process-math">\(K\)</span> est en particulier un <span class="process-math">\(\mathbb{Q}\)</span>-espace vectoriel de dimension finie <span class="process-math">\(n=[K:\mathbb{Q}]\text{.}\)</span> Pour tout <span class="process-math">\(\alpha\in K\text{,}\)</span> la multiplication par <span class="process-math">\(\alpha\)</span> définit une application linéaire de <span class="process-math">\(K\)</span> dans lui-même:</div>
+<div class="displaymath process-math" id="sec-normes-traces-et-discriminants-2-9">
+\begin{equation*}
+m_{\alpha}: K\to K, \quad x\mapsto \alpha x.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-trace-et-norme"><h3 class="heading">
+<span class="type">Définition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="def-trace-et-norme-1-1">
+<div class="para">La <em class="emphasis">trace</em> de <span class="process-math">\(\alpha\)</span> est la trace de l’application linéaire <span class="process-math">\(m_{\alpha}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="def-trace-et-norme-1-1-4">
+\begin{equation*}
+\mathrm{Tr}_{K}(\alpha):=\mathrm{Tr}(m_{\alpha}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#def-trace-et-norme-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div> <div class="para logical" id="def-trace-et-norme-1-2">
+<div class="para">La <em class="emphasis">norme</em> de <span class="process-math">\(\alpha\)</span> est le déterminant de l’application linéaire <span class="process-math">\(m_{\alpha}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="def-trace-et-norme-1-2-4">
+\begin{equation*}
+\mathrm{N}_{K}(\alpha):=\mathrm{det}(m_{\alpha}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#def-trace-et-norme-1-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Définition 2.2.1"><a href="#def-trace-et-norme" title="Permalien Définition 2.2.1" aria-label="Permalien Définition 2.2.1">🔗</a></div></article><div class="para logical" id="sec-normes-traces-et-discriminants-4">
+<div class="para">Si <span class="process-math">\(\alpha,\beta\in K\text{,}\)</span> alors <span class="process-math">\(m_{\alpha+\beta}=m_{\alpha}+m_{\beta}\)</span> et <span class="process-math">\(m_{\alpha\beta}=m_{\alpha}\circ m_{\beta}\text{.}\)</span> De même, pour <span class="process-math">\(a\in \mathbb{Q}\text{,}\)</span> on a <span class="process-math">\(m_{a\alpha}=a\cdot m_{\alpha}\text{.}\)</span> Par linéarité de la trace et multiplicativité du déterminant, on en déduit les relations suivantes:</div>
+<div class="displaymath process-math" id="sec-normes-traces-et-discriminants-4-6">
+\begin{align*}
+\mathrm{Tr}_{K}(\alpha+\beta) \amp = \mathrm{Tr}_{K}(\alpha)+\mathrm{Tr}_{K}(\beta) \\
+\mathrm{N}_{K}(\alpha\beta) \amp = \mathrm{N}_{K}(\alpha)\mathrm{N}_{K}(\beta) \\
+\mathrm{Tr}_{K}(a\alpha) \amp = a\cdot \mathrm{Tr}_{K}(\alpha) \\
+\mathrm{N}_{K}(a\alpha) \amp = a^n\cdot \mathrm{N}_{K}(\alpha) 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-normes-traces-et-discriminants-5">On désigne par <span class="process-math">\(\chi_{\alpha}(X):=\mathrm{det}(X\cdot I_n-m_{\alpha})\)</span> le polynôme caractéristique de l’endomorphisme <span class="process-math">\(m_{\alpha}\text{.}\)</span> Sa relation au polynôme minimal de <span class="process-math">\(\alpha\)</span> est donnée par la proposition suivante.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-polynome-caracteristique-et-minimal"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-polynome-caracteristique-et-minimal-1-1">Si <span class="process-math">\(\alpha\in K\text{,}\)</span> alors <span class="process-math">\(\chi_{\alpha}(X)=\Pi_{\alpha}(X)^{r}\)</span> où <span class="process-math">\(r=[K:\mathbb{Q}(\alpha)]\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop-polynome-caracteristique-et-minimal-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.2.2"><a href="#prop-polynome-caracteristique-et-minimal" title="Permalien Proposition 2.2.2" aria-label="Permalien Proposition 2.2.2">🔗</a></div></article><details id="sec-normes-traces-et-discriminants-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-normes-traces-et-discriminants-7-1">Soit <span class="process-math">\(d\)</span> le degré de <span class="process-math">\(\alpha\text{.}\)</span> Alors <span class="process-math">\((1,\alpha,\ldots,\alpha^{d-1})\)</span> est une base de <span class="process-math">\(\mathbb{Q}(\alpha)\)</span> sur <span class="process-math">\(\mathbb{Q}\text{.}\)</span> Si <span class="process-math">\((e_1,\ldots,e_r)\)</span> désigne une base de <span class="process-math">\(K\)</span> sur <span class="process-math">\(\mathbb{Q}(\alpha)\text{,}\)</span> alors <span class="process-math">\((e_i\alpha^j)_{1\leq i\leq r,0\leq j\leq d-1}\)</span> est une base de <span class="process-math">\(K\)</span> sur <span class="process-math">\(\mathbb{Q}\text{.}\)</span> Dans cette base, la matrice de <span class="process-math">\(m_{\alpha}\)</span> est une matrice par blocs diagonale avec <span class="process-math">\(r\)</span> blocs égaux à la matrice compagnon de <span class="process-math">\(\Pi_{\alpha}(X)\text{.}\)</span> Le polynôme caractéristique de <span class="process-math">\(m_{\alpha}\)</span> est donc <span class="process-math">\(\Pi_{\alpha}(X)^{r}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-7-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 2.2.1"><a href="#sec-normes-traces-et-discriminants-7" title="Permalien Démonstration 2.2.1" aria-label="Permalien Démonstration 2.2.1">🔗</a></div></article></details><article class="proposition theorem-like" id="prop-formule-traces-normes"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="prop-formule-traces-normes-1-1">
+<div class="para">Soit <span class="process-math">\(\alpha\in K\text{.}\)</span> Soit <span class="process-math">\(\Sigma(K)\)</span> l’ensemble des plongements de <span class="process-math">\(K\)</span> dans <span class="process-math">\(\mathbb{C}\text{.}\)</span> Alors</div>
+<ol class="decimal" id="prop-formule-traces-normes-1-1-5">
+<li id="prop-formule-traces-normes-1-1-5-1">
+<div class="para" id="p-derived-prop-formule-traces-normes-1-1-5-1"><span class="process-math">\(\displaystyle \mathrm{Tr}_{K/\mathbb{Q}}(\alpha)=\sum_{\sigma\in \Sigma(K)}{\sigma(\alpha)}\)</span></div>
+<div class="autopermalink" data-description="Assertion 1"><a href="#prop-formule-traces-normes-1-1-5-1" title="Permalien Assertion 1" aria-label="Permalien Assertion 1">🔗</a></div>
+</li>
+<li id="prop-formule-traces-normes-1-1-5-2">
+<div class="para" id="p-derived-prop-formule-traces-normes-1-1-5-2"><span class="process-math">\(\displaystyle \mathrm{N}_{K/\mathbb{Q}}(\alpha)=\prod_{\sigma\in \Sigma(K)}{\sigma_i(\alpha)}\)</span></div>
+<div class="autopermalink" data-description="Assertion 2"><a href="#prop-formule-traces-normes-1-1-5-2" title="Permalien Assertion 2" aria-label="Permalien Assertion 2">🔗</a></div>
+</li>
+<li id="prop-formule-traces-normes-1-1-5-3">
+<div class="para" id="p-derived-prop-formule-traces-normes-1-1-5-3"><span class="process-math">\(\displaystyle \chi_{\alpha}(X)=\prod_{\sigma\in \Sigma(K)}{(X-\sigma(\alpha))}\)</span></div>
+<div class="autopermalink" data-description="Assertion 3"><a href="#prop-formule-traces-normes-1-1-5-3" title="Permalien Assertion 3" aria-label="Permalien Assertion 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraphe"><a href="#prop-formule-traces-normes-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.2.3"><a href="#prop-formule-traces-normes" title="Permalien Proposition 2.2.3" aria-label="Permalien Proposition 2.2.3">🔗</a></div></article><details id="sec-normes-traces-et-discriminants-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-normes-traces-et-discriminants-9-1">
+<div class="para">Les assertions (1) et (2) découlent de l’assertion (3) en utilisant le fait que la trace est la somme des valeurs propres et que le déterminant est le produit des valeurs propres. On démarre par la formule</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-nombre-de-morphismes-de-corps.html ./knowl/xref/prop-polynome-caracteristique-et-minimal.html" id="sec-normes-traces-et-discriminants-9-1-1">
+\begin{equation*}
+\chi_{\alpha}(X)=\prod_{\sigma\in \Sigma(\mathbb{Q}(\alpha))}{(X-\sigma(\alpha))}
+\end{equation*}
+</div>
+<div class="para">Étant donné <span class="process-math">\(\sigma\in \Sigma(\mathbb{Q}(\alpha))\text{,}\)</span> on peut le prolonger en exactement <span class="process-math">\([K:\mathbb{Q}(\alpha)]\)</span> plongements distincts de <span class="process-math">\(K\)</span> dans <span class="process-math">\(\mathbb{C}\)</span> d’après la <a href="ch-number-fields-2.html#prop-nombre-de-morphismes-de-corps" class="xref" data-knowl="./knowl/xref/prop-nombre-de-morphismes-de-corps.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 2.1.8">Proposition 2.1.8</a>. Ainsi, chaque facteur <span class="process-math">\((X-\sigma(\alpha))\)</span> apparaît exactement <span class="process-math">\([K:\mathbb{Q}(\alpha)]\)</span> fois dans le produit, et on trouve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-nombre-de-morphismes-de-corps.html ./knowl/xref/prop-polynome-caracteristique-et-minimal.html" id="sec-normes-traces-et-discriminants-9-1-9">
+\begin{equation*}
+\chi_{\alpha}(X)=\Pi_{\alpha}(X)^{[K:\mathbb{Q}(\alpha)]}=\prod_{\sigma\in \Sigma(K)}{(X-\sigma(\alpha))}
+\end{equation*}
+</div>
+<div class="para">où la première égalité provient de la <a href="sec-normes-traces-et-discriminants.html#prop-polynome-caracteristique-et-minimal" class="xref" data-knowl="./knowl/xref/prop-polynome-caracteristique-et-minimal.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 2.2.2">Proposition 2.2.2</a>.</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-9-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 2.2.2"><a href="#sec-normes-traces-et-discriminants-9" title="Permalien Démonstration 2.2.2" aria-label="Permalien Démonstration 2.2.2">🔗</a></div></article></details><article class="proposition theorem-like" id="prop-trace-et-norme-en-fonction-des-plongements"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-trace-et-norme-en-fonction-des-plongements-1-1">Soit <span class="process-math">\(K\)</span> un corps de nombres de degré <span class="process-math">\(n\)</span> avec comme plongements <span class="process-math">\(\mathrm{Hom}(K,\mathbb{C})=\{\sigma_1,\ldots,\sigma_n\}\text{.}\)</span> Alors l’application <span class="process-math">\(m_{\alpha}\)</span> est diagonalisable et ses valeurs propres sont les <span class="process-math">\(\sigma_i(\alpha)\)</span> pour <span class="process-math">\(i=1,\ldots,n\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop-trace-et-norme-en-fonction-des-plongements-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.2.4"><a href="#prop-trace-et-norme-en-fonction-des-plongements" title="Permalien Proposition 2.2.4" aria-label="Permalien Proposition 2.2.4">🔗</a></div></article><details id="sec-normes-traces-et-discriminants-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-normes-traces-et-discriminants-11-1">Soit <span class="process-math">\(\theta\in K\)</span> un élément primitif: cela signifie que <span class="process-math">\(K=\mathbb{Q}(\theta)\text{.}\)</span> Le polynôme minimal de l’endomorphisme <span class="process-math">\(m_{\theta}\)</span> est <span class="process-math">\(\prod_{i=1}^n{(X-\sigma_i(\theta))}\)</span> et comme ses racines sont simples <span class="process-math">\(m_{\theta}\)</span> est diagonalisable avec pour valeurs propres les <span class="process-math">\(\sigma_i(\theta)\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-11-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-normes-traces-et-discriminants-11-2">Plus généralement, pour <span class="process-math">\(\alpha\in K\)</span> on peut trouver un polynôme <span class="process-math">\(P(X)\in \mathbb{Q}[X]\)</span> tel que <span class="process-math">\(\alpha=P(\theta)\text{.}\)</span> Par construction, on a <span class="process-math">\(m_{\alpha}=P(m_{\theta})\)</span> et donc <span class="process-math">\(m_{\alpha}\)</span> est diagonalisable de valeurs propres les <span class="process-math">\(P(\sigma_i(\theta))=\sigma_i(P(\theta))=\sigma_i(\alpha)\)</span> pour <span class="process-math">\(i=1,\ldots,n\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-11-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 2.2.3"><a href="#sec-normes-traces-et-discriminants-11" title="Permalien Démonstration 2.2.3" aria-label="Permalien Démonstration 2.2.3">🔗</a></div></article></details><article class="corollary theorem-like" id="cor-formule-trace-et-norme-en-fonction-des-plongements"><h3 class="heading">
+<span class="type">Corollaire</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="displaymath process-math" id="cor-formule-trace-et-norme-en-fonction-des-plongements-1-1">
+\begin{equation*}
+\mathrm{Tr}_{K/\mathbb{Q}}(\alpha)=\sum_{i=1}^n{\sigma_i(\alpha)} \quad \text{et} \quad \mathrm{N}_{K/\mathbb{Q}}(\alpha)=\prod_{i=1}^n{\sigma_i(\alpha)}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Corollaire 2.2.5"><a href="#cor-formule-trace-et-norme-en-fonction-des-plongements" title="Permalien Corollaire 2.2.5" aria-label="Permalien Corollaire 2.2.5">🔗</a></div></article><article class="proposition theorem-like" id="prop-trace-et-norme-entiers-algebriques"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-trace-et-norme-entiers-algebriques-1-1">Soit <span class="process-math">\(\alpha\in K\)</span> un entier algébrique. Alors <span class="process-math">\(\mathrm{Tr}_{K/\mathbb{Q}}(\alpha)\)</span> et <span class="process-math">\(\mathrm{N}_{K/\mathbb{Q}}(\alpha)\)</span> sont des entiers.<div class="autopermalink" data-description="Paragraphe"><a href="#prop-trace-et-norme-entiers-algebriques-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.2.6"><a href="#prop-trace-et-norme-entiers-algebriques" title="Permalien Proposition 2.2.6" aria-label="Permalien Proposition 2.2.6">🔗</a></div></article><details id="sec-normes-traces-et-discriminants-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Démonstration du Lemme 2.2.7.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-normes-traces-et-discriminants-14-1">On commence par démontrer un lemme, utile en soi.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-14-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-polynome-minimal-et-plongements"><h3 class="heading">
+<span class="type">Lemme</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynôme minimal et plongements.</span>
+</h3>
+<div class="para logical" id="lem-polynome-minimal-et-plongements-2-1">
+<div class="para">Soit <span class="process-math">\(K\)</span> un corps de nombres de degré <span class="process-math">\(n\)</span> avec comme plongements <span class="process-math">\(\mathrm{Hom}(K,\mathbb{C})=\{\sigma_1,\ldots,\sigma_n\}\text{.}\)</span> Soit <span class="process-math">\(\alpha\in K\)</span> un élément de <span class="process-math">\(K\)</span> de degré <span class="process-math">\(d\)</span> et soit <span class="process-math">\(\Pi_{\alpha}(X)\)</span> son polynôme minimal sur <span class="process-math">\(K\text{.}\)</span> Alors</div>
+<div class="displaymath process-math" id="lem-polynome-minimal-et-plongements-2-1-9">
+\begin{equation*}
+\Pi_{\alpha}(X)^{n/d}=\prod_{i=1}^n{(X-\sigma_i(\alpha))}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#lem-polynome-minimal-et-plongements-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemme 2.2.7: Polynôme minimal et plongements"><a href="#lem-polynome-minimal-et-plongements" title="Permalien Lemme 2.2.7: Polynôme minimal et plongements" aria-label="Permalien Lemme 2.2.7: Polynôme minimal et plongements">🔗</a></div></article><details id="sec-normes-traces-et-discriminants-14-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-normes-traces-et-discriminants-14-4-1">
+<div class="para">On prétend que, dans la suite <span class="process-math">\((\sigma_i(\alpha))_{1\leq i\leq n}\text{,}\)</span> chaque racine de <span class="process-math">\(\Pi_{\alpha}(X)\)</span> apparaît exactement <span class="process-math">\(n/d\)</span> fois. En effet, chaque racine <span class="process-math">\(\beta\)</span> de <span class="process-math">\(\Pi_{\alpha}(X)\)</span> fournit un plongement</div>
+<div class="displaymath process-math" id="sec-normes-traces-et-discriminants-14-4-1-6">
+\begin{align*}
+\mathbb{Q}(\alpha) \amp \to \mathbb{C}\\
+\alpha \amp \mapsto \beta
+\end{align*}
+</div>
+<div class="para">qui se prolonge en <span class="process-math">\([K:\mathbb{Q}(\alpha)]=\frac{n}{d}\)</span> plongements de <span class="process-math">\(K\)</span> dans <span class="process-math">\(\mathbb{C}\text{.}\)</span> On a donc</div>
+<div class="displaymath process-math" id="sec-normes-traces-et-discriminants-14-4-1-10">
+\begin{equation*}
+\prod_{i=1}^n{(X-\sigma_i(\alpha))}=\prod_{j=1}^d{(X-\beta_j)}^{n/d}=\Pi_{\alpha}(X)^{n/d}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-14-4-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 2.2.4.1"><a href="#sec-normes-traces-et-discriminants-14-4" title="Permalien Démonstration 2.2.4.1" aria-label="Permalien Démonstration 2.2.4.1">🔗</a></div></article></details><div class="para logical" id="sec-normes-traces-et-discriminants-14-5">
+<div class="para">Le polynôme caractéristique de l’endomorphisme <span class="process-math">\(m_{\alpha}\)</span> est donc <span class="process-math">\(\Pi_{\alpha}(X)^{n/d}\)</span> d’après le <a href="sec-normes-traces-et-discriminants.html#lem-polynome-minimal-et-plongements" class="xref" data-knowl="./knowl/xref/lem-polynome-minimal-et-plongements.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Lemme 2.2.7: Polynôme minimal et plongements">Lemme 2.2.7</a>, avec <span class="process-math">\(d\)</span> le degré de <span class="process-math">\(\alpha\text{.}\)</span> D’après le critère d’intégralité, <a href="sec-polynome-minimal.html#prop-polynome-minimal" class="xref" data-knowl="./knowl/xref/prop-polynome-minimal.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 1.2.3: Critère d’intégralité">Proposition 1.2.3</a>, les coefficients de <span class="process-math">\(\Pi_{\alpha}(X)\)</span> sont des entiers. En écrivant <span class="process-math">\(\Pi_{\alpha}(X)=X^d+a_{d-1}X^{d-1}+\ldots +a_0\)</span> avec <span class="process-math">\(a_i\in \mathbb{Z}\text{,}\)</span> on obtient</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-polynome-minimal-et-plongements.html ./knowl/xref/prop-polynome-minimal.html" id="sec-normes-traces-et-discriminants-14-5-10">
+\begin{equation*}
+\mathrm{Tr}_K(\alpha)=-\frac{n}{d}a_{d-1} \quad \text{et} \quad \mathrm{N}_K(\alpha)=a_0^{n/d}.
+\end{equation*}
+</div>
+<div class="para">Ce sont donc des entiers.</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-normes-traces-et-discriminants-14-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 2.2.4: Démonstration du Lemme 2.2.7"><a href="#sec-normes-traces-et-discriminants-14" title="Permalien Démonstration 2.2.4: Démonstration du Lemme 2.2.7" aria-label="Permalien Démonstration 2.2.4: Démonstration du Lemme 2.2.7">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.2: Normes, traces et discriminants"><a href="#sec-normes-traces-et-discriminants" title="Permalien Section 2.2: Normes, traces et discriminants" aria-label="Permalien Section 2.2: Normes, traces et discriminants">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-number-fields-2.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

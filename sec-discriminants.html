@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-FR" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Discriminants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Théorie algébrique des nombres">
+<meta property="book:author" content="Quentin Gazda">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Sauter au contenu</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Théorie algébrique des nombres</span> <span class="subtitle">UM4MA234 - Sorbonne Université</span></a></h1>
+<p class="byline">Quentin Gazda</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Table des matières"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Table des matières</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Résultats de la recherche: </h2>
+<div id="searchempty" class="searchempty"><span>Aucun résultat.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-normes-traces.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="up-button button" href="ch-number-fields.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="ch-integer-rings.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Avant-propos</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="front-preface.html" class="internal"><span class="title">Préface</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-algebraic-numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Nombres algébriques et entiers algébriques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nombres algébriques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynome-minimal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Polynôme minimal d’un nombre algébrique</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Théorème de Cantor</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Nombres algébriques de degré deux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-number-fields.html" class="internal"><span class="codenumber">2</span> <span class="title">Corps de nombres</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-number-fields-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Structure des corps de nombres</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-normes-traces.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Traces et Normes</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-discriminants.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Discriminants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-integer-rings.html" class="internal"><span class="codenumber">3</span> <span class="title">Anneaux d’entiers</span></a></div></li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="app-irreducibilite-polynome.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Démontrer l’irréductibilité d’un polynôme</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rappels-sur-les-anneaux.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Rappels sur les anneaux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-discriminants"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discriminants</span>
+</h2>
+<div class="para logical" id="sec-discriminants-2">
+<div class="para">Soit <span class="process-math">\(P(X)\in \mathbb{C}[X]\)</span> un polynôme unitaire qui se factorise en <span class="process-math">\(P(X)=\prod_{i=1}^n (X-\alpha_i)\text{.}\)</span> On rappelle que son discriminant est défini par la quantité :</div>
+<div class="displaymath process-math" id="sec-discriminants-2-3">
+\begin{equation*}
+\mathrm{disc}(P):=\prod_{1\leq i&lt;j\leq n} (\alpha_i-\alpha_j)^2.
+\end{equation*}
+</div>
+<div class="para">La mise au carré garantit que <span class="process-math">\(\mathrm{disc}(P)\)</span> est invariante par permutation des racines. On remarque aussi que <span class="process-math">\(\mathrm{disc}(P)=0\)</span> si, et seulement si, <span class="process-math">\(P(X)\)</span> possède une racine multiple.</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<details id="sec-discriminants-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exemple</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exemples de discriminants de polynômes.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-discriminants-3-2">Le discriminant d’un polynôme <span class="process-math">\(P(X)\)</span> est lui-même un polynôme symétrique en les coefficients du polynôme <span class="process-math">\(P(X)\text{.}\)</span> Si la formule explicite reste raisonnable pour les polynômes de degré inférieur ou égal à <span class="process-math">\(3\text{,}\)</span> elle devient rapidement compliquée lorsque le degré augmente. Voici quelques exemples:<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-3-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<ul class="disc" id="sec-discriminants-3-3">
+<li id="sec-discriminants-3-3-1">
+<div class="para" id="sec-discriminants-3-3-1-1">Si <span class="process-math">\(P(X)=X-a\text{,}\)</span> alors <span class="process-math">\(\mathrm{disc}(P)=1\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-3-3-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#sec-discriminants-3-3-1" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="sec-discriminants-3-3-2">
+<div class="para" id="sec-discriminants-3-3-2-1">Si <span class="process-math">\(P(X)=X^2+bX+c\text{,}\)</span> alors <span class="process-math">\(\mathrm{disc}(P)=b^2-4c\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-3-3-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#sec-discriminants-3-3-2" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="sec-discriminants-3-3-3">
+<div class="para" id="sec-discriminants-3-3-3-1">Si <span class="process-math">\(P(X)=X^3+bX^2+cX+d\text{,}\)</span> alors <span class="process-math">\(\mathrm{disc}(P)=b^2c^2-4c^3-4b^3d-27d^2+18bcd\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-3-3-3-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#sec-discriminants-3-3-3" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="sec-discriminants-3-3-4">
+<div class="para logical" id="sec-discriminants-3-3-4-1">
+<div class="para">Si <span class="process-math">\(P(X)=X^n+aX+b\text{,}\)</span> alors</div>
+<div class="displaymath process-math" id="sec-discriminants-3-3-4-1-2">
+\begin{equation*}
+\mathrm{disc}(P)=(-1)^{\frac{n(n-1)}{2}}\left(n^n b^{n-1}+(-1)^n(n-1)^{n-1}a^n\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-3-3-4-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#sec-discriminants-3-3-4" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Exemple 2.3.1: Exemples de discriminants de polynômes"><a href="#sec-discriminants-3" title="Permalien Exemple 2.3.1: Exemples de discriminants de polynômes" aria-label="Permalien Exemple 2.3.1: Exemples de discriminants de polynômes">🔗</a></div></article></details><div class="para" id="sec-discriminants-4">Dans cette section, on introduit le discriminant d’une famille de nombres algébriques et on montre qu’il coincide au discriminant d’un polynôme dans certaines situations.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para logical" id="sec-discriminants-5">
+<div class="para">Soit <span class="process-math">\(K\)</span> un corps de nombres. Dans la section précédente, on a défini la trace d’un élément de <span class="process-math">\(K\text{.}\)</span> On considère ici l’application bilinéaire symétrique</div>
+<div class="displaymath process-math" id="sec-discriminants-5-3">
+\begin{equation*}
+\mathrm{Tr}_{K}: K\times K \to \mathbb{Q}, \quad (\alpha,\beta)\mapsto \mathrm{Tr}_{K}(\alpha\beta).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="remark remark-like" id="rem-trace-non-degeneree"><h3 class="heading">
+<span class="type">Remarque</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="rem-trace-non-degeneree-1">C’est une forme bilinéaire non dégénérée. En effet, pour tout <span class="process-math">\(\alpha\in K\)</span> il existe <span class="process-math">\(\beta\in K\)</span> tel que <span class="process-math">\(\mathrm{Tr}_{K}(\alpha\beta)=1\)</span> (comme <span class="process-math">\(\mathrm{Tr}_{K}(1)=[K:\mathbb{Q}]\text{,}\)</span> il suffit de prendre <span class="process-math">\(\beta=[K:\mathbb{Q}]^{-1}\alpha^{-1}\)</span>).<div class="autopermalink" data-description="Paragraphe"><a href="#rem-trace-non-degeneree-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remarque 2.3.2"><a href="#rem-trace-non-degeneree" title="Permalien Remarque 2.3.2" aria-label="Permalien Remarque 2.3.2">🔗</a></div></article><article class="definition definition-like" id="def-discriminant-d-une-famille"><h3 class="heading">
+<span class="type">Définition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discriminant d’une famille.</span>
+</h3>
+<div class="para logical" id="def-discriminant-d-une-famille-2-1">
+<div class="para">Soit <span class="process-math">\((e_1,\ldots,e_n)\)</span> une famille d’éléments de <span class="process-math">\(K\text{.}\)</span> Le discriminant de cette famille est défini par</div>
+<div class="displaymath process-math" id="def-discriminant-d-une-famille-2-1-3">
+\begin{equation*}
+\mathrm{disc}_K(e_1,\ldots,e_n):=\det(\mathrm{Tr}_{K}(e_ie_j))_{1\leq i,j\leq n} \in \mathbb{Q}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#def-discriminant-d-une-famille-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Définition 2.3.3: Discriminant d’une famille"><a href="#def-discriminant-d-une-famille" title="Permalien Définition 2.3.3: Discriminant d’une famille" aria-label="Permalien Définition 2.3.3: Discriminant d’une famille">🔗</a></div></article><div class="para logical" id="sec-discriminants-8">
+<div class="para">Sa relation à la forme bilinéaire <span class="process-math">\(\mathrm{Tr}_K\)</span> est la suivante: si <span class="process-math">\(x_1,\ldots,x_n\in \mathbb{Q}\)</span> et si <span class="process-math">\(x\in K\)</span> désigne l’élément <span class="process-math">\(x=x_1e_1+\cdots +x_ne_n\text{,}\)</span> alors on a</div>
+<div class="displaymath process-math" id="eq-discriminant-system">
+\begin{equation}
+\mathrm{Tr}_{K}(e_ie_j)\begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}=\begin{pmatrix} \mathrm{Tr}_{K}(xe_1) \\ \vdots \\ \mathrm{Tr}_{K}(xe_n) \end{pmatrix}.\tag{2.3.1}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-8" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-discriminants"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-discriminants-1-1">Soit <span class="process-math">\((e_1,\ldots,e_n)\)</span> une famille d’éléments de <span class="process-math">\(K\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop-discriminants-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div> <ol class="lower-roman ol-marker-1" id="prop-discriminants-1-2">
+<li id="item-discriminant-libre">
+<div class="para" id="item-discriminant-libre-1">
+<span class="process-math">\(\mathrm{disc}_K(e_1,\ldots,e_n)\neq 0\)</span> si, et seulement si <span class="process-math">\((e_1,\ldots,e_n)\)</span> est une base de <span class="process-math">\(K\)</span> sur <span class="process-math">\(\mathbb{Q}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#item-discriminant-libre-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion i"><a href="#item-discriminant-libre" title="Permalien Assertion i" aria-label="Permalien Assertion i">🔗</a></div>
+</li>
+<li id="item-discriminant-changement-base">
+<div class="para logical" id="item-discriminant-changement-base-1">
+<div class="para">Soit <span class="process-math">\(P\)</span> une matrice de taille <span class="process-math">\(n\)</span> à coefficients rationnels et soit <span class="process-math">\((f_1,\ldots,f_n)\)</span> la famille <span class="process-math">\(P\cdot (e_1,\ldots,e_n)\text{.}\)</span> Alors</div>
+<div class="displaymath process-math" id="item-discriminant-changement-base-1-5">
+\begin{equation*}
+\mathrm{disc}_K(f_1,\ldots,f_n)=\mathrm{det}(P)^2\mathrm{disc}_K(e_1,\ldots,e_n)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#item-discriminant-changement-base-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion ii"><a href="#item-discriminant-changement-base" title="Permalien Assertion ii" aria-label="Permalien Assertion ii">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Proposition 2.3.4"><a href="#prop-discriminants" title="Permalien Proposition 2.3.4" aria-label="Permalien Proposition 2.3.4">🔗</a></div></article><details id="sec-discriminants-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-discriminants-10-1">Vérifions l’<a href="sec-discriminants.html#item-discriminant-libre" class="xref" data-knowl="./knowl/xref/item-discriminant-libre.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion i">Assertion i</a>. Si la famille <span class="process-math">\((e_1,\ldots,e_n)\)</span> est liée sur <span class="process-math">\(\mathbb{Q}\text{,}\)</span> alors il existe des <span class="process-math">\(x_i\in \mathbb{Q}\)</span> non tous nuls tels que <span class="process-math">\(x:=\sum_i{x_ie_i}=0\text{.}\)</span> La relation <a href="sec-discriminants.html#eq-discriminant-system" class="xref" data-knowl="./knowl/xref/eq-discriminant-system.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 2.3.1">(2.3.1)</a> appliquée à <span class="process-math">\(x\)</span> montre que la matrice <span class="process-math">\(T:=(\mathrm{Tr}(e_ie_j))_{i,j}\)</span> a un noyau non trivial et que donc son déterminant, <span class="process-math">\(\mathrm{disc}_K(e_1,\ldots,e_n)\text{,}\)</span> est nul.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-10-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-discriminants-10-2">Réciproquement, si <span class="process-math">\(\mathrm{disc}_K(e_1,\ldots,e_n)=0\text{,}\)</span> alors il existe un vecteur non nul <span class="process-math">\({}^{\mathsf{t}}(x_1,\ldots,x_n)\)</span> dans le noyau de <span class="process-math">\(T\text{.}\)</span> Soit <span class="process-math">\(x:=\sum_i{x_ie_i}\text{.}\)</span> La relation <a href="sec-discriminants.html#eq-discriminant-system" class="xref" data-knowl="./knowl/xref/eq-discriminant-system.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 2.3.1">(2.3.1)</a> assure que <span class="process-math">\(\mathrm{Tr}_K(xe_i)=0\)</span> pour tout <span class="process-math">\(i\in \{1,\ldots,n\}\text{.}\)</span> Par la non dégénérescence de la forme bilinéaire <span class="process-math">\(\mathrm{Tr}_K\)</span> (<a href="sec-discriminants.html#rem-trace-non-degeneree" class="xref" data-knowl="./knowl/xref/rem-trace-non-degeneree.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Remarque 2.3.2">Remarque 2.3.2</a>), l’application <span class="process-math">\(y\mapsto \mathrm{Tr}_K(xy)\)</span> est non nulle et donc la famille <span class="process-math">\((e_1,\ldots,e_n)\)</span> n’est pas une base.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-10-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para logical" id="sec-discriminants-10-3">
+<div class="para">L’<a href="sec-discriminants.html#item-discriminant-changement-base" class="xref" data-knowl="./knowl/xref/item-discriminant-changement-base.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion ii">Assertion ii</a> suit d’une propriété générale des formes bilinéaires. Pour tout <span class="process-math">\(x_i,y_j\in \mathbb{Q}\text{,}\)</span> on a</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-discriminant-changement-base.html" id="sec-discriminants-10-3-3">
+\begin{equation*}
+\mathrm{Tr}_K\left(\left(\sum_{i=1}^n{x_i e_i}\right)\left(\sum_{j=1}^n{y_j e_j}\right)\right)=(x_1,\ldots,x_n)\cdot T\cdot {}^{\mathsf{t}}(y_1,\ldots,y_n).
+\end{equation*}
+</div>
+<div class="para">Dans la situation de l’énoncé, on a donc <span class="process-math">\((\mathrm{Tr}_K(f_if_j))_{i,j}={}^{\mathsf{t}}P T P\text{,}\)</span> d’où la formule en prenant les déterminants.</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-10-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 2.3.1"><a href="#sec-discriminants-10" title="Permalien Démonstration 2.3.1" aria-label="Permalien Démonstration 2.3.1">🔗</a></div></article></details><article class="proposition theorem-like" id="prop-discriminant-conjugues"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discriminant et conjugués.</span>
+</h3>
+<div class="para logical" id="prop-discriminant-conjugues-2-1">
+<div class="para">Soit <span class="process-math">\((e_1,\ldots,e_n)\)</span> une famille de <span class="process-math">\(K\text{.}\)</span> Si <span class="process-math">\(\Sigma(K)=\{\sigma_1,\ldots,\sigma_n\}\)</span> désigne l’ensemble des plongements complexes de <span class="process-math">\(K\text{,}\)</span> alors</div>
+<div class="displaymath process-math" id="prop-discriminant-conjugues-2-1-5">
+\begin{equation*}
+\mathrm{disc}_K(e_1,\ldots,e_n)=\mathrm{det}((\sigma_i(e_j))_{i,j})^2.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#prop-discriminant-conjugues-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.3.5: Discriminant et conjugués"><a href="#prop-discriminant-conjugues" title="Permalien Proposition 2.3.5: Discriminant et conjugués" aria-label="Permalien Proposition 2.3.5: Discriminant et conjugués">🔗</a></div></article><details id="sec-discriminants-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-discriminants-12-1">
+<div class="para">Il suffit d’invoquer la formule <span class="process-math">\(\mathrm{Tr}_K(x)=\sum_{i=1}^n{\sigma_i(x)}\)</span> (<a href="sec-normes-traces.html#prop-formule-traces-normes" class="xref" data-knowl="./knowl/xref/prop-formule-traces-normes.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 2.2.4">Proposition 2.2.4</a>). On constate alors que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-formule-traces-normes.html" id="sec-discriminants-12-1-3">
+\begin{equation*}
+(\mathrm{Tr}_K(e_ie_j))_{i,j}={}^{\mathsf{t}}(\sigma_i(e_j))_{i,j}\cdot (\sigma_i(e_j))_{i,j}
+\end{equation*}
+</div>
+<div class="para">et on obtient la formule énoncée en prenant les déterminants.</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-12-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 2.3.2"><a href="#sec-discriminants-12" title="Permalien Démonstration 2.3.2" aria-label="Permalien Démonstration 2.3.2">🔗</a></div></article></details><div class="para" id="sec-discriminants-13">On peut enfin relier le discriminant de certaines familles de <span class="process-math">\(K\)</span> à la notion initiale de discriminant d’un polynôme.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-13" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-discriminant-plongements"><h3 class="heading">
+<span class="type">Corollaire</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="cor-discriminant-plongements-1-1">
+<div class="para">Soit <span class="process-math">\(\alpha\)</span> un nombre algébrique et <span class="process-math">\(K=\mathbb{Q}(\alpha)\text{.}\)</span> Si <span class="process-math">\(\{\alpha_1,\ldots,\alpha_n\}\)</span> désigne l’ensemble des conjugués de <span class="process-math">\(\alpha\text{,}\)</span> alors</div>
+<div class="displaymath process-math" id="cor-discriminant-plongements-1-1-5">
+\begin{equation*}
+\mathrm{disc}_K(1,\alpha,\ldots,\alpha^{n-1})=\prod_{i &lt; j}{(\alpha_i-\alpha_j)}^2=(-1)^{\frac{n(n-1)}{2}} N_{K}(\Pi_{\alpha}'(\alpha)).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#cor-discriminant-plongements-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div> <div class="para" id="cor-discriminant-plongements-1-2">En particulier, <span class="process-math">\(\mathrm{disc}_K(1,\alpha,\ldots,\alpha^{n-1})=\mathrm{disc}(\Pi_{\alpha}(X))\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#cor-discriminant-plongements-1-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollaire 2.3.6"><a href="#cor-discriminant-plongements" title="Permalien Corollaire 2.3.6" aria-label="Permalien Corollaire 2.3.6">🔗</a></div></article><details id="sec-discriminants-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-discriminants-15-1">
+<div class="para">Soit <span class="process-math">\(\Sigma(K)=\{\sigma_1,\ldots,\sigma_n\}\)</span> l’ensemble des plongements complexes de <span class="process-math">\(K\)</span> numérotés de sorte que <span class="process-math">\(\sigma_i(\alpha)=\alpha_i\)</span> (<em class="emphasis">cf.</em> <a href="ch-number-fields-2.html#prop-corps-engendres-par-nombre-algebrique" class="xref" data-knowl="./knowl/xref/prop-corps-engendres-par-nombre-algebrique.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 2.1.6">Proposition 2.1.6</a>). La formule de la <a href="sec-discriminants.html#prop-discriminant-conjugues" class="xref" data-knowl="./knowl/xref/prop-discriminant-conjugues.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 2.3.5: Discriminant et conjugués">Proposition 2.3.5</a> appliquée dans cette situation donne</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-corps-engendres-par-nombre-algebrique.html ./knowl/xref/prop-discriminant-conjugues.html" id="sec-discriminants-15-1-7">
+\begin{equation*}
+\mathrm{disc}_K(1,\alpha,\ldots,\alpha^{n-1})=\mathrm{det} \begin{pmatrix} 1 &amp; \alpha_1 &amp; \cdots &amp; \alpha_1^{n-1} \\ 1 &amp; \alpha_2 &amp; \cdots &amp; \alpha_2^{n-1} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; \alpha_n &amp; \cdots &amp; \alpha_n^{n-1} \end{pmatrix}^2.
+\end{equation*}
+</div>
+<div class="para">On reconnaît un déterminant de Vandermonde, d’où la première identité.</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-15-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para logical" id="sec-discriminants-15-2">
+<div class="para">Le polynôme minimal de <span class="process-math">\(\alpha\)</span> se factorise comme <span class="process-math">\(\Pi_{\alpha}(X)=\prod_{j=1}^n{(X-\alpha_j)}\text{.}\)</span> Pour sa dérivée, la formule de Leibniz donne</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-formule-traces-normes.html" id="sec-discriminants-15-2-3">
+\begin{equation*}
+\Pi_{\alpha}'(X)=\sum_{i=1}^n{\prod_{\substack{j=1\\ j\neq i}}^n{(X-\alpha_j)}}.
+\end{equation*}
+</div>
+<div class="para">On en déduit : <span class="process-math">\(\Pi_{\alpha}'(\alpha_i)=\prod_{\substack{j=1\\ j\neq i}}^n{(\alpha_i-\alpha_j)}\text{.}\)</span> Pour terminer, on fait appel à la <a href="sec-normes-traces.html#prop-formule-traces-normes" class="xref" data-knowl="./knowl/xref/prop-formule-traces-normes.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 2.2.4">Proposition 2.2.4</a> :</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-formule-traces-normes.html" id="sec-discriminants-15-2-6">
+\begin{equation*}
+N_K(\Pi_{\alpha}'(\alpha))=\prod_{i=1}^n{\Pi_{\alpha}'(\alpha_i)}=\prod_{i=1}^n{\prod_{\substack{j=1\\ j\neq i}}^n{(\alpha_i-\alpha_j)}}=\prod_{i\neq j}{(\alpha_i-\alpha_j)}.
+\end{equation*}
+</div>
+<div class="para">Pour retrouver la formule de l’énoncé, il suffit de partitionner l’ensemble <span class="process-math">\(\{(i,j)~|~i\neq j\}\)</span> à <span class="process-math">\(n^2-n\)</span> éléments en l’union disjointe des deux ensembles <span class="process-math">\(\{(i,j)~|~i &lt; j\}\sqcup \{(i,j)~|~i &gt; j\}\text{,}\)</span> chacun possédant <span class="process-math">\(\frac{n(n-1)}{2}\)</span> éléments.</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminants-15-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 2.3.3"><a href="#sec-discriminants-15" title="Permalien Démonstration 2.3.3" aria-label="Permalien Démonstration 2.3.3">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.3: Discriminants"><a href="#sec-discriminants" title="Permalien Section 2.3: Discriminants" aria-label="Permalien Section 2.3: Discriminants">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-normes-traces.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-integer-rings.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

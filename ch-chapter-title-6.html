@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-FR" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Nombres algébriques de degré 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Théorie algébrique des nombres">
+<meta property="book:author" content="Quentin Gazda">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.886636c6424f998d.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f71e3729636f8aa8.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Sauter au contenu</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Théorie algébrique des nombres</span> <span class="subtitle">UM4MA234 - Sorbonne Université</span></a></h1>
+<p class="byline">Quentin Gazda</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Table des matières"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Table des matières</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Résultats de la recherche: </h2>
+<div id="searchempty" class="searchempty"><span>Aucun résultat.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-chapter-title-5.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="up-button button" href="ch-chapter-title.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Avant-propos</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="front-preface.html" class="internal"><span class="title">Préface</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">1</span> <span class="title">Nombres algébriques et entiers algébriques</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nombres algébriques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynome-minimal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Polynôme minimal d’un nombre algébrique</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-chapter-title-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Théorème de Cantor</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="ch-chapter-title-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Nombres algébriques de degré <span class="process-math">\(2\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-chapter-title-8.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Corps de nombres</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="app-irreducibilite-polynome.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Démontrer l’irréductibilité d’un polynôme</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rappels-sur-les-anneaux.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Rappels sur les anneaux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="ch-chapter-title-6"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Nombres algébriques de degré <span class="process-math">\(2\)</span></span>
+</h2>
+<div class="para" id="ch-chapter-title-6-2">Dans cette section, on s’intéresse aux nombres algébriques de degré <span class="process-math">\(2\text{.}\)</span> Les exemples élémentaires sont les <span class="process-math">\(\sqrt{d}\)</span> où <span class="process-math">\(d\neq 0\)</span> est un entier, positif ou négatif. Ici <span class="process-math">\(\sqrt{d}\)</span> désignera la racine réelle positive si <span class="process-math">\(d&gt;0\)</span> et <span class="process-math">\(i\sqrt{-d}\)</span> si <span class="process-math">\(d&lt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="ch-chapter-title-6-3">On désignera par <span class="process-math">\(\mathbb{Q}(\sqrt{d})\)</span> le sous-ensemble de <span class="process-math">\(\mathbb{C}\)</span> formé des nombres de la forme <span class="process-math">\(a+b\sqrt{d}\)</span> avec <span class="process-math">\(a,b\in \mathbb{Q}\text{.}\)</span> Comme <span class="process-math">\(\mathbb{Q}(\sqrt{r^2d})=\mathbb{Q}(\sqrt{d})\)</span> pour <span class="process-math">\(r\)</span> entier, on peut supposer que <span class="process-math">\(d\)</span> est un entier sans facteur carré<details class="ptx-footnote" aria-live="polite" id="ch-chapter-title-6-3-8"><summary class="ptx-footnote__number" title="Note 1.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="ch-chapter-title-6-3-8"><div class="para" id="ch-chapter-title-6-3-8-1">Cela signifie que <span class="process-math">\(1\)</span> est l’unique carré positif qui divise <span class="process-math">\(d\text{;}\)</span> autrement dit, les nombres premiers qui divisent <span class="process-math">\(d\)</span> ne le divise qu’une fois.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-3-8-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div></div></details>, ce que l’on fera ici.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para logical" id="ch-chapter-title-6-4">
+<div class="para">
+<span class="process-math">\(\mathbb{Q}(\sqrt{d})\)</span> est un sous-anneau de <span class="process-math">\(\mathbb{C}\)</span> qui est un corps (voir <a href="ch-chapter-title-8.html#prop-corps" class="xref" data-knowl="./knowl/xref/prop-corps.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 1.5.5">Proposition 1.5.5</a> pour le cas général); si <span class="process-math">\(d\)</span> est sans facteur carré, l’inverse de l’élément <span class="process-math">\(a+b\sqrt{d}\)</span> est</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-corps.html" id="ch-chapter-title-6-4-6">
+\begin{equation*}
+\frac{a-b\sqrt{d}}{a^2-b^2d} \qquad (a,b)\neq (0,0)\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="ch-chapter-title-6-5">Les nombres algébriques de degré <span class="process-math">\(2\)</span> sont déterminés par la proposition suivante.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="ch-chapter-title-6-6"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ch-chapter-title-6-6-1-1">Soit <span class="process-math">\(z\)</span> un nombre algébrique de degré <span class="process-math">\(2\text{.}\)</span> Alors il existe un unique entier relatif <span class="process-math">\(d\)</span> sans facteur carré et deux uniques nombres rationels <span class="process-math">\(a\)</span> et <span class="process-math">\(b\)</span> tels que<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-6-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ch-chapter-title-6-6-1-2">
+\begin{equation*}
+z=a+b\sqrt{d}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proposition 1.4.1"><a href="#ch-chapter-title-6-6" title="Permalien Proposition 1.4.1" aria-label="Permalien Proposition 1.4.1">🔗</a></div></article><details id="ch-chapter-title-6-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="ch-chapter-title-6-7-1">Par hypothèse, le polynôme minimal de <span class="process-math">\(z\)</span> est de degré <span class="process-math">\(2\text{:}\)</span> notons le <span class="process-math">\(X^2+\alpha X+\beta\)</span> avec <span class="process-math">\(\alpha,\beta\in \mathbb{Q}\text{.}\)</span> On a alors<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-7-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-forme-factorisee.html" id="eq-forme-factorisee">
+\begin{equation}
+\left(z+\frac{\alpha}{2}\right)^2=-\beta+\frac{\alpha^2}{4}\tag{1.4.1}
+\end{equation}
+</div>
+<div class="para" id="ch-chapter-title-6-7-3">Notons <span class="process-math">\(D\)</span> pour ``discriminant’’ le terme de droite. C’est un rationel non nul car <span class="process-math">\(z\notin \mathbb{Q}\)</span> (sinon <span class="process-math">\(z\)</span> serait de degré <span class="process-math">\(1\)</span>). Écrivons <span class="process-math">\(D\)</span> en produit de nombres premiers <span class="process-math">\(D=\pm \prod_{i}{p_i^{n_i}}\text{,}\)</span> les <span class="process-math">\(n_i\)</span> pouvant être négatifs, et posons<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-7-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-forme-factorisee.html" id="ch-chapter-title-6-7-4">
+\begin{equation*}
+d=\pm \prod_{i}{p_i^{m_i}} \quad \text{où}\quad \begin{cases} m_i=1 \text{ si } n_i \text{ est impaire}, \\ m_i=0 \text{ si } n_i \text{ est paire}.\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ch-chapter-title-6-7-5">Alors <span class="process-math">\(d\)</span> est sans facteur carré par construction, et<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-7-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-forme-factorisee.html" id="ch-chapter-title-6-7-6">
+\begin{equation*}
+\frac{D}{d}=\prod_{i}{p_i^{n_i-m_i}}
+\end{equation*}
+</div>
+<div class="para" id="ch-chapter-title-6-7-7">est un carré car <span class="process-math">\(n_i-m_i\)</span> est toujours paire. On a donc <span class="process-math">\(D=dr^2\)</span> pour un certain <span class="process-math">\(r\in \mathbb{Q}\text{.}\)</span> En reprenant l’équation <a href="ch-chapter-title-6.html#eq-forme-factorisee" class="xref" data-knowl="./knowl/xref/eq-forme-factorisee.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 1.4.1">(1.4.1)</a>, on trouve:<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-7-7" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-forme-factorisee.html" id="ch-chapter-title-6-7-8">
+\begin{equation*}
+z=-\frac{\alpha}{2}\pm r\sqrt{d}.
+\end{equation*}
+</div>
+<div class="para" id="ch-chapter-title-6-7-9">Cela démontre l’existence de l’écriture, avec <span class="process-math">\(a=-\alpha/2\)</span> et <span class="process-math">\(b=\pm r\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-7-9" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="ch-chapter-title-6-7-10">Comme <span class="process-math">\(d\)</span> est sans facteur carré, <span class="process-math">\(\sqrt{d}\)</span> est irrationel et les éléments <span class="process-math">\(1,\sqrt{d}\in \mathbb{C}\)</span> sont linéairement indépendants sur <span class="process-math">\(\mathbb{Q}\text{.}\)</span> Cela démontre l’unicité de <span class="process-math">\(a\)</span> et <span class="process-math">\(b\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-7-10" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="ch-chapter-title-6-7-11">Montrons enfin l’unicité de <span class="process-math">\(d\text{.}\)</span> Soit <span class="process-math">\(d'\)</span> un entier sans facteur carré tel que <span class="process-math">\(z\in \mathbb{Q}(\sqrt{d'})\text{.}\)</span> Alors <span class="process-math">\(\sqrt{d}\in \mathbb{Q}(\sqrt{d'})\)</span> et il existe <span class="process-math">\(u,v\in \mathbb{Q}\)</span> tels que<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-7-11" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-forme-factorisee.html" id="ch-chapter-title-6-7-12">
+\begin{align*}
+\amp \sqrt{d}=u+v\sqrt{d'} \\
+\amp d=(u^2+v^2d')+2uv\sqrt{d'}. 
+\end{align*}
+</div>
+<div class="para" id="ch-chapter-title-6-7-13">Comme <span class="process-math">\(\sqrt{d'}\)</span> est irrationel, cela impose <span class="process-math">\(uv=0\)</span> puis, comme <span class="process-math">\(v\neq 0\)</span> car <span class="process-math">\(\sqrt{d}\)</span> est également irrationel, <span class="process-math">\(u=0\text{.}\)</span> Ainsi <span class="process-math">\(d=v^2d'\)</span> ce qui n’est possible que si <span class="process-math">\(v^2=1\text{,}\)</span> et donc <span class="process-math">\(d'=d\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-7-13" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 1.4.1"><a href="#ch-chapter-title-6-7" title="Permalien Démonstration 1.4.1" aria-label="Permalien Démonstration 1.4.1">🔗</a></div></article></details><div class="para" id="ch-chapter-title-6-8">On va maintenant caractériser les entiers algébriques dans les corps quadratiques <span class="process-math">\(\mathbb{Q}(\sqrt{d})\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-8" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para logical" id="ch-chapter-title-6-9">
+<div class="para">Soit <span class="process-math">\(z=a+b\sqrt{d}\in\mathbb{Q}(\sqrt{d})\)</span> avec <span class="process-math">\(a,b\in \mathbb{Q}\text{.}\)</span> Si <span class="process-math">\(b\neq 0\text{,}\)</span> le polynôme minimal de <span class="process-math">\(z\)</span> est</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-polynome-minimal.html" id="ch-chapter-title-6-9-5">
+\begin{equation*}
+\Pi_z(X):=X^2-2aX+a^2-db^2.
+\end{equation*}
+</div>
+<div class="para">En effet, <span class="process-math">\(\Pi_z(X)\)</span> est unitaire, annule <span class="process-math">\(z\)</span> car:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-polynome-minimal.html" id="ch-chapter-title-6-9-8">
+\begin{gather*}
+z^2 =a^2+ 2ab\sqrt{d}+b^2 d, \\
+z^2-2az =-a^2+b^2d,\\
+z^2-2az+(a^2-b^2d) =0,
+\end{gather*}
+</div>
+<div class="para">et, comme <span class="process-math">\(z\)</span> est irrationel, aucun polynôme de degré <span class="process-math">\(1\)</span> ne l’annule. On va alors utiliser le critère de la <a href="sec-polynome-minimal.html#prop-polynome-minimal" class="xref" data-knowl="./knowl/xref/prop-polynome-minimal.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 1.2.3: Critère d’intégralité">Proposition 1.2.3</a> pour déterminer quand est-ce que <span class="process-math">\(z\)</span> est un entier algébrique.</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-9" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-integralite-quadratique"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-integralite-quadratique-1-1">Soit <span class="process-math">\(d\)</span> un entier non nul sans facteur carré. Un élement <span class="process-math">\(z=a+b\sqrt{d}\in\mathbb{Q}(\sqrt{d})\)</span> est un entier algébrique si, et seulement si<div class="autopermalink" data-description="Paragraphe"><a href="#prop-integralite-quadratique-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div> <ol class="decimal" id="prop-integralite-quadratique-1-2">
+<li id="item-d-1mod4">
+<div class="para" id="item-d-1mod4-1">
+<span class="process-math">\(a,b\in \mathbb{Z}\)</span> si <span class="process-math">\(d\not \equiv 1 \pmod{4}\text{,}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#item-d-1mod4-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion 1"><a href="#item-d-1mod4" title="Permalien Assertion 1" aria-label="Permalien Assertion 1">🔗</a></div>
+</li>
+<li id="item-dnot-1mod4">
+<div class="para" id="item-dnot-1mod4-1">
+<span class="process-math">\(2a,2b\in \mathbb{Z}\)</span> et <span class="process-math">\(a-b\in \mathbb{Z}\)</span> si <span class="process-math">\(d\equiv 1\pmod{4}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#item-dnot-1mod4-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion 2"><a href="#item-dnot-1mod4" title="Permalien Assertion 2" aria-label="Permalien Assertion 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Proposition 1.4.2"><a href="#prop-integralite-quadratique" title="Permalien Proposition 1.4.2" aria-label="Permalien Proposition 1.4.2">🔗</a></div></article><details id="ch-chapter-title-6-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="ch-chapter-title-6-11-1">Soit <span class="process-math">\(z=a+b\sqrt{d}\)</span> avec <span class="process-math">\(a,b\in \mathbb{Q}\text{.}\)</span> Si <span class="process-math">\(b=0\text{,}\)</span> les deux conditions reviennent à <span class="process-math">\(a\in \mathbb{Z}\)</span> et la proposition découle du <a href="sec-polynome-minimal.html#cor-Z-comme-QcapbarZ" class="xref" data-knowl="./knowl/xref/cor-Z-comme-QcapbarZ.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Corollaire 1.2.7">Corollaire 1.2.7</a>.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="ch-chapter-title-6-11-2">On suppose donc <span class="process-math">\(b\neq 0\)</span> auquel cas <span class="process-math">\(z\)</span> est irrationel. Le polynôme minimal de <span class="process-math">\(z=a+b\sqrt{d}\)</span> est alors <span class="process-math">\(X^2-2aX+a^2-db^2\text{.}\)</span> On utilise ensuite le critère de la <a href="sec-polynome-minimal.html#prop-polynome-minimal" class="xref" data-knowl="./knowl/xref/prop-polynome-minimal.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 1.2.3: Critère d’intégralité">Proposition 1.2.3</a>:<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-Z-comme-QcapbarZ.html ./knowl/xref/prop-polynome-minimal.html ./knowl/xref/item-d-1mod4.html ./knowl/xref/item-dnot-1mod4.html ./knowl/xref/item-d-1mod4.html ./knowl/xref/item-dnot-1mod4.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/eq-equivalence-integralite.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/item-autre.html ./knowl/xref/item-autre.html" id="eq-equivalence-integralite">
+\begin{equation}
+z\in \overline{\mathbb{Z}} \quad \Longleftrightarrow \quad \begin{cases} 2a\in \mathbb{Z}, \\ a^2-db^2 \in \mathbb{Z}. \end{cases}\tag{1.4.2}
+\end{equation}
+</div>
+<div class="para" id="ch-chapter-title-6-11-4">Vérifions que les condtions <a href="ch-chapter-title-6.html#item-d-1mod4" class="xref" data-knowl="./knowl/xref/item-d-1mod4.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion 1">Assertion 1</a> et <a href="ch-chapter-title-6.html#item-dnot-1mod4" class="xref" data-knowl="./knowl/xref/item-dnot-1mod4.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion 2">Assertion 2</a> imposent l’intégralité de <span class="process-math">\(z\text{.}\)</span> Le cas <a href="ch-chapter-title-6.html#item-d-1mod4" class="xref" data-knowl="./knowl/xref/item-d-1mod4.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion 1">Assertion 1</a> est clair : si <span class="process-math">\(a,b\in \mathbb{Z}\text{,}\)</span> alors <span class="process-math">\(2a,a^2-db^2\in \mathbb{Z}\)</span> et donc <span class="process-math">\(z\)</span> est un entier algébrique. Dans le cas <a href="ch-chapter-title-6.html#item-dnot-1mod4" class="xref" data-knowl="./knowl/xref/item-dnot-1mod4.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion 2">Assertion 2</a>, on peut supposer <span class="process-math">\(a,b\in \frac{1}{2}+\mathbb{Z}\)</span> (sinon c’est le cas précédent), auquel cas <span class="process-math">\(2a\in \mathbb{Z}\text{.}\)</span> Pour le coefficient constant <span class="process-math">\(n=a^2-db^2\text{,}\)</span> on remarque d’abord que<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-Z-comme-QcapbarZ.html ./knowl/xref/prop-polynome-minimal.html ./knowl/xref/item-d-1mod4.html ./knowl/xref/item-dnot-1mod4.html ./knowl/xref/item-d-1mod4.html ./knowl/xref/item-dnot-1mod4.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/eq-equivalence-integralite.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/item-autre.html ./knowl/xref/item-autre.html" id="ch-chapter-title-6-11-5">
+\begin{equation*}
+4n=(2a)^2-d(2b)^2\in \mathbb{Z}
+\end{equation*}
+</div>
+<div class="para logical" id="ch-chapter-title-6-11-6">
+<div class="para">De plus, comme <span class="process-math">\(a-b\in \mathbb{Z}\text{,}\)</span> on a</div>
+<div class="displaymath process-math" id="ch-chapter-title-6-11-6-2">
+\begin{equation*}
+(2a)^2-(2b)^2=(2a-2b)(2a+2b)\equiv 0 \pmod{4}.
+\end{equation*}
+</div>
+<div class="para">Or <span class="process-math">\(0\)</span> et <span class="process-math">\(1\)</span> sont les seuls carrés modulo <span class="process-math">\(4\text{,}\)</span> et alors <span class="process-math">\((2a)^2\equiv (2b)^2\equiv 0,1 \pmod{4}\text{.}\)</span> Comme <span class="process-math">\(d\equiv 1 \pmod{4}\text{,}\)</span> on trouve <span class="process-math">\(4n \equiv 0 \pmod{4}\)</span> et donc <span class="process-math">\(n\in \mathbb{Z}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-6" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="ch-chapter-title-6-11-7">Démontrons la réciproque. On commence par une observation:<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-7" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="fact theorem-like" id="fact-rationnel-entier"><h3 class="heading">
+<span class="type">Fait</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="fact-rationnel-entier-1-1">Si <span class="process-math">\(x\)</span> est un nombre rationel tel que <span class="process-math">\(dx^2\in \mathbb{Z}\text{,}\)</span> alors <span class="process-math">\(x\in \mathbb{Z}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#fact-rationnel-entier-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Fait 1.4.3"><a href="#fact-rationnel-entier" title="Permalien Fait 1.4.3" aria-label="Permalien Fait 1.4.3">🔗</a></div></article><details id="ch-chapter-title-6-11-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Démonstration du Fait 1.4.3.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="ch-chapter-title-6-11-9-2">En effet, posons <span class="process-math">\(n=dx^2\text{.}\)</span> Si l’on écrit <span class="process-math">\(x=p/q\)</span> sous forme irréductible, alors on trouve <span class="process-math">\(q^2 n=dp^2\text{.}\)</span> En particulier, <span class="process-math">\(q^2|dp^2\)</span> puis <span class="process-math">\(q^2|d\)</span> car <span class="process-math">\(p\)</span> et <span class="process-math">\(q\)</span> sont premiers entre eux. Comme <span class="process-math">\(d\)</span> est sans facteur carré, cela impose <span class="process-math">\(q^2=1\text{,}\)</span> donc <span class="process-math">\(q=\pm 1\text{,}\)</span> donc <span class="process-math">\(x=\pm p\)</span> un entier.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-9-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 1.4.2.1: Démonstration du Fait 1.4.3"><a href="#ch-chapter-title-6-11-9" title="Permalien Démonstration 1.4.2.1: Démonstration du Fait 1.4.3" aria-label="Permalien Démonstration 1.4.2.1: Démonstration du Fait 1.4.3">🔗</a></div></article></details><div class="para" id="ch-chapter-title-6-11-10">On suppose que <span class="process-math">\(z\in \overline{\mathbb{Z}}\text{.}\)</span> La première implication <a href="ch-chapter-title-6.html#eq-equivalence-integralite" class="xref" data-knowl="./knowl/xref/eq-equivalence-integralite.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 1.4.2">(1.4.2)</a> donne <span class="process-math">\(a\in \mathbb{Z}\)</span> ou <span class="process-math">\(a+\frac{1}{2}\in \mathbb{Z}\text{.}\)</span> On distingue ces deux cas:<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-10" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<ol class="lower-roman ol-marker-1" id="ch-chapter-title-6-11-11">
+<li id="item-a-b-Z">
+<div class="para" id="item-a-b-Z-1">Si <span class="process-math">\(a\in \mathbb{Z}\text{,}\)</span> alors <span class="process-math">\(db^2\in \mathbb{Z}\)</span> et donc <span class="process-math">\(b\in \mathbb{Z}\)</span> d’après le <a href="ch-chapter-title-6.html#fact-rationnel-entier" class="xref" data-knowl="./knowl/xref/fact-rationnel-entier.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Fait 1.4.3">Fait 1.4.3</a>.<div class="autopermalink" data-description="Paragraphe"><a href="#item-a-b-Z-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion i"><a href="#item-a-b-Z" title="Permalien Assertion i" aria-label="Permalien Assertion i">🔗</a></div>
+</li>
+<li id="item-autre">
+<div class="para" id="item-autre-1">Si <span class="process-math">\(a+\frac{1}{2}\in \mathbb{Z}\text{,}\)</span> on a<div class="autopermalink" data-description="Paragraphe"><a href="#item-autre-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-rationnel-entier.html" id="item-autre-2">
+\begin{equation*}
+4n=(2a)^2-d(2b)^2
+\end{equation*}
+</div>
+<div class="para" id="item-autre-3">et donc <span class="process-math">\(d(2b)^2\)</span> est un entier. Toujours par notre <a href="ch-chapter-title-6.html#fact-rationnel-entier" class="xref" data-knowl="./knowl/xref/fact-rationnel-entier.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Fait 1.4.3">Fait 1.4.3</a>, <span class="process-math">\(2b\in \mathbb{Z}\text{.}\)</span> Posons alors <span class="process-math">\(A=2a\)</span> et <span class="process-math">\(B=2b\text{.}\)</span> Comme <span class="process-math">\(a\in \frac{1}{2}+\mathbb{Z}\text{,}\)</span> <span class="process-math">\(A\)</span> est un entier impair. Comme <span class="process-math">\(dB^2=A^2-4n\)</span> est également impair, il en est de même pour <span class="process-math">\(d\)</span> et <span class="process-math">\(B\text{.}\)</span> Ainsi <span class="process-math">\(b\in \frac{1}{2}+\mathbb{Z}\)</span> et <span class="process-math">\(a-b\in \mathbb{Z}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#item-autre-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion ii"><a href="#item-autre" title="Permalien Assertion ii" aria-label="Permalien Assertion ii">🔗</a></div>
+</li>
+</ol>
+<div class="para" id="ch-chapter-title-6-11-12">Enfin, on prétend que la condition <a href="ch-chapter-title-6.html#item-autre" class="xref" data-knowl="./knowl/xref/item-autre.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion ii">Assertion ii</a> n’est possible que si <span class="process-math">\(d\equiv 1 \pmod{4}\text{.}\)</span> En effet, <a href="ch-chapter-title-6.html#item-autre" class="xref" data-knowl="./knowl/xref/item-autre.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion ii">Assertion ii</a> entraîne que<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-12" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-Z-comme-QcapbarZ.html ./knowl/xref/prop-polynome-minimal.html ./knowl/xref/item-d-1mod4.html ./knowl/xref/item-dnot-1mod4.html ./knowl/xref/item-d-1mod4.html ./knowl/xref/item-dnot-1mod4.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/eq-equivalence-integralite.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/item-autre.html ./knowl/xref/item-autre.html" id="ch-chapter-title-6-11-13">
+\begin{equation*}
+\frac{A-1}{2}+\frac{B-1}{2}\sqrt{d}
+\end{equation*}
+</div>
+<div class="para" id="ch-chapter-title-6-11-14">est un entier algébrique, et donc que<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-14" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-Z-comme-QcapbarZ.html ./knowl/xref/prop-polynome-minimal.html ./knowl/xref/item-d-1mod4.html ./knowl/xref/item-dnot-1mod4.html ./knowl/xref/item-d-1mod4.html ./knowl/xref/item-dnot-1mod4.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/eq-equivalence-integralite.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/fact-rationnel-entier.html ./knowl/xref/item-autre.html ./knowl/xref/item-autre.html" id="ch-chapter-title-6-11-15">
+\begin{equation*}
+z-\left(\frac{A-1}{2}+\frac{B-1}{2}\sqrt{d}\right)=\frac{1+\sqrt{d}}{2}
+\end{equation*}
+</div>
+<div class="para" id="ch-chapter-title-6-11-16">est un entier algébrique. Son polynôme minimal est <span class="process-math">\(X^2-X+\frac{1-d}{4}\text{,}\)</span> d’où <span class="process-math">\(d\equiv 1 \pmod{4}\text{.}\)</span> Cela conclut.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-11-16" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 1.4.2"><a href="#ch-chapter-title-6-11" title="Permalien Démonstration 1.4.2" aria-label="Permalien Démonstration 1.4.2">🔗</a></div></article></details><div class="para" id="ch-chapter-title-6-12">Soit <span class="process-math">\(d\)</span> un entier sans facteur carré et <span class="process-math">\(K=\mathbb{Q}(\sqrt{d})\text{.}\)</span> On note <span class="process-math">\(\mathcal{O}_K\)</span> l’anneau <span class="process-math">\(K\cap \overline{\mathbb{Z}}\text{.}\)</span> L’étude de l’arithmétique de cet anneau, et de ses généralisations pour divers corps de nombres <span class="process-math">\(K\text{,}\)</span> est l’un des enjeux de ce cours. Dans le cas des extensions quadratiques, on a le corollaire suivant:<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-12" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="ch-chapter-title-6-13"><h3 class="heading">
+<span class="type">Corollaire</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ch-chapter-title-6-13-1-1">
+<span class="process-math">\(\displaystyle \mathcal{O}_K=\begin{cases} \mathbb{Z} \oplus \mathbb{Z} \sqrt{d} \amp \text{si }d\not \equiv 1 \pmod{4} \\  \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2} \amp \text{si }d\equiv 1 \pmod{4} \end{cases}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-13-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div> <div class="para" id="ch-chapter-title-6-13-1-2">En particulier, <span class="process-math">\(\mathcal{O}_K\)</span> est un module libre de rang <span class="process-math">\(2\)</span> sur <span class="process-math">\(\mathbb{Z}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-13-1-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollaire 1.4.4"><a href="#ch-chapter-title-6-13" title="Permalien Corollaire 1.4.4" aria-label="Permalien Corollaire 1.4.4">🔗</a></div></article><details id="ch-chapter-title-6-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="ch-chapter-title-6-14-1">Seul le cas <span class="process-math">\(d\equiv 1\pmod{4}\)</span> est à étudier. Dans ce cas, <span class="process-math">\(\frac{1+\sqrt{d}}{2}\in \mathcal{O}_K\)</span> et on peut écrire<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-14-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-dnot-1mod4.html ./knowl/xref/prop-integralite-quadratique.html" id="ch-chapter-title-6-14-2">
+\begin{equation*}
+a+b\sqrt{d}=(a-b)+2b\left(\frac{1+\sqrt{d}}{2}\right).
+\end{equation*}
+</div>
+<div class="para" id="ch-chapter-title-6-14-3">C’est cette formule qui donne l’équivalence entre les assertions ``<span class="process-math">\(a,b\)</span> vérifient <a href="ch-chapter-title-6.html#item-dnot-1mod4" class="xref" data-knowl="./knowl/xref/item-dnot-1mod4.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion 2">Assertion 2</a> de la <a href="ch-chapter-title-6.html#prop-integralite-quadratique" class="xref" data-knowl="./knowl/xref/prop-integralite-quadratique.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 1.4.2">Proposition 1.4.2</a>’’ et ``<span class="process-math">\(z\in \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2}\)</span>’’.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-14-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 1.4.3"><a href="#ch-chapter-title-6-14" title="Permalien Démonstration 1.4.3" aria-label="Permalien Démonstration 1.4.3">🔗</a></div></article></details><article class="remark remark-like" id="ch-chapter-title-6-15"><h3 class="heading">
+<span class="type">Remarque</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ch-chapter-title-6-15-1-1">Notez que l’inclusion <span class="process-math">\(\mathbb{Z}[\sqrt{d}]\subset \mathcal{O}_K\)</span> n’est en général pas une égalité ! Nous verrons dans ce cours comment "calculer" la différence entre ces deux anneaux.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-15-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remarque 1.4.5"><a href="#ch-chapter-title-6-15" title="Permalien Remarque 1.4.5" aria-label="Permalien Remarque 1.4.5">🔗</a></div></article><article class="remark remark-like" id="ch-chapter-title-6-16"><h3 class="heading">
+<span class="type">Remarque</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ch-chapter-title-6-16-1-1">Soit <span class="process-math">\(z\)</span> un nombre algébrique de degré <span class="process-math">\(d\text{.}\)</span> On démontrera plus tard dans ce cours que, si <span class="process-math">\(K=\mathbb{Q}(z)\text{,}\)</span> alors <span class="process-math">\(\mathcal{O}_K=K\cap \overline{\mathbb{Z}}\)</span> est libre de rang <span class="process-math">\(d\)</span> comme groupe abélien.<div class="autopermalink" data-description="Paragraphe"><a href="#ch-chapter-title-6-16-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remarque 1.4.6"><a href="#ch-chapter-title-6-16" title="Permalien Remarque 1.4.6" aria-label="Permalien Remarque 1.4.6">🔗</a></div></article><div class="autopermalink" data-description="Section 1.4: Nombres algébriques de degré 2"><a href="#ch-chapter-title-6" title="Permalien Section 1.4: Nombres algébriques de degré 2" aria-label="Permalien Section 1.4: Nombres algébriques de degré 2">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-chapter-title-5.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
