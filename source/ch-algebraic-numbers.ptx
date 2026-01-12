@@ -58,7 +58,7 @@
 <lemma xml:id="lem-denominateur">
   <statement>
     <p>
-      Soit <m>\alpha\in \overline{Q}</m> un nombre algébrique. Alors il existe un entier <m>d>0</m> tel que <m>d\alpha\in \overlline{Z}</m>.
+      Soit <m>\alpha\in \overline{\mathbb{Q}}</m> un nombre algébrique. Alors il existe un entier <m>d>0</m> tel que <m>d\alpha\in \overline{\mathbb{Z}}</m>.
     </p>
   </statement>
 </lemma>

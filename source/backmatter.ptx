@@ -16,7 +16,7 @@
 
   <!-- <index> <title>Index</title> <index-list/> </index> -->
 
- <bibliography xml:id="references">
+  <bibliography xml:id="references">
     <title>References</title>
 
     <biblio xml:id="chambertloir">
