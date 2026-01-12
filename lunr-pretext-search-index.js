@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Préface",
   "number": "",
   "title": "Préface",
-  "body": " Ces notes sont destinées aux étudiant·e·s du module UM4MA234 de Sorbonne Université. Elles complètent le cours magistral (délivré par Quentin Gazda) et les TD (délivrés par Salim Alloun), et peuvent servir de support à la préparation des examens.  Je m'inspire largement des notes de cours de mes prédécesseurs, notamment celles d'Antoine Chambert-Loir, Pierre Charollois, Gaëtan Chenevier et Javier Fresán. Je les remercie vivement pour leur travail. Les erreurs et imprécisions qui subsistent sont miennes.  Le cours est composé de 12 séances de 2 heures. Il est dispensé chaque mardi de 10h45 à 12h45 en salle 56.66.109 à partir de la semaine du 12 janvier 2026.  "
+  "body": " Ces notes sont destinées aux étudiant·e·s du module UM4MA234 de Sorbonne Université. Elles complètent le cours magistral (délivré par Quentin Gazda) et les TD (délivrés par Salim Alloun), et peuvent servir de support à la préparation des examens.  Je m'inspire largement des notes de cours de mes prédécesseurs, notamment celles d'Antoine Chambert-Loir , Pierre Charollois, Gaëtan Chenevier et Javier Fresán. Je les remercie vivement pour leur travail. Les erreurs et imprécisions qui subsistent sont miennes.  Le cours est composé de 12 séances de 2 heures. Il est dispensé chaque mardi de 10h45 à 12h45 en salle 56.66.109 à partir de la semaine du 12 janvier 2026.  "
 },
 {
   "id": "sec-section-name",
