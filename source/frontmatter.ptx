@@ -19,12 +19,14 @@
       <url href="https://quentin.gazda.fr/">Page personnelle</url>
     </website>
 
+<!--
     <copyright>
       <year>2025<ndash />2028</year>
       <holder>Quentin Gazda</holder>
       <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
       </shortlicense>
     </copyright>
+-->
   
   </bibinfo>
 
@@ -38,7 +40,7 @@
 
   <preface xml:id="front-preface">
     <p>
-    Ces notes sont destinées aux étudiant·e·s du module <em>UM4MA234</em> de Sorbonne Université. Elles complètent le cours magistral et les TD, et peuvent servir de support à la préparation des examens.
+    Ces notes sont destinées aux étudiant·e·s du module <em>UM4MA234</em> de Sorbonne Université. Elles complètent le cours magistral (délivré par Quentin Gazda) et les TD (délivrés par Salim Alloun), et peuvent servir de support à la préparation des examens.
     </p>
 
     <p>
@@ -46,12 +48,15 @@
     </p>
 
     <p>
-      Le cours est composé de 12 séances de 2 heures. Il est dispensé chaque mardi de 10h45 à 12h45 à partir de la semaine du 12 janvier 2026. 
+      Le cours est composé de 12 séances de 2 heures. Il est dispensé chaque mardi de 10h45 à 12h45 en salle 56.66.109 à partir de la semaine du 12 janvier 2026. 
     </p>
   </preface>
 
+<!--
   <colophon xml:id="front-colophon">
     <colophon-items/>
   </colophon>
+-->
+
 </frontmatter>
 
