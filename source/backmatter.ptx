@@ -19,7 +19,7 @@
   <bibliography xml:id="references">
     <title>References</title>
 
-    <biblio xml:id="chambertloir">
+    <bibitem xml:id="chambertloir">
       <author>
         <personname>
           <surname>Chambert-Loir</surname>
@@ -30,9 +30,9 @@
       <journal>enseigné à l'Université de Rennes 1</journal>
       <year>2007-2008</year>
       <url>https://webusers.imj-prg.fr/~antoine.chambert-loir/enseignement/2007-08/h4/coursh4.pdf</url>
-    </biblio>
+    </bibitem>
 
-    <biblio xml:id="chenevier">
+    <bibitem xml:id="chenevier">
       <author>
         <personname>
           <surname>Chenevier</surname>
@@ -43,9 +43,9 @@
       <journal>enseigné à l'École Polytechnique</journal>
       <year>2011-2019</year>
       <url>http://gaetan.chenevier.perso.math.cnrs.fr/TAN_chenevier.pdf</url>
-    </biblio>
+    </bibitem>
 
-     <biblio xml:id="fresan">
+     <bibitem xml:id="fresan">
       <author>
         <personname>
           <surname>Fresán</surname>
@@ -56,7 +56,7 @@
       <journal>enseigné à Sorbonne Université</journal>
       <year>2023-2025</year>
       <url>http://javier.fresan.perso.math.cnrs.fr/M12024.html</url>
-    </biblio>
+    </bibitem>
 
   </bibliography>
 
