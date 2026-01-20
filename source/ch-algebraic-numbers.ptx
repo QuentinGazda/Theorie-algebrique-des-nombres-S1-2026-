@@ -190,7 +190,7 @@ Le polynôme caractéristique de la matrice
     <title>Polynôme minimal</title>
     <statement>
       <p>Le <em>polynôme minimal</em> d'un nombre algébrique <m>z</m> est l'unique polynôme unitaire qui engendre <m>I_z</m>. </p>
-      <p>De manière équivalente, c'est le polynôme unitaire de de plus bas degré qui annule <m>z</m>. Son degré est appelé <em>degré</em> du nombre algébrique.</p>
+      <p>De manière équivalente, c'est le polynôme unitaire de plus bas degré qui annule <m>z</m>. Son degré est appelé <em>degré</em> du nombre algébrique.</p>
     </statement>
   </definition>
 
@@ -285,7 +285,7 @@ Le polynôme caractéristique de la matrice
   <p> Par contre, le polynôme minimal de <m>\frac{1+\sqrt{2}}{2}</m> est <m>2X^2 - 2X - 1</m>, qui n'est pas à coefficients entiers. Donc <m>\frac{1+\sqrt{2}}{2}</m> n'est pas un entier algébrique.</p>
 </example>
 
-<p>Poursuivons avec quelques corrolaires d'intégralité.</p>
+<p>Poursuivons avec quelques corollaires d'intégralité.</p>
 
 <corollary>
   <statement>
@@ -379,7 +379,7 @@ Le polynôme caractéristique de la matrice
 
     <p>En développant le terme de gauche, on trouve</p>
 
-    <me>\text{pour~tout~}k\in \{0,\ldots,n-1\}:\quad (-1)^k a_k=\sum_{1\leq i_1&lt;\ldots &lt;i_k\leq n}{dz_{i_1}\cdots dz_{i_k}},</me>
+    <me>\text{pour tout }k\in \{0,\ldots,n-1\}:\quad (-1)^k a_k=\sum_{1\leq i_1&lt;\ldots &lt;i_k\leq n}{dz_{i_1}\cdots dz_{i_k}},</me>
 
     <p>puis, en utilisant l'inégalité triangulaire sur cette somme à <m>k</m> parmi <m>n</m> termes,</p>
 
@@ -406,7 +406,7 @@ Le polynôme caractéristique de la matrice
 
     <men xml:id="eq-barQ-comme-union">\overline{\mathbb{Q}}=\bigcup_{r\in \mathbb{N}}{\{\text{nombres algébriques de taille }\leq r\}}</men>
 
-    <p>Chaque terme de l'union est un ensemble fini d'après la Proposition <xref ref="prop-taille-compte"/>; <m>\overline{\mathbb{Q}}</m> s'écrit donc comme une union dénombrable d'ensembles finis et est donc dénombrable.</p>
+    <p>Or chaque terme de l'union est un ensemble dénombrable : on peut l'écrire comme l'union d'ensembles finis d'après la Proposition <xref ref="prop-taille-compte"/>; <m>\overline{\mathbb{Q}}</m> s'écrit donc comme une union dénombrable d'ensembles dénombrables et est donc dénombrable.</p>
   </proof>
 
   <remark>
