@@ -8,6 +8,18 @@
     <title>Théorie algébrique des nombres</title>
     <subtitle>UM4MA234 - Sorbonne Université</subtitle>
 
+
+
+  <cover>
+    <image source="images/cover.jpg"/>
+    <description>
+      Entiers algébriques de degré 5, éclairés en fonction d'invariants de théorie de Galois. 
+    </description>
+    <credit>
+      Illustration de <url href="https://arxiv.org/abs/2107.06328">Gabriel Dorfsman-Hopkins, Shuchang Xu</url> 
+    </credit>
+  </cover>
+
     <custom>
       <theorem-like
         name="fact"

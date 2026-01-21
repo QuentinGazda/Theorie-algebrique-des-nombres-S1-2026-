@@ -289,7 +289,7 @@ Le polynôme caractéristique de la matrice
 
 <corollary>
   <statement>
-    <p>Soit <m>z</m> un nombre algébrique de polynôme minimal <m>a_n X^n+\ldots+a_1 X+a_0</m>.</p>
+    <p>Soit <m>z</m> un nombre algébrique de polynôme minimal <m>X^n+a_{n-1} X^{n-1}+\ldots+a_1 X+a_0</m>.</p>
     <ol>
       <li xml:id="item-dz">
         <p>Soit <m>d</m> un entier. Alors <m>dz</m> est un entier algébrique si, et seulement si <m>d^i a_{n-i}</m> est un entier pour tout <m>i\in \{0,\ldots,n\}</m>.</p>
@@ -407,6 +407,8 @@ Le polynôme caractéristique de la matrice
     <men xml:id="eq-barQ-comme-union">\overline{\mathbb{Q}}=\bigcup_{r\in \mathbb{N}}{\{\text{nombres algébriques de taille }\leq r\}}</men>
 
     <p>Or chaque terme de l'union est un ensemble dénombrable : on peut l'écrire comme l'union d'ensembles finis d'après la Proposition <xref ref="prop-taille-compte"/>; <m>\overline{\mathbb{Q}}</m> s'écrit donc comme une union dénombrable d'ensembles dénombrables et est donc dénombrable.</p>
+
+
   </proof>
 
   <remark>
@@ -468,14 +470,17 @@ Le polynôme caractéristique de la matrice
     <me>z=-\frac{\alpha}{2}\pm r\sqrt{d}.</me>
 
     <p>Cela démontre l'existence de l'écriture, avec <m>a=-\alpha/2</m> et <m>b=\pm r</m>. </p> 
-    <p> Comme <m>d</m> est sans facteur carré, <m>\sqrt{d}</m> est irrationel et les éléments <m>1,\sqrt{d}\in \mathbb{C}</m> sont linéairement indépendants sur <m>\mathbb{Q}</m>. Cela démontre l'unicité de <m>a</m> et <m>b</m>.</p>
 
-    <p>Montrons enfin l'unicité de <m>d</m>. Soit <m>d'</m> un entier sans facteur carré tel que <m>z\in \mathbb{Q}(\sqrt{d'})</m>. Alors <m>\sqrt{d}\in \mathbb{Q}(\sqrt{d'})</m> et il existe <m>u,v\in \mathbb{Q}</m> tels que</p>
+    <p>Montrons l'unicité de <m>d</m>. Soit <m>d'</m> un entier sans facteur carré tel que <m>z\in \mathbb{Q}(\sqrt{d'})</m>. Comme <m>b\neq 0</m>, alors <m>\sqrt{d}\in \mathbb{Q}(\sqrt{d'})</m> et il existe <m>u,v\in \mathbb{Q}</m> tels que</p>
 
     <md> <mrow>\amp \sqrt{d}=u+v\sqrt{d'} </mrow> <mrow> \amp d=(u^2+v^2d')+2uv\sqrt{d'}. </mrow> </md>
 
     <p>
       Comme <m>\sqrt{d'}</m> est irrationel, cela impose <m>uv=0</m> puis, comme <m>v\neq 0</m> car <m>\sqrt{d}</m> est également irrationel, <m>u=0</m>. Ainsi <m>d=v^2d'</m> ce qui n'est possible que si <m>v^2=1</m>, et donc <m>d'=d</m>.
+    </p>
+
+    <p>
+      Montrons enfin l'unicité de <m>a</m> et <m>b</m>. Comme <m>d</m> est sans facteur carré, <m>\sqrt{d}</m> est irrationel et les éléments <m>1,\sqrt{d}\in \mathbb{C}</m> sont linéairement indépendants sur <m>\mathbb{Q}</m>. Cela démontre l'unicité de <m>a</m> et <m>b</m>.
     </p>
   </proof>
 
@@ -521,7 +526,7 @@ Le polynôme caractéristique de la matrice
 
   <me>4n=(2a)^2-d(2b)^2\in \mathbb{Z}</me>
 
-  <p>De plus, comme <m>a-b\in \mathbb{Z}</m>, on a
+  <p>De plus, comme <m>a-b, a+b \in \mathbb{Z}</m>, on a
 
     <me>(2a)^2-(2b)^2=(2a-2b)(2a+2b)\equiv 0 \pmod{4}.</me>
     
