@@ -13,7 +13,7 @@
     <statement>
       <p>Un <em>corps de nombres</em> est un sous-corps <m>K</m> de <m>\mathbb{C}</m> de dimension finie sur <m>\mathbb{Q}</m>.</p>
 
-      <p>On appelle <em>degré du corps de nombres <m>K</m></em> et on notera <m>[K:\mathbb{Q}]</m>la dimension de <m>K</m> vu comme <m>\mathbb{Q}</m>-espace vectoriel.</p>
+      <p>On appelle <em>degré du corps de nombres <m>K</m></em> et on notera <m>[K:\mathbb{Q}]</m> la dimension de <m>K</m> vu comme <m>\mathbb{Q}</m>-espace vectoriel.</p>
     </statement>
   </definition>
 
@@ -50,7 +50,7 @@
      Notons <m>d=[K:\mathbb{Q}]</m>. Si <m>z\in K</m>, alors la famille <m>(1,z,z^2,\ldots,z^{d})</m> qui possède <m>d+1</m> éléments est linéairement dépendante sur <m>\mathbb{Q}</m>. Il existe donc une relation non triviale de la forme
     </p> 
      <me>
-        a_0+a_1 z+a_2 z^2+\ldots +a_d z^{d}=0 \quad (a_i\in \mathbb{Q}, \text{ pas tous nuls}).
+        a_0+a_1 z+a_2 z^2+\ldots +a_d z^{d}=0 \quad (a_i\in \mathbb{Q}, \text{ nous tous nuls}).
      </me>
       <p>
         Le polynôme <m>P(X)=a_0+a_1 X+a_2 X^2+\ldots +a_d X^{d}</m> est non nul et la relation ci-dessus s'écrit <m>P(z)=0</m>. Ainsi, <m>z</m> est algébrique de degré au plus <m>d</m>.
@@ -95,7 +95,7 @@
     <p>
       Montrons que <m>(1,z,\ldots,z^{d-1})</m> est une base de <m>\mathbb{Q}(z)</m> comme <m>\mathbb{Q}</m>-espace vectoriel. La famille est libre car, si il existe une relation non triviale de la forme
       <md>
-        a_0 + a_1 z + \cdots + a_{d-1} z^{d-1} = 0 \quad \text{avec } a_i\in\mathbb{Q} non tous nuls,
+        a_0 + a_1 z + \cdots + a_{d-1} z^{d-1} = 0 \quad \text{avec } a_i\in\mathbb{Q} \text{ nous tous nuls},
       </md>
       alors le polynôme <m>P(X)=a_0 + a_1 X + \cdots + a_{d-1} X^{d-1}</m> est non nul de degré strictement inférieur à <m>d</m> et annule <m>z</m>. En particulier, <m>\Pi_z(X)|P(X)</m>, avec <m>\Pi_z(X)</m> le polynôme minimal de <m>z</m>. Mais <m>d</m> est, par définition, le degré de <m>\Pi_z(X)</m> d'où la contradiction.
     </p>
@@ -229,7 +229,7 @@
       Supposons maintenant que <m>[K:L]=n&gt;1</m> et que le résultat est démontré pour les extensions de degré strictement inférieur à <m>n</m>. Soit <m>\alpha\in K\setminus L</m>. Notons <m>L(\alpha)</m> le plus petit sous-corps de <m>K</m> contenant à la fois <m>L</m> et <m>\alpha</m> :
     </p>
     <me>
-      L(\alpha)=\{Q(\alpha)~|~Q(X)\in L[X]\}L \quad (\text{avec}\quad \subset L(\alpha) \subset K).
+      L(\alpha)=\{Q(\alpha)~|~Q(X)\in L[X]\} \quad (\text{avec}\quad L \subset L(\alpha) \subset K).
     </me>
     <p>
       Si <m>\Psi</m> satisfait à <m>\Psi|_L=\varphi</m>, alors il en est de même pour <m>\Psi|_{L(\alpha)}</m>. Ainsi, on dispose d'une application de restriction
@@ -237,7 +237,7 @@
         <mrow> \{\Psi\in\Sigma(K)~|~\Psi|_L=\varphi\} \amp \to \{\Psi\in\Sigma(L(\alpha))~|~\Psi|_L=\varphi\},</mrow>
         <mrow>   \Psi \amp \mapsto \Psi|_{L(\alpha)} </mrow>
       </md>
-      L'image inverse d'un élément <m>\sigma</m> par cette application correspond à l'ensemble<m>\{\Psi\in\Sigma(K)~|~\Psi|_L=\sigma\}</m>. Par hypothèse de récurrence, il est de cardinal <m>[K:L(\alpha)]</m>. D'après la multiplicativité des degrés d'extensions (voir le <xref ref="lem-multiplicativite-degres-extensions"/>), il reste à montrer que<fn> En effet, si <m>f:A\to B</m> est une application, alors <me>|A|=\bigsqcup_{b\in B}|f^{-1}(\{b\})|</me>. Dans notre cas, le cardinal <m>|f^{-1}(b)|</m> est constant en <m>b</m> et donc <m>|A|=|B|\cdot |f^{-1}(b)|</m> pour n'importe quel <m>b\in B</m>.</fn> le cardinal de l'ensemble d'arrivée est <m>[L(\alpha):L]</m>.
+      L'image inverse d'un élément <m>\sigma</m> par cette application correspond à l'ensemble<m>\{\Psi\in\Sigma(K)~|~\Psi|_{L(\alpha)}=\sigma\}</m>. Par hypothèse de récurrence, il est de cardinal <m>[K:L(\alpha)]</m>. D'après la multiplicativité des degrés d'extensions (voir le <xref ref="lem-multiplicativite-degres-extensions"/>), il reste à montrer que<fn> En effet, si <m>f:A\to B</m> est une application, alors <me>|A|=\bigsqcup_{b\in B}|f^{-1}(\{b\})|</me>. Dans notre cas, le cardinal <m>|f^{-1}(b)|</m> est constant en <m>b</m> et donc <m>|A|=|B|\cdot |f^{-1}(b)|</m> pour n'importe quel <m>b\in B</m>.</fn> le cardinal de l'ensemble d'arrivée est <m>[L(\alpha):L]</m>.
     </p>
 
     <p>
@@ -313,7 +313,7 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
 <proof>
 <title>Démonstration du <xref ref="thm-element-primitif"/></title>
   <p>
-    La démonstration repose sur le lemme suivant:
+    Notons <m>n</m> le degré de <m>K</m> et <m>\{\sigma_1,\ldots,\sigma_n\}</m> les plongements complexes de <m>K</m>. La démonstration repose sur le lemme suivant:
   </p>
 <lemma xml:id="lem-differents-plongements-engendrent-le-corps">
   <statement>
@@ -350,7 +350,7 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
     Supposons le résultat démontré en <m>m-1</m> et montrons-le pour <m>m</m>. Par hypothèse de récurrence, il existe <m>w\in V\setminus (V_2\cup \cdots \cup V_m)</m>. Si <m>w\notin V_1</m>, alors <m>V\setminus (V_1\cup \cdots \cup V_m)</m> est non vide car contient <m>\{w\}</m>; c'est gagné. On peut donc supposer <m>w\in V_1</m>. Comme <m>V_1\subset V</m> est stricte, soit <m>v\in V\setminus V_1</m>.
     </p>
     <p>
-    Fixons <m>j\in \{1,\ldots,m\}</m>. Supposons qu'il existe <m>t,t' \in F</m> deux éléments distincts tels que <m>v+tw\in V_j</m> et <m>v+t'w\in V_j</m>. Alors <m>(t-t')w\in V_j</m> et donc <m>w\in V_j</m>. Par choix de <m>w</m>, on en déduit que <m>j=1</m>. Mais alors <m>v=(v+tw)-tw\in V_1</m> ce qui est absurde. En conclusion, il existe au plus un seul <m>t\in F</m> tel que <m>v+tw\in V_j</m>, donc au plus <m>n</m> éléments <m>t\in F</m> tels que <m>v+tw\in V_1\cup\cdots \cup V_m</m>. Comme <m>F</m> est infini, il existe donc <m>\lambda \in F</m> tel que <m>v+\lambda w\notin V_1\cup \cdots \cup V_m</m>. Cela démontre que <m>V_1\cup \cdots \cup V_m \neq V</m>, ce qui conclut.
+    Fixons <m>j\in \{1,\ldots,m\}</m>. Supposons qu'il existe <m>t,t' \in F</m> deux éléments distincts tels que <m>v+tw\in V_j</m> et <m>v+t'w\in V_j</m>. Alors <m>(t-t')w\in V_j</m> et donc <m>w\in V_j</m>. Par choix de <m>w</m>, on en déduit que <m>j=1</m>. Mais alors <m>v=(v+tw)-tw\in V_1</m> ce qui est absurde. En conclusion, il existe au plus un seul <m>t\in F</m> tel que <m>v+tw\in V_j</m>, donc au plus <m>m</m> éléments <m>t\in F</m> tels que <m>v+tw\in V_1\cup\cdots \cup V_m</m>. Comme <m>F</m> est infini, il existe donc <m>\lambda \in F</m> tel que <m>v+\lambda w\notin V_1\cup \cdots \cup V_m</m>. Cela démontre que <m>V_1\cup \cdots \cup V_m \neq V</m>, ce qui conclut.
     </p>
   </proof>
 </proof>
