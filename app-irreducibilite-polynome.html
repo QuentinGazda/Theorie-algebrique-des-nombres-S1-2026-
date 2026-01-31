@@ -102,14 +102,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.11';
+eBookConfig.runestone_version = '7.11.12';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.fc0e080e84d54281.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.0d5f811896ddeac1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
 </script>
@@ -161,7 +161,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminants.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Discriminants</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-integer-rings.html" class="internal"><span class="codenumber">3</span> <span class="title">Anneaux d’entiers</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integer-rings.html" class="internal"><span class="codenumber">3</span> <span class="title">Anneaux d’entiers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-plongement-canonique.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Plongement canonique</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-appendix contains-active">
 <div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
 <ul class="structural toc-item-list contains-active">
@@ -271,7 +274,13 @@ eBookConfig.enable_chatcodes =  false;
 \Phi_p(X)=\frac{X^p - 1}{X - 1} = X^{p-1} + X^{p-2} + \ldots + X + 1
 \end{equation*}
 </div>
-<div class="para">est irréductible dans <span class="process-math">\(\mathbb{Z}[X]\)</span> pour tout nombre premier <span class="process-math">\(p\text{.}\)</span> Pour le vérifier, on montre que <span class="process-math">\(\Phi_p(X+1)\)</span> est <span class="process-math">\(p\)</span>-Eisenstein; En effet, étant donné un polynôme <span class="process-math">\(P(X)\text{,}\)</span> l’irréductibilité de <span class="process-math">\(P(X)\)</span> est équivalente à celle de ses translatées, par exemple <span class="process-math">\(P(X+1)\text{.}\)</span> En effectuant le changement de variable <span class="process-math">\(X \mapsto X + 1\text{,}\)</span> on obtient <span class="process-math">\(\Phi_p(X + 1) = \frac{(X + 1)^p - 1}{X} = X^{p-1} + \binom{p}{1}X^{p-2} + \ldots + \binom{p}{p-1}\text{.}\)</span> Or, pour <span class="process-math">\(1 \leq k \leq p - 1\text{,}\)</span> le coefficient binomial <span class="process-math">\(\binom{p}{k}\)</span> est divisible par <span class="process-math">\(p\text{,}\)</span> tandis que le terme constant <span class="process-math">\(\binom{p}{p} = 1\)</span> n’est pas divisible par <span class="process-math">\(p^2\text{.}\)</span> Ainsi, <span class="process-math">\(\Phi_p(X + 1)\)</span> est <span class="process-math">\(p\)</span>-Eisenstein, et donc irréductible dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span> Par conséquent, <span class="process-math">\(\Phi_p(X)\)</span> est également irréductible dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span>
+<div class="para">est irréductible dans <span class="process-math">\(\mathbb{Z}[X]\)</span> pour tout nombre premier <span class="process-math">\(p\text{.}\)</span> Pour le vérifier, on montre que <span class="process-math">\(\Phi_p(X+1)\)</span> est <span class="process-math">\(p\)</span>-Eisenstein; En effet, étant donné un polynôme <span class="process-math">\(P(X)\text{,}\)</span> l’irréductibilité de <span class="process-math">\(P(X)\)</span> est équivalente à celle de ses translatées, par exemple <span class="process-math">\(P(X+1)\text{.}\)</span> En effectuant le changement de variable <span class="process-math">\(X \mapsto X + 1\text{,}\)</span> on obtient</div>
+<div class="displaymath process-math" id="app-irreducibilite-polynome-9-3-11">
+\begin{equation*}
+\Phi_p(X + 1) = \frac{(X + 1)^p - 1}{X} = X^{p-1} + \binom{p}{1}X^{p-2} + \ldots + \binom{p}{p-1}.
+\end{equation*}
+</div>
+<div class="para">Or, pour <span class="process-math">\(1 \leq k \leq p - 1\text{,}\)</span> le coefficient binomial <span class="process-math">\(\binom{p}{k}\)</span> est divisible par <span class="process-math">\(p\text{,}\)</span> tandis que le terme constant <span class="process-math">\(\binom{p}{p-1} = p\)</span> n’est pas divisible par <span class="process-math">\(p^2\text{.}\)</span> Ainsi, <span class="process-math">\(\Phi_p(X + 1)\)</span> est <span class="process-math">\(p\)</span>-Eisenstein, et donc irréductible dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span> Par conséquent, <span class="process-math">\(\Phi_p(X)\)</span> est également irréductible dans <span class="process-math">\(\mathbb{Z}[X]\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraphe"><a href="#app-irreducibilite-polynome-9-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
 </div>
