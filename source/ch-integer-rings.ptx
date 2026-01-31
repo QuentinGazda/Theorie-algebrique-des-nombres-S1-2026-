@@ -3,6 +3,207 @@
 <chapter xml:id="ch-integer-rings" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Anneaux d'entiers</title>
 
+<section xml:id="sec-plongement-canonique">
+  <title>Plongement canonique</title>
+  
+  <p>
+    Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m>. On désigne par <m>\Sigma(K)=\mathrm{Hom}(K,\mathbb{C})</m> l'ensemble des plongements de <m>K</m>.
+  </p>
+
+  <definition xml:id="def-plongements-reels-et-complexes">
+    <title> Plongements réels et complexes</title>
+    <statement>
+      <p>
+        Un <em>plongement réel</em> de <m>K</m> est un plongement <m>\sigma\in \Sigma(K)</m> dont l'image <m>\sigma(K)</m> est contenue dans <m>\mathbb{R}</m>.
+      </p>
+      <p>  
+        Un <em>plongement complexe</em> de <m>K</m> est un plongement de <m>K</m> qui n'est pas réel.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Étant donné un plongement <m>\sigma:K\to \mathbb{C}</m>, on peut définir <em> son plongement conjugué</em>
+  </p>
+  <md> \overline{\sigma}:K\longrightarrow \mathbb{C}, \quad x\longmapsto \overline{\sigma(x)}.</md>
+  <p>
+  Alors <m>\overline{\sigma}</m> est aussi un plongement de <m>K</m> et l'opération <m>\sigma\mapsto \overline{\sigma}</m> définit une involution de <m>\Sigma(K)</m>. Les points fixes de cette involution sont précisément les plongements réels, tandis que les plongements complexes se regroupent par paires <m>(\sigma,\overline{\sigma})</m>. De cette manière, on peut écrire 
+  </p>
+  <md>
+  \Sigma(K)=\Sigma_1 \sqcup \Sigma_2 \sqcup \overline{\Sigma}_2
+  </md>
+  <p>
+  où <m>\Sigma_1</m> est l'ensemble des plongements réels et <m>\Sigma_2</m> est un ensemble de représentants des paires de plongements complexes non réels deux-à-deux non conjugués.
+  </p>  
+  <p>
+   En notant <m>r_1</m> le nombre de plongements réels de <m>K</m> et <m>r_2</m> le nombre de plongements complexes non deux-à-deux conjugués, on obtient la relation
+</p>
+<me>[K:\mathbb{Q}]=r_1+2r_2.</me>
+
+<example>
+  <title> Corps quadratiques réels et imaginaires </title>
+  <p> 
+  Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. Alors:
+  </p>
+    <ul>
+      <li>
+        <p>
+         Si <m>d&gt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique réel</em> et possède deux plongements réels: l'inclusion canonique <m>\mathrm{id}_K</m> et le morphisme <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m>. Si <m>d&lt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique imaginaire</em> et ne possède pas de plongement réel: les deux plongements complexes <m>\mathrm{id}_K</m> et <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> sont conjugués l'un de l'autre.
+        </p>
+      </li>
+      <li>
+        <p>
+          Si <m>d&lt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique imaginaire</em> et ne possède pas de plongement réel: les deux plongements complexes <m>\mathrm{id}_K</m> et <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> sont conjugués l'un de l'autre.
+        </p>
+      </li>
+    </ul>  
+</example>
+
+<example>
+  <p>
+    Soit <m>K=\mathbb{Q}(\sqrt[3]{2})</m>. Le polynôme minimal de <m>\sqrt[3]{2}</m> est <m>X^3-2</m> qui possède comme racines complexes <m>\sqrt[3]{2}</m>, <m>\sqrt[3]{2}\omega</m>, et <m>\sqrt[3]{2}\omega^2</m> où <m>\omega=e^{2i\pi/3}</m> est une racine cubique primitive de l'unité. <m>K</m> est un corps de nombres de degré <m>3</m> qui possède un seul plongement réel, l'inclusion canonique, et un seul plongement complexe non réel, défini par <m>\sigma:\sqrt[3]{2}\mapsto \sqrt[3]{2}\omega</m>. On a donc <m>r_1=1</m> et <m>r_2=1</m>.
+  </p>
+</example>
+
+<p>
+  Numérotons les plongements de <m>K</m> de la manière suivante:
+</p>
+  <md>
+    <mrow> \Sigma(K) \amp =\{\sigma_1,\ldots,\sigma_n\},</mrow>
+    <mrow> \Sigma_1 \amp = \{\sigma_1,\ldots,\sigma_{r_1}\},</mrow>
+    <mrow> \Sigma_2 \amp = \{\sigma_{r_1+1},\ldots,\sigma_{r_1+r_2}\},</mrow>
+    <mrow> \overline{\Sigma}_2 \amp = \{\sigma_{r_1+r_2+1},\ldots,\sigma_{n}\}.</mrow>
+  </md>
+
+<definition xml:id="def-plongement-canonique">
+  <title>Plongement canonique</title>
+  <statement>
+    <p>
+      On définit alors le <em>plongement canonique</em> de <m>K</m> comme le morphisme de <m>\mathbb{Q}</m>-espaces vectoriels
+    </p>
+  <md>
+  <mrow>\sigma: K \amp \to \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}  </mrow>
+  <mrow>x \amp \mapsto (\sigma_1(x),\ldots,\sigma_{r_1}(x),\sigma_{r_1+1}(x),\ldots,\sigma_{r_1+r_2}(x))</mrow>
+  </md>
+  </statement>
+</definition>
+
+<p>
+  Le plongement canonique est application injective de <m>K</m> dans <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> (car chaque <m>\sigma_i</m> indépendament, en tant que morphisme de corps, est injectif).
+</p>
+
+<p>
+  Le produit <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> est un espace vectoriel réel de dimension <m>n=r_1+2r_2</m>. On l'identifiera à <m>\mathbb{R}^n</m> en utilisant la base canonique de <m>\mathbb{R}^{r_1}</m> et la base <m>(1,i)</m> de <m>\mathbb{C}</m>; on appelle cette famille <em>la base canonique de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m></em>. Par cette identification, on dispose de la mesure de Lebesgue sur <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>.
+</p>
+
+<theorem xml:id="thm-reseau-du-plongement-canonique">
+  <statement>
+    <p>
+      L'image de <m>\mathcal{O}_K</m> par le plongement canonique est un réseau de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>.
+    </p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+    On commence par énoncer un lemme général.
+  </p>
+  <lemma xml:id="lem-covolume-dune-base-dun-corps-de-nombres">
+    <statement>
+      <p>
+        Soit <m>(e_1,\ldots,e_n)</m> une base de <m>K</m> en tant que <m>\mathbb{Q}</m>-espace vectoriel. Alors <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> est une <m>\mathbb{R}</m> base de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> qui engendre un réseau de covolume <m>2^{-r_2}\sqrt{|\mathrm{disc}(e_1,\ldots,e_n)|}</m>.
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <p>
+      On rappelle que le covolume de la famille <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> dans l'espace <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> est donné par la valeur absolue du déterminant de la matrice de changement de base entre <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> et la base canonique de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>. Pour <m>i\in \{1,\ldots,n\}</m>, la <m>i</m>ième coordonnée <m>\sigma(e_i)</m> s'écrit dans la base canonique comme 
+    </p>
+    <md>
+      (\sigma_1(e_i),\ldots,\sigma_{r_1}(e_i),\mathrm{Re}~\sigma_{r_1+1}(e_i),\mathrm{Im}~\sigma_{r_1+1}(e_i),\ldots,\mathrm{Re}~\sigma_{r_1+r_2}(e_i),\mathrm{Im}~\sigma_{r_1+r_2}(e_i)).
+    </md>
+    <p>
+      Cela montre que le covolume est donné par la valeur absolue du déterminant de la matrice
+    </p>
+    <md>
+      \begin{pmatrix}
+      \sigma_1(e_1) \amp \cdots \amp \sigma_{r_1}(e_1) \amp \mathrm{Re}~\sigma_{r_1+1}(e_1) \amp \mathrm{Im}~\sigma_{r_1+1}(e_1) \amp \cdots \amp \mathrm{Re}~\sigma_{r_1+r_2}(e_1) \amp \mathrm{Im}~\sigma_{r_1+r_2}(e_1) \\
+      \sigma_1(e_2) \amp \cdots \amp \sigma_{r_1}(e_2) \amp \mathrm{Re}~\sigma_{r_1+1}(e_2) \amp \mathrm{Im}~\sigma_{r_1+1}(e_2) \amp \cdots \amp \mathrm{Re}~\sigma_{r_1+r_2}(e_2) \amp \mathrm{Im}~\sigma_{r_1+r_2}(e_2) \\
+      \vdots \amp \ddots \amp \vdots \amp \vdots \amp \vdots \amp \ddots \amp \vdots \amp \vdots \\
+      \sigma_1(e_n) \amp \cdots \amp 	\sigma_{r_1}(e_n) 	\amp 	\mathrm{Re}~\sigma_{r_1+1}(e_n) 	\amp 	\mathrm{Im}~\sigma_{r_1+1}(e_n) 	\amp 	\cdots 	\amp 	\mathrm{Re}~\sigma_{r_1+r_2}(e_n) 	\amp 	\mathrm{Im}~\sigma_{r_1+r_2}(e_n)
+      \end{pmatrix}.
+    </md>
+    <p>
+    En multipliant à droite cette matrice par la matrice complexe de taille <m>n=r_1+2r_2</m> donnée par
+    </p>
+    <men xml:id="matrice-de-changement-complexe">
+      \left(
+        \begin{array}{c|cccc}
+        I_{r_1} \amp 0      \amp 0      \amp \cdots \amp 0 \\
+        \hline
+        0 \amp \begin{pmatrix} 1 \amp i \\[2pt] 1 \amp -i \end{pmatrix} \amp 0 \amp \cdots \amp 0 \\
+        0 \amp 0 \amp \begin{pmatrix} 1 \amp i \\[2pt] 1 \amp -i \end{pmatrix} \amp \ddots \amp \vdots \\
+        \vdots \amp \vdots \amp \ddots \amp \ddots \amp 0 \\
+        0 \amp 0 \amp \cdots \amp 0 \amp \begin{pmatrix} 1 \amp i \\[2pt] 1 \amp -i \end{pmatrix}
+        \end{array}
+      \right)
+    </men>
+    <p>
+    on trouve la matrice 
+    </p>
+    <md>
+      \begin{pmatrix}
+      \sigma_1(e_1) \amp \cdots \amp \sigma_{r_1}(e_1) \amp \sigma_{r_1+1}(e_1) \amp \overline{\sigma_{r_1+1}}(e_1) \amp \cdots \amp \overline{\sigma_{r_1+r_2}}(e_1) \\
+      \sigma_1(e_2) \amp \cdots \amp \sigma_{r_1}(e_2) \amp \sigma_{r_1+1}(e_2) \amp \overline{\sigma_{r_1+1}}(e_2) \amp \cdots \amp \overline{\sigma_{r_1+r_2}}(e_2) \\
+      \vdots \amp \ddots \amp \vdots \amp \vdots \amp \vdots \amp \ddots \amp \vdots \\
+      \sigma_1(e_n) \amp \cdots \amp \sigma_{r_1}(e_n) \amp \sigma_{r_1+1}(e_n) \amp \overline{\sigma_{r_1+1}}(e_n) \amp \cdots \amp \overline{\sigma_{r_1+r_2}}(e_n) \\
+      \end{pmatrix}
+    </md>
+    <p>
+    qui n'est autre que la matrice <m>(\sigma_i(e_j))_{i,j}</m> dont le carré du déterminant est égal à <m>\mathrm{disc}(e_1,\ldots,e_n)</m>. Le déterminant de la matrice réelle initiale est donc égal à une racine du discriminant divisé par <m>(2i)^{r_2}</m>, le déterminant de la matrice complexe <xref ref="matrice-de-changement-complexe"/>. La valeur absolue, et donc le covolume, s'en déduit.
+    </p>
+  </proof>
+
+  <p>
+    On poursuit avec un autre lemme.
+  </p>
+  <lemma xml:id="lem-OK-contient-une-base-de-K">
+    <statement>
+      <p>
+        <m>\mathcal{O}_K</m> contient une base de <m>K</m> en tant que <m>\mathbb{Q}</m>-espace vectoriel.
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <p>
+      Soit <m>(e_1,\ldots,e_n)</m> une base de <m>K</m> en tant que <m>\mathbb{Q}</m>-espace vectoriel. Pour chaque <m>i\in\{1,\ldots,n\}</m>, il existe un entier non nul <m>d_i</m> tel que <m>d_i e_i\in \overline{\mathbb{Z}}</m> (<xref ref="lem-denominateur"/>). Ainsi <m>(d_1e_1,\ldots,d_ne_n)</m> est encore une base de <m>K</m> comme <m>\mathbb{Q}</m>-espace vectoriel et est contenue dans <m>\mathcal{O}_K=K\cap \overline{\mathbb{Z}}</m>.
+    </p>
+  </proof>
+
+  <p>
+    D'après le <xref ref="lem-OK-contient-une-base-de-K"/>, il reste à montrer que l'image <m>\sigma(\mathcal{O}_K)</m> est discrète dans <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>. On équippe alors <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> de la norme sup <m>\|\cdot\|_{\infty}</m> dans la base canonique.
+  </p>
+  <p>
+    Pour <m>r>0</m> et <m>x\in \mathcal{O}_K</m>, l'inégalité <m>\|x\|_{\infty}\leq r</m> signifie que <m>|\sigma_i(x)|\leq r</m> pour <m>i\in \{1,\ldots,r_1\}</m> et que <m>|\mathrm{Re}~\sigma_{r_1+j}(x)|\leq r</m> et <m>|\mathrm{Im}~\sigma_{r_1+j}(x)|\leq r</m> pour <m>j\in \{1,\ldots,r_2\}</m>. En particulier, <m>|\sigma_i(x)|\leq \sqrt{2} r</m> pour tout <m>i\in \{1,\ldots,n\}</m>.  
+  </p>
+  <p>
+    De l'identité
+  </p>
+    <md>
+      \chi_{x,K}(X)=\prod_{i=1}^n (X-\sigma_i(x))
+    </md>
+  <p>
+    (<xref ref="prop-formule-traces-normes"/>), on déduit que le <m>m</m>-ième coefficient <m>a_m</m> de <m>\chi_{x,K}(X)</m> vérifie
+  </p>
+  <md>
+    |a_m|=\left|(-1)^m \sum_{1\leq i_1 &lt; \cdots &lt; i_m\leq n}{\sigma_{i_1}(x)\cdots \sigma_{i_m}(x)}\right|\leq \binom{n}{m}\sqrt{2}^m r^m
+  </md>
+  <p>
+    Puisqu'il n'y a qu'un nombre fini de polynômes à coefficients entiers vérifiant ces inégalités, il n'y a qu'un nombre fini de <m>\chi_{x,K}(X)</m> possibles, et donc qu'un nombre fini de tels <m>x</m> (racine de <m>\chi_{x,K}(X)</m>). Ainsi, <m>\sigma(\mathcal{O}_K)</m> est discret dans <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>.
+  </p>
+</proof>
+
+</section>
+
+
 
 
 </chapter>

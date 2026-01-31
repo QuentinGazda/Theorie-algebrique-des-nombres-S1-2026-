@@ -256,49 +256,6 @@
     </p>
   </proof>
 
-
-
-  <definition xml:id="def-plongements-reels-et-complexes">
-    <title> Plongements réels et complexes</title>
-    <statement>
-      <p>
-        Soit <m>K</m> un corps de nombres. Un <em>plongement réel</em> de <m>K</m> est un plongement complexe <m>\sigma:K\to \mathbb{C}</m> de <m>K</m> dont l'image <m>\sigma(K)</m> est contenue dans <m>\mathbb{R}</m>.
-      </p>
-      <p>  
-        Un <em>plongement complexe</em> de <m>K</m> est un plongement complexe de <m>K</m> qui n'est pas réel.
-      </p>
-    </statement>
-  </definition>
-  <p>
-    Étant donné un plongement complexe <m>\sigma:K\to \mathbb{C}</m>, on peut définir son conjugué <m>\overline{\sigma}:K\to \mathbb{C}</m> par <m>\overline{\sigma}(x)=\overline{\sigma(x)}</m> où le second conjugué est le conjugué complexe usuel dans <m>\mathbb{C}</m>. Alors <m>\overline{\sigma}</m> est aussi un plongement complexe de <m>K</m> différent de <m>\sigma</m>. De plus, <m>\sigma</m> est réel si, et seulement si, <m>\overline{\sigma}=\sigma</m>. Ainsi, les plongements complexes non réels de <m>K</m> se regroupent par paires <m>(\sigma,\overline{\sigma})</m>. On note <m>r_1</m> le nombre de plongements réels de <m>K</m> et <m>r_2</m> le nombre de paires de plongements complexes non réels. On a donc la relation
-    <me>[K:\mathbb{Q}]=r_1+2r_2.</me>
-  </p>
-
-<example>
-  <title> Corps quadratiques réels et imaginaires </title>
-  <p> 
-  Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. Alors:
-  </p>
-    <ul>
-      <li>
-        <p>
-         Si <m>d&gt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique réel</em> et possède deux plongements réels: l'inclusion canonique <m>\mathrm{id}_K</m> et le morphisme <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m>. Si <m>d&lt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique imaginaire</em> et ne possède pas de plongement réel: les deux plongements complexes <m>\mathrm{id}_K</m> et <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> sont conjugués l'un de l'autre.
-        </p>
-      </li>
-      <li>
-        <p>
-          Si <m>d&lt;0</m>, alors <m>K</m> est appelé un <em>corps quadratique imaginaire</em> et ne possède pas de plongement réel: les deux plongements complexes <m>\mathrm{id}_K</m> et <m>\sigma: a+b\sqrt{d}\mapsto a-b\sqrt{d}</m> sont conjugués l'un de l'autre.
-        </p>
-      </li>
-    </ul>  
-</example>
-
-<example>
-  <p>
-    Soit <m>K=\mathbb{Q}(\sqrt[3]{2})</m>. Le polynôme minimal de <m>\sqrt[3]{2}</m> est <m>X^3-2</m> qui possède comme racines complexes <m>\sqrt[3]{2}</m>, <m>\sqrt[3]{2}\omega</m>, et <m>\sqrt[3]{2}\omega^2</m> où <m>\omega=e^{2i\pi/3}</m> est une racine cubique primitive de l'unité. <m>K</m> est un corps de nombres de degré <m>3</m> qui possède un seul plongement réel, l'inclusion canonique, et un seul plongement complexe non réel, défini par <m>\sigma:\sqrt[3]{2}\mapsto \sqrt[3]{2}\omega</m>. On a donc <m>r_1=1</m> et <m>r_2=1</m>.
-  </p>
-</example>
-
 <theorem xml:id="thm-element-primitif">
   <title> de l'élément primitif </title>
   <statement>
@@ -461,6 +418,23 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
       </p>
     </proof>
 
+    <p>
+      On en déduit une extension du critère d'intégralité au polynôme caractéristique (<xref ref="prop-polynome-minimal"/>). L'avantage décisif de cet énoncé est que le polynôme caractéristique reste plus facile à déterminer que le polynôme minimal dans le cas général.
+    </p>
+
+    <corollary xml:id="cor-critere-integralite">
+      <statement>
+        <p>
+          Un nombre algébrique <m>\alpha</m> est une entier algébrique si, et seulement si, son polynôme caractéristique <m>\chi_{\alpha}(X)</m> appartient à <m>\mathbb{Z}[X]</m>.
+        </p>
+      </statement>
+    </corollary>
+    <proof>
+      <p>
+        Si <m>\alpha</m> est un entier algébrique, alors son polynôme minimal appartient à <m>\mathbb{Z}[X]</m> d'après le <xref ref="prop-polynome-minimal"/>. Par la <xref ref="prop-polynome-caracteristique-et-minimal"/>, le polynôme caractéristique <m>\chi_{\alpha}(X)</m> appartient aussi à <m>\mathbb{Z}[X]</m>. La réciproque est immédiate.
+      </p>
+    </proof>
+
     <proposition xml:id="prop-formule-traces-normes">
       <statement>
         <p>
@@ -492,18 +466,17 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
         où la seconde égalité provient de la <xref ref="prop-polynome-caracteristique-et-minimal"/>.
       </p>
     </proof>
- 
 
     <corollary xml:id="cor-trace-et-norme-entiers-algebriques">
      <statement>
          <p>
             Soit <m>\alpha\in K</m> un entier algébrique. Alors <m>\mathrm{Tr}_{K}(\alpha)</m> et <m>\mathrm{N}_{K}(\alpha)</m> sont des entiers.
           </p>
-        </statement>
-      </corollary>
+      </statement>
+    </corollary>
       <proof>
         <p> 
-          Comme <m>\alpha</m> est un entier algébrique, le critère d'intégralité (<xref ref="prop-polynome-minimal"/>) implique <m>\Pi_{\alpha}(X)\in \mathbb{Z}[X]</m>. D'après la <xref ref="prop-polynome-caracteristique-et-minimal"/>, le polynôme caractéristique <m>\chi_{\alpha}(X)</m> appartient aussi à <m>\mathbb{Z}[X]</m>. Par la <xref ref="prop-formule-traces-normes"/>, on en déduit que <m>\mathrm{Tr}_{K}(\alpha)</m> et <m>\mathrm{N}_{K}(\alpha)</m>, en tant que premier et dernier coefficient de <m>\chi_{\alpha}(X)</m> (au signe près), sont des entiers.
+          Comme <m>\alpha</m> est un entier algébrique son polynôme caractéristique <m>\chi_{\alpha}(X)</m> appartient à <m>\mathbb{Z}[X]</m>. Par la <xref ref="prop-formule-traces-normes"/>, on en déduit que <m>\mathrm{Tr}_{K}(\alpha)</m> et <m>\mathrm{N}_{K}(\alpha)</m>, en tant que premier et dernier coefficient de <m>\chi_{\alpha}(X)</m> (au signe près), sont des entiers.
         </p>
       </proof>
 
