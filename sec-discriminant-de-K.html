@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-FR" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Discriminant de K</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Théorie algébrique des nombres">
+<meta property="book:author" content="Quentin Gazda">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.0d5f811896ddeac1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Sauter au contenu</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Théorie algébrique des nombres</span> <span class="subtitle">UM4MA234 - Sorbonne Université</span></a></h1>
+<p class="byline">Quentin Gazda</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Table des matières"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Table des matières</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Résultats de la recherche: </h2>
+<div id="searchempty" class="searchempty"><span>Aucun résultat.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-OK.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="up-button button" href="ch-integer-rings.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Avant-propos</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="front-preface.html" class="internal"><span class="title">Préface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-algebraic-numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Nombres algébriques et entiers algébriques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nombres algébriques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynome-minimal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Polynôme minimal d’un nombre algébrique</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Théorème de Cantor</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Nombres algébriques de degré deux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-number-fields.html" class="internal"><span class="codenumber">2</span> <span class="title">Corps de nombres</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-number-fields-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Structure des corps de nombres</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-normes-traces.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Traces et Normes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminants.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Discriminants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-integer-rings.html" class="internal"><span class="codenumber">3</span> <span class="title">Anneaux d’entiers</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-OK.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Structure de <span class="process-math">\(\mathcal{O}_K\)</span></span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-discriminant-de-K.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Discriminant de <span class="process-math">\(K\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="app-irreducibilite-polynome.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Démontrer l’irréductibilité d’un polynôme</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rappels-sur-les-anneaux.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Rappels sur les anneaux</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-reseaux.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Théorie des réseaux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="references.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-discriminant-de-K"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discriminant de <span class="process-math">\(K\)</span></span>
+</h2>
+<div class="para" id="sec-discriminant-de-K-2">Soit <span class="process-math">\(K\)</span> un corps de nombres de degré <span class="process-math">\(n=[K:\mathbb{Q}]\)</span> et <span class="process-math">\(\mathcal{O}_K\)</span> son anneau des entiers. D’après le <a href="sec-OK.html#cor-structure-of-OK" class="xref" data-knowl="./knowl/xref/cor-structure-of-OK.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Corollaire 3.1.10">Corollaire 3.1.10</a>, il existe une <span class="process-math">\(\mathbb{Z}\)</span>-base <span class="process-math">\((e_1,\ldots,e_n)\)</span> de <span class="process-math">\(\mathcal{O}_K\text{.}\)</span> Un choix alternatif de base diffère de la première par une matrice de <span class="process-math">\(\mathrm{GL}_n(\mathbb{Z})\text{,}\)</span> soit déterminant <span class="process-math">\(\pm 1\text{.}\)</span> Par conséquent, le discriminant <span class="process-math">\(\mathrm{disc}(e_1,\ldots,e_n)\)</span> ne dépend pas du choix de la base de <span class="process-math">\(\mathcal{O}_K\)</span> (<a href="sec-discriminants.html#prop-discriminants" class="xref" data-knowl="./knowl/xref/prop-discriminants.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 2.3.4">Proposition 2.3.4</a>, <a href="sec-discriminants.html#item-discriminant-changement-base" class="xref" data-knowl="./knowl/xref/item-discriminant-changement-base.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion ii">Assertion ii</a>). On peut donc définir le discriminant de <span class="process-math">\(K\)</span> comme suit.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-discriminant-dun-corps-de-nombres"><h3 class="heading">
+<span class="type">Définition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discriminant d’un corps de nombres.</span>
+</h3>
+<div class="para" id="def-discriminant-dun-corps-de-nombres-2-1">Le <em class="emphasis">discriminant</em> de <span class="process-math">\(K\)</span> est le discriminant d’une base de <span class="process-math">\(\mathcal{O}_K\)</span> en tant que <span class="process-math">\(\mathbb{Z}\)</span>-module. On le note <span class="process-math">\(\mathrm{disc}(K)\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#def-discriminant-dun-corps-de-nombres-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Définition 3.2.1: Discriminant d’un corps de nombres"><a href="#def-discriminant-dun-corps-de-nombres" title="Permalien Définition 3.2.1: Discriminant d’un corps de nombres" aria-label="Permalien Définition 3.2.1: Discriminant d’un corps de nombres">🔗</a></div></article><details id="sec-discriminant-de-K-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exemple</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discriminant des corps quadratiques.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-discriminant-de-K-4-2">Soit <span class="process-math">\(K=\mathbb{Q}(\sqrt{d})\)</span> un corps quadratique où <span class="process-math">\(d\)</span> est un entier sans facteur carré. On a vu que l’anneau des entiers de <span class="process-math">\(K\)</span> est donné par<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-4-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-discriminant-de-K-4-3">
+\begin{equation*}
+\mathcal{O}_K = \begin{cases}
+\mathbb{Z}[\sqrt{d}] \amp \text{si } d\equiv 2,3 \pmod{4}, \\
+\mathbb{Z}\left[\frac{1+\sqrt{d}}{2}\right] \amp \text{si } d\equiv 1 \pmod{4}.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="sec-discriminant-de-K-4-4">Le discriminant de <span class="process-math">\(K\)</span> se calcule alors comme <span class="process-math">\(\det\left(\begin{smallmatrix} 1 \amp \sqrt{d} \\ 1 \amp -\sqrt{d} \end{smallmatrix}\right)^2\)</span> si <span class="process-math">\(d\equiv 2,3 \pmod{4}\text{,}\)</span> et comme <span class="process-math">\(\det\left(\begin{smallmatrix} 1 \amp \frac{1+\sqrt{d}}{2} \\ 1 \amp \frac{1-\sqrt{d}}{2} \end{smallmatrix}\right)^2\)</span> si <span class="process-math">\(d\equiv 1 \pmod{4}\text{.}\)</span> On trouve ainsi<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-4-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-discriminant-de-K-4-5">
+\begin{equation*}
+\mathrm{disc}(K) = \begin{cases}
+4d \amp \text{si } d\equiv 2,3 \pmod{4}, \\
+d \amp \text{si } d\equiv 1 \pmod{4}.
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Exemple 3.2.2: Discriminant des corps quadratiques"><a href="#sec-discriminant-de-K-4" title="Permalien Exemple 3.2.2: Discriminant des corps quadratiques" aria-label="Permalien Exemple 3.2.2: Discriminant des corps quadratiques">🔗</a></div></article></details><article class="remark remark-like" id="sec-discriminant-de-K-5"><h3 class="heading">
+<span class="type">Remarque</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-discriminant-de-K-5-1">Soit <span class="process-math">\(D\)</span> le sous-ensemble de <span class="process-math">\(\mathbb{Z}\)</span> formé des <span class="process-math">\(|\mathrm{disc}(f_1,\ldots,f_n)|\)</span> où <span class="process-math">\((f_1,\ldots,f_n)\)</span> est une famille de <span class="process-math">\(\mathcal{O}_K\text{.}\)</span> Alors <span class="process-math">\(D\)</span> est non réduit à zéro et admet un plus petit élément qui est précisément <span class="process-math">\(|\mathrm{disc}(K)|\)</span> (on le déduit de la <a href="sec-discriminants.html#prop-discriminants" class="xref" data-knowl="./knowl/xref/prop-discriminants.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 2.3.4">Proposition 2.3.4</a>, <a href="sec-discriminants.html#item-discriminant-changement-base" class="xref" data-knowl="./knowl/xref/item-discriminant-changement-base.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Assertion ii">Assertion ii</a>).<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-5-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remarque 3.2.3"><a href="#sec-discriminant-de-K-5" title="Permalien Remarque 3.2.3" aria-label="Permalien Remarque 3.2.3">🔗</a></div></article><div class="para" id="sec-discriminant-de-K-6">Plus généralement, la <a href="sec-discriminant-de-K.html#def-discriminant-dun-corps-de-nombres" class="xref" data-knowl="./knowl/xref/def-discriminant-dun-corps-de-nombres.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Définition 3.2.1: Discriminant d’un corps de nombres">Définition 3.2.1</a> s’étend à un sous-groupe de <span class="process-math">\(\mathcal{O}_K\)</span> contenant une base de <span class="process-math">\(K\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-6" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-discriminant-dun-sous-groupe"><h3 class="heading">
+<span class="type">Définition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discriminant d’un sous-groupe de <span class="process-math">\(\mathcal{O}_K\)</span>.</span>
+</h3>
+<div class="para" id="def-discriminant-dun-sous-groupe-2-1">Soit <span class="process-math">\(A\subset \mathcal{O}_K\)</span> un sous-groupe contenant une base de <span class="process-math">\(K\)</span><details class="ptx-footnote" aria-live="polite" id="def-discriminant-dun-sous-groupe-2-1-3"><summary class="ptx-footnote__number" title="Note 3.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="def-discriminant-dun-sous-groupe-2-1-3">On notera que <span class="process-math">\(A\)</span> est immédiatement libre de rang <span class="process-math">\(n\)</span> en tant que <span class="process-math">\(\mathbb{Z}\)</span>-module.</div></details>. Le <em class="emphasis">discriminant</em> de <span class="process-math">\(A\)</span> est le discriminant d’une base de <span class="process-math">\(A\)</span> en tant que <span class="process-math">\(\mathbb{Z}\)</span>-module. On le note <span class="process-math">\(\mathrm{disc}(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#def-discriminant-dun-sous-groupe-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Définition 3.2.4: Discriminant d’un sous-groupe de \mathcal{O}_K"><a href="#def-discriminant-dun-sous-groupe" title="Permalien Définition 3.2.4: Discriminant d’un sous-groupe de \mathcal{O}_K" aria-label="Permalien Définition 3.2.4: Discriminant d’un sous-groupe de \mathcal{O}_K">🔗</a></div></article><div class="para" id="sec-discriminant-de-K-8">
+<a href="sec-discriminant-de-K.html#def-discriminant-dun-sous-groupe" class="xref" data-knowl="./knowl/xref/def-discriminant-dun-sous-groupe.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Définition 3.2.4: Discriminant d’un sous-groupe de \mathcal{O}_K">Définition 3.2.4</a> s’applique en particulier aux anneaux de la forme <span class="process-math">\(\mathbb{Z}[\alpha]\)</span> où <span class="process-math">\(\alpha\)</span> est un élément primitif de <span class="process-math">\(K\text{,}\)</span> ou bien aux idéaux non-nuls<details class="ptx-footnote" aria-live="polite" id="sec-discriminant-de-K-8-5"><summary class="ptx-footnote__number" title="Note 3.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="sec-discriminant-de-K-8-5">En effet, <span class="process-math">\(I\)</span> est un idéal non nul, si <span class="process-math">\(x\in I\setminus\{0\}\)</span> et si <span class="process-math">\((e_1,\ldots,e_n)\)</span> désigne une <span class="process-math">\(\mathbb{Z}\)</span>-base de <span class="process-math">\(\mathcal{O}_K\text{,}\)</span> alors <span class="process-math">\((xe_1,\ldots,xe_n)\)</span> est une base de <span class="process-math">\(K\)</span> contenue dans <span class="process-math">\(I\text{.}\)</span>
+</div></details>.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-8" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-discriminant-indice"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-discriminant-indice-1-1">Soit <span class="process-math">\(A\subset B\)</span> des sous-groupes de <span class="process-math">\(\mathcal{O}_K\)</span> contenant une base de <span class="process-math">\(K\text{.}\)</span> Alors <span class="process-math">\(A\)</span> est d’indice fini dans <span class="process-math">\(B\)</span> et on a la relation<div class="autopermalink" data-description="Paragraphe"><a href="#prop-discriminant-indice-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="prop-discriminant-indice-1-2">
+\begin{equation*}
+|\mathrm{disc}(A)|=|B/A|^2\cdot |\mathrm{disc}(B)|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proposition 3.2.5"><a href="#prop-discriminant-indice" title="Permalien Proposition 3.2.5" aria-label="Permalien Proposition 3.2.5">🔗</a></div></article><details id="sec-discriminant-de-K-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-discriminant-de-K-10-1">D’après le <a href="sec-OK.html#lem-covolume-dune-base-dun-corps-de-nombres" class="xref" data-knowl="./knowl/xref/lem-covolume-dune-base-dun-corps-de-nombres.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Lemme 3.1.7">Lemme 3.1.7</a>, on a<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-10-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-covolume-dune-base-dun-corps-de-nombres.html" id="sec-discriminant-de-K-10-2">
+\begin{equation*}
+|B/A|=|\sigma(B)/\sigma(A)|=\frac{\mathrm{covol}(\sigma(A))}{\mathrm{covol}(\sigma(B))}=\sqrt{\frac{\mathrm{disc}(A)}{\mathrm{disc}(B)}}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Démonstration 3.2.1"><a href="#sec-discriminant-de-K-10" title="Permalien Démonstration 3.2.1" aria-label="Permalien Démonstration 3.2.1">🔗</a></div></article></details><div class="para" id="sec-discriminant-de-K-11">La <a href="sec-discriminant-de-K.html#prop-discriminant-indice" class="xref" data-knowl="./knowl/xref/prop-discriminant-indice.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 3.2.5">Proposition 3.2.5</a> est fondamentale pour le calcul de <span class="process-math">\(\mathcal{O}_K\text{.}\)</span> Elle indique en particulier que le discriminant d’un sous-anneau <span class="process-math">\(A\subset \mathcal{O}_K\)</span> ne peut diminuer que d’un carré ! Cela implique par exemple que si <span class="process-math">\(\mathrm{disc}(A)\)</span> est un entier sans facteur carré, alors <span class="process-math">\(A=\mathcal{O}_K\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-11" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<details id="sec-discriminant-de-K-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exemple</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Nombre plastique.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-discriminant-de-K-12-2">Soit <span class="process-math">\(\psi\)</span> le <em class="emphasis">nombre plastique</em>:<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-12-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-discriminant-indice.html ./knowl/xref/prop-discriminant-indice.html ./knowl/xref/cor-discriminant-plongements.html ./knowl/xref/exemples-discriminants-polynomes.html" id="sec-discriminant-de-K-12-3">
+\begin{equation*}
+\psi=\sqrt[3]{\frac12+\frac{\sqrt{69}}{18}}+\sqrt[3]{\frac12-\frac{\sqrt{69}}{18}}
+\end{equation*}
+</div>
+<div class="para" id="sec-discriminant-de-K-12-4">Ce nombre est un entier algébrique de degré <span class="process-math">\(3\)</span>vérifiant <span class="process-math">\(\psi^3=\psi+1\)</span> (de manière similaire au <em class="emphasis">nombre d’or</em> vérifiant <span class="process-math">\(\varphi^2=\varphi+1\)</span>).<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-12-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-discriminant-de-K-12-5">Utilisons la <a href="sec-discriminant-de-K.html#prop-discriminant-indice" class="xref" data-knowl="./knowl/xref/prop-discriminant-indice.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 3.2.5">Proposition 3.2.5</a> pour déterminer l’anneau des entiers du corps de nombres <span class="process-math">\(K=\mathbb{Q}(\psi)\text{.}\)</span> On a <span class="process-math">\(\mathbb{Z}[\psi]\subset \mathcal{O}_K\)</span> et, pour montrer que cette inclusion est une égalité, il suffit de montrer que <span class="process-math">\(|\mathcal{O}_K/\mathbb{Z}[\psi]|=1\text{.}\)</span> Or la <a href="sec-discriminant-de-K.html#prop-discriminant-indice" class="xref" data-knowl="./knowl/xref/prop-discriminant-indice.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 3.2.5">Proposition 3.2.5</a> donne<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-12-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-discriminant-indice.html ./knowl/xref/prop-discriminant-indice.html ./knowl/xref/cor-discriminant-plongements.html ./knowl/xref/exemples-discriminants-polynomes.html" id="sec-discriminant-de-K-12-6">
+\begin{equation*}
+|\mathrm{disc}(\mathbb{Z}[\psi])|=|\mathrm{disc}(\mathcal{O}_K)|\cdot |\mathcal{O}_K/\mathbb{Z}[\psi]|^2.
+\end{equation*}
+</div>
+<div class="para" id="sec-discriminant-de-K-12-7">Comme <span class="process-math">\(X^3-X-1\)</span> est le polynôme minimal de <span class="process-math">\(\psi\text{,}\)</span> on a<div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-12-7" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-discriminant-indice.html ./knowl/xref/prop-discriminant-indice.html ./knowl/xref/cor-discriminant-plongements.html ./knowl/xref/exemples-discriminants-polynomes.html" id="sec-discriminant-de-K-12-8">
+\begin{equation*}
+\mathrm{disc}(\mathbb{Z}[\psi])=\mathrm{disc}(1,\psi,\psi^2)=\mathrm{disc}(X^3-X-1)=-23.
+\end{equation*}
+</div>
+<div class="para" id="sec-discriminant-de-K-12-9">La première égalité suit de la définition, la seconde s’obtient par le <a href="sec-discriminants.html#cor-discriminant-plongements" class="xref" data-knowl="./knowl/xref/cor-discriminant-plongements.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Corollaire 2.3.6">Corollaire 2.3.6</a>, enfin on peut le calculer le discriminant d’un polynôme à l’aide des formules <a href="sec-discriminants.html#exemples-discriminants-polynomes" class="xref" data-knowl="./knowl/xref/exemples-discriminants-polynomes.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Exemple 2.3.1: Exemples de discriminants de polynômes">Exemple 2.3.1</a>). Comme <span class="process-math">\(23\)</span> est sans facteur carré, on a nécessairement <span class="process-math">\(|\mathcal{O}_K/\mathbb{Z}[\psi]|=1\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-discriminant-de-K-12-9" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exemple 3.2.6: Nombre plastique"><a href="#sec-discriminant-de-K-12" title="Permalien Exemple 3.2.6: Nombre plastique" aria-label="Permalien Exemple 3.2.6: Nombre plastique">🔗</a></div></article></details><div class="autopermalink" data-description="Section 3.2: Discriminant de K"><a href="#sec-discriminant-de-K" title="Permalien Section 3.2: Discriminant de K" aria-label="Permalien Section 3.2: Discriminant de K">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-OK.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
