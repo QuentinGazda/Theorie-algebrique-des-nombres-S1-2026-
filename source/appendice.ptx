@@ -157,4 +157,182 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
   </section>
 
 
+  <section xml:id="sec-reseaux">
+    <title>Théorie des réseaux</title>
+    
+      <p>
+        Nous rappelons ici quelques définitions et résultats de base sur les réseaux dans les espaces euclidiens qui seront utilisés dans ce cours.
+      </p>
+
+      <p>
+        Soit <m>V</m> un espace vectoriel réel de dimension finie muni d'une norme fixée quelconque notée <m>\|\cdot\|</m>. On peut supposer, sans perte de généralité, que <m>V=\mathbb{R}^n</m>; cela nous permettra de pouvoir considérer le déterminant de familles de vecteurs de <m>V</m> relativement à sa base canonique.
+      </p>
+      <definition xml:id="def-reseau">
+        <statement>
+          <p>
+            Un <em>réseau</em> dans <m>V</m> est un sous-groupe discret<fn>Cela signifie que pour tout ensemble borné <m>B\subset V</m>, l'intersection <m>B\cap L</m> est finie. Il suffit de vérifier cette condition pour les <m>B=B(0,r)</m>, les boules de rayon <m>r\geq 0</m>.</fn> de <m>V</m> qui contient une base.
+          </p>
+        </statement>
+      </definition>
+
+      <example>
+        <ul>
+          <li>
+            <p>
+              Le groupe <m>\mathbb{Z}^n</m> est un exemple de réseau dans <m>\mathbb{R}^n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Le sous-groupe <m>L=\{(a,b)\in \mathbb{Z}^2~|~a\equiv 2b \pmod{3}\}</m> est un réseau dans <m>\mathbb{R}^2</m>. En effet il est discret (car inclus dans <m>\mathbb{Z}^2</m>) et contient une base, par exemple <m>\{(3,0),(0,3)\}</m>.
+            </p>
+          </li>
+        </ul>
+      </example>
+
+      <p>
+        Les réseaux sont des groupes abéliens libres. 
+      </p>
+      <proposition xml:id="prop-base-reseau">
+        <title> Base d'un réseau</title>
+        <statement>
+          <p>
+            Soit <m>L</m> un réseau de <m>V</m>. Alors <m>L</m> contient une base de <m>V</m> qui est aussi une famille génératrice.
+          </p>
+        </statement>
+      </proposition>
+      <proof>
+        <p>
+          Étant donnée une base <m>(e_1,\ldots,e_n)</m> de <m>V</m> incluse dans <m>L</m>, on note <m>L(e)</m> le sous-groupe de <m>V</m> engendré par cette base, à savoir :
+        </p>
+          <md>L(e) = \left\{ \sum_{i=1}^n a_i e_i ~|~ a_i \in \mathbb{Z} \right\}.</md>
+        <p>
+          C'est un réseau car il contient la base <m>(e_1,\ldots,e_n)</m> et est discret : si <m>\|\cdot\|=\|\cdot\|_{\infty}</m> désigne la norme sup dans cette base, alors
+        </p>
+        <md>
+          L\cap B(0,r)=\left\{ \sum_{i=1}^n a_i e_i ~|~ a_i \in \mathbb{Z}~\text{et}~|a_i|\leq r \right\}
+        </md> 
+        <p>
+          qui est un ensemble fini. 
+        </p>
+
+        <p>
+          Désignons par <m>\Pi(e)</m> le <em>pavé fondamental de <m>L(e)</m></em>, à savoir:
+        </p>
+        <md>
+          \Pi(e):=\left\{\sum_{i=1}^n v_i e_i~|~v_i\in [0,1[\right\} \subset V.
+        </md>
+        <p>
+          Tout élément de <m>V</m> peut s'écrire de manière unique comme la somme d'un élément de <m>L(e)</m> et d'un élément de <m>\Pi(e)</m>. En effet, étant donné <m>v\in V</m> de coordonnées <m>(v_1,\ldots,v_n)</m> dans la base <m>(e_1,\ldots,e_n)</m>, on a
+        </p>
+        <md>  
+          v=\sum_{i=1}^n{\lfloor v_i \rfloor e_i} + \sum_{i=1}^n (v_i - \lfloor v_i \rfloor) e_i
+        </md>
+        <p>
+          où le premier terme appartient à <m>L(e)</m> et le second terme appartient à <m>\Pi(e)</m>. L'unicité de cette écriture suit de la propriété qui définit la partie entière. 
+        </p>
+        <lemma xml:id="lem-L-commensure-Le">
+          <statement>
+            <p>
+              <m>L(e)</m> est d'indice fini dans <m>L</m> et il existe un entier <m>N\geq 1</m> tel que <m>L\subset \frac{1}{N}L(e)</m>.
+            </p>
+          </statement>
+        </lemma>
+        <proof>
+          <p>
+            Comme la base <m>(e_1,\ldots,e_n)</m> est incluse dans <m>L</m>, on a <m>L(e)\subset L</m>. Montrons que cette inclusion est d'indice fini. Pour cela, on considère l'application
+          </p>
+          <md>
+            \begin{array}{rcl}
+              \Pi(e)\cap L \amp \longrightarrow \amp L/L(e) \\
+              \ell \amp \longmapsto \amp \ell +L(e)
+            \end{array}
+          </md>
+          <p>
+            Cette application est surjective : si <m>\ell\in L</m>, on peut l'écrire comme <m>\ell=\ell_e+\pi_e</m> avec <m>\ell_e\in L(e)</m> et <m>\pi_e\in \Pi(e)</m>. En particulier <m>\pi_e=\ell-\ell_e</m> est un élément de <m>\Pi(e)\cap L</m> qui s'envoie sur <m>\ell + L(e)</m>. Comme <m>\Pi(e)\cap L</m> est un ensemble fini (car <m>\Pi(e)</m> est borné et que <m>L</m> est discret), on en déduit que <m>L/L(e)</m> est un ensemble fini. 
+          </p>
+          <p>
+            Enfin, par Lagrange, en posant <m>N=|L/L(e)|</m>, on a <m>N\cdot L(e)\subset L</m>, d'où <m>L\subset \frac{1}{N}L(e)</m>. 
+          </p>
+        </proof>
+
+        <p>
+          Notons <m>B_L</m> le sous-ensemble de <m>\mathbb{R}_{>0}</m> formé des <m>|\det(f_1,\ldots,f_n)|</m> où <m>(f_1,\ldots,f_n)</m> parcourt les bases de <m>V</m> contenues dans <m>L</m>. Cette ensemble est non vide par définition d'un réseau. D'après le <xref ref="lem-L-commensure-Le"/>, il est aussi discret : comme tout élément de <m>L</m> s'écrit comme combinaison linéaire à coefficients entiers de la base <m>(N^{-1}e_1,\ldots,N^{-1}e_n)</m>, on a <m>B_L\subset N^{-n}|\det(e_1,\ldots,e_n)|\mathbb{Z}_{>0}</m> pour un certain entier <m>N\geq 1</m>. En conséquence, <m>B_L</m> admet un plus petit élément. Il nous reste alors à démontrer le lemme suivant.
+        </p>
+        <lemma xml:id="lem-base-de-det-minimal">
+          <statement>
+            <p>
+              Soit <m>(f_1,\ldots,f_n)</m> une base de <m>V</m> contenue dans <m>L</m> telle que <m>|\det(f_1,\ldots,f_n)|\in B_L</m> soit minimal. Alors <m>(f_1,\ldots,f_n)</m> est une base de <m>L</m>.
+            </p>
+          </statement>
+        </lemma>
+        <proof>
+          <p>
+            Comme  <m>V=\Pi(f)+L(f)</m> et <m>L(f)\subset L</m>, on a
+          </p>
+          <md> 
+            L=L\cap (\Pi(f)+L(f))=L\cap \Pi(f)+L(f).
+          </md>
+          <p>
+            En particulier, il suffit de montrer que <m>\Pi(f)\cap L</m> est réduit à zéro. Supposons par l'absurde qu'il existe un élément non nul <m>v\in \Pi(f)\cap L</m>. Soient <m>v_i\in [0,1[</m>, <m>i\in \{1,\ldots,n\}</m>, les coordonnées de <m>v</m> dans la base <m>(f_1,\ldots,f_n)</m> et soit <m>j</m> tel que <m>v_j\neq 0</m>. Alors <m>(f_1,\ldots,f_{j-1},v,f_{j+1},\ldots,f_n)</m> est une base de <m>V</m> dans <m>L</m>. Son déterminant se calcule ainsi:
+          </p>
+          <md>
+            <mrow> |\det(f_1,\ldots,f_{j-1},v,f_{j+1},\ldots,f_n)| \amp =v_j\cot |\det(f_1,\ldots,f_n)| </mrow>
+            <mrow> \amp &lt; |\det(f_1,\ldots,f_n)| </mrow>
+          </md>
+            <p>
+              ce qui contredit la minimalité de <m>|\det(f_1,\ldots,f_n)|</m>.
+            </p>
+        </proof>
+      </proof>
+
+  <p>
+    On a donc montré que tout réseau <m>L</m> de <m>V=\mathbb{R}^n</m> est de la forme
+  </p>  
+     <md>L(e) = \left\{ \sum_{i=1}^n a_i e_i ~|~ a_i \in \mathbb{Z} \right\}</md>
+  <p>  
+    où <m>(e_1,\ldots,e_n)</m> est une base de <m>V</m> contenue dans <m>L</m> de déterminant minimal (en valeur absolue).
+  </p>
+
+  <definition xml:id="def-covolume">
+    <title>Covolume d'un réseau</title>
+    <statement>
+      <p>
+        On appelle <em>covolume</em> du réseau <m>L\subset \mathbb{R}^n</m> la mesure commune d'un pavé fondamental, à savoir le nombre réel positif
+      </p>  
+      <md>
+        \mathrm{covol}(L)=|\det(e_1,\ldots,e_n)|.
+      </md>
+    </statement>
+  </definition>
+
+  <proposition xml:id="prop-comparaison-covolumes">
+    <statement>
+      <p>
+        Soit <m>L'\subset L</m> une inclusion de réseaux dans <m>V=\mathbb{R}^n</m>. Alors
+      </p>
+      <md>  
+        \mathrm{covol}(L') =|L/L'|\cdot \mathrm{covol}(L).
+      </md>
+    </statement>
+  </proposition>
+  <proof>
+  <p>
+    Soient <m>(e_1,\ldots,e_n)</m> une base de <m>L</m> et <m>(e_1',\ldots,e_n')</m> une base de <m>L'</m>. Comme <m>L'\subset L</m>, on peut écrire <m>e_i'=\sum_{j=1}^n a_{ij} e_j</m> pour des entiers <m>a_{ij}\in \mathbb{Z}</m>. Posons <md>A=(a_{ij})\in M_n(\mathbb{Z})</md>, de sorte que <m>(e_1',\ldots,e_n')=(e_1,\ldots,e_n)A</m>. Par le théorème des facteurs invariants dans l'anneau principal <m>\mathbb{Z}</m>, il existe des matrices inversibles <m>U,V\in \mathrm{GL}_n(\mathbb{Z})</m> telles que <m>UAV</m> soit une matrice diagonale, disons <m>\mathrm{diag}(d_1,\ldots,d_n)</m> où <m>d_1,\ldots,d_n\in \mathbb{Z}_{\geq 0}</m> sont les facteurs invariants de <m>A</m>. Quitte à changer les base <m>e</m> et <m>e'</m> en <m>(e_1,\ldots,e_n)U</m> et <m>(e'_1,\ldots,e'_n)V^{-1}</m>, on a
+  </p>
+  <md>
+    (e_1',\ldots,e_n')=(e_1,\ldots,e_n)\mathrm{diag}(d_1,\ldots,d_n).
+  </md>
+  <p>
+    En particulier, on a <m>\mathrm{covol}(L')=|d_1\cdots d_n|\cdot \mathrm{covol}(L)</m>. Par ailleurs, cette même formule donne
+  </p>
+  <md>
+    L/L'\cong \bigoplus_{i=1}^n \mathbb{Z}/d_i\mathbb{Z}
+  </md>
+  <p>
+    d'où <m>|L/L'|=d_1\cdots d_n</m>.
+  </p>
+  </proof>
+  </section>
+
 </appendix>

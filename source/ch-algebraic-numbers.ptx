@@ -586,7 +586,7 @@ Le polynôme caractéristique de la matrice
   Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. On note <m>\mathcal{O}_K</m> l'anneau <m>K\cap \overline{\mathbb{Z}}</m>. L'étude de l'arithmétique de cet anneau, et de ses généralisations pour divers corps de nombres <m>K</m>, est l'un des enjeux de ce cours. Dans le cas des extensions quadratiques, on a le corollaire suivant:
 </p>
 
-<corollary>
+<corollary xml:id="cor-entiers-quadratiques-base">
   <statement>
     <p><m>\displaystyle \mathcal{O}_K=\begin{cases} \mathbb{Z} \oplus \mathbb{Z} \sqrt{d} \amp \text{si }d\not \equiv 1 \pmod{4} \\  \mathbb{Z} \oplus \mathbb{Z} \frac{1+\sqrt{d}}{2} \amp \text{si }d\equiv 1 \pmod{4} \end{cases}</m>. </p>
     <p>En particulier, <m>\mathcal{O}_K</m> est un module libre de rang <m>2</m> sur <m>\mathbb{Z}</m>.</p>

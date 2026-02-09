@@ -3,11 +3,35 @@
 <chapter xml:id="ch-integer-rings" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Anneaux d'entiers</title>
 
-<section xml:id="sec-plongement-canonique">
-  <title>Plongement canonique</title>
+
+<section xml:id="sec-OK">
+  <title>Structure de <m>\mathcal{O}_K</m></title>
   
+<p>
+  Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m>. On définit l'<em>anneau des entiers</em> de <m>K</m> comme l'ensemble
+</p>
+<md>
+  \mathcal{O}_K = K\cap \overline{\mathbb{Z}}.
+</md>
+
+<p>
+  L'anneau <m>\mathcal{O}_K</m> est en général difficile à déterminer. Par exemple, si l'on a montré que <m>K</m> est engendré par un seul élément par le théorème de l'élément primitif (<xref ref="thm-element-primitif"/>), il n'est pas toujours vrai que <m>\mathcal{O}_K</m> est monogène, c-à-d de la forme <m>\mathbb{Z}[\alpha]</m> pour un entier algébrique <m>\alpha</m>.
+</p>
+
+<example>
+  <title>
+  Non-monogénie d'anneaux d'entiers dans des extensions biquadratiques
+  </title>
   <p>
-    Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m>. On désigne par <m>\Sigma(K)=\mathrm{Hom}(K,\mathbb{C})</m> l'ensemble des plongements de <m>K</m>.
+    Si <m>m,n</m> sont des entiers sans facteur carré distincts congrus à <m>1 \pmod{8}</m>, alors on peut montrer que l'anneau des entiers de <m>K=\mathbb{Q}(\sqrt{m},\sqrt{n})</m> est donné par <m>\mathcal{O}_K=\mathbb{Z}\left[\frac{1+\sqrt{m}}{2},\frac{1+\sqrt{n}}{2}\right]</m> et qu'il n'est pas monogène.
+  </p>
+</example>
+
+  <p>
+    Si <m>K</m> est un corps de degré deux, on a déjà vu que <m>\mathcal{O}_K</m> est libre de rang <m>[K:\mathbb{Q}]=2</m> comme groupe abélien (<xref ref="cor-entiers-quadratiques-base"/>). Le but de cette section est de généraliser ce résultat à tout corps de nombres <m>K</m> en utilisant le plongement canonique de <m>K</m> (<xref ref="def-plongement-canonique"/>).
+  </p>  
+  <p>
+    On désigne par <m>\Sigma(K)=\mathrm{Hom}(K,\mathbb{C})</m> l'ensemble des plongements de <m>K</m>.
   </p>
 
   <definition xml:id="def-plongements-reels-et-complexes">
@@ -115,7 +139,7 @@
   </lemma>
   <proof>
     <p>
-      On rappelle que le covolume de la famille <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> dans l'espace <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> est donné par la valeur absolue du déterminant de la matrice de changement de base entre <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> et la base canonique de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>. Pour <m>i\in \{1,\ldots,n\}</m>, la <m>i</m>ième coordonnée <m>\sigma(e_i)</m> s'écrit dans la base canonique comme 
+      On rappelle que le covolume de la famille <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> dans l'espace <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> est donné par la valeur absolue du déterminant de la matrice de changement de base entre <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> et la base canonique de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> (<em>cf.</em> <xref ref="def-covolume"/>). Pour <m>i\in \{1,\ldots,n\}</m>, la <m>i</m>ième coordonnée <m>\sigma(e_i)</m> s'écrit dans la base canonique comme 
     </p>
     <md>
       (\sigma_1(e_i),\ldots,\sigma_{r_1}(e_i),\mathrm{Re}~\sigma_{r_1+1}(e_i),\mathrm{Im}~\sigma_{r_1+1}(e_i),\ldots,\mathrm{Re}~\sigma_{r_1+r_2}(e_i),\mathrm{Im}~\sigma_{r_1+r_2}(e_i)).
@@ -201,9 +225,148 @@
   </p>
 </proof>
 
+<example>
+  <title>Plongement canonique des corps quadratiques</title>
+  <p>
+    Soit <m>K=\mathbb{Q}(\sqrt{5})</m>. Le corps <m>K</m> est quadratique réel, c-à-d que <m>(r_1,r_2)=(2,0)</m>. Le plongement canonique s'écrit donc
+  </p>
+  <md>
+    <mrow> \sigma: \amp K\longrightarrow \mathbb{R}^2</mrow>
+    <mrow> \amp 1 \longmapsto (1,1)</mrow>
+    <mrow> \amp \sqrt{5} \longmapsto (\sqrt{5},-\sqrt{5})</mrow>
+  </md>
+  <p>
+    Comme <m>\mathcal{O}_K=\mathbb{Z}[\varphi]</m> où <m>\varphi=\frac{1+\sqrt{5}}{2}</m>, le réseau <m>\sigma(\mathcal{O}_K)</m> est engendré par les vecteurs <m>(1,1)</m> et <m>\left(\varphi,\overline{\varphi}\right)</m> où <m>\overline{\varphi}=\frac{1-\sqrt{5}}{2}</m> est le conjugué de <m>\varphi</m>.
+  </p>
+<p>
+  Son covolume est <m>\det\begin{pmatrix} 1 \amp \varphi \\ 1 \amp \overline{\varphi} \end{pmatrix}^2 = 5</m>.
+</p>
+</example>
+
+On déduit de la <xref ref="prop-base-reseau"/> le corollaire suivant :
+<corollary xml:id="cor-structure-of-OK">
+  <statement>
+    <p>
+      L'anneau <m>\mathcal{O}_K</m> est un <m>\mathbb{Z}</m>-module libre de rang <m>n</m>; autrement dit, il existe une base <m>(e_1,\ldots,e_n)</m> de <m>K</m> en tant que <m>\mathbb{Q}</m>-espace vectoriel telle que <m>\mathcal{O}_K=\bigoplus_{i=1}^n \mathbb{Z}e_i</m>.
+    </p>
+  </statement>
+</corollary>
+
 </section>
 
 
+<section xml:id="sec-discriminant-de-K">
+  <title>Discriminant de <m>K</m></title>
+<p>
+Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathcal{O}_K</m> son anneau des entiers. D'après le <xref ref="cor-structure-of-OK"/>, il existe une <m>\mathbb{Z}</m>-base <m>(e_1,\ldots,e_n)</m> de <m>\mathcal{O}_K</m>. Un choix alternatif de base diffère de la première par une matrice de <m>\mathrm{GL}_n(\mathbb{Z})</m>, soit déterminant <m>\pm 1</m>. Par conséquent, le discriminant <m>\mathrm{disc}(e_1,\ldots,e_n)</m> ne dépend pas du choix de la base de <m>\mathcal{O}_K</m> (<xref ref="prop-discriminants"/>, <xref ref="item-discriminant-changement-base"/>). On peut donc définir le discriminant de <m>K</m> comme suit.
+</p>
+
+  <definition xml:id="def-discriminant-dun-corps-de-nombres">
+    <title>Discriminant d'un corps de nombres</title>
+    <statement>
+      <p>
+        Le <em>discriminant</em> de <m>K</m> est le discriminant d'une base de <m>\mathcal{O}_K</m> en tant que <m>\mathbb{Z}</m>-module. On le note <m>\mathrm{disc}(K)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <title> Discriminant des corps quadratiques </title>
+    <p>
+      Soit <m>K=\mathbb{Q}(\sqrt{d})</m> un corps quadratique où <m>d</m> est un entier sans facteur carré. On a vu que l'anneau des entiers de <m>K</m> est donné par
+    </p>
+    <md>
+      \mathcal{O}_K = \begin{cases}
+      \mathbb{Z}[\sqrt{d}] \amp \text{si } d\equiv 2,3 \pmod{4}, \\
+      \mathbb{Z}\left[\frac{1+\sqrt{d}}{2}\right] \amp \text{si } d\equiv 1 \pmod{4}.
+      \end{cases}
+    </md>
+    <p>
+      Le discriminant de <m>K</m> se calcule alors comme <m>\det\left(\begin{smallmatrix} 1 \amp \sqrt{d} \\ 1 \amp -\sqrt{d} \end{smallmatrix}\right)^2</m> si <m>d\equiv 2,3 \pmod{4}</m>, et comme <m>\det\left(\begin{smallmatrix} 1 \amp \frac{1+\sqrt{d}}{2} \\ 1 \amp \frac{1-\sqrt{d}}{2} \end{smallmatrix}\right)^2</m> si <m>d\equiv 1 \pmod{4}</m>. On trouve ainsi
+    </p>
+    <md>
+      \mathrm{disc}(K) = \begin{cases}
+      4d \amp \text{si } d\equiv 2,3 \pmod{4}, \\
+      d \amp \text{si } d\equiv 1 \pmod{4}.
+      \end{cases}
+    </md>
+  </example>
+
+  <remark>
+    <p>
+      Soit <m>D</m> le sous-ensemble de <m>\mathbb{Z}</m> formé des <m>|\mathrm{disc}(f_1,\ldots,f_n)|</m> où <m>(f_1,\ldots,f_n)</m> est une famille de <m>\mathcal{O}_K</m>. Alors <m>D</m> est non réduit à zéro et admet un plus petit élément qui est précisément <m>|\mathrm{disc}(K)|</m> (on le déduit de la <xref ref="prop-discriminants"/>, <xref ref="item-discriminant-changement-base"/>).
+   </p>
+  </remark>
+
+<p>
+  Plus généralement, la <xref ref="def-discriminant-dun-corps-de-nombres"/> s'étend à un sous-groupe de <m>\mathcal{O}_K</m> contenant une base de <m>K</m>.
+</p>
+  <definition xml:id="def-discriminant-dun-sous-groupe">
+    <title>Discriminant d'un sous-groupe de <m>\mathcal{O}_K</m></title>
+    <statement>
+      <p>
+        Soit <m>A\subset \mathcal{O}_K</m> un sous-groupe contenant une base de <m>K</m><fn>On notera que <m>A</m> est immédiatement libre de rang <m>n</m> en tant que <m>\mathbb{Z}</m>-module.</fn>. Le <em>discriminant</em> de <m>A</m> est le discriminant d'une base de <m>A</m> en tant que <m>\mathbb{Z}</m>-module. On le note <m>\mathrm{disc}(A)</m>.
+      </p>
+    </statement>
+  </definition>
+
+<p>
+  <xref ref="def-discriminant-dun-sous-groupe"/> s'applique en particulier aux anneaux de la forme <m>\mathbb{Z}[\alpha]</m> où <m>\alpha</m> est un élément primitif de <m>K</m>, ou bien aux idéaux non-nuls<fn>En effet, <m>I</m> est un idéal non nul, si <m>x\in I\setminus\{0\}</m> et si <m>(e_1,\ldots,e_n)</m> désigne une <m>\mathbb{Z}</m>-base de <m>\mathcal{O}_K</m>, alors <m>(xe_1,\ldots,xe_n)</m> est une base de <m>K</m> contenue dans <m>I</m>.</fn>.
+</p>
+
+<proposition xml:id="prop-discriminant-indice">
+  <statement>
+    <p>
+      Soit <m> A\subset B</m> des sous-groupes de <m>\mathcal{O}_K</m> contenant une base de <m>K</m>. Alors <m>A</m> est d'indice fini dans <m>B</m> et on a la relation
+    </p>
+    <md>
+      |\mathrm{disc}(A)|=|B/A|^2\cdot |\mathrm{disc}(B)|.
+    </md>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    D'après la <xref ref="prop-comparaison-covolumes"/> et le <xref ref="lem-covolume-dune-base-dun-corps-de-nombres"/>, on a 
+  </p>
+  <md>
+    |B/A|=|\sigma(B)/\sigma(A)|=\frac{\mathrm{covol}(\sigma(A))}{\mathrm{covol}(\sigma(B))}=\sqrt{\frac{\mathrm{disc}(A)}{\mathrm{disc}(B)}}.
+  </md>
+</proof>
+
+<p>
+  La <xref ref="prop-discriminant-indice"/> est fondamentale pour le calcul de <m>\mathcal{O}_K</m>. Elle indique en particulier que le discriminant d'un sous-anneau <m>A\subset \mathcal{O}_K</m> ne peut diminuer que d'un carré ! Cela implique par exemple que si <m>\mathrm{disc}(A)</m> est un entier sans facteur carré, alors <m>A=\mathcal{O}_K</m>.
+</p>
+
+<example>
+  <title> Nombre plastique </title>
+  <p>
+  Soit <m>\psi</m> le <em>nombre plastique</em> :
+  </p>
+<md>
+  \psi=\sqrt[3]{\frac12+\frac{\sqrt{69}}{18}}+\sqrt[3]{\frac12-\frac{\sqrt{69}}{18}}
+</md>
+<p>
+  Ce nombre est l'unique nombre réel vérifiant <m>\psi^3=\psi+1</m> (de manière parallèle au <em>nombre d'or</em> qui vérifie <m>\varphi^2=\varphi+1</m>). C'est un entier algébrique de degré trois.
+</p>
+<p>
+  Utilisons la <xref ref="prop-discriminant-indice"/> pour déterminer l'anneau des entiers du corps de nombres <m>K=\mathbb{Q}(\psi)</m>. On a <m>\mathbb{Z}[\psi]\subset \mathcal{O}_K</m> et, pour montrer que cette inclusion est une égalité, il suffit de montrer que <m>|\mathcal{O}_K/\mathbb{Z}[\psi]|=1</m>. Or la <xref ref="prop-discriminant-indice"/> donne
+</p>
+<md>
+  |\mathrm{disc}(\mathbb{Z}[\psi])|=|\mathrm{disc}(\mathcal{O}_K)|\cdot |\mathcal{O}_K/\mathbb{Z}[\psi]|^2.
+</md>
+<p>
+  Comme <m>X^3-X-1</m> est le polynôme minimal de <m>\psi</m>, on a
+</p>
+  <md>
+    \mathrm{disc}(\mathbb{Z}[\psi])=\mathrm{disc}(1,\psi,\psi^2)=\mathrm{disc}(X^3-X-1)=-23.
+  </md>
+<p>
+    La première égalité suit de la définition, la seconde s'obtient par le <xref ref="cor-discriminant-plongements"/>, enfin on peut le calculer le discriminant d'un polynôme à l'aide des formules <xref ref="exemples-discriminants-polynomes"/>). Comme <m>23</m> est sans facteur carré, on a nécessairement <m>|\mathcal{O}_K/\mathbb{Z}[\psi]|=1</m>.
+</p>
+</example>
+  
+ 
+</section>
 
 
 </chapter>

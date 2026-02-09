@@ -307,6 +307,9 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
     Supposons le résultat démontré en <m>m-1</m> et montrons-le pour <m>m</m>. Par hypothèse de récurrence, il existe <m>w\in V\setminus (V_2\cup \cdots \cup V_m)</m>. Si <m>w\notin V_1</m>, alors <m>V\setminus (V_1\cup \cdots \cup V_m)</m> est non vide car contient <m>\{w\}</m>; c'est gagné. On peut donc supposer <m>w\in V_1</m>. Comme <m>V_1\subset V</m> est stricte, soit <m>v\in V\setminus V_1</m>.
     </p>
     <p>
+    L'idée de la preuve consiste à contempler la droite <m>D:\{v+tw~|~t\in F\}</m> dans <m>V</m> qui passe par <m>v</m> et de direction <m>w</m> et de montrer qu'elle intersecte chaque <m>V_i</m> au plus une fois; comme <m>F</m> est infini, on peut donc trouver un point de <m>D</m> qui n'est dans aucun des <m>V_i</m>.
+    </p>
+    <p>
     Fixons <m>j\in \{1,\ldots,m\}</m>. Supposons qu'il existe <m>t,t' \in F</m> deux éléments distincts tels que <m>v+tw\in V_j</m> et <m>v+t'w\in V_j</m>. Alors <m>(t-t')w\in V_j</m> et donc <m>w\in V_j</m>. Par choix de <m>w</m>, on en déduit que <m>j=1</m>. Mais alors <m>v=(v+tw)-tw\in V_1</m> ce qui est absurde. En conclusion, il existe au plus un seul <m>t\in F</m> tel que <m>v+tw\in V_j</m>, donc au plus <m>m</m> éléments <m>t\in F</m> tels que <m>v+tw\in V_1\cup\cdots \cup V_m</m>. Comme <m>F</m> est infini, il existe donc <m>\lambda \in F</m> tel que <m>v+\lambda w\notin V_1\cup \cdots \cup V_m</m>. Cela démontre que <m>V_1\cup \cdots \cup V_m \neq V</m>, ce qui conclut.
     </p>
   </proof>
@@ -397,7 +400,7 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
         \mathrm{Tr}_{K}(\alpha)=2a \quad \text{et} \quad \mathrm{N}_{K}(\alpha)=a^2-b^2d.
       </me>
       <p>
-        En particulier, on redémontre que l'application <m>a+\sqrt{d}b\mapsto a^2-b^2d</m> est multiplicative.
+        En particulier, on redémontre que l'application <m>a+b\sqrt{d}\mapsto a^2-b^2d</m> est multiplicative.
       </p>
     </example>
 
@@ -431,7 +434,7 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
     </corollary>
     <proof>
       <p>
-        Si <m>\alpha</m> est un entier algébrique, alors son polynôme minimal appartient à <m>\mathbb{Z}[X]</m> d'après le <xref ref="prop-polynome-minimal"/>. Par la <xref ref="prop-polynome-caracteristique-et-minimal"/>, le polynôme caractéristique <m>\chi_{\alpha}(X)</m> appartient aussi à <m>\mathbb{Z}[X]</m>. La réciproque est immédiate.
+        Si <m>\alpha</m> est un entier algébrique, alors son polynôme minimal appartient à <m>\mathbb{Z}[X]</m> d'après le <xref ref="prop-polynome-minimal"/>. Par la <xref ref="prop-polynome-caracteristique-et-minimal"/>, le polynôme caractéristique <m>\chi_{\alpha}(X)</m> appartient aussi à <m>\mathbb{Z}[X]</m>. La réciproque est immédiate, puisque <m>\chi_{\alpha}(X)</m> est unitaire à coefficients entiers et annule <m>\alpha</m>.
       </p>
     </proof>
 
@@ -492,7 +495,7 @@ L'élément <m>\alpha</m> de <m>K</m> tel que <m>K=\mathbb{Q}(\alpha)</m> est ap
     La mise au carré garantit que <m>\mathrm{disc}(P)</m> est invariante par permutation des racines. On remarque aussi que <m>\mathrm{disc}(P)=0</m> si, et seulement si, <m>P(X)</m> possède une racine multiple.
   </p>
 
-  <example>
+  <example xml:id="exemples-discriminants-polynomes">
     <title>Exemples de discriminants de polynômes</title>
     <p>
        Le discriminant d'un polynôme <m>P(X)</m> est lui-même un polynôme symétrique en les coefficients du polynôme <m>P(X)</m>. Si la formule explicite reste raisonnable pour les polynômes de degré inférieur ou égal à <m>3</m>, elle devient rapidement compliquée lorsque le degré augmente. Voici quelques exemples:
