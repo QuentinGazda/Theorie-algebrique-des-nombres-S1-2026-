@@ -165,7 +165,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
       </p>
 
       <p>
-        Soit <m>V</m> un espace vectoriel réel de dimension finie muni d'une norme fixée quelconque notée <m>\|\cdot\|</m>. On peut supposer, sans perte de généralité, que <m>V=\mathbb{R}^n</m>; cela nous permettra de pouvoir considérer le déterminant de familles de vecteurs de <m>V</m> relativement à sa base canonique.
+        Soit <m>V</m> un espace vectoriel réel de dimension finie muni d'une base fixe <m>b=(b_1,\ldots,b_n)</m> ainsi que d'une norme fixée quelconque notée <m>\|\cdot\|</m>. On peut supposer, sans perte de généralité, que <m>V=\mathbb{R}^n</m> et que <m>b</m> est la base canonique; le fait de fixer une base nous permettra de pouvoir considérer le déterminant de familles de vecteurs de <m>V</m> relativement à cette base.
       </p>
       <definition xml:id="def-reseau">
         <statement>
@@ -257,12 +257,12 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
         </proof>
 
         <p>
-          Notons <m>B_L</m> le sous-ensemble de <m>\mathbb{R}_{>0}</m> formé des <m>|\det(f_1,\ldots,f_n)|</m> où <m>(f_1,\ldots,f_n)</m> parcourt les bases de <m>V</m> contenues dans <m>L</m>. Cette ensemble est non vide par définition d'un réseau. D'après le <xref ref="lem-L-commensure-Le"/>, il est aussi discret : comme tout élément de <m>L</m> s'écrit comme combinaison linéaire à coefficients entiers de la base <m>(N^{-1}e_1,\ldots,N^{-1}e_n)</m>, on a <m>B_L\subset N^{-n}|\det(e_1,\ldots,e_n)|\mathbb{Z}_{>0}</m> pour un certain entier <m>N\geq 1</m>. En conséquence, <m>B_L</m> admet un plus petit élément. Il nous reste alors à démontrer le lemme suivant.
+          Notons <m>B_L</m> le sous-ensemble de <m>\mathbb{R}_{>0}</m> formé des <m>|\det_b(f_1,\ldots,f_n)|</m> où <m>(f_1,\ldots,f_n)</m> parcourt les bases de <m>V</m> contenues dans <m>L</m>. Cette ensemble est non vide par définition d'un réseau. D'après le <xref ref="lem-L-commensure-Le"/>, il est aussi discret : comme tout élément de <m>L</m> s'écrit comme combinaison linéaire à coefficients entiers de la base <m>(N^{-1}e_1,\ldots,N^{-1}e_n)</m>, on a <m>B_L\subset N^{-n}|\det(e_1,\ldots,e_n)|\mathbb{Z}_{>0}</m> pour un certain entier <m>N\geq 1</m>. En conséquence, <m>B_L</m> admet un plus petit élément. Il nous reste alors à démontrer le lemme suivant.
         </p>
         <lemma xml:id="lem-base-de-det-minimal">
           <statement>
             <p>
-              Soit <m>(f_1,\ldots,f_n)</m> une base de <m>V</m> contenue dans <m>L</m> telle que <m>|\det(f_1,\ldots,f_n)|\in B_L</m> soit minimal. Alors <m>(f_1,\ldots,f_n)</m> est une base de <m>L</m>.
+              Soit <m>(f_1,\ldots,f_n)</m> une base de <m>V</m> contenue dans <m>L</m> telle que <m>|\det_b(f_1,\ldots,f_n)|\in B_L</m> soit minimal. Alors <m>(f_1,\ldots,f_n)</m> est une base de <m>L</m>.
             </p>
           </statement>
         </lemma>
@@ -277,31 +277,31 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
             En particulier, il suffit de montrer que <m>\Pi(f)\cap L</m> est réduit à zéro. Supposons par l'absurde qu'il existe un élément non nul <m>v\in \Pi(f)\cap L</m>. Soient <m>v_i\in [0,1[</m>, <m>i\in \{1,\ldots,n\}</m>, les coordonnées de <m>v</m> dans la base <m>(f_1,\ldots,f_n)</m> et soit <m>j</m> tel que <m>v_j\neq 0</m>. Alors <m>(f_1,\ldots,f_{j-1},v,f_{j+1},\ldots,f_n)</m> est une base de <m>V</m> dans <m>L</m>. Son déterminant se calcule ainsi:
           </p>
           <md>
-            <mrow> |\det(f_1,\ldots,f_{j-1},v,f_{j+1},\ldots,f_n)| \amp =v_j\cot |\det(f_1,\ldots,f_n)| </mrow>
-            <mrow> \amp &lt; |\det(f_1,\ldots,f_n)| </mrow>
+            <mrow> |\det_b(f_1,\ldots,f_{j-1},v,f_{j+1},\ldots,f_n)| \amp =v_j\cot |\det_b(f_1,\ldots,f_n)| </mrow>
+            <mrow> \amp &lt; |\det_b(f_1,\ldots,f_n)| </mrow>
           </md>
             <p>
-              ce qui contredit la minimalité de <m>|\det(f_1,\ldots,f_n)|</m>.
+              ce qui contredit la minimalité de <m>|\det_b(f_1,\ldots,f_n)|</m>.
             </p>
         </proof>
       </proof>
 
   <p>
-    On a donc montré que tout réseau <m>L</m> de <m>V=\mathbb{R}^n</m> est de la forme
+    On a donc montré que tout réseau <m>L</m> de <m>V</m> est de la forme
   </p>  
      <md>L(e) = \left\{ \sum_{i=1}^n a_i e_i ~|~ a_i \in \mathbb{Z} \right\}</md>
   <p>  
-    où <m>(e_1,\ldots,e_n)</m> est une base de <m>V</m> contenue dans <m>L</m> de déterminant minimal (en valeur absolue).
+    où <m>(e_1,\ldots,e_n)</m> est une base de <m>V</m> contenue dans <m>L</m> de déterminant minimal (en valeur absolue) relativement à la base <m>b</m>.
   </p>
 
   <definition xml:id="def-covolume">
     <title>Covolume d'un réseau</title>
     <statement>
       <p>
-        On appelle <em>covolume</em> du réseau <m>L\subset \mathbb{R}^n</m> la mesure commune d'un pavé fondamental, à savoir le nombre réel positif
+        On appelle <em>covolume</em> du réseau <m>L\subset V</m> (relativement à <m>b</m>) la mesure commune d'un pavé fondamental, à savoir le nombre réel positif
       </p>  
       <md>
-        \mathrm{covol}(L)=|\det(e_1,\ldots,e_n)|.
+        \mathrm{covol}(L)=|\det_b(e_1,\ldots,e_n)|.
       </md>
     </statement>
   </definition>

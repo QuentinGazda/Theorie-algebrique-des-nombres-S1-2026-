@@ -116,7 +116,7 @@
 </p>
 
 <p>
-  Le produit <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> est un espace vectoriel réel de dimension <m>n=r_1+2r_2</m>. On l'identifiera à <m>\mathbb{R}^n</m> en utilisant la base canonique de <m>\mathbb{R}^{r_1}</m> et la base <m>(1,i)</m> de <m>\mathbb{C}</m>; on appelle cette famille <em>la base canonique de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m></em>. Par cette identification, on dispose de la mesure de Lebesgue sur <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>.
+  Le produit <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> est un espace vectoriel réel de dimension <m>n=r_1+2r_2</m>. On l'identifiera à <m>\mathbb{R}^n</m> en utilisant la base canonique de <m>\mathbb{R}^{r_1}</m> et la base <m>(1,i)</m> de <m>\mathbb{C}</m>; on appelle cette famille <em>la base canonique de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m></em>. On est donc dans la cadre d'application de la <xref ref="sec-reseaux"/>.
 </p>
 
 <theorem xml:id="thm-reseau-du-plongement-canonique">
@@ -133,7 +133,7 @@
   <lemma xml:id="lem-covolume-dune-base-dun-corps-de-nombres">
     <statement>
       <p>
-        Soit <m>(e_1,\ldots,e_n)</m> une base de <m>K</m> en tant que <m>\mathbb{Q}</m>-espace vectoriel. Alors <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> est une <m>\mathbb{R}</m> base de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> qui engendre un réseau de covolume <m>2^{-r_2}\sqrt{|\mathrm{disc}(e_1,\ldots,e_n)|}</m>.
+        Soit <m>(e_1,\ldots,e_n)</m> une base de <m>K</m> en tant que <m>\mathbb{Q}</m>-espace vectoriel. Alors <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> est une <m>\mathbb{R}</m>-base de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> qui engendre un réseau de covolume <m>2^{-r_2}\sqrt{|\mathrm{disc}(e_1,\ldots,e_n)|}</m>.
       </p>
     </statement>
   </lemma>
@@ -243,7 +243,9 @@
 </p>
 </example>
 
+<p>
 On déduit de la <xref ref="prop-base-reseau"/> le corollaire suivant :
+</p>
 <corollary xml:id="cor-structure-of-OK">
   <statement>
     <p>
