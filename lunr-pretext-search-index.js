@@ -943,7 +943,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "A.3",
   "title": "Théorie des réseaux",
-  "body": " Théorie des réseaux  Nous rappelons ici quelques définitions et résultats de base sur les réseaux dans les espaces euclidiens qui seront utilisés dans ce cours.  Soit un espace vectoriel réel de dimension finie muni d'une base fixe ainsi que d'une norme fixée quelconque notée . On peut supposer, sans perte de généralité, que et que est la base canonique; le fait de fixer une base nous permettra de pouvoir considérer le déterminant de familles de vecteurs de relativement à cette base.    Un réseau dans est un sous-groupe discret Cela signifie que pour tout ensemble borné , l'intersection est finie. Il suffit de vérifier cette condition pour les , les boules de rayon . de qui contient une base.       Le groupe est un exemple de réseau dans .    Le sous-groupe est un réseau dans . En effet il est discret (car inclus dans ) et contient une base, par exemple .     Les réseaux sont des groupes abéliens libres.   Base d'un réseau   Soit un réseau de . Alors contient une base de qui est aussi une famille génératrice.     Étant donnée une base de incluse dans , on note le sous-groupe de engendré par cette base, à savoir :   C'est un réseau car il contient la base et est discret : si désigne la norme sup dans cette base, alors   qui est un ensemble fini.  Désignons par le pavé fondamental de , à savoir:   Tout élément de peut s'écrire de manière unique comme la somme d'un élément de et d'un élément de . En effet, étant donné de coordonnées dans la base , on a   où le premier terme appartient à et le second terme appartient à . L'unicité de cette écriture suit de la propriété qui définit la partie entière.     est d'indice fini dans et il existe un entier tel que .     Comme la base est incluse dans , on a . Montrons que cette inclusion est d'indice fini. Pour cela, on considère l'application   Cette application est surjective : si , on peut l'écrire comme avec et . En particulier est un élément de qui s'envoie sur . Comme est un ensemble fini (car est borné et que est discret), on en déduit que est un ensemble fini.  Enfin, par Lagrange, en posant , on a , d'où .   Notons le sous-ensemble de formé des où parcourt les bases de contenues dans . Cette ensemble est non vide par définition d'un réseau. D'après le , il est aussi discret : comme tout élément de s'écrit comme combinaison linéaire à coefficients entiers de la base , on a pour un certain entier . En conséquence, admet un plus petit élément. Il nous reste alors à démontrer le lemme suivant.    Soit une base de contenue dans telle que soit minimal. Alors est une base de .     Comme et , on a   En particulier, il suffit de montrer que est réduit à zéro. Supposons par l'absurde qu'il existe un élément non nul . Soient , , les coordonnées de dans la base et soit tel que . Alors est une base de dans . Son déterminant se calcule ainsi:   ce qui contredit la minimalité de .    On a donc montré que tout réseau de est de la forme   où est une base de contenue dans de déterminant minimal (en valeur absolue) relativement à la base .   Covolume d'un réseau   On appelle covolume du réseau (relativement à ) la mesure commune d'un pavé fondamental, à savoir le nombre réel positif       Soit une inclusion de réseaux dans . Alors      Soient une base de et une base de . Comme , on peut écrire pour des entiers . Posons , de sorte que . Par le théorème des facteurs invariants dans l'anneau principal , il existe des matrices inversibles telles que soit une matrice diagonale, disons où sont les facteurs invariants de . Quitte à changer les base et en et , on a   En particulier, on a . Par ailleurs, cette même formule donne   d'où .   "
+  "body": " Théorie des réseaux  Nous rappelons ici quelques définitions et résultats de base sur les réseaux dans les espaces euclidiens qui seront utilisés dans ce cours.   Structure des réseaux  Soit un espace vectoriel réel de dimension finie muni d'une base fixe ainsi que d'une norme fixée quelconque notée . On peut supposer, sans perte de généralité, que et que est la base canonique; le fait de fixer une base nous permettra de pouvoir considérer le déterminant de familles de vecteurs de relativement à cette base.    Un réseau dans est un sous-groupe discret Cela signifie que pour tout ensemble borné , l'intersection est finie. Il suffit de vérifier cette condition pour les , les boules de rayon . de qui contient une base.       Le groupe est un exemple de réseau dans .    Le sous-groupe est un réseau dans . En effet il est discret (car inclus dans ) et contient une base, par exemple .     Les réseaux sont des groupes abéliens libres.   Base d'un réseau   Soit un réseau de . Alors contient une base de qui est aussi une famille génératrice.     Étant donnée une base de incluse dans , on note le sous-groupe de engendré par cette base, à savoir :   C'est un réseau car il contient la base et est discret : si désigne la norme sup dans cette base, alors   qui est un ensemble fini.  Désignons par le pavé fondamental de , à savoir:   Tout élément de peut s'écrire de manière unique comme la somme d'un élément de et d'un élément de . En effet, étant donné de coordonnées dans la base , on a   où le premier terme appartient à et le second terme appartient à . L'unicité de cette écriture suit de la propriété qui définit la partie entière.     est d'indice fini dans et il existe un entier tel que .     Comme la base est incluse dans , on a . Montrons que cette inclusion est d'indice fini. Pour cela, on considère l'application   Cette application est surjective : si , on peut l'écrire comme avec et . En particulier est un élément de qui s'envoie sur . Comme est un ensemble fini (car est borné et que est discret), on en déduit que est un ensemble fini.  Enfin, par Lagrange, en posant , on a , d'où .   Notons le sous-ensemble de formé des où parcourt les bases de contenues dans . Cette ensemble est non vide par définition d'un réseau. D'après le , il est aussi discret : comme tout élément de s'écrit comme combinaison linéaire à coefficients entiers de la base , on a pour un certain entier . En conséquence, admet un plus petit élément. Il nous reste alors à démontrer le lemme suivant.    Soit une base de contenue dans telle que soit minimal. Alors est une base de .     Comme et , on a   En particulier, il suffit de montrer que est réduit à zéro. Supposons par l'absurde qu'il existe un élément non nul . Soient , , les coordonnées de dans la base et soit tel que . Alors est une base de dans . Son déterminant se calcule ainsi:   ce qui contredit la minimalité de .    On a donc montré que tout réseau de est libre de rang en tant que groupe abélien, ç-à-d de la forme de la forme   où est une base de contenue dans . Une famille qui réalise l'égalité ci-dessus est appelée base de . Puisque les bases de diffèrent d'un changement de base dans   les bases de sont caractérisées comme les bases de dans de déterminant minimal (en valeur absolue) relativement à la base (voir la preuve du ).   Covolume d'un réseau   On appelle covolume du réseau (relativement à ) la mesure commune d'un pavé fondamental, à savoir le nombre réel positif       Soit une inclusion de réseaux dans . Alors      Soient une base de et une base de . Comme , on peut écrire pour des entiers . Posons , de sorte que . Par le théorème des facteurs invariants dans l'anneau principal , il existe des matrices inversibles telles que soit une matrice diagonale, disons où sont les facteurs invariants de . Quitte à changer les base et en et , on a   En particulier, on a . Par ailleurs, cette même formule donne   d'où .    Calcul de covolume  On peut utiliser la proposition précédente pourcalculer le covolume du réseau de sans avoir à en trouver une base. En effet, s'identifie au noyau de l'application surjective   On a donc et, comme le covolume de est égal à 1, on en déduit que le covolume de est égal à 3.  On peut maintenant en déduire une base: les vecteurs et sont dans et   Par minimalité du covolume, est une base de .     Lemme du corps convexe  Soit un espace vectoriel réel de dimension finie muni d'une base fixée ainsi que d'une norme . On équippe de la mesure de Lebesgue relative à la base , à savoir l'unique mesure de Borel sur invariant par translation et telle que où désigne le pavé fondamental de la base .  Soit un réseau de . On a vu dans la sous-section précédente que admet une base, c-à-d est de la forme pour une base de contenue dans . On a appelé pavé fondamental de les parallélépipèdes de la forme où est une base de . Par définition du covolume et la formule de la Jacobienne (ou du changement de variable ) en théorie de la mesure, on a . On étend ces notions des pavés aux espaces mesurables.   Domaine fondamental   Soit un ensemble mesurable de . On dit que est un domaine fondamental de si tout s'écrit de manière unique comme avec et .    Les domaines fondamentaux de ont tous la même mesure, égale au covolume de ; cela découle du lemme de Blichfeldt :   de Blichfeldt   Soit un domaine fondamental de et un ensemble mesurable tel que, pour tout , implique . Alors .     Par définition d'un domaine fondamental, on a   En prenant l'intersection avec , on obtient . La relation   et l'invariance de la mesure par translation donnent . En sommant sur , on trouve   Puisque les ensembles sont disjoints, on a , d'où le résultat.  On peut maintenant énoncer le lemme du corps convexe, qui est un résultat fondamental de la géométrie des nombres.  Lemme du corps convexe   Soit un ensemble mesurable convexe Cela signifie que si et sont deux points de , alors le segement qui relie à -- à savoir l'ensemble des pour -- est inclus dans . , symétrique Cela signifie que si , alors . par rapport à l'origine et vérifiant l'un des points suivants:    , ou   est compact et .   Alors contient un élément non nul de .     Soit de sorte que . En particulier, et le lemme de Blichfeldt assure qu'il existe distincts tels que . Comme est convexe et symétrique, on a . Par ailleurs, comme , on a . Ainsi, contient un élément non nul de .  Si est compact et , on peut appliquer le même raisonnement à des épaississements de : pour , on considère   C'est un ouvert de (donc mesurable) qui contient et tel que . En particulier et le même raisonnement que précédemment trouve des éléments non nuls de dans .  Comme est discret, l'intersection est finie, et la suite d'entiers est et décroît lorsque diminue. Sa valeur limite lorsque , à savoir , est un entier strictement positif.     Applications en théorie des nombres On démontre deux résultats classiques de la théorie des nombres à partir du lemme du corps convexe de Minkowski.   Soit p un nombre premier . Alors il existe tels que .     On commence par un lemme classique du à Euler.    Si , alors est un carré modulo .     On considère le polynôme dans qui admet au plus racines. Par Fermat, annule tous les carrés de , et il y en a exactement : pour le voir, on peut utiliser l'isomorphisme obtenu en considérant le morphisme surjectif de vers ses carrés et de noyau .  On en déduit que les racines de sont exactement les carrés de . Comme , on a que est racine de , donc est un carré dans .   Soit donc une racine de modulo . On considère le réseau de    C'est un réseau de covolume : en effet, s'identifie au noyau du morphisme surjectif   et donc , puis d'après la .  De plus, pour tout , on a .  On considère la boule ouverte de rayon ; c'est un ouvert convexe et symétrique de mesure  . Le lemme du corps convexe assure qu'il existe non nul. Un tel couple vérifie et . On en déduit .     Tout entier positif est somme de quatre carrés.     Il suffit de démontrer le résultat pour les entier sans facteur carré, ce que l'on suppose.     est somme de deux carrés dans .     Le théorème des restes chinois nous permet de se ramener au cas où En effet, si est sans facteur carré, alors le morphisme canonique est surjectif (un isomorphisme, à vrai dire). Si est somme de deux carrés dans , disons , pour chaque premier , et si sont deux entiers tels que , alors dans .  est un nombre premier.  Comme le cas est évident, on suppose impair. Comme l'ensemble et son \"translaté opposé\" ont tous deux éléments (voir la preuve du \"), ils ne peuvent être disjoints et donc ils existe tels que .   Soient donc tels que . On considère le réseau de    Comme ce réseau s'identifie au noyau de l'application surjective   on a .  De plus, si , alors   En considérant l'ensemble mesurable connexe symétrique qu'est la boule ouverte de centre zéro et de rayon , à savoir   on a , car .  Il existe donc un élement , vérifiant alors et . Cela conclut.    Un entier positif est somme de trois carrés si et seulement s'il n'est pas de la forme .    "
 },
 {
   "id": "def-reseau",
@@ -955,9 +955,9 @@ var ptx_lunr_docs = [
   "body": "  Un réseau dans est un sous-groupe discret Cela signifie que pour tout ensemble borné , l'intersection est finie. Il suffit de vérifier cette condition pour les , les boules de rayon . de qui contient une base.   "
 },
 {
-  "id": "sec-reseaux-5",
+  "id": "subsec-structure-des-reseaux-4",
   "level": "2",
-  "url": "sec-reseaux.html#sec-reseaux-5",
+  "url": "sec-reseaux.html#subsec-structure-des-reseaux-4",
   "type": "Exemple",
   "number": "A.3.2",
   "title": "",
@@ -973,11 +973,11 @@ var ptx_lunr_docs = [
   "body": " Base d'un réseau   Soit un réseau de . Alors contient une base de qui est aussi une famille génératrice.   "
 },
 {
-  "id": "sec-reseaux-8",
+  "id": "subsec-structure-des-reseaux-7",
   "level": "2",
-  "url": "sec-reseaux.html#sec-reseaux-8",
+  "url": "sec-reseaux.html#subsec-structure-des-reseaux-7",
   "type": "Démonstration",
-  "number": "A.3.1",
+  "number": "A.3.1.1",
   "title": "",
   "body": " Étant donnée une base de incluse dans , on note le sous-groupe de engendré par cette base, à savoir :   C'est un réseau car il contient la base et est discret : si désigne la norme sup dans cette base, alors   qui est un ensemble fini.  Désignons par le pavé fondamental de , à savoir:   Tout élément de peut s'écrire de manière unique comme la somme d'un élément de et d'un élément de . En effet, étant donné de coordonnées dans la base , on a   où le premier terme appartient à et le second terme appartient à . L'unicité de cette écriture suit de la propriété qui définit la partie entière.     est d'indice fini dans et il existe un entier tel que .     Comme la base est incluse dans , on a . Montrons que cette inclusion est d'indice fini. Pour cela, on considère l'application   Cette application est surjective : si , on peut l'écrire comme avec et . En particulier est un élément de qui s'envoie sur . Comme est un ensemble fini (car est borné et que est discret), on en déduit que est un ensemble fini.  Enfin, par Lagrange, en posant , on a , d'où .   Notons le sous-ensemble de formé des où parcourt les bases de contenues dans . Cette ensemble est non vide par définition d'un réseau. D'après le , il est aussi discret : comme tout élément de s'écrit comme combinaison linéaire à coefficients entiers de la base , on a pour un certain entier . En conséquence, admet un plus petit élément. Il nous reste alors à démontrer le lemme suivant.    Soit une base de contenue dans telle que soit minimal. Alors est une base de .     Comme et , on a   En particulier, il suffit de montrer que est réduit à zéro. Supposons par l'absurde qu'il existe un élément non nul . Soient , , les coordonnées de dans la base et soit tel que . Alors est une base de dans . Son déterminant se calcule ainsi:   ce qui contredit la minimalité de .   "
 },
@@ -1000,13 +1000,112 @@ var ptx_lunr_docs = [
   "body": "  Soit une inclusion de réseaux dans . Alors    "
 },
 {
-  "id": "sec-reseaux-14",
+  "id": "subsec-structure-des-reseaux-15",
   "level": "2",
-  "url": "sec-reseaux.html#sec-reseaux-14",
+  "url": "sec-reseaux.html#subsec-structure-des-reseaux-15",
   "type": "Démonstration",
-  "number": "A.3.2",
+  "number": "A.3.1.2",
   "title": "",
   "body": " Soient une base de et une base de . Comme , on peut écrire pour des entiers . Posons , de sorte que . Par le théorème des facteurs invariants dans l'anneau principal , il existe des matrices inversibles telles que soit une matrice diagonale, disons où sont les facteurs invariants de . Quitte à changer les base et en et , on a   En particulier, on a . Par ailleurs, cette même formule donne   d'où .  "
+},
+{
+  "id": "subsec-structure-des-reseaux-16",
+  "level": "2",
+  "url": "sec-reseaux.html#subsec-structure-des-reseaux-16",
+  "type": "Exemple",
+  "number": "A.3.8",
+  "title": "Calcul de covolume.",
+  "body": " Calcul de covolume  On peut utiliser la proposition précédente pourcalculer le covolume du réseau de sans avoir à en trouver une base. En effet, s'identifie au noyau de l'application surjective   On a donc et, comme le covolume de est égal à 1, on en déduit que le covolume de est égal à 3.  On peut maintenant en déduire une base: les vecteurs et sont dans et   Par minimalité du covolume, est une base de .  "
+},
+{
+  "id": "def-domaine-fondamental",
+  "level": "2",
+  "url": "sec-reseaux.html#def-domaine-fondamental",
+  "type": "Définition",
+  "number": "A.3.9",
+  "title": "Domaine fondamental.",
+  "body": " Domaine fondamental   Soit un ensemble mesurable de . On dit que est un domaine fondamental de si tout s'écrit de manière unique comme avec et .   "
+},
+{
+  "id": "lem-blichfeldt",
+  "level": "2",
+  "url": "sec-reseaux.html#lem-blichfeldt",
+  "type": "Lemme",
+  "number": "A.3.10",
+  "title": "de Blichfeldt.",
+  "body": " de Blichfeldt   Soit un domaine fondamental de et un ensemble mesurable tel que, pour tout , implique . Alors .   "
+},
+{
+  "id": "subsec-minkowski-7",
+  "level": "2",
+  "url": "sec-reseaux.html#subsec-minkowski-7",
+  "type": "Démonstration",
+  "number": "A.3.2.1",
+  "title": "",
+  "body": " Par définition d'un domaine fondamental, on a   En prenant l'intersection avec , on obtient . La relation   et l'invariance de la mesure par translation donnent . En sommant sur , on trouve   Puisque les ensembles sont disjoints, on a , d'où le résultat.  "
+},
+{
+  "id": "lem-corps-convexe",
+  "level": "2",
+  "url": "sec-reseaux.html#lem-corps-convexe",
+  "type": "Lemme",
+  "number": "A.3.11",
+  "title": "Lemme du corps convexe.",
+  "body": " Lemme du corps convexe   Soit un ensemble mesurable convexe Cela signifie que si et sont deux points de , alors le segement qui relie à -- à savoir l'ensemble des pour -- est inclus dans . , symétrique Cela signifie que si , alors . par rapport à l'origine et vérifiant l'un des points suivants:    , ou   est compact et .   Alors contient un élément non nul de .   "
+},
+{
+  "id": "subsec-minkowski-9",
+  "level": "2",
+  "url": "sec-reseaux.html#subsec-minkowski-9",
+  "type": "Démonstration",
+  "number": "A.3.2.2",
+  "title": "",
+  "body": " Soit de sorte que . En particulier, et le lemme de Blichfeldt assure qu'il existe distincts tels que . Comme est convexe et symétrique, on a . Par ailleurs, comme , on a . Ainsi, contient un élément non nul de .  Si est compact et , on peut appliquer le même raisonnement à des épaississements de : pour , on considère   C'est un ouvert de (donc mesurable) qui contient et tel que . En particulier et le même raisonnement que précédemment trouve des éléments non nuls de dans .  Comme est discret, l'intersection est finie, et la suite d'entiers est et décroît lorsque diminue. Sa valeur limite lorsque , à savoir , est un entier strictement positif.  "
+},
+{
+  "id": "thm-euler-fermat",
+  "level": "2",
+  "url": "sec-reseaux.html#thm-euler-fermat",
+  "type": "Théorème",
+  "number": "A.3.12",
+  "title": "",
+  "body": "  Soit p un nombre premier . Alors il existe tels que .   "
+},
+{
+  "id": "subsec-applications-3",
+  "level": "2",
+  "url": "sec-reseaux.html#subsec-applications-3",
+  "type": "Démonstration",
+  "number": "A.3.3.1",
+  "title": "",
+  "body": " On commence par un lemme classique du à Euler.    Si , alors est un carré modulo .     On considère le polynôme dans qui admet au plus racines. Par Fermat, annule tous les carrés de , et il y en a exactement : pour le voir, on peut utiliser l'isomorphisme obtenu en considérant le morphisme surjectif de vers ses carrés et de noyau .  On en déduit que les racines de sont exactement les carrés de . Comme , on a que est racine de , donc est un carré dans .   Soit donc une racine de modulo . On considère le réseau de    C'est un réseau de covolume : en effet, s'identifie au noyau du morphisme surjectif   et donc , puis d'après la .  De plus, pour tout , on a .  On considère la boule ouverte de rayon ; c'est un ouvert convexe et symétrique de mesure  . Le lemme du corps convexe assure qu'il existe non nul. Un tel couple vérifie et . On en déduit .  "
+},
+{
+  "id": "thm-lagrange",
+  "level": "2",
+  "url": "sec-reseaux.html#thm-lagrange",
+  "type": "Théorème",
+  "number": "A.3.14",
+  "title": "",
+  "body": "  Tout entier positif est somme de quatre carrés.   "
+},
+{
+  "id": "subsec-applications-5",
+  "level": "2",
+  "url": "sec-reseaux.html#subsec-applications-5",
+  "type": "Démonstration",
+  "number": "A.3.3.2",
+  "title": "",
+  "body": " Il suffit de démontrer le résultat pour les entier sans facteur carré, ce que l'on suppose.     est somme de deux carrés dans .     Le théorème des restes chinois nous permet de se ramener au cas où En effet, si est sans facteur carré, alors le morphisme canonique est surjectif (un isomorphisme, à vrai dire). Si est somme de deux carrés dans , disons , pour chaque premier , et si sont deux entiers tels que , alors dans .  est un nombre premier.  Comme le cas est évident, on suppose impair. Comme l'ensemble et son \"translaté opposé\" ont tous deux éléments (voir la preuve du \"), ils ne peuvent être disjoints et donc ils existe tels que .   Soient donc tels que . On considère le réseau de    Comme ce réseau s'identifie au noyau de l'application surjective   on a .  De plus, si , alors   En considérant l'ensemble mesurable connexe symétrique qu'est la boule ouverte de centre zéro et de rayon , à savoir   on a , car .  Il existe donc un élement , vérifiant alors et . Cela conclut.  "
+},
+{
+  "id": "subsec-applications-6",
+  "level": "2",
+  "url": "sec-reseaux.html#subsec-applications-6",
+  "type": "Remarque",
+  "number": "A.3.16",
+  "title": "",
+  "body": " Un entier positif est somme de trois carrés si et seulement s'il n'est pas de la forme .  "
 },
 {
   "id": "references",
