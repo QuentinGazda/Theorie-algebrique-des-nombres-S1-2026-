@@ -466,14 +466,15 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
 
   <subsection xml:id="subsec-applications">
     <title>Applications en théorie des nombres</title>
-    
+    <p>
     On démontre deux résultats classiques de la théorie des nombres à partir du lemme du corps convexe de Minkowski.
+    </p>
 
     <theorem xml:id="thm-euler-fermat">
       <title>Euler, Fermat</title>
       <statement>
         <p>
-          Soit <p>p</p> un nombre premier <m>\equiv 1 \pmod{4}</m>. Alors il existe <m>a,b\in \mathbb{Z}</m> tels que <m>p=a^2+b^2</m>.
+          Soit <m>p</m> un nombre premier <m>\equiv 1 \pmod{4}</m>. Alors il existe <m>a,b\in \mathbb{Z}</m> tels que <m>p=a^2+b^2</m>.
         </p>
       </statement>
     </theorem>
