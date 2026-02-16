@@ -164,6 +164,9 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
         Nous rappelons ici quelques définitions et résultats de base sur les réseaux dans les espaces euclidiens qui seront utilisés dans ce cours.
       </p>
 
+      <subsection xml:id="subsec-structure-des-reseaux">
+        <title>Structure des réseaux</title>
+        
       <p>
         Soit <m>V</m> un espace vectoriel réel de dimension finie muni d'une base fixe <m>b=(b_1,\ldots,b_n)</m> ainsi que d'une norme fixée quelconque notée <m>\|\cdot\|</m>. On peut supposer, sans perte de généralité, que <m>V=\mathbb{R}^n</m> et que <m>b</m> est la base canonique; le fait de fixer une base nous permettra de pouvoir considérer le déterminant de familles de vecteurs de <m>V</m> relativement à cette base.
       </p>
@@ -287,11 +290,17 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
       </proof>
 
   <p>
-    On a donc montré que tout réseau <m>L</m> de <m>V</m> est de la forme
+    On a donc montré que tout réseau <m>L</m> de <m>V</m> est libre de rang <m>n</m> en tant que groupe abélien, ç-à-d de la forme de la forme
   </p>  
      <md>L(e) = \left\{ \sum_{i=1}^n a_i e_i ~|~ a_i \in \mathbb{Z} \right\}</md>
   <p>  
-    où <m>(e_1,\ldots,e_n)</m> est une base de <m>V</m> contenue dans <m>L</m> de déterminant minimal (en valeur absolue) relativement à la base <m>b</m>.
+    où <m>(e_1,\ldots,e_n)</m> est une base de <m>V</m> contenue dans <m>L</m>. Une famille <m>(e_1,\ldots,e_n)</m> qui réalise l'égalité ci-dessus est appelée <em>base de <m>L</m></em>. Puisque les bases de <m>L</m> diffèrent d'un changement de base dans
+  </p>
+    <md>
+      \mathrm{GL}_n(\mathbb{Z})=\{A\in M_n(\mathbb{Z})~|~\det(A)=\pm 1\},
+    </md>
+  <p>
+    les bases de <m>L</m> sont caractérisées comme les bases de <m>V</m> dans <m>L</m> de déterminant minimal (en valeur absolue) relativement à la base <m>b</m> (voir la preuve du <xref ref="lem-base-de-det-minimal"/>).
   </p>
 
   <definition xml:id="def-covolume">
@@ -333,6 +342,266 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
     d'où <m>|L/L'|=d_1\cdots d_n</m>.
   </p>
   </proof>
+
+  <example>
+    <title>Calcul de covolume</title>
+    <p>
+      On peut utiliser la proposition précédente pourcalculer le covolume du réseau <m>L=\{(a,b)\in \mathbb{Z}^2~|~a\equiv 2b \pmod{3}\}</m> de <m>\mathbb{R}^2</m> sans avoir à en trouver une base.
+      En effet, <m>L</m> s'identifie au noyau de l'application surjective 
+    </p>
+      <md>
+        <mrow> f:~\amp \mathbb{Z}^2 \longrightarrow  \mathbb{Z}/3\mathbb{Z}</mrow>
+        <mrow> \amp (a,b) \longmapsto a-2b \pmod{3}</mrow>
+      </md>
+    <p>
+      On a donc <m>|\mathbb{Z}^2/L|=3</m> et, comme le covolume de <m>\mathbb{Z}^2</m> est égal à 1, on en déduit que le covolume de <m>L</m> est égal à 3.
+    </p>
+    <p>
+      On peut maintenant en déduire une base: les vecteurs <m>f_1=(3,0)</m> et <m>f_2=(2,1)</m> sont dans <m>L</m> et
+    </p>
+      <md>
+        |\mathrm{det}_{(e_1,e_2)}(f_1,f_2)|=|\det\begin{pmatrix}3 \amp 2\\0 \amp 1\end{pmatrix}|=|3\cdot 1 - 2\cdot 0|=3.
+      </md>
+    <p>
+        Par minimalité du covolume, <m>(f_1,f_2)</m> est une base de <m>L</m>.
+    </p>
+  </example>
+
+
+  </subsection>
+
+
+  <subsection xml:id="subsec-minkowski">
+    <title> Lemme du corps convexe</title>
+    
+    <p>
+      Soit <m>V</m> un espace vectoriel réel de dimension finie muni d'une base <m>b</m> fixée ainsi que d'une norme <m>\|\cdot\|</m>. On équippe <m>V</m> de la mesure de Lebesgue <m>\lambda</m> relative à la base <m>b</m>, à savoir l'unique mesure de Borel sur <m>V</m> invariant par translation et telle que <m>\lambda(\Pi(b))=1</m> où <m>\Pi(b)</m> désigne le pavé fondamental de la base <m>b</m>.
+    </p>
+
+    <p>
+      Soit <m>L</m> un réseau de <m>V</m>. On a vu dans la sous-section précédente que <m>L</m> admet une base, c-à-d est de la forme <m>L(e)</m> pour une base <m>(e_1,\ldots,e_n)</m> de <m>V</m> contenue dans <m>L</m>. On a appelé <em>pavé fondamental de <m>L</m></em> les parallélépipèdes de la forme <m>\Pi(e)</m> où <m>e</m> est une base de <m>L</m>. Par définition du covolume et la formule de la Jacobienne (ou <em>du changement de variable</em>) en théorie de la mesure, on a <md>\lambda(\Pi(e))=\mathrm{covol}(L)</md>. On étend ces notions des pavés aux espaces mesurables.
+    </p>
+    <definition xml:id="def-domaine-fondamental">
+      <title>Domaine fondamental</title>
+      <statement>
+        <p>
+          Soit <m>X</m> un ensemble mesurable de <m>V</m>. On dit que <m>X</m> est un <em>domaine fondamental de <m>L</m></em> si tout <m>v\in V</m> s'écrit de manière unique comme <m>v=x+\ell</m> avec <m>x\in X</m> et <m>\ell\in L</m>.
+        </p>
+      </statement>
+    </definition>
+
+   <p>
+    Les domaines fondamentaux de <m>L</m> ont tous la même mesure, égale au covolume de <m>L</m>; cela découle du lemme de Blichfeldt :
+   </p>
+   <lemma xml:id="lem-blichfeldt">
+    <title>de Blichfeldt</title>
+    <statement>
+      <p>
+        Soit <m>X</m> un domaine fondamental de <m>L</m> et <m>Y\subset V</m> un ensemble mesurable tel que, pour tout <m>x,y\in Y</m>, <m>x-y\in L</m> implique <m>x=y</m>. Alors <m>\lambda(Y)\leq \lambda(X)</m>.
+      </p>
+    </statement>
+   </lemma>
+   <proof>
+    <p>
+      Par définition d'un domaine fondamental, on a 
+    </p>
+    <md>
+      V=\bigsqcup_{\ell\in L}{(X+\ell)}.
+    </md>
+    <p>
+      En prenant l'intersection avec <m>Y</m>, on obtient <m>Y=\bigsqcup_{\ell\in L}{Y\cap (X+\ell)}</m>. La relation
+    </p>
+    <md>
+      Y\cap (X+\ell)-\ell=X\cap (Y-\ell)
+    </md>
+    <p>
+      et l'invariance de la mesure par translation donnent <m>\lambda(Y\cap (X+\ell))=\lambda(X\cap (Y-\ell))</m>. En sommant sur <m>\ell\in L</m>, on trouve
+    </p>
+    <md>
+      \lambda(Y)=\lambda\left(\bigsqcup_{\ell\in L}Y\cap (X+\ell)\right)=\sum_{\ell\in L}{\lambda(X\cap (Y-\ell))}.
+    </md>
+    <p>
+      Puisque les ensembles <m>Y-\ell</m> sont disjoints, on a <m>\sum_{\ell\in L}{\lambda(X\cap (Y-\ell))}\leq \lambda(X)</m>, d'où le résultat.
+    </p>
+   </proof>
+
+   On peut maintenant énoncer le lemme du corps convexe, qui est un résultat fondamental de la géométrie des nombres.
+
+   <lemma xml:id="lem-corps-convexe">
+    <title>Lemme du corps convexe</title>
+    <statement>
+      <p>
+        Soit <m>C\subset V</m> un ensemble mesurable convexe<fn>Cela signifie que si <m>c</m> et <m>c'</m> sont deux points de <m>C</m>, alors le segement qui relie <m>c</m> à <m>c'</m> -- à savoir l'ensemble des <m>tc+(1-t)c'</m> pour <m>t\in [0,1]</m> -- est inclus dans <m>C</m>.</fn>, symétrique<fn>Cela signifie que si <m>c\in C</m>, alors <m>-c\in C</m>.</fn> par rapport à l'origine et vérifiant l'un des points suivants:
+      </p>
+      <ol marker="(i)">
+        <li> <p><m>\lambda(C)> 2^n\cdot \mathrm{covol}(L)</m>, ou </p></li>
+        <li> <p><m>C</m> est compact et <m>\lambda(C)\geq 2^n\cdot \mathrm{covol}(L)</m>.</p></li>
+      </ol>
+      <p>
+        Alors <m>C</m> contient un élément non nul de <m>L</m>.
+      </p>
+    </statement>
+   </lemma>
+
+   <proof>
+    <p>
+      Soit <m>L':=2L</m> de sorte que <m>\mathrm{covol}(L')=2^n \mathrm{covol}(L)</m>. En particulier, <m>\lambda(C)>\mathrm{covol}(L')</m> et le lemme de Blichfeldt assure qu'il existe <m>c\neq c'\in C</m> distincts tels que <m>c-c'\in L'</m>. Comme <m>C</m> est convexe et symétrique, on a <m>\frac{c-c'}{2}\in C</m>. Par ailleurs, comme <m>c-c'\in L'</m>, on a <m>\frac{c-c'}{2}\in L</m>. Ainsi, <m>C</m> contient un élément non nul de <m>L</m>.
+    </p>
+
+    <p>
+      Si <m>C</m> est compact et <m>\lambda(C)\geq \mathrm{covol}(L')</m>, on peut appliquer le même raisonnement à des épaississements de <m>C</m> : pour <m>\varepsilon>0</m>, on considère
+    </p>
+    <md>
+      C_\varepsilon:=\{v\in V~|~\exists c\in C:~\|v-c\| &lt; \varepsilon\}.
+    </md>
+    <p>
+      C'est un ouvert de <m>V</m> (donc mesurable) qui contient <m>C</m> et tel que <m>\lambda(C_\varepsilon)> \lambda(C)</m>. En particulier <m>\lambda(C_\varepsilon)> \mathrm{covol}(L')</m> et le même raisonnement que précédemment trouve des éléments non nuls de <m>L</m> dans <m>C_\varepsilon</m>.
+    </p>
+    <p>  
+      Comme <m>L</m> est discret, l'intersection <m>L\setminus\{0\}\cap C_\varepsilon</m> est finie, et la suite d'entiers  <m>|L\setminus\{0\}\cap C_\varepsilon|</m> est <m>\geq 1</m> et décroît lorsque <m>\varepsilon</m> diminue. Sa valeur limite lorsque <m>\varepsilon\to 0</m>, à savoir  <m>|L\setminus\{0\}\cap C|</m>, est un entier strictement positif. 
+    </p>
+   </proof>
+
+  </subsection>
+
+  <subsection xml:id="subsec-applications">
+    <title>Applications en théorie des nombres</title>
+    
+    On démontre deux résultats classiques de la théorie des nombres à partir du lemme du corps convexe de Minkowski.
+
+    <theorem xml:id="thm-euler-fermat">
+      <title>Euler, Fermat</title>
+      <statement>
+        <p>
+          Soit <p>p</p> un nombre premier <m>\equiv 1 \pmod{4}</m>. Alors il existe <m>a,b\in \mathbb{Z}</m> tels que <m>p=a^2+b^2</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        On commence par un lemme classique du à Euler.
+      </p>
+      <lemma xml:id="lem-moins-un">
+        <statement>
+          <p>
+            Si <m>p\equiv 1 \pmod{4}</m>, alors <m>-1</m> est un carré modulo <m>p</m>.
+          </p>
+        </statement>
+      </lemma>
+      <proof>
+        <p>
+        On considère le polynôme <m>P(X)=X^{\frac{p-1}{2}}-1</m> dans <m>\mathbb{F}_p</m> qui admet au plus <m>\frac{p-1}{2}</m> racines. Par Fermat, <m>P(X)</m> annule tous les carrés de <m>\mathbb{F}_p^{\times}</m>, et il y en a exactement <m>\frac{p-1}{2}</m> : pour le voir, on peut utiliser l'isomorphisme <m>(\mathbb{F}_p^{\times})^2\cong \mathbb{F}_p^{\times}/\{\pm 1\}</m> obtenu en considérant le morphisme surjectif <m>x\mapsto x^2</m> de <m>\mathbb{F}_p^{\times}</m> vers ses carrés <m>(\mathbb{F}_p^{\times})^{\times}</m> et de noyau <m>\{\pm 1\}</m>.
+        </p>
+        <p>
+        On en déduit que les racines de <m>P(X)</m> sont exactement les carrés de <m>\mathbb{F}_p^{\times}</m>. Comme <m>p\equiv 1 \pmod{4}</m>, on a que <m>-1</m> est racine de <m>P(X)</m>, donc est un carré dans <m>\mathbb{F}_p^{\times}</m>.  
+        </p>
+      </proof>
+      <p>
+      Soit donc <m>u</m> une racine de <m>-1</m> modulo <m>p</m>. On considère le réseau de <m>\mathbb{R}^2</m>
+      </p>
+      <md>
+        L:=\{(a,b)\in \mathbb{Z}^2~|~a\equiv ub \pmod{p}\}.
+      </md>
+      <p>
+        C'est un réseau de covolume <m>p</m> : en effet, <m>L</m> s'identifie au noyau du morphisme surjectif
+      </p>
+      <md>
+        <mrow> f:~\amp \mathbb{Z}^2 \longrightarrow \mathbb{Z}/p\mathbb{Z}</mrow>
+        <mrow> \amp (a,b) \longmapsto a-ub </mrow>
+      </md>
+      <p>
+        et donc <m>|\mathbb{Z}^2/L|=p</m>, puis <m>\mathrm{covol}(L)=p</m> d'après la <xref ref="prop-comparaison-covolumes"/>.
+      </p>
+      <p>
+        De plus, pour tout <m>(a,b)\in L</m>, on a <m>a^2+b^2\equiv 0 \pmod{p}</m>. 
+      </p>
+      <p>
+        On considère la boule ouverte <m>C=\{(x,y)\in \mathbb{R}^2~|~x^2+y^2 &lt; 2p\}</m> de rayon <m>2p</m>; c'est un ouvert convexe et symétrique de mesure
+      </p>
+        <md>2\pi p > 4p = 4\cdot \mathrm{covol}(L)</md>.
+      <p>
+        Le lemme du corps convexe assure qu'il existe <m>(a,b)\in L\cap C</m> non nul. Un tel couple vérifie <m>0 &lt; a^2+b^2 &lt; 2p</m> et <m>p|a^2+b^2</m>. On en déduit <m>p=a^2+b^2</m>.
+      </p>
+    </proof>
+
+    <theorem xml:id="thm-lagrange">
+      <title>Lagrange</title>
+      <statement>
+        <p>
+          Tout entier positif est somme de quatre carrés.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Il suffit de démontrer le résultat pour les entier <m>n\geq 2</m> sans facteur carré, ce que l'on suppose.
+      </p>
+      <lemma xml:id="lem-somme-de-carre-mod-n">
+        <statement>
+          <p>
+            <m>-1</m> est somme de deux carrés dans <m>\mathbb{Z}/n\mathbb{Z}</m>.
+          </p>
+        </statement>
+      </lemma>
+      <proof>
+        <p>
+        Le théorème des restes chinois nous permet de se ramener au cas où<fn>En effet, si <m>n</m> est sans facteur carré, alors le morphisme canonique <m>\mathbb{Z}/n\mathbb{Z}\to \prod_{p|n}\mathbb{Z}/p\mathbb{Z}</m> est surjectif (un isomorphisme, à vrai dire). Si <m>-1</m> est somme de deux carrés dans <m>\mathbb{Z}/p\mathbb{Z}</m>, disons <m>-1=a_p^2+b_p^2</m>, pour chaque premier <m>p|n</m>, et si <m>a,b</m> sont deux entiers tels que <m>a,b\equiv a_p,b_p \pmod{p}</m>, alors <m>-1=a^2+b^2</m> dans <m>\mathbb{Z}/n\mathbb{Z}</m>.</fn> <m>n</m> est un nombre premier.
+        </p>
+        <p>
+        Comme le cas <m>p=2</m> est évident, on suppose <m>p</m> impair. Comme l'ensemble <m>\mathbb{F}_p^2=(\mathbb{Z}/p\mathbb{Z})^2</m> et son "translaté opposé" <m>-1-\mathbb{F}_p^2</m> ont tous deux <m>\frac{p+1}{2}</m> éléments (voir la preuve du <xref ref="lem-moins-un"/>"), ils ne peuvent être disjoints et donc ils existe <m>x^2,y^2\in \mathbb{F}_p^2</m> tels que <m>-1-x^2=y^2</m>. 
+        </p>
+      </proof>
+      <p>
+      Soient donc <m>u,v\in \mathbb{Z}</m> tels que <m>1+u^2+v^2\equiv 0 \pmod{n}</m>. On considère le réseau de <m>\mathbb{R}^4</m>
+      </p>
+      <md>
+        L:=\{(a,b,c,d)\in \mathbb{Z}^4~|~c\equiv au+bv\pmod{n},~d\equiv av-bu \pmod{n}\}.
+      </md>
+      <p>
+      Comme ce réseau s'identifie au noyau de l'application surjective 
+      </p>
+      <md>
+        <mrow> f:~\amp \mathbb{Z}^4 \longrightarrow (\mathbb{Z}/n\mathbb{Z})^2 </mrow>
+        <mrow> \amp (a,b,c,d) \longmapsto (au+bv,av-bu) </mrow>
+      </md>
+      <p>
+      on a <m>\mathrm{covol}(L)=n^2</m>.
+      </p>
+      <p>
+      De plus, si <m>(a,b,c,d)\in L</m>, alors 
+      </p>
+      <md>
+        <mrow>a^2+b^2+c^2+d^2 \amp \equiv a^2+b^2+(au+bv)^2+(av-bu)^2 \pmod{n} </mrow>
+        <mrow> \amp \equiv a^2(1+u^2+v^2)+b^2(1+u^2+v^2) \pmod{n}</mrow>
+        <mrow> \amp \equiv 0 \pmod{n} </mrow>
+      </md>
+      <p>
+        En considérant l'ensemble mesurable connexe symétrique qu'est la boule ouverte de centre zéro et de rayon <m>\sqrt{2n}</m>, à savoir
+      </p>
+      <md>
+        C:=\{(w,x,y,z)\in \mathbb{R}^4~|~w^2+x^2+y^2+z^2 &lt; 2n\},
+      </md>
+      <p>
+        on a <m>\lambda(C)=2\pi^2 n^2 &gt; 16 n^2= 2^4 \mathrm{covol}(L)</m>, car <m>\pi^2>2^3</m>.
+      </p>
+      <p>
+        Il existe donc un élement <m>(a,b,c,d)\in (L\setminus\{0\} \cap C)</m>, vérifiant alors <m>0 &lt; a^2+b^2+c^2+d^2 &lt; 2n</m> et <m>n|a^2+b^2+c^2+d^2</m>. Cela conclut. 
+      </p>
+    </proof>
+
+    <remark>
+      <p>
+        Un entier positif est somme de trois carrés si et seulement s'il n'est pas de la forme <m>4^i(8k+7)</m>.
+      </p>
+    </remark>
+
+  </subsection>
+
+
+
+
+
+
   </section>
 
 </appendix>
