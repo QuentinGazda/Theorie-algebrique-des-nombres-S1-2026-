@@ -379,7 +379,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
     </p>
 
     <p>
-      Soit <m>L</m> un réseau de <m>V</m>. On a vu dans la sous-section précédente que <m>L</m> admet une base, c-à-d est de la forme <m>L(e)</m> pour une base <m>(e_1,\ldots,e_n)</m> de <m>V</m> contenue dans <m>L</m>. On a appelé <em>pavé fondamental de <m>L</m></em> les parallélépipèdes de la forme <m>\Pi(e)</m> où <m>e</m> est une base de <m>L</m>. Par définition du covolume et la formule de la Jacobienne (ou <em>du changement de variable</em>) en théorie de la mesure, on a <md>\lambda(\Pi(e))=\mathrm{covol}(L)</md>. On étend ces notions des pavés aux espaces mesurables.
+      Soit <m>L</m> un réseau de <m>V</m>. On a vu dans la sous-section précédente que <m>L</m> admet une base, c-à-d est de la forme <m>L(e)</m> pour une base <m>(e_1,\ldots,e_n)</m> de <m>V</m> contenue dans <m>L</m>. On a appelé <em>pavé fondamental de <m>L</m></em> les parallélépipèdes de la forme <m>\Pi(e)</m> où <m>e</m> est une base de <m>L</m>. Par définition du covolume et la formule de la Jacobienne (ou <em>du changement de variable</em>) en théorie de la mesure, on a <md>\lambda(\Pi(e))=|\mathrm{det}_b(e_1,\ldots,e_n)|=\mathrm{covol}(L)</md>. On étend ces notions des pavés aux espaces mesurables.
     </p>
     <definition xml:id="def-domaine-fondamental">
       <title>Domaine fondamental</title>

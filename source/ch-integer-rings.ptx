@@ -128,9 +128,9 @@
 </theorem>
 <proof>
   <p>
-    On commence par énoncer un lemme général.
+    On commence par énoncer deux lemmes qui, ensembles, garantissent que <m>\sigma(\mathcal{O}_K)</m> contient une base de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>.
   </p>
-  <lemma xml:id="lem-covolume-dune-base-dun-corps-de-nombres">
+   <lemma xml:id="lem-covolume-dune-base-dun-corps-de-nombres">
     <statement>
       <p>
         Soit <m>(e_1,\ldots,e_n)</m> une base de <m>K</m> en tant que <m>\mathbb{Q}</m>-espace vectoriel. Alors <m>(\sigma(e_1),\ldots,\sigma(e_n))</m> est une <m>\mathbb{R}</m>-base de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> qui engendre un réseau de covolume <m>2^{-r_2}\sqrt{|\mathrm{disc}(e_1,\ldots,e_n)|}</m>.
@@ -186,9 +186,6 @@
     </p>
   </proof>
 
-  <p>
-    On poursuit avec un autre lemme.
-  </p>
   <lemma xml:id="lem-OK-contient-une-base-de-K">
     <statement>
       <p>
@@ -294,6 +291,17 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     </md>
   </example>
 
+  <p>
+    Le plongement canonique <m>\sigma:K\to \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> permet d'identifier <m>\mathcal{O}_K</m> à un réseau de l'espace vectoriel réel <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> (<xref ref="thm-reseau-du-plongement-canonique"/>). On calcule son covolume à l'aide de la proposition suivante, qui découle immédiatement du <xref ref="lem-covolume-dune-base-dun-corps-de-nombres"/>.
+  </p>
+  <proposition xml:id="prop-covolume-sigmaOK">
+    <statement>
+      <p>
+        Le réseau <m>\sigma(\mathcal{O}_K)</m> est de covolume <m>2^{-r_2}\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}</m>.
+      </p>
+    </statement>
+  </proposition>
+
   <remark>
     <p>
       Soit <m>D</m> le sous-ensemble de <m>\mathbb{Z}</m> formé des <m>|\mathrm{disc}(f_1,\ldots,f_n)|</m> où <m>(f_1,\ldots,f_n)</m> est une famille de <m>\mathcal{O}_K</m>. Alors <m>D</m> est non réduit à zéro et admet un plus petit élément qui est précisément <m>|\mathrm{disc}(K)|</m> (on le déduit de la <xref ref="prop-discriminants"/>, <xref ref="item-discriminant-changement-base"/>).
@@ -307,7 +315,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     <title>Discriminant d'un sous-groupe de <m>\mathcal{O}_K</m></title>
     <statement>
       <p>
-        Soit <m>A\subset \mathcal{O}_K</m> un sous-groupe contenant une base de <m>K</m><fn>On notera que <m>A</m> est immédiatement libre de rang <m>n</m> en tant que <m>\mathbb{Z}</m>-module.</fn>. Le <em>discriminant</em> de <m>A</m> est le discriminant d'une base de <m>A</m> en tant que <m>\mathbb{Z}</m>-module. On le note <m>\mathrm{disc}(A)</m>.
+        Soit <m>A\subset \mathcal{O}_K</m> un sous-groupe contenant une base de <m>K</m><fn>La même preuve que celle du <xref ref="thm-reseau-du-plongement-canonique"/> montre que <m>\sigma(A)</m> est un réseau de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>. En particulier, on notera que <m>A</m> est libre de rang <m>n</m> en tant que <m>\mathbb{Z}</m>-module.</fn>. Le <em>discriminant</em> de <m>A</m> est le discriminant d'une base de <m>A</m> en tant que <m>\mathbb{Z}</m>-module. On le note <m>\mathrm{disc}(A)</m>.
       </p>
     </statement>
   </definition>
