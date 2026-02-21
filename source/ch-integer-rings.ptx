@@ -264,7 +264,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     <title>Discriminant d'un corps de nombres</title>
     <statement>
       <p>
-        Le <em>discriminant</em> de <m>K</m> est le discriminant d'une base de <m>\mathcal{O}_K</m> en tant que <m>\mathbb{Z}</m>-module. On le note <m>\mathrm{disc}(K)</m>.
+        Le <em>discriminant</em> de <m>K</m> est le discriminant d'une base de <m>\mathcal{O}_K</m> en tant que <m>\mathbb{Z}</m>-module. On le note <m>\mathrm{disc}(K)</m>, <m>\mathrm{disc}(\mathcal{O}_K)</m> ou même <m>\Delta_K</m>.
       </p>
     </statement>
   </definition>
@@ -284,7 +284,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
       Le discriminant de <m>K</m> se calcule alors comme <m>\det\left(\begin{smallmatrix} 1 \amp \sqrt{d} \\ 1 \amp -\sqrt{d} \end{smallmatrix}\right)^2</m> si <m>d\equiv 2,3 \pmod{4}</m>, et comme <m>\det\left(\begin{smallmatrix} 1 \amp \frac{1+\sqrt{d}}{2} \\ 1 \amp \frac{1-\sqrt{d}}{2} \end{smallmatrix}\right)^2</m> si <m>d\equiv 1 \pmod{4}</m>. On trouve ainsi
     </p>
     <md>
-      \mathrm{disc}(K) = \begin{cases}
+      \mathrm{disc}(\mathcal{O}_K) = \begin{cases}
       4d \amp \text{si } d\equiv 2,3 \pmod{4}, \\
       d \amp \text{si } d\equiv 1 \pmod{4}.
       \end{cases}
@@ -304,7 +304,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
 
   <remark>
     <p>
-      Soit <m>D</m> le sous-ensemble de <m>\mathbb{Z}</m> formé des <m>|\mathrm{disc}(f_1,\ldots,f_n)|</m> où <m>(f_1,\ldots,f_n)</m> est une famille de <m>\mathcal{O}_K</m>. Alors <m>D</m> est non réduit à zéro et admet un plus petit élément qui est précisément <m>|\mathrm{disc}(K)|</m> (on le déduit de la <xref ref="prop-discriminants"/>, <xref ref="item-discriminant-changement-base"/>).
+      Soit <m>D</m> le sous-ensemble de <m>\mathbb{Z}</m> formé des <m>|\mathrm{disc}(f_1,\ldots,f_n)|</m> où <m>(f_1,\ldots,f_n)</m> est une famille de <m>\mathcal{O}_K</m>. Alors <m>D</m> est non réduit à zéro et admet un plus petit élément qui est précisément <m>|\mathrm{disc}(\mathcal{O}_K)|</m> (on le déduit de la <xref ref="prop-discriminants"/>, <xref ref="item-discriminant-changement-base"/>).
    </p>
   </remark>
 
@@ -376,6 +376,286 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
 </example>
   
  
+</section>
+
+
+<section xml:id="sec-norme-ideaux">
+  <title>Norme d'un idéal</title>
+  
+  <p>
+  Soit <m>I</m> un idéal non nul de <m>\mathcal{O}_K</m>. Si <m>\sigma</m> désigne le plongement canonique, on a vu que <m>\sigma(I)\subset \sigma(\mathcal{O}_K)</m> est une inclusion de réseaux de <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>. Son indice <m>|\mathcal{O}_K/I|</m> est alors fini. 
+  </p>
+  <definition xml:id="def-norme-ideal">
+    <title>Norme d'un idéal</title>
+    <statement>
+      <p>
+        On appelle <em>norme</em> de <m>I</m> et on note <m>N(I)</m> l'indice <m>|A/I|</m> de <m>I</m> dans <m>\mathcal{O}_K</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    La terminologie <em>norme</em> est justifiée par la relation qu'elle entretient avec la norme d'un élément de <m>K</m>.
+  </p>
+  <proposition xml:id="prop-norme-ideal-element">
+    <statement>
+      <p>
+        Soit <m>a\in \mathcal{O}_K</m> et <m>I</m> un idéal non nul. Alors <m>N(aI)=|N_{K/\mathbb{Q}}(a)| N(I)</m>. En particulier, <m>N((a))=|N_K(a)|</m>.
+      </p>
+    </statement>
+  </proposition>
+  <proof>
+    <p>
+      Notons que <m>\mathrm{disc}_K(aI)=N_{K}(a)^2\mathrm{disc}_K(I)</m> : en effet, si <m>(e_1,\ldots,e_n)</m> est une base de <m>I</m>, alors <m>(ae_1,\ldots,ae_n)</m> est une base de <m>aI</m> et alors 
+    </p>
+    <md>
+      <mrow> \mathrm{disc}_K(aI) \amp =\mathrm{disc}(ae_1,\ldots,ae_n) </mrow>
+      <mrow> \amp =\det\begin{pmatrix} \sigma_i(ae_j) \end{pmatrix}^2=\det\begin{pmatrix} \sigma_i(a)\sigma_i(e_j) \end{pmatrix}^2=N_{K}(a)^2\mathrm{disc}_K(I). </mrow>
+    </md>
+    <p>
+      De plus, comme <m>\sigma(aI)</m> et <m>\sigma(I)</m> sont des sous-réseaux de <m>\sigma(\mathcal{O}_K)</m> dans <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> de covolumes respectifs <m>2^{-r_2}\sqrt{|\mathrm{disc}_K(aI)|}</m> et <m>2^{-r_2}\sqrt{|\mathrm{disc}_K(I)|}</m> d'après le <xref ref="lem-covolume-dune-base-dun-corps-de-nombres"/>, on a par la <xref ref="prop-comparaison-covolumes"/> que
+    </p>
+    <md>
+      <mrow> \sqrt{|\mathrm{disc}_K(\mathcal{O}_K)|} \amp = |\mathcal{O}_K/aI|  \sqrt{|\mathrm{disc}_K(aI)|} </mrow>
+      <mrow> \sqrt{|\mathrm{disc}_K(\mathcal{O}_K)|} \amp = |\mathcal{O}_K/I| \sqrt{|\mathrm{disc}_K(I)|}  </mrow>
+    </md>
+    <p>
+      et la comparaison de ces formules donne le résultat.
+    </p>
+  </proof>
+
+  <remark>
+    Nous verrons plus loin que la norme d'un idéal est multiplicative : si <m>I,J\subset \mathcal{O}_K</m> sont des idéaux non nuls, alors <m>N(IJ)=N(I)N(J)</m>.
+  </remark>
+
+  <p>
+    Il suit de la <xref ref="prop-norme-ideal-element"/> que si <m>I</m> est principal, alors <m>N(I)</m> coincide avec la norme (en valeur absolue) d'un élémént de <m>I</m>. Ce n'est pas le cas si <m>I</m> n'est pas principal, mais le théorème de Minkowski assure que l'on peut trouver un élément de <m>I</m> dont la "distance" à <m>N(I)</m> est contrôlée par le discriminant. On pose 
+  </p>
+  <md>
+    C(r,n):=\frac{n!}{n^n}\left(\frac{4}{\pi}\right)^{r}.
+  </md>
+  
+  <theorem xml:id="thm-minkowski">
+    <title>Minkowski</title>
+    <statement>
+      <p>
+        Soit <m>I</m> un idéal non nul de <m>\mathcal{O}_K</m>. Alors il existe <m>a\in I</m> tel que 
+      </p>
+      <md>
+        |N_K(a)|\leq C(r_2,n)N(I)\sqrt{|\mathrm{disc}_K(A)|}.
+      </md>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      On considère l'espace <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> muni de la norme
+    </p>
+    <md>
+      \|(x_1,\ldots,x_{r_1},z_1,\ldots,z_{r_2})\|=\sqrt{\sum_{i=1}^{r_1}{|x_i|^2}+2\sum_{j=1}^{r_2}{|z_j|^2}}.
+    </md>
+    <p>
+      La boule <m>C_t:=\{v\in \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}~|~\|v\|\leq t\}</m> de rayon <m>t</m> est un convexe symétrique et son volume se calcule par le lemme qui suit.
+    </p>
+    <lemma xml:id="lem-volume-boule">
+      <statement>
+        <p>
+          Soit <m>\lambda</m> la mesure de Lebesgue sur <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>. Alors
+        </p>
+        <md>
+          \lambda(C_t)=2^{r_1}\left(\frac{\pi}{2}\right)^{r_2}\frac{t^n}{n!}.
+        </md>
+      </statement>
+    </lemma>
+    <p>
+      Le choix de cette norme vient de l'inégalité arithmetico-géométrique<fn>qui découle de la convexité de la fonction exponentielle réelle.</fn> :
+    </p>
+    <md>
+      \left(\prod_{i=1}^{r_1}{|x_i|}\prod_{j=1}^{r_2}{|z_j|^2}\right)^{\frac{1}{n}}\leq \frac{1}{n}\|(x_1,\ldots,x_{r_1},z_1,\ldots,z_{r_2})\|.
+    </md>
+    <p>
+      qui entraîne <m>|N_K(x)|\leq n^{-n}\|\sigma(x)\|^n</m> pour tout <m>x\in K</m>. Enfin, on choisit <m>t</m> de sorte que <m>\lambda(C_t)=2^n\mathrm{covol}(\sigma(I))</m>. Comme <m>C_t</m> est compact, le <xref ref="lem-corps-convexe"/> du corps convexe assure que <m>C_t</m> contient un élément non nul de <m>\sigma(I)</m>. En notant <m>\sigma(a)</m> cet élément, alors on a que <m>a\in I\setminus\{0\}</m> est tel que 
+    </p>
+    <md>
+      <mrow> |N_K(a)| \amp \leq n^{-n}t^n  </mrow> 
+      <mrow> \amp = \frac{n!}{2^{r_1}\left(\frac{\pi}{2}\right)^{r_2}n^n} 2^{n}\mathrm{covol}(\sigma(I)) </mrow>
+      <mrow> \amp = C(r_2,n)N(I)\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}  </mrow>.
+    </md>
+  </proof>
+
+  <corollary xml:id="cor-minkowski">
+    <title>Minkowski</title>
+    <statement>
+      <p>
+        Si <m>K\neq \mathbb{Q}</m>, alors <m>|\mathrm{disc}(\mathcal{O}_K)|>\frac{\pi}{3}\left(\frac{3\pi}{4}\right)^{n-1}</m>. En particulier, on a <m>\mathrm{disc}(\mathcal{O}_K)\neq \pm 1</m>. 
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      Comme tout élément non nul de <m>\mathcal{O}_K</m> est de norme <m>\geq 1</m> en valeur absolue, le <xref ref="thm-minkowski"/> donne
+    </p>
+    <md>
+      |\mathrm{disc}(\mathcal{O}_K)|\geq C(r_2,n)^{-2}\geq C(\frac{n}{2},n)^{-2}=\frac{n^{2n}}{n!^2}\left(\frac{\pi}{4}\right)^n
+    </md>
+    <p>
+      où la seconde inégalité découle du fait que <m>r_2\leq \frac{n}{2}</m> et <m>\pi &lt; 4</m>. 
+    </p>
+    <p>
+    De plus, si <m>n\geq 2</m> par hypothèse. En posant <m>a_n</m> pour le terme de droite, on a <m>\frac{a_{n+1}}{a_n}=\frac{\pi}{4}\left(1+\frac{1}{n}\right)^{2n}</m> qui est une suite strictement croissante <m>\geq \frac{3\pi}{4}</m> pour <m>n\geq 2</m>. On a donc
+    </p>
+    <md>
+      a_n\geq \left(\frac{3\pi}{4}\right)^{n-2}a_2=\frac{\pi}{3}\left(\frac{3\pi}{4}\right)^{n-1}.
+    </md>
+  </proof>
+
+  <remark>
+    <p>
+      Ce corollaire est remarquable en bien des aspects. Par exemple, on en déduit qu'étant donné un polynôme irréductible unitaire à coefficients entiers <m>P(X)</m> de degré <m>n\geq 2</m>, il existe nécessairement un nombre premier <m>p</m> tel que <m>P(X)\pmod{p}</m> admette une racine double. 
+    </p>
+    <p>
+      En effet, le corps <m>\mathbb{Q}[X]/(P(X))</m> s'identifie à un corps de nombre de la forme <m>K=\mathbb{Q}(\alpha)</m> où <m>\alpha</m> est une racine complexe de <m>P(X)</m>, puis 
+    </p>
+    <md>
+      |\mathrm{disc}(P)|=|\mathrm{disc}(\mathbb{Z}[\alpha])|\geq |\mathrm{disc}(\mathcal{O}_K)|>1.
+    </md>
+    <p>
+      Comme <m>\mathrm{disc}(P)\in \mathbb{Z}</m>, il est divisible par un nombre premier <m>p</m>. Or la réduction modulo <m>p</m> du discriminant de <m>P(X)</m>, qui est nulle, coincide  au discriminant de la réduction de <m>P(X)</m> modulo <m>p</m>.
+    </p>
+  </remark>
+
+</section>
+
+
+
+<section xml:id="sec-groupe-des-classes">
+  <title>Groupe des classes d'idéaux</title>
+
+
+
+  <p>
+    On se pose maintenant la question de savoir si l'anneau <m>\mathcal{O}_K</m> est principal. Nous vérons que ce n'est pas toujours le cas, et le défaut de principalité est mésuré par un groupe abélien fini appelé le <em>groupe des classes d'idéaux</em> de <m>K</m>.
+  </p>
+  
+  <definition xml:id="def-classe">
+    <statement>
+      <p>
+        Soit <m>A</m> un anneau intègre et notons <m>K</m> son corps de fractions.
+      </p>
+      <p>
+        Deux idéaux non nuls <m>I</m> et <m>J</m> de <m>A</m> sont dits <em>équivalents</em>, et on note alors <m>I\sim J</m>, s'il existe deux éléments <m>a,b\in A</m> tels que <m>aI=bJ</m>. 
+      </p>
+      <p>
+        On désigne par <m>\mathrm{Cl}(A)</m> l'ensemble des classes d'idéaux non nuls de <m>A</m> à équivalence près. On notera par <m>[I]</m> la classe d'un idéal non nul <m>I</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    On note <m>[A]\in \mathrm{Cl}(A)</m> la classe de l'idéal principal <m>A</m>. La pertinence de cette définition vient de la proposition suivante :
+  </p>
+  <proposition xml:id="prop-principal-classetrivial">
+    <statement>
+      <p>
+        Un idéal non nul <m>I</m> est principal si, et seulement si <m>[I]=[A]</m>. En particulier, <m>A</m> est principal si, et seulement si, <m>\mathrm{Cl}(A)</m> est réduit à un élément.
+      </p>
+    </statement>
+  </proposition>
+  <proof>
+    <p>
+      Soit <m>I=(c)</m> un idéal principal non nul de <m>A</m>. Si <m>J\sim I</m>, alors il existe <m>a,b\in A</m> tels que <m>aI=bJ</m>, soit <m>ac=bJ</m>. Comme <m>c\neq 0</m>, on a <m>b\neq 0</m> puis <m>J=\frac{ac}{b}\cdot A</m> comme sous-ensemble de <m>K</m>. Mais comme <m>\frac{ac}{b}\cdot 1\in J\subset A</m>, on a <m>\frac{ac}{b}\in A</m> et donc <m>J</m> est l'idéal principal engendré par <m>\frac{ac}{b}</m>.
+    </p>
+  </proof>
+  
+  <p>
+    Soient <m>I,J</m> deux ideaux non nuls de <m>A</m>. Rappelons que l'on écrit <m>IJ</m> pour désigner l'idéal :
+  </p>
+  <md>
+    IJ:=\{\sum_{i=1}^s{a_i b_i}~|~a_i\in I,~b_i\in J\}.
+  </md>
+  <p>
+    Cette opération est commutative (on a en effet <m>IJ=JI</m>) et associative (on a <m>(IJ)K=I(JK)</m>).
+  </p>
+
+  <proposition xml:id="prop-composition-classe">
+    <statement>
+      <p>
+        Le produit des idéaux induit une loi de composition commutative et associative sur <m>\mathrm{Cl}(A)</m> dont l'élément neutre est <m>[A]</m>. 
+      </p>
+    </statement>
+  </proposition>
+  <proof>
+    <p>
+      Soient <m>I,J\subset A</m> des idéaux non nuls. Si <m>I'\sim I</m> et <m>J'\sim J</m>, alors il existe <m>a,b,a',b'\in A</m> tels que <m>aI=bI'</m> et <m>a'J=b'J'</m>. En multipliant ces égalités, on trouve <m>(aa')(IJ)=(bb')(I'J')</m>, soit <m>IJ\sim I'J'</m>. Par conséquent, la loi de composition induite par le produit d'idéaux sur les classes d'idéaux est bien définie. De plus, elle est commutative et associative car le produit d'idéaux l'est.
+    </p>
+  </proof>
+
+  <p>
+    Ce qui manque à <m>\mathrm{Cl}(A)</m> pour être un groupe est l'existence d'inverses. Remarquons qu'un idéal <m>I</m> est tel que <m>[I]</m> est inversible dans <m>\mathrm{Cl}(A)</m> si, et seulement si, il existe un idéal <m>J</m> tel que <m>IJ</m> est principal. Nous dirons alors que <m>I</m> est <em>inversible</em>.
+  </p>
+
+  <p>
+    Soit <m>K</m> un corps de nombres. Nous allons montrer deux théorèmes fondamentaux : d'abord que <m>\mathrm{Cl}(\mathcal{O}_K)</m> est fini, puis que c'est un groupe. 
+  </p>
+
+  <theorem xml:id="thm-finitude-nombre-de-classe">
+    <title>Finitude du nombre de classes</title>
+    <statement>
+      <p>
+       <m>\mathrm{Cl}(\mathcal{O}_K)</m> est un ensemble fini. 
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Soit <m>N</m> la partie entière de <m>C(r_2,n)\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}</m> où <m>C(r_2,n)</m> est la constante de Minkowski (<em>cf.</em> <xref ref="thm-minkowski"/>). Nous allons montrer que tout idéal non nul de <m>\mathcal{O}_K</m> est équivalent à un idéal contenant l'un des entiers <m>\{1,\ldots,,N\}</m> et qu'il n'y a qu'un nombre fini d'idéaux de <m>\mathcal{O}_K</m> contenant un entier donné. 
+    </p>
+    <p>
+      Soit <m>I</m> un idéal non nul de <m>\mathcal{O}_K</m>. D'après le <xref ref="thm-minkowski"/>, il existe <m>a\in I</m> tel que <m>c:=|I/(a)|\leq N</m>. Par Lagrange, <m>c\cdot I\subset (a)</m>. On a donc
+    </p>
+    <md>
+      (c)= \frac{c}{a}(a)\subset \frac{c}{a}I \subset \mathcal{O}_K.
+    </md>
+    <p>
+      En posant <m>J:=\frac{c}{a}I</m>, on trouve que <m>J\sim I</m> et que <m>J</m> contient l'entier <m>c\in \{1,\ldots,N\}</m>. 
+    </p>
+    <p>
+      Il reste à montrer qu'il n'y a qu'un nombre fini d'idéaux contenant <m>c</m>. Mais ces idéaux sont en bijection avec les idéaux de <m>\mathcal{O}_K/(c)</m> qui est un anneau fini à <m>|N_K(c)|=c^n</m> éléments.
+    </p>
+  </proof>
+
+
+  <theorem xml:id="thm-classe-groupe">
+    <statement>
+      <p>
+        Soit <m>K</m> un corps de nombres. Alors <m>\mathrm{Cl}(\mathcal{O}_K)</m> est un groupe abélien fini. 
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      On commence par une application du lemme de Nakayama: 
+    </p>
+    <lemma xml:id="lem-bebe-thm-classe-groupe">
+      <statement>
+        <p>
+          Si <m>J,J'</m> sont deux idéaux non nuls de <m>\mathcal{O}_K</m> tels que <m>JJ'=(a)J'</m> pour un certain <m>a\in \mathcal{O}_K</m>, alors <m>J=(a)</m>.
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        Montrons que <m>\frac{1}{a}J\subset \mathcal{O}_K</m>. Soit <m>j\in J</m>, de sorte que <m>\frac{j}{a}J'\subset J'</m>.On sait que <m>J'</m> est un <m>\mathbb{Z}</m>-module libre de rang fini, et si l'on fixe une base de <m>J'</m>, alors l'élément <m>\frac{j}{a}</m> agit par multiplication sur cette base comme une matrice à coefficients entiers. Par Cayley-Hamilton, le polynôme caractéristique de cette matrice annule <m>\frac{j}{a}</m>, et comme ses coefficients sont entiers, on en déduit que <m>\frac{j}{a}\in \overline{\mathbb{Z}}\cap K=\mathcal{O}_K</m>. Par conséquent, <m>J\subset (a)</m>.
+      </p>
+      <p>
+        Soit alors <m>J'':=\frac{1}{a}J</m>. On a alors <m>J'' J'=J'</m>, et le lemme de Nakayam permet de conclure que <m>J''=\mathcal{O}_K</m>, soit <m>J=(a)</m>.
+      </p>
+    </proof>
+
+    <p>
+      Soit <m>I</m> un idéal non nul de <m>\mathcal{O}_K</m>. Pour montrer qu'il est inversible, il suffit de montrer qu'il existe un entier <m>n\geq 1</m> tel que <m>I^n</m> est principal (car alors la classe de <m>I^{n-1}</m> est l'inverse de la classe de <m>I</m>). Comme <m>|\mathrm{Cl}(A)|</m> est fini, il existe deux entiers <m>0 &lt; i &lt; j</m> tels que <m>I^i\sim I^j</m>. Il existe alors des éléments <m>a,b\in \mathcal{O}_K</m> tels que <m>aI^i=bI^j</m>, soit <m>aI^i=bI^j</m>, et donc <m>(bI^{j-i})I^i=(a)I^i</m>. En appliquant le <xref ref="lem-bebe-thm-classe-groupe"/>, on trouve <m>bI^{j-i}=(a)</m> puis que <m>I^{j-i}</m> est principal d'après la <xref ref="prop-principal-classetrivial"/>. 
+    </p>
+  </proof>
+  
 </section>
 
 

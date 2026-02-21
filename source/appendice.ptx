@@ -310,7 +310,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
         On appelle <em>covolume</em> du réseau <m>L\subset V</m> (relativement à <m>b</m>) la mesure commune d'un pavé fondamental, à savoir le nombre réel positif
       </p>  
       <md>
-        \mathrm{covol}(L)=|\det_b(e_1,\ldots,e_n)|.
+        \mathrm{covol}(L)=|\mathrm{det}_b(e_1,\ldots,e_n)|.
       </md>
     </statement>
   </definition>
@@ -379,7 +379,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
     </p>
 
     <p>
-      Soit <m>L</m> un réseau de <m>V</m>. On a vu dans la sous-section précédente que <m>L</m> admet une base, c-à-d est de la forme <m>L(e)</m> pour une base <m>(e_1,\ldots,e_n)</m> de <m>V</m> contenue dans <m>L</m>. On a appelé <em>pavé fondamental de <m>L</m></em> les parallélépipèdes de la forme <m>\Pi(e)</m> où <m>e</m> est une base de <m>L</m>. Par définition du covolume et la formule de la Jacobienne (ou <em>du changement de variable</em>) en théorie de la mesure, on a <md>\lambda(\Pi(e))=|\mathrm{det}_b(e_1,\ldots,e_n)|=\mathrm{covol}(L)</md>. On étend ces notions des pavés aux espaces mesurables.
+      Soit <m>L</m> un réseau de <m>V</m>. On a vu dans la sous-section précédente que <m>L</m> admet une base, c-à-d est de la forme <m>L(e)</m> pour une base <m>(e_1,\ldots,e_n)</m> de <m>V</m> contenue dans <m>L</m>. On a appelé <em>pavé fondamental de <m>L</m></em> les parallélépipèdes de la forme <m>\Pi(e)</m> où <m>e</m> est une base de <m>L</m>. Par définition du covolume et la formule de la Jacobienne (ou <em>du changement de variable</em>) en théorie de la mesure, on a <md>\lambda(\Pi(e))=|\mathrm{det}_b(e_1,\ldots,e_n)|=\mathrm{covol}(L)</md>. On étend ces notions des pavés aux ensembles mesurables.
     </p>
     <definition xml:id="def-domaine-fondamental">
       <title>Domaine fondamental</title>
@@ -391,7 +391,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
     </definition>
 
    <p>
-    Les domaines fondamentaux de <m>L</m> ont tous la même mesure, égale au covolume de <m>L</m>; cela découle du lemme de Blichfeldt :
+    Les domaines fondamentaux de <m>L</m> ont tous la même mesure, égale au covolume de <m>L</m>; cela découle du lemme de Blichfeldt dont le slongan est le suivant : <em>si <m>Y\subset V</m> est un ensemble mesurable tel que deux élements de <m>Y</m> distants l'un de l'autre d'un élement de <m>L</m> sont égaux (et donc distants de <m>O\in L</m>), alors la mesure de <m>Y</m> est inférieure à celle d'un pavé fondamental de <m>L</m>.</em>.
    </p>
    <lemma xml:id="lem-blichfeldt">
     <title>de Blichfeldt</title>
@@ -467,7 +467,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
   <subsection xml:id="subsec-applications">
     <title>Applications en théorie des nombres</title>
     <p>
-    On démontre deux résultats classiques de la théorie des nombres à partir du lemme du corps convexe de Minkowski.
+    On démontre deux résultats classiques de la théorie des nombres à partir du lemme du corps convexe de Minkowski. On l'appliquera à certaines boules de rayon <m>r>0</m> de <m>\mathbb{R}^n</m>, dont la mesure est <m>\frac{\pi^{\frac{n}{2}r^n}}{\Gamma(\frac{n}{2}+1)}</m>.
     </p>
 
     <theorem xml:id="thm-euler-fermat">
@@ -491,7 +491,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
       </lemma>
       <proof>
         <p>
-        On considère le polynôme <m>P(X)=X^{\frac{p-1}{2}}-1</m> dans <m>\mathbb{F}_p</m> qui admet au plus <m>\frac{p-1}{2}</m> racines. Par Fermat, <m>P(X)</m> annule tous les carrés de <m>\mathbb{F}_p^{\times}</m>, et il y en a exactement <m>\frac{p-1}{2}</m> : pour le voir, on peut utiliser l'isomorphisme <m>(\mathbb{F}_p^{\times})^2\cong \mathbb{F}_p^{\times}/\{\pm 1\}</m> obtenu en considérant le morphisme surjectif <m>x\mapsto x^2</m> de <m>\mathbb{F}_p^{\times}</m> vers ses carrés <m>(\mathbb{F}_p^{\times})^{\times}</m> et de noyau <m>\{\pm 1\}</m>.
+        En particulier, <m>p</m> est impair. On considère le polynôme <m>P(X)=X^{\frac{p-1}{2}}-1</m> dans <m>\mathbb{F}_p</m> qui admet au plus <m>\frac{p-1}{2}</m> racines. Par Fermat, <m>P(X)</m> annule tous les carrés de <m>\mathbb{F}_p^{\times}</m>, et il y en a exactement <m>\frac{p-1}{2}</m> : pour le voir, on peut utiliser l'isomorphisme <m>(\mathbb{F}_p^{\times})^2\cong \mathbb{F}_p^{\times}/\{\pm 1\}</m> obtenu en considérant le morphisme surjectif <m>x\mapsto x^2</m> de <m>\mathbb{F}_p^{\times}</m> vers ses carrés <m>(\mathbb{F}_p^{\times})^{\times}</m> et de noyau <m>\{\pm 1\}</m>.
         </p>
         <p>
         On en déduit que les racines de <m>P(X)</m> sont exactement les carrés de <m>\mathbb{F}_p^{\times}</m>. Comme <m>p\equiv 1 \pmod{4}</m>, on a que <m>-1</m> est racine de <m>P(X)</m>, donc est un carré dans <m>\mathbb{F}_p^{\times}</m>.  
