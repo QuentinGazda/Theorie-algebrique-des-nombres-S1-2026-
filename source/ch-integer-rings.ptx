@@ -389,7 +389,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     <title>Norme d'un idéal</title>
     <statement>
       <p>
-        On appelle <em>norme</em> de <m>I</m> et on note <m>N(I)</m> l'indice <m>|A/I|</m> de <m>I</m> dans <m>\mathcal{O}_K</m>.
+        On appelle <em>norme</em> de <m>I</m> et on note <m>N(I)</m> l'indice <m>|\mathcal{O}_K/I|</m> de <m>I</m> dans <m>\mathcal{O}_K</m>.
       </p>
     </statement>
   </definition>
@@ -400,7 +400,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   <proposition xml:id="prop-norme-ideal-element">
     <statement>
       <p>
-        Soit <m>a\in \mathcal{O}_K</m> et <m>I</m> un idéal non nul. Alors <m>N(aI)=|N_{K/\mathbb{Q}}(a)| N(I)</m>. En particulier, <m>N((a))=|N_K(a)|</m>.
+        Soit <m>a\in \mathcal{O}_K</m> et <m>I</m> un idéal non nul. Alors <m>N(aI)=|N_{K}(a)| N(I)</m>. En particulier, <m>N((a))=|N_K(a)|</m>.
       </p>
     </statement>
   </proposition>
@@ -425,7 +425,9 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   </proof>
 
   <remark>
+    <p>
     Nous verrons plus loin que la norme d'un idéal est multiplicative : si <m>I,J\subset \mathcal{O}_K</m> sont des idéaux non nuls, alors <m>N(IJ)=N(I)N(J)</m>.
+    </p>
   </remark>
 
   <p>
@@ -451,7 +453,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
       On considère l'espace <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> muni de la norme
     </p>
     <md>
-      \|(x_1,\ldots,x_{r_1},z_1,\ldots,z_{r_2})\|=\sqrt{\sum_{i=1}^{r_1}{|x_i|^2}+2\sum_{j=1}^{r_2}{|z_j|^2}}.
+      \|(x_1,\ldots,x_{r_1},z_1,\ldots,z_{r_2})\|=\sum_{i=1}^{r_1}{|x_i|}+2\sum_{j=1}^{r_2}{|z_j|}.
     </md>
     <p>
       La boule <m>C_t:=\{v\in \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}~|~\|v\|\leq t\}</m> de rayon <m>t</m> est un convexe symétrique et son volume se calcule par le lemme qui suit.
@@ -466,6 +468,32 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
         </md>
       </statement>
     </lemma>
+    <proof>
+      <p>
+        Notons <m>c_{r_1,r_2}:=\lambda(C_1)</m>. Par homotétie, on a <m>\lambda(C_t)=c_{r_1,r_2}t^n</m> donc il suffit de déterminer <m>c_{r_1,r_2}</m>.
+      </p>
+      <p>
+        Si <m>r_1\geq 1</m>, par Fubini en intégrant le long de la coordonnée <m>x_{r_1}\in [-1,1]</m>, on trouve
+      </p>
+      <md>
+        c_{r_1,r_2}=2\int^1_{0}{\lambda(C_{1-t,r_1-1,r_2})dt}=2c_{r_1-1,r_2}\int^1_0{(1-t)^{n-1}dt}=\frac{2}{n}c_{r_1-1,r_2}.
+      </md>
+      <p>
+        Par récurrence, si <m>r_2\geq 1</m>, on trouve <m>c_{r_1,r_2}=2^{r_1}\frac{(n-r_1)!}{n!}</m>.
+      </p>
+      <p>
+        Si <m>r_2\geq 1</m>, en écrivant <m>z_{r_2}</m> sous la forme <m>re^{i\theta}</m> avec <m>r\in[0,1]</m> et <m>\theta\in [0,2\pi]</m>, on trouve 
+      </p>
+      <md>
+        c_{r_1,r_2}=2\pi \int_0^{1/2}{\lambda(C_{1-2r,r_1,r_2-1})rdr}=2\pi c_{r_1,r_2-1}\int_0^{1/2}{(1-2r)^{n-1}rdr}=\frac{\pi}{2} c_{r_1,r_2-1}\int_{0}^{1}{(1-u)u^{n-1}du}=\frac{\pi}{2n(n-1)}c_{r_1,r_2-1}.
+      </md>
+      <p>
+        Par récurrence, si <m>r_2\geq 1</m>,on trouve <m>c_{r_1,r_2}=c_{r_1,0}\left(\frac{\pi}{2}\right)^{r_2}\frac{1}{(2r_2)!}</m>.
+      </p>
+      <p>
+        On conclut en utilisant soit <m>c_{1,0}=2</m>, soit <m>c_{0,1}=\frac{\pi}{4}</m>.
+      </p>
+    </proof>
     <p>
       Le choix de cette norme vient de l'inégalité arithmetico-géométrique<fn>qui découle de la convexité de la fonction exponentielle réelle.</fn> :
     </p>
@@ -519,7 +547,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
       |\mathrm{disc}(P)|=|\mathrm{disc}(\mathbb{Z}[\alpha])|\geq |\mathrm{disc}(\mathcal{O}_K)|>1.
     </md>
     <p>
-      Comme <m>\mathrm{disc}(P)\in \mathbb{Z}</m>, il est divisible par un nombre premier <m>p</m>. Or la réduction modulo <m>p</m> du discriminant de <m>P(X)</m>, qui est nulle, coincide  au discriminant de la réduction de <m>P(X)</m> modulo <m>p</m>.
+      Comme <m>\mathrm{disc}(P)\in \mathbb{Z}</m>, on en déduit qu'il est divisible par un nombre premier <m>p</m>. Or la réduction modulo <m>p</m> du discriminant de <m>P(X)</m>, qui est nulle, coincide  au discriminant de la réduction de <m>P(X)</m> modulo <m>p</m>.
     </p>
   </remark>
 
@@ -551,7 +579,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   </definition>
 
   <p>
-    On note <m>[A]\in \mathrm{Cl}(A)</m> la classe de l'idéal principal <m>A</m>. La pertinence de cette définition vient de la proposition suivante :
+    On note <m>[A]\in \mathrm{Cl}(A)</m> la classe de l'idéal principal <m>A</m>. La pertinence de cette notion d'équivalence vient de la proposition suivante :
   </p>
   <proposition xml:id="prop-principal-classetrivial">
     <statement>
@@ -570,7 +598,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     Soient <m>I,J</m> deux ideaux non nuls de <m>A</m>. Rappelons que l'on écrit <m>IJ</m> pour désigner l'idéal :
   </p>
   <md>
-    IJ:=\{\sum_{i=1}^s{a_i b_i}~|~a_i\in I,~b_i\in J\}.
+    IJ:=\left\{\sum_{i=1}^s{a_i b_i}~|~a_i\in I,~b_i\in J\right\}.
   </md>
   <p>
     Cette opération est commutative (on a en effet <m>IJ=JI</m>) et associative (on a <m>(IJ)K=I(JK)</m>).
