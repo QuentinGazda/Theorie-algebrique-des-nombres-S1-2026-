@@ -865,9 +865,9 @@ var ptx_lunr_docs = [
   "body": " D'après la et le , on a   "
 },
 {
-  "id": "sec-discriminant-de-K-14",
+  "id": "exemple-nombre-plastique",
   "level": "2",
-  "url": "sec-discriminant-de-K.html#sec-discriminant-de-K-14",
+  "url": "sec-discriminant-de-K.html#exemple-nombre-plastique",
   "type": "Exemple",
   "number": "3.2.7",
   "title": "Nombre plastique.",
@@ -880,7 +880,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Norme d’un idéal",
-  "body": " Norme d'un idéal  Soit un idéal non nul de . Si désigne le plongement canonique, on a vu que est une inclusion de réseaux de . Son indice est alors fini.   Norme d'un idéal   On appelle norme de et on note l'indice de dans .    La terminologie norme est justifiée par la relation qu'elle entretient avec la norme d'un élément de .    Soit et un idéal non nul. Alors . En particulier, .     Notons que : en effet, si est une base de , alors est une base de et alors   De plus, comme et sont des sous-réseaux de dans de covolumes respectifs et d'après le , on a par la que   et la comparaison de ces formules donne le résultat.    Nous verrons plus loin que la norme d'un idéal est multiplicative : si sont des idéaux non nuls, alors .   Il suit de la que si est principal, alors coincide avec la norme (en valeur absolue) d'un élémént de . Ce n'est pas le cas si n'est pas principal, mais le théorème de Minkowski assure que l'on peut trouver un élément de dont la \"distance\" à est contrôlée par le discriminant. On pose    Minkowski   Soit un idéal non nul de . Alors il existe tel que      On considère l'espace muni de la norme   La boule de rayon est un convexe symétrique et son volume se calcule par le lemme qui suit.    Soit la mesure de Lebesgue sur . Alors      Notons . Par homotétie, on a donc il suffit de déterminer .  Si , par Fubini en intégrant le long de la coordonnée , on trouve   Par récurrence, si , on trouve .  Si , en écrivant sous la forme avec et , on trouve   Par récurrence, si ,on trouve .  On conclut en utilisant soit , soit .   Le choix de cette norme vient de l'inégalité arithmetico-géométrique qui découle de la convexité de la fonction exponentielle réelle. :   qui entraîne pour tout . Enfin, on choisit de sorte que . Comme est compact, le du corps convexe assure que contient un élément non nul de . En notant cet élément, alors on a que est tel que     Minkowski   Si , alors . En particulier, on a .     Comme tout élément non nul de est de norme en valeur absolue, le donne   où la seconde inégalité découle du fait que et .  De plus, si par hypothèse. En posant pour le terme de droite, on a qui est une suite strictement croissante pour . On a donc     Ce corollaire est remarquable en bien des aspects. Par exemple, on en déduit qu'étant donné un polynôme irréductible unitaire à coefficients entiers de degré , il existe nécessairement un nombre premier tel que admette une racine double.  En effet, le corps s'identifie à un corps de nombre de la forme où est une racine complexe de , puis   Comme , on en déduit qu'il est divisible par un nombre premier . Or la réduction modulo du discriminant de , qui est nulle, coincide au discriminant de la réduction de modulo .   "
+  "body": " Norme d'un idéal  Soit un idéal non nul de . Si désigne le plongement canonique, on a vu que est une inclusion de réseaux de . Son indice est alors fini.   Norme d'un idéal   On appelle norme de et on note l'indice de dans .    La terminologie norme est justifiée par la relation qu'elle entretient avec la norme d'un élément de .    Soit et un idéal non nul. Alors . En particulier, .     Notons que : en effet, si est une base de , alors est une base de et alors   De plus, comme et sont des sous-réseaux de dans de covolumes respectifs et d'après le , on a par la que   et la comparaison de ces formules donne le résultat.    Nous verrons plus loin que la norme d'un idéal est multiplicative : si sont des idéaux non nuls, alors .     Soit , une inclusion d'idéaux non nuls. Alors . En particulier, si et seulement si .     On dispose d'une application surjective entre groupes finis de noyau . On conclut par le théorème de Lagrange.   Il suit de la que si est principal, alors coincide avec la norme (en valeur absolue) d'un élémént de . Ce n'est pas le cas si n'est pas principal, mais le théorème de Minkowski assure que l'on peut trouver un élément de dont la \"distance\" à est contrôlée par le discriminant. On pose    Minkowski   Soit un idéal non nul de . Alors il existe tel que      On considère l'espace muni de la norme   La boule de rayon est un convexe symétrique et son volume se calcule par le lemme qui suit.    Soit la mesure de Lebesgue sur . Alors      Notons . Par homotétie, on a donc il suffit de déterminer .  Si , par Fubini en intégrant le long de la coordonnée , on trouve   Par récurrence, si , on trouve  . Si , en écrivant sous la forme avec et , on trouve   Par récurrence, si ,on trouve   On conclut en utilisant soit , soit .   Le choix de cette norme vient de l'inégalité arithmetico-géométrique qui découle de la convexité de la fonction exponentielle réelle. :   qui entraîne pour tout . Enfin, on choisit de sorte que . Comme est compact, le du corps convexe assure que contient un élément non nul de . En notant cet élément, alors on a que est tel que     Minkowski   Si , alors . En particulier, on a .     Comme tout élément non nul de est de norme en valeur absolue, le donne   où la seconde inégalité découle du fait que et .  De plus, si par hypothèse. En posant pour le terme de droite, on a qui est une suite strictement croissante pour . On a donc     Ce corollaire est remarquable en bien des aspects. Par exemple, on en déduit qu'étant donné un polynôme irréductible unitaire à coefficients entiers de degré , il existe nécessairement un nombre premier tel que admette une racine double.  En effet, le corps s'identifie à un corps de nombre de la forme où est une racine complexe de , puis   Comme , on en déduit qu'il est divisible par un nombre premier . Or la réduction modulo du discriminant de , qui est nulle, coincide au discriminant de la réduction de modulo .   "
 },
 {
   "id": "def-norme-ideal",
@@ -919,31 +919,31 @@ var ptx_lunr_docs = [
   "body": " Nous verrons plus loin que la norme d'un idéal est multiplicative : si sont des idéaux non nuls, alors .  "
 },
 {
+  "id": "lem-inclusion-ideaux-normes",
+  "level": "2",
+  "url": "sec-norme-ideaux.html#lem-inclusion-ideaux-normes",
+  "type": "Lemme",
+  "number": "3.3.4",
+  "title": "",
+  "body": "  Soit , une inclusion d'idéaux non nuls. Alors . En particulier, si et seulement si .   "
+},
+{
+  "id": "sec-norme-ideaux-9",
+  "level": "2",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-9",
+  "type": "Démonstration",
+  "number": "3.3.2",
+  "title": "",
+  "body": " On dispose d'une application surjective entre groupes finis de noyau . On conclut par le théorème de Lagrange.  "
+},
+{
   "id": "thm-minkowski",
   "level": "2",
   "url": "sec-norme-ideaux.html#thm-minkowski",
   "type": "Théorème",
-  "number": "3.3.4",
+  "number": "3.3.5",
   "title": "Minkowski.",
   "body": " Minkowski   Soit un idéal non nul de . Alors il existe tel que    "
-},
-{
-  "id": "sec-norme-ideaux-11",
-  "level": "2",
-  "url": "sec-norme-ideaux.html#sec-norme-ideaux-11",
-  "type": "Démonstration",
-  "number": "3.3.2",
-  "title": "",
-  "body": " On considère l'espace muni de la norme   La boule de rayon est un convexe symétrique et son volume se calcule par le lemme qui suit.    Soit la mesure de Lebesgue sur . Alors      Notons . Par homotétie, on a donc il suffit de déterminer .  Si , par Fubini en intégrant le long de la coordonnée , on trouve   Par récurrence, si , on trouve .  Si , en écrivant sous la forme avec et , on trouve   Par récurrence, si ,on trouve .  On conclut en utilisant soit , soit .   Le choix de cette norme vient de l'inégalité arithmetico-géométrique qui découle de la convexité de la fonction exponentielle réelle. :   qui entraîne pour tout . Enfin, on choisit de sorte que . Comme est compact, le du corps convexe assure que contient un élément non nul de . En notant cet élément, alors on a que est tel que   "
-},
-{
-  "id": "cor-minkowski",
-  "level": "2",
-  "url": "sec-norme-ideaux.html#cor-minkowski",
-  "type": "Corollaire",
-  "number": "3.3.6",
-  "title": "Minkowski.",
-  "body": " Minkowski   Si , alors . En particulier, on a .   "
 },
 {
   "id": "sec-norme-ideaux-13",
@@ -952,14 +952,32 @@ var ptx_lunr_docs = [
   "type": "Démonstration",
   "number": "3.3.3",
   "title": "",
+  "body": " On considère l'espace muni de la norme   La boule de rayon est un convexe symétrique et son volume se calcule par le lemme qui suit.    Soit la mesure de Lebesgue sur . Alors      Notons . Par homotétie, on a donc il suffit de déterminer .  Si , par Fubini en intégrant le long de la coordonnée , on trouve   Par récurrence, si , on trouve  . Si , en écrivant sous la forme avec et , on trouve   Par récurrence, si ,on trouve   On conclut en utilisant soit , soit .   Le choix de cette norme vient de l'inégalité arithmetico-géométrique qui découle de la convexité de la fonction exponentielle réelle. :   qui entraîne pour tout . Enfin, on choisit de sorte que . Comme est compact, le du corps convexe assure que contient un élément non nul de . En notant cet élément, alors on a que est tel que   "
+},
+{
+  "id": "cor-minkowski",
+  "level": "2",
+  "url": "sec-norme-ideaux.html#cor-minkowski",
+  "type": "Corollaire",
+  "number": "3.3.7",
+  "title": "Minkowski.",
+  "body": " Minkowski   Si , alors . En particulier, on a .   "
+},
+{
+  "id": "sec-norme-ideaux-15",
+  "level": "2",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-15",
+  "type": "Démonstration",
+  "number": "3.3.4",
+  "title": "",
   "body": " Comme tout élément non nul de est de norme en valeur absolue, le donne   où la seconde inégalité découle du fait que et .  De plus, si par hypothèse. En posant pour le terme de droite, on a qui est une suite strictement croissante pour . On a donc   "
 },
 {
-  "id": "sec-norme-ideaux-14",
+  "id": "sec-norme-ideaux-16",
   "level": "2",
-  "url": "sec-norme-ideaux.html#sec-norme-ideaux-14",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-16",
   "type": "Remarque",
-  "number": "3.3.7",
+  "number": "3.3.8",
   "title": "",
   "body": " Ce corollaire est remarquable en bien des aspects. Par exemple, on en déduit qu'étant donné un polynôme irréductible unitaire à coefficients entiers de degré , il existe nécessairement un nombre premier tel que admette une racine double.  En effet, le corps s'identifie à un corps de nombre de la forme où est une racine complexe de , puis   Comme , on en déduit qu'il est divisible par un nombre premier . Or la réduction modulo du discriminant de , qui est nulle, coincide au discriminant de la réduction de modulo .  "
 },
@@ -970,7 +988,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Groupe des classes d’idéaux",
-  "body": " Groupe des classes d'idéaux  On se pose maintenant la question de savoir si l'anneau est principal. Nous verrons que ce n'est pas toujours le cas, et le défaut de principalité est mésuré par un groupe abélien fini appelé le groupe des classes d'idéaux de .    Soit un anneau intègre et notons son corps de fractions.  Deux idéaux non nuls et de sont dits équivalents , et on note alors , s'il existe deux éléments tels que .  On désigne par l'ensemble des classes d'idéaux non nuls de à équivalence près. On notera par la classe d'un idéal non nul .    On note la classe de l'idéal principal . La pertinence de cette notion d'équivalence vient de la proposition suivante :    Un idéal non nul est principal si, et seulement si . En particulier, est principal si, et seulement si, est réduit à un élément.     Soit un idéal principal non nul de . Si , alors il existe tels que , soit . Comme , on a puis comme sous-ensemble de . Mais comme , on a et donc est l'idéal principal engendré par .   Soient deux ideaux non nuls de . Rappelons que l'on écrit pour désigner l'idéal :   Cette opération est commutative (on a en effet ) et associative (on a ).    Le produit des idéaux induit une loi de composition commutative et associative sur dont l'élément neutre est .     Soient des idéaux non nuls. Si et , alors il existe tels que et . En multipliant ces égalités, on trouve , soit . Par conséquent, la loi de composition induite par le produit d'idéaux sur les classes d'idéaux est bien définie. De plus, elle est commutative et associative car le produit d'idéaux l'est.   Ce qui manque à pour être un groupe est l'existence d'inverses. Remarquons qu'un idéal est tel que est inversible dans si, et seulement si, il existe un idéal tel que est principal. Nous dirons alors que est inversible .  Soit un corps de nombres. Nous allons montrer deux théorèmes fondamentaux : d'abord que est fini, puis que c'est un groupe.   Finitude du nombre de classes    est un ensemble fini.     Soit la partie entière de où est la constante de Minkowski ( cf.  ). Nous allons montrer que tout idéal non nul de est équivalent à un idéal contenant l'un des entiers et qu'il n'y a qu'un nombre fini d'idéaux de contenant un entier donné.  Soit un idéal non nul de . D'après le , il existe tel que . Par Lagrange, . On a donc   En posant , on trouve que et que contient l'entier .  Il reste à montrer qu'il n'y a qu'un nombre fini d'idéaux contenant . Mais ces idéaux sont en bijection avec les idéaux de qui est un anneau fini à éléments.     Soit un corps de nombres. Alors est un groupe abélien fini.     On commence par une application du lemme de Nakayama:    Si sont deux idéaux non nuls de tels que pour un certain , alors .     Montrons que . Soit , de sorte que .On sait que est un -module libre de rang fini, et si l'on fixe une base de , alors l'élément agit par multiplication sur cette base comme une matrice à coefficients entiers. Par Cayley-Hamilton, le polynôme caractéristique de cette matrice annule , et comme ses coefficients sont entiers, on en déduit que . Par conséquent, .  Soit alors . On a alors , et le lemme de Nakayam permet de conclure que , soit .   Soit un idéal non nul de . Pour montrer qu'il est inversible, il suffit de montrer qu'il existe un entier tel que est principal (car alors la classe de est l'inverse de la classe de ). Comme est fini, il existe deux entiers tels que . Il existe alors des éléments tels que , soit , et donc . En appliquant le , on trouve puis que est principal d'après la .   "
+  "body": " Groupe des classes d'idéaux  On se pose maintenant la question de savoir si l'anneau est principal. Nous verrons que ce n'est pas toujours le cas, et le défaut de principalité est mésuré par un groupe abélien fini appelé le groupe des classes d'idéaux de .    Soit un anneau intègre et notons son corps de fractions.  Deux idéaux non nuls et de sont dits équivalents , et on note alors , s'il existe deux éléments tels que .  On désigne par l'ensemble des classes d'idéaux non nuls de à équivalence près. On notera par la classe d'un idéal non nul .    On note la classe de l'idéal principal . La pertinence de cette notion d'équivalence vient de la proposition suivante :    Un idéal non nul est principal si, et seulement si . En particulier, est principal si, et seulement si, est réduit à un élément.     Si est principal, disons , alors et donc .  Si , alors il existe tels que , soit . En particulier et donc et .   Soient deux ideaux non nuls de . Rappelons que l'on écrit pour désigner l'idéal :   Cette opération est commutative (on a en effet ) et associative (on a ).  On notera par ailleurs que si est un idéal premier, alors implique que ou ; si ce n'était pas le cas, on pourrait trouver et tels que , ce qui contredirait la primalité de .    Le produit des idéaux induit une loi de composition commutative et associative sur dont l'élément neutre est .     Soient des idéaux non nuls. Si et , alors il existe tels que et . En multipliant ces égalités, on trouve , soit . Par conséquent, la loi de composition induite par le produit d'idéaux sur les classes d'idéaux est bien définie. De plus, elle est commutative et associative car le produit d'idéaux l'est.   Ce qui manque à pour être un groupe est l'existence d'inverses. Remarquons qu'un idéal est tel que est inversible dans si, et seulement si, il existe un idéal tel que est principal. Nous dirons alors que est inversible .   On note généralement le goupe obtenu comme le sous-ensemble de formé des classes inversibles. C'est le groupe de Picard de .   Soit un corps de nombres. Nous allons montrer deux théorèmes fondamentaux : d'abord que est fini, puis que c'est un groupe.   Finitude du nombre de classes    est un ensemble fini.     Soit la partie entière de où est la constante de Minkowski ( cf.  ). Nous allons montrer que tout idéal non nul de est équivalent à un idéal contenant l'un des entiers et qu'il n'y a qu'un nombre fini d'idéaux de contenant un entier donné.  Soit un idéal non nul de . D'après le , il existe tel que . Par Lagrange, . On a donc   En posant , on trouve que et que contient l'entier .  Il reste à montrer qu'il n'y a qu'un nombre fini d'idéaux contenant . Mais ces idéaux sont en bijection avec les idéaux de qui est un anneau fini à éléments.     est principal  Soit un corps de nombres. Soit la constante . Si , alors et la preuve du impose que tout idéal de est équivalent à un idéal contenant , soit à un idéal principal. En conséquence, est réduit à un élément et est principal.  Ce fait s'applique, par exemple, aux corps de nombre , , , , , etc. , mais aussi au corps plastique ( cf. ). En particulier, leur anneau d'entiers, à savoir :   sont principaux.     Soit un corps de nombres. Alors tout idéal non nul de est inversible; autrement dit, est un groupe abélien fini.     On commence par une application du lemme de Nakayama:    Si sont deux idéaux non nuls de tels que pour un certain , alors .     Montrons que . Soit , de sorte que .On sait que est un -module libre de rang fini, et si l'on fixe une base de , alors l'élément agit par multiplication sur cette base comme une matrice à coefficients entiers. Par Cayley-Hamilton, le polynôme caractéristique de cette matrice annule , et comme ses coefficients sont entiers, on en déduit que . Par conséquent, .  Soit alors . On a alors , et le lemme de Nakayama ( e.g.  ) permet de conclure que , soit .   Soit un idéal non nul de . Pour montrer qu'il est inversible, il suffit de montrer qu'il existe un entier tel que est principal (car alors la classe de est l'inverse de la classe de ). Comme est fini, il existe deux entiers tels que . Il existe alors des éléments tels que et donc . En appliquant le , on trouve puis que est principal d'après la .     Soient trois idéaux non nuls de .    (Simplification) Si , alors .    (Contenir c'est diviser) Si , alors il existe un idéal tel que .       Pour démontrer la simplification, prenons un idéal de tel que soit un principal, mettons (l'existence de est assurée par le ). Alors   soit : , à savoir .  De même, soit et tels que . Posons . C'est bien un idéal de car . On vérifie alors que .   "
 },
 {
   "id": "def-classe",
@@ -997,7 +1015,7 @@ var ptx_lunr_docs = [
   "type": "Démonstration",
   "number": "3.4.1",
   "title": "",
-  "body": " Soit un idéal principal non nul de . Si , alors il existe tels que , soit . Comme , on a puis comme sous-ensemble de . Mais comme , on a et donc est l'idéal principal engendré par .  "
+  "body": " Si est principal, disons , alors et donc .  Si , alors il existe tels que , soit . En particulier et donc et .  "
 },
 {
   "id": "prop-composition-classe",
@@ -1009,49 +1027,193 @@ var ptx_lunr_docs = [
   "body": "  Le produit des idéaux induit une loi de composition commutative et associative sur dont l'élément neutre est .   "
 },
 {
-  "id": "sec-groupe-des-classes-11",
+  "id": "sec-groupe-des-classes-12",
   "level": "2",
-  "url": "sec-groupe-des-classes.html#sec-groupe-des-classes-11",
+  "url": "sec-groupe-des-classes.html#sec-groupe-des-classes-12",
   "type": "Démonstration",
   "number": "3.4.2",
   "title": "",
   "body": " Soient des idéaux non nuls. Si et , alors il existe tels que et . En multipliant ces égalités, on trouve , soit . Par conséquent, la loi de composition induite par le produit d'idéaux sur les classes d'idéaux est bien définie. De plus, elle est commutative et associative car le produit d'idéaux l'est.  "
 },
 {
+  "id": "sec-groupe-des-classes-14",
+  "level": "2",
+  "url": "sec-groupe-des-classes.html#sec-groupe-des-classes-14",
+  "type": "Remarque",
+  "number": "3.4.4",
+  "title": "",
+  "body": " On note généralement le goupe obtenu comme le sous-ensemble de formé des classes inversibles. C'est le groupe de Picard de .  "
+},
+{
   "id": "thm-finitude-nombre-de-classe",
   "level": "2",
   "url": "sec-groupe-des-classes.html#thm-finitude-nombre-de-classe",
   "type": "Théorème",
-  "number": "3.4.4",
+  "number": "3.4.5",
   "title": "Finitude du nombre de classes.",
   "body": " Finitude du nombre de classes    est un ensemble fini.   "
-},
-{
-  "id": "sec-groupe-des-classes-15",
-  "level": "2",
-  "url": "sec-groupe-des-classes.html#sec-groupe-des-classes-15",
-  "type": "Démonstration",
-  "number": "3.4.3",
-  "title": "",
-  "body": " Soit la partie entière de où est la constante de Minkowski ( cf.  ). Nous allons montrer que tout idéal non nul de est équivalent à un idéal contenant l'un des entiers et qu'il n'y a qu'un nombre fini d'idéaux de contenant un entier donné.  Soit un idéal non nul de . D'après le , il existe tel que . Par Lagrange, . On a donc   En posant , on trouve que et que contient l'entier .  Il reste à montrer qu'il n'y a qu'un nombre fini d'idéaux contenant . Mais ces idéaux sont en bijection avec les idéaux de qui est un anneau fini à éléments.  "
-},
-{
-  "id": "thm-classe-groupe",
-  "level": "2",
-  "url": "sec-groupe-des-classes.html#thm-classe-groupe",
-  "type": "Théorème",
-  "number": "3.4.5",
-  "title": "",
-  "body": "  Soit un corps de nombres. Alors est un groupe abélien fini.   "
 },
 {
   "id": "sec-groupe-des-classes-17",
   "level": "2",
   "url": "sec-groupe-des-classes.html#sec-groupe-des-classes-17",
   "type": "Démonstration",
+  "number": "3.4.3",
+  "title": "",
+  "body": " Soit la partie entière de où est la constante de Minkowski ( cf.  ). Nous allons montrer que tout idéal non nul de est équivalent à un idéal contenant l'un des entiers et qu'il n'y a qu'un nombre fini d'idéaux de contenant un entier donné.  Soit un idéal non nul de . D'après le , il existe tel que . Par Lagrange, . On a donc   En posant , on trouve que et que contient l'entier .  Il reste à montrer qu'il n'y a qu'un nombre fini d'idéaux contenant . Mais ces idéaux sont en bijection avec les idéaux de qui est un anneau fini à éléments.  "
+},
+{
+  "id": "sec-groupe-des-classes-18",
+  "level": "2",
+  "url": "sec-groupe-des-classes.html#sec-groupe-des-classes-18",
+  "type": "Exemple",
+  "number": "3.4.6",
+  "title": "<span class=\"process-math\">\\(\\mathbb{Z}[\\zeta_3]\\)<\/span> est principal.",
+  "body": "  est principal  Soit un corps de nombres. Soit la constante . Si , alors et la preuve du impose que tout idéal de est équivalent à un idéal contenant , soit à un idéal principal. En conséquence, est réduit à un élément et est principal.  Ce fait s'applique, par exemple, aux corps de nombre , , , , , etc. , mais aussi au corps plastique ( cf. ). En particulier, leur anneau d'entiers, à savoir :   sont principaux.  "
+},
+{
+  "id": "thm-classe-groupe",
+  "level": "2",
+  "url": "sec-groupe-des-classes.html#thm-classe-groupe",
+  "type": "Théorème",
+  "number": "3.4.7",
+  "title": "",
+  "body": "  Soit un corps de nombres. Alors tout idéal non nul de est inversible; autrement dit, est un groupe abélien fini.   "
+},
+{
+  "id": "sec-groupe-des-classes-20",
+  "level": "2",
+  "url": "sec-groupe-des-classes.html#sec-groupe-des-classes-20",
+  "type": "Démonstration",
   "number": "3.4.4",
   "title": "",
-  "body": " On commence par une application du lemme de Nakayama:    Si sont deux idéaux non nuls de tels que pour un certain , alors .     Montrons que . Soit , de sorte que .On sait que est un -module libre de rang fini, et si l'on fixe une base de , alors l'élément agit par multiplication sur cette base comme une matrice à coefficients entiers. Par Cayley-Hamilton, le polynôme caractéristique de cette matrice annule , et comme ses coefficients sont entiers, on en déduit que . Par conséquent, .  Soit alors . On a alors , et le lemme de Nakayam permet de conclure que , soit .   Soit un idéal non nul de . Pour montrer qu'il est inversible, il suffit de montrer qu'il existe un entier tel que est principal (car alors la classe de est l'inverse de la classe de ). Comme est fini, il existe deux entiers tels que . Il existe alors des éléments tels que , soit , et donc . En appliquant le , on trouve puis que est principal d'après la .  "
+  "body": " On commence par une application du lemme de Nakayama:    Si sont deux idéaux non nuls de tels que pour un certain , alors .     Montrons que . Soit , de sorte que .On sait que est un -module libre de rang fini, et si l'on fixe une base de , alors l'élément agit par multiplication sur cette base comme une matrice à coefficients entiers. Par Cayley-Hamilton, le polynôme caractéristique de cette matrice annule , et comme ses coefficients sont entiers, on en déduit que . Par conséquent, .  Soit alors . On a alors , et le lemme de Nakayama ( e.g.  ) permet de conclure que , soit .   Soit un idéal non nul de . Pour montrer qu'il est inversible, il suffit de montrer qu'il existe un entier tel que est principal (car alors la classe de est l'inverse de la classe de ). Comme est fini, il existe deux entiers tels que . Il existe alors des éléments tels que et donc . En appliquant le , on trouve puis que est principal d'après la .  "
+},
+{
+  "id": "cor-contenir-cest-diviser",
+  "level": "2",
+  "url": "sec-groupe-des-classes.html#cor-contenir-cest-diviser",
+  "type": "Corollaire",
+  "number": "3.4.9",
+  "title": "",
+  "body": "  Soient trois idéaux non nuls de .    (Simplification) Si , alors .    (Contenir c'est diviser) Si , alors il existe un idéal tel que .     "
+},
+{
+  "id": "sec-groupe-des-classes-22",
+  "level": "2",
+  "url": "sec-groupe-des-classes.html#sec-groupe-des-classes-22",
+  "type": "Démonstration",
+  "number": "3.4.5",
+  "title": "",
+  "body": " Pour démontrer la simplification, prenons un idéal de tel que soit un principal, mettons (l'existence de est assurée par le ). Alors   soit : , à savoir .  De même, soit et tels que . Posons . C'est bien un idéal de car . On vérifie alors que .  "
+},
+{
+  "id": "sec-Dedekind",
+  "level": "1",
+  "url": "sec-Dedekind.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "<span class=\"process-math\">\\(\\mathcal{O}_K\\)<\/span> est de Dedekind",
+  "body": " est de Dedekind  Soit un corps de nombres. Très souvent, l'anneau n'est pas factoriel (typiquement, si n'est pas réduit à un élément). Il existe nénamoins une version faible de la factorisation en irréductible au niveau des idéaux de . Dans cette sections, nous allons montrer que les idéaux de se factorisent de manière unique en produits d'idéaux premiers.   Dedekind   Soit un idéal strict non nul de . Alors il existe des idéaux premiers de tels que . De plus, cette factorisation est unique à l'ordre près.     Démontrons l'existence de cette décomposition. Supposons par l'absurde qu'il existe un idéal strict non nul qui n'admet pas une telle décomposition, et choisissons-le de norme minimale. En particulier, n'est pas un idéal premier. Il est néanmoins inclus dans un idéal maximal , qui est lui-même premier. On a donc et, puisque contenir c'est diviser ( cf.  ), il existe un idéal strict tel que . Notons que n'admet pas non plus une telle décomposition (car, sinon, en posséderait une), et que la norme de est strictement inférieure à celle de ( cf.  ). C'est une contradiction avec le choix de .  Montrons à présent l'unicité. Si deux telles décompositions sont égales, , alors est en particulier inclus dans . Puisque est premier, il existe tel que . Par conséquent, . En simplifiant par , on trouve . En répétant ce raisonnement, on trouve que les deux décompositions sont égales à l'ordre près.    Un anneau intégre et noethérien possédant cette propriété de factorisation des idéaux est appelé un anneau de Dedekind.   Les corollaires de ce théorème sont nombreux. On en déduit par exemple la multiplicativité de la norme des idéaux :    Soient deux idéaux non nuls de . Alors .     D'après le , il suffit de montrer que pour un idéal strict et un idéal premier. Comme , on a d'après le que . Il suffit donc de montrer que .  Notons que, par simplification et puisque est maximal, les seuls idéaux qui contiennent et contenus dans sont et . En particulier, si est un élément de qui n'est pas dans , alors . On dispose alors d'un morphisme de groupes abéliens surjectif :   de noyau égal à . Ce noyau est un idéal de qui contient , et donc égal à l'un ou l'autre car est premier. Or, puisque , et donc . L'application ci-dessus se factorise alors en un isomorphisme . D'où .   Soit un nombre premier. L'idéal n'est en général pas premier. Nous présentons ici une méthode pour décomposer cet idéal en produit d'idéaux premiers dans le cas où est monogène.    Soit tel que . Soit la réduction de modulo . Soit un diviseur de . On note   où est un relevé de .     L'idéal ne dépend pas du relevé choisi. En effet, si est un autre relevé de , alors , et donc . Par conséquent, .   Ces idéaux sont les seuls idéaux de qui contiennent d'après la proposition suivante.    L'application induit une bijection entre les facteurs unitaires de et les idéaux de contenant . De plus,     divise si, et seulement si .    L'idéal est premier si, et seulement si est irréductible dans .    La norme de vaut .       Par hypothèse, on dispose de l'isomorphisme d'anneaux qui envoie la classe de sur . En réduisant modulo , on trouve alors un autre isomorphisme   Rappelons que si est un anneau et un idéal, alors les idéaux de sont en bijection avec ceux de contenant : à un idéal de contenant , on associe l'idéal de ; réciproquement, à un idéal , on associe l'image inverse par le morphisme quotient qui est un idéal de contenant . Notons que cette bijection préserve les anneaux quotients, c-à-d , et donc préserve la primalité et la maximalité.  Les facteurs unitaires de sont en bijection avec les idéaux de contenant , eux-mêmes en bijection avec les idéaux de . Par l'isomorphisme ci-dessus, ils sont eux-mêmes en bijection avec idéaux de qui sont enfin en bijection avec les idéaux de contenant . Il suffit de remarquer que la composition de ces bijections est donnée par . Cette application, par construction, préserve l'inclusion des idéaux, d'où le premier point, et la primalité, d'où le second point. Enfin, on a   d'où le troisième point.     Soit la décomposition de en facteurs unitaires irréductibles dans . Alors on a   qui correspond la décomposition en idéaux premiers de .     Si est un idéal premier qui apparaît dans la décomposition de , alors en particulier il contient et on déduit de la qu'il est de la forme . Par la propriété de Dedekind, on peut trouver des entiers tels que   Il reste à montrer que pour tout . Pour ce faire, on considère, pour , le sous-ensemble des ideaux de qui contiennent mais qui ne sont pas contenu dans si .  D'une part, la propriété de Dedekind assure que est formé des puissances de : . D'autre part, la assure que égale l'image des puissances de qui divisent , à savoir , par . On en déduit   et .   "
+},
+{
+  "id": "thm-factorisation",
+  "level": "2",
+  "url": "sec-Dedekind.html#thm-factorisation",
+  "type": "Théorème",
+  "number": "4.1.1",
+  "title": "Dedekind.",
+  "body": " Dedekind   Soit un idéal strict non nul de . Alors il existe des idéaux premiers de tels que . De plus, cette factorisation est unique à l'ordre près.   "
+},
+{
+  "id": "sec-Dedekind-4",
+  "level": "2",
+  "url": "sec-Dedekind.html#sec-Dedekind-4",
+  "type": "Démonstration",
+  "number": "4.1.1",
+  "title": "",
+  "body": " Démontrons l'existence de cette décomposition. Supposons par l'absurde qu'il existe un idéal strict non nul qui n'admet pas une telle décomposition, et choisissons-le de norme minimale. En particulier, n'est pas un idéal premier. Il est néanmoins inclus dans un idéal maximal , qui est lui-même premier. On a donc et, puisque contenir c'est diviser ( cf.  ), il existe un idéal strict tel que . Notons que n'admet pas non plus une telle décomposition (car, sinon, en posséderait une), et que la norme de est strictement inférieure à celle de ( cf.  ). C'est une contradiction avec le choix de .  Montrons à présent l'unicité. Si deux telles décompositions sont égales, , alors est en particulier inclus dans . Puisque est premier, il existe tel que . Par conséquent, . En simplifiant par , on trouve . En répétant ce raisonnement, on trouve que les deux décompositions sont égales à l'ordre près.  "
+},
+{
+  "id": "sec-Dedekind-5",
+  "level": "2",
+  "url": "sec-Dedekind.html#sec-Dedekind-5",
+  "type": "Remarque",
+  "number": "4.1.2",
+  "title": "",
+  "body": " Un anneau intégre et noethérien possédant cette propriété de factorisation des idéaux est appelé un anneau de Dedekind.  "
+},
+{
+  "id": "cor-multiplicativite-norme",
+  "level": "2",
+  "url": "sec-Dedekind.html#cor-multiplicativite-norme",
+  "type": "Corollaire",
+  "number": "4.1.3",
+  "title": "",
+  "body": "  Soient deux idéaux non nuls de . Alors .   "
+},
+{
+  "id": "sec-Dedekind-8",
+  "level": "2",
+  "url": "sec-Dedekind.html#sec-Dedekind-8",
+  "type": "Démonstration",
+  "number": "4.1.2",
+  "title": "",
+  "body": " D'après le , il suffit de montrer que pour un idéal strict et un idéal premier. Comme , on a d'après le que . Il suffit donc de montrer que .  Notons que, par simplification et puisque est maximal, les seuls idéaux qui contiennent et contenus dans sont et . En particulier, si est un élément de qui n'est pas dans , alors . On dispose alors d'un morphisme de groupes abéliens surjectif :   de noyau égal à . Ce noyau est un idéal de qui contient , et donc égal à l'un ou l'autre car est premier. Or, puisque , et donc . L'application ci-dessus se factorise alors en un isomorphisme . D'où .  "
+},
+{
+  "id": "def-ideaux-I",
+  "level": "2",
+  "url": "sec-Dedekind.html#def-ideaux-I",
+  "type": "Définition",
+  "number": "4.1.4",
+  "title": "",
+  "body": "  Soit tel que . Soit la réduction de modulo . Soit un diviseur de . On note   où est un relevé de .   "
+},
+{
+  "id": "sec-Dedekind-11",
+  "level": "2",
+  "url": "sec-Dedekind.html#sec-Dedekind-11",
+  "type": "Remarque",
+  "number": "4.1.5",
+  "title": "",
+  "body": " L'idéal ne dépend pas du relevé choisi. En effet, si est un autre relevé de , alors , et donc . Par conséquent, .  "
+},
+{
+  "id": "prop-proprietes-I",
+  "level": "2",
+  "url": "sec-Dedekind.html#prop-proprietes-I",
+  "type": "Proposition",
+  "number": "4.1.6",
+  "title": "",
+  "body": "  L'application induit une bijection entre les facteurs unitaires de et les idéaux de contenant . De plus,     divise si, et seulement si .    L'idéal est premier si, et seulement si est irréductible dans .    La norme de vaut .     "
+},
+{
+  "id": "sec-Dedekind-14",
+  "level": "2",
+  "url": "sec-Dedekind.html#sec-Dedekind-14",
+  "type": "Démonstration",
+  "number": "4.1.3",
+  "title": "",
+  "body": " Par hypothèse, on dispose de l'isomorphisme d'anneaux qui envoie la classe de sur . En réduisant modulo , on trouve alors un autre isomorphisme   Rappelons que si est un anneau et un idéal, alors les idéaux de sont en bijection avec ceux de contenant : à un idéal de contenant , on associe l'idéal de ; réciproquement, à un idéal , on associe l'image inverse par le morphisme quotient qui est un idéal de contenant . Notons que cette bijection préserve les anneaux quotients, c-à-d , et donc préserve la primalité et la maximalité.  Les facteurs unitaires de sont en bijection avec les idéaux de contenant , eux-mêmes en bijection avec les idéaux de . Par l'isomorphisme ci-dessus, ils sont eux-mêmes en bijection avec idéaux de qui sont enfin en bijection avec les idéaux de contenant . Il suffit de remarquer que la composition de ces bijections est donnée par . Cette application, par construction, préserve l'inclusion des idéaux, d'où le premier point, et la primalité, d'où le second point. Enfin, on a   d'où le troisième point.  "
+},
+{
+  "id": "thm-",
+  "level": "2",
+  "url": "sec-Dedekind.html#thm-",
+  "type": "Théorème",
+  "number": "4.1.7",
+  "title": "",
+  "body": "  Soit la décomposition de en facteurs unitaires irréductibles dans . Alors on a   qui correspond la décomposition en idéaux premiers de .   "
+},
+{
+  "id": "sec-Dedekind-16",
+  "level": "2",
+  "url": "sec-Dedekind.html#sec-Dedekind-16",
+  "type": "Démonstration",
+  "number": "4.1.4",
+  "title": "",
+  "body": " Si est un idéal premier qui apparaît dans la décomposition de , alors en particulier il contient et on déduit de la qu'il est de la forme . Par la propriété de Dedekind, on peut trouver des entiers tels que   Il reste à montrer que pour tout . Pour ce faire, on considère, pour , le sous-ensemble des ideaux de qui contiennent mais qui ne sont pas contenu dans si .  D'une part, la propriété de Dedekind assure que est formé des puissances de : . D'autre part, la assure que égale l'image des puissances de qui divisent , à savoir , par . On en déduit   et .  "
 },
 {
   "id": "app-irreducibilite-polynome",
@@ -1123,7 +1285,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "A.2",
   "title": "Rappels sur les anneaux",
-  "body": " Rappels sur les anneaux  Nous rappelons ici quelques définitions et résultats de base sur les anneaux commutatifs avec unité qui seront utilisés dans ce cours.  "
+  "body": " Rappels sur les anneaux  Nous rappelons ici quelques définitions et résultats de base sur les anneaux commutatifs avec unité qui seront utilisés dans ce cours.   Nakayama   Soit un -module libre de rang fini non nul et un idéal de tel que . Alors .     Soit une base de . Puisque , on peut écrire chaque comme une combinaison linéaire à coefficients dans des éléments de la base, c'est-à-dire :   En particulier, l'identité agit comme la matrice et donc . Ainsi .   "
+},
+{
+  "id": "lem-nakayama",
+  "level": "2",
+  "url": "sec-rappels-sur-les-anneaux.html#lem-nakayama",
+  "type": "Lemme",
+  "number": "A.2.1",
+  "title": "Nakayama.",
+  "body": " Nakayama   Soit un -module libre de rang fini non nul et un idéal de tel que . Alors .   "
+},
+{
+  "id": "sec-rappels-sur-les-anneaux-4",
+  "level": "2",
+  "url": "sec-rappels-sur-les-anneaux.html#sec-rappels-sur-les-anneaux-4",
+  "type": "Démonstration",
+  "number": "A.2.1",
+  "title": "",
+  "body": " Soit une base de . Puisque , on peut écrire chaque comme une combinaison linéaire à coefficients dans des éléments de la base, c'est-à-dire :   En particulier, l'identité agit comme la matrice et donc . Ainsi .  "
 },
 {
   "id": "sec-reseaux",
