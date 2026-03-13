@@ -172,7 +172,16 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-factorization-of-ideals.html" class="internal"><span class="codenumber">4</span> <span class="title">Factorisation des idéaux</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Dedekind.html" class="internal"><span class="codenumber">4.1</span> <span class="title"><span class="process-math">\(\mathcal{O}_K\)</span> est de Dedekind</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Dedekind.html" class="internal"><span class="codenumber">4.1</span> <span class="title"><span class="process-math">\(\mathcal{O}_K\)</span> est de Dedekind</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Dedekind.html#subsec-produits-dideaux-premiers" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Produits d’idéaux premier</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Dedekind.html#subsec-factoriser-un-nombre-premier" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Factoriser un nombre premier</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-application-a-la-determination-de-ClOK.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Application à la détermination de <span class="process-math">\(\mathrm{Cl}(\mathcal{O}_K)\)</span></span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
@@ -279,9 +288,16 @@ IJ:=\left\{\sum_{i=1}^s{a_i b_i}~|~a_i\in I,~b_i\in J\right\}.
 <div class="autopermalink" data-description="Exemple 3.4.6: \mathbb{Z}[\zeta_3] est principal"><a href="#sec-groupe-des-classes-18" title="Permalien Exemple 3.4.6: \mathbb{Z}[\zeta_3] est principal" aria-label="Permalien Exemple 3.4.6: \mathbb{Z}[\zeta_3] est principal">🔗</a></div></article></details><article class="remark remark-like" id="sec-groupe-des-classes-19"><h3 class="heading">
 <span class="type">Remarque</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec-groupe-des-classes-19-1">Les corps de nombres <span class="process-math">\(K\)</span> de <em class="emphasis">nombre de classe <span class="process-math">\(1\)</span></em>, c-à-d ceux pour lesquels <span class="process-math">\(|\mathrm{Cl}(\mathcal{O}_K)|=1\text{,}\)</span> restent très mystérieux. Le théorème de Stark-Heegner énonce que si <span class="process-math">\(d &lt; 0\)</span> est sans facteur carré, alors <span class="process-math">\(\mathbb{Q}(\sqrt{d})\)</span> est de nombre de classe <span class="process-math">\(1\)</span> si, et seulement si, <span class="process-math">\(d\in \{-1,-2,-3,-7,-11,-19,-43,-67,-163\}\text{.}\)</span> Une conjecture de Gauss, toujours ouverte, stipule qu’il existe une infinité de <span class="process-math">\(d &gt; 1\)</span> sans facteur carré tel que <span class="process-math">\(\mathbb{Q}(\sqrt{d})\)</span> ait nombre de classe <span class="process-math">\(1\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-groupe-des-classes-19-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+<div class="para" id="sec-groupe-des-classes-19-1">Les corps de nombres <span class="process-math">\(K\)</span> de <em class="emphasis">nombre de classe <span class="process-math">\(1\)</span></em>, c-à-d ceux pour lesquels <span class="process-math">\(|\mathrm{Cl}(\mathcal{O}_K)|=1\text{,}\)</span> restent très mystérieux. Le théorème de Stark-Heegner énonce que si <span class="process-math">\(d &lt; 0\)</span> est sans facteur carré, alors <span class="process-math">\(\mathbb{Q}(\sqrt{d})\)</span> est de nombre de classe <span class="process-math">\(1\)</span> si, et seulement si<div class="autopermalink" data-description="Paragraphe"><a href="#sec-groupe-des-classes-19-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
 </div>
-<div class="para" id="sec-groupe-des-classes-19-2">Plus modestement, on ne sait même pas s’il existe une infinité de corps de nombres <span class="process-math">\(K\)</span> de nombre de classe <span class="process-math">\(1\text{.}\)</span> Celui de plus grand degré observé ayant cette propriété est de degré <span class="process-math">\(120\)</span> (voir l’article de <a class="external" href="https://arxiv.org/abs/1606.09320?utm_source=chatgpt.com" target="_blank"><code class="code-inline tex2jax_ignore">Kim et Miller</code></a>).<div class="autopermalink" data-description="Paragraphe"><a href="#sec-groupe-des-classes-19-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+<div class="displaymath process-math" id="sec-groupe-des-classes-19-2">
+\begin{equation*}
+d\in \{-1,-2,-3,-7,-11,-19,-43,-67,-163\}.
+\end{equation*}
+</div>
+<div class="para" id="sec-groupe-des-classes-19-3">Une conjecture de Gauss, toujours ouverte, stipule qu’il existe une infinité de <span class="process-math">\(d &gt; 1\)</span> sans facteur carré tel que <span class="process-math">\(\mathbb{Q}(\sqrt{d})\)</span> ait nombre de classe <span class="process-math">\(1\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-groupe-des-classes-19-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-groupe-des-classes-19-4">Plus modestement, on ne sait même pas s’il existe une infinité de corps de nombres <span class="process-math">\(K\)</span> de nombre de classe <span class="process-math">\(1\text{.}\)</span> Celui de plus grand degré observé ayant cette propriété est de degré <span class="process-math">\(120\)</span> (voir l’article de <a class="external" href="https://arxiv.org/abs/1606.09320?utm_source=chatgpt.com" target="_blank"><code class="code-inline tex2jax_ignore">Kim et Miller</code></a>).<div class="autopermalink" data-description="Paragraphe"><a href="#sec-groupe-des-classes-19-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Remarque 3.4.7"><a href="#sec-groupe-des-classes-19" title="Permalien Remarque 3.4.7" aria-label="Permalien Remarque 3.4.7">🔗</a></div></article><article class="theorem theorem-like" id="thm-classe-groupe"><h3 class="heading">
 <span class="type">Théorème</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
