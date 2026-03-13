@@ -347,7 +347,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   La <xref ref="prop-discriminant-indice"/> est fondamentale pour le calcul de <m>\mathcal{O}_K</m>. Elle indique en particulier que le discriminant d'un sous-anneau <m>A\subset \mathcal{O}_K</m> ne peut diminuer que d'un carré ! Cela implique par exemple que si <m>\mathrm{disc}(A)</m> est un entier sans facteur carré, alors <m>A=\mathcal{O}_K</m>.
 </p>
 
-<example>
+<example xml:id="exemple-nombre-plastique">
   <title> Nombre plastique </title>
   <p>
   Soit <m>\psi</m> le <em>nombre plastique</em> :
@@ -430,6 +430,18 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     </p>
   </remark>
 
+  <lemma xml:id="lem-inclusion-ideaux-normes">
+    <statement>
+      <p>
+        Soit <m>I\subset J\subset \mathcal{O}_K</m>, une inclusion d'idéaux non nuls. Alors <m>N(I)=N(J)|I/J|</m>. En particulier, <m>I=J</m> si et seulement si <m>N(J)=N(I)</m>.
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <p>
+      On dispose d'une application surjective <m>\pi:\mathcal{O}_K/I \to \mathcal{O}_K/J</m> entre groupes finis de noyau <m>I/J</m>. On conclut par le théorème de Lagrange.  </p>
+  </proof>
+
   <p>
     Il suit de la <xref ref="prop-norme-ideal-element"/> que si <m>I</m> est principal, alors <m>N(I)</m> coincide avec la norme (en valeur absolue) d'un élémént de <m>I</m>. Ce n'est pas le cas si <m>I</m> n'est pas principal, mais le théorème de Minkowski assure que l'on peut trouver un élément de <m>I</m> dont la "distance" à <m>N(I)</m> est contrôlée par le discriminant. On pose 
   </p>
@@ -444,7 +456,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
         Soit <m>I</m> un idéal non nul de <m>\mathcal{O}_K</m>. Alors il existe <m>a\in I</m> tel que 
       </p>
       <md>
-        |N_K(a)|\leq C(r_2,n)N(I)\sqrt{|\mathrm{disc}_K(A)|}.
+        |N_K(a)|\leq C(r_2,n)N(I)\sqrt{|\mathrm{disc}_K(\mathcal{O}_K)|}.
       </md>
     </statement>
   </theorem>
@@ -479,17 +491,24 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
         c_{r_1,r_2}=2\int^1_{0}{\lambda(C_{1-t,r_1-1,r_2})dt}=2c_{r_1-1,r_2}\int^1_0{(1-t)^{n-1}dt}=\frac{2}{n}c_{r_1-1,r_2}.
       </md>
       <p>
-        Par récurrence, si <m>r_2\geq 1</m>, on trouve <m>c_{r_1,r_2}=2^{r_1}\frac{(n-r_1)!}{n!}</m>.
+        Par récurrence, si <m>r_2\geq 1</m>, on trouve
       </p>
+      <md>
+        c_{r_1,r_2}=2^{r_1}\frac{(n-r_1)!}{n!}
+      </md>.
       <p>
         Si <m>r_2\geq 1</m>, en écrivant <m>z_{r_2}</m> sous la forme <m>re^{i\theta}</m> avec <m>r\in[0,1]</m> et <m>\theta\in [0,2\pi]</m>, on trouve 
       </p>
       <md>
-        c_{r_1,r_2}=2\pi \int_0^{1/2}{\lambda(C_{1-2r,r_1,r_2-1})rdr}=2\pi c_{r_1,r_2-1}\int_0^{1/2}{(1-2r)^{n-1}rdr}=\frac{\pi}{2} c_{r_1,r_2-1}\int_{0}^{1}{(1-u)u^{n-1}du}=\frac{\pi}{2n(n-1)}c_{r_1,r_2-1}.
+        <mrow> c_{r_1,r_2} \amp =2\pi \int_0^{1/2}{\lambda(C_{1-2r,r_1,r_2-1})rdr}=2\pi c_{r_1,r_2-1}\int_0^{1/2}{(1-2r)^{n-1}rdr} </mrow>
+        <mrow>  \amp =\frac{\pi}{2} c_{r_1,r_2-1}\int_{0}^{1}{(1-u)u^{n-1}du}=\frac{\pi}{2n(n-1)}c_{r_1,r_2-1}. </mrow>
       </md>
       <p>
-        Par récurrence, si <m>r_2\geq 1</m>,on trouve <m>c_{r_1,r_2}=c_{r_1,0}\left(\frac{\pi}{2}\right)^{r_2}\frac{1}{(2r_2)!}</m>.
-      </p>
+        Par récurrence, si <m>r_2\geq 1</m>,on trouve 
+      </p> 
+      <md>
+        c_{r_1,r_2}=c_{r_1,0}\left(\frac{\pi}{2}\right)^{r_2}\frac{1}{(2r_2)!}.
+      </md>
       <p>
         On conclut en utilisant soit <m>c_{1,0}=2</m>, soit <m>c_{0,1}=\frac{\pi}{4}</m>.
       </p>
@@ -506,7 +525,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     <md>
       <mrow> |N_K(a)| \amp \leq n^{-n}t^n  </mrow> 
       <mrow> \amp = \frac{n!}{2^{r_1}\left(\frac{\pi}{2}\right)^{r_2}n^n} 2^{n}\mathrm{covol}(\sigma(I)) </mrow>
-      <mrow> \amp = C(r_2,n)N(I)\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}  </mrow>.
+      <mrow> \amp = C(r_2,n)N(I)\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}  </mrow>
     </md>
   </proof>
 
@@ -544,7 +563,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
       En effet, le corps <m>\mathbb{Q}[X]/(P(X))</m> s'identifie à un corps de nombre de la forme <m>K=\mathbb{Q}(\alpha)</m> où <m>\alpha</m> est une racine complexe de <m>P(X)</m>, puis 
     </p>
     <md>
-      |\mathrm{disc}(P)|=|\mathrm{disc}(\mathbb{Z}[\alpha])|\geq |\mathrm{disc}(\mathcal{O}_K)|>1.
+      |\mathrm{disc}(P)|=|\mathrm{disc}(\mathbb{Z}[\alpha])|\geq |\mathrm{disc}(\mathcal{O}_K)| &gt; 1.
     </md>
     <p>
       Comme <m>\mathrm{disc}(P)\in \mathbb{Z}</m>, on en déduit qu'il est divisible par un nombre premier <m>p</m>. Or la réduction modulo <m>p</m> du discriminant de <m>P(X)</m>, qui est nulle, coincide  au discriminant de la réduction de <m>P(X)</m> modulo <m>p</m>.
@@ -561,7 +580,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
 
 
   <p>
-    On se pose maintenant la question de savoir si l'anneau <m>\mathcal{O}_K</m> est principal. Nous vérons que ce n'est pas toujours le cas, et le défaut de principalité est mésuré par un groupe abélien fini appelé le <em>groupe des classes d'idéaux</em> de <m>K</m>.
+    On se pose maintenant la question de savoir si l'anneau <m>\mathcal{O}_K</m> est principal. Nous verrons que ce n'est pas toujours le cas, et le défaut de principalité est mésuré par un groupe abélien fini appelé le <em>groupe des classes d'idéaux</em> de <m>K</m>.
   </p>
   
   <definition xml:id="def-classe">
@@ -590,7 +609,10 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   </proposition>
   <proof>
     <p>
-      Soit <m>I=(c)</m> un idéal principal non nul de <m>A</m>. Si <m>J\sim I</m>, alors il existe <m>a,b\in A</m> tels que <m>aI=bJ</m>, soit <m>ac=bJ</m>. Comme <m>c\neq 0</m>, on a <m>b\neq 0</m> puis <m>J=\frac{ac}{b}\cdot A</m> comme sous-ensemble de <m>K</m>. Mais comme <m>\frac{ac}{b}\cdot 1\in J\subset A</m>, on a <m>\frac{ac}{b}\in A</m> et donc <m>J</m> est l'idéal principal engendré par <m>\frac{ac}{b}</m>.
+    Si <m>I</m> est principal, disons <m>I=(c)</m>, alors <m>1\cdot I=c\cdot A</m> et donc <m>[I]=[A]</m>.
+    </p>
+    <p>
+      Si <m>I\sim A</m>, alors il existe <m>a,b\in A</m> tels que <m>aI=b A</m>, soit <m>I=\frac{a}{b}A</m>. En particulier <m>\frac{a}{b} A\subset A</m> et donc <m>c:=\frac{a}{b}\in A</m> et <m>I=(c)</m>.
     </p>
   </proof>
   
@@ -602,6 +624,9 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   </md>
   <p>
     Cette opération est commutative (on a en effet <m>IJ=JI</m>) et associative (on a <m>(IJ)K=I(JK)</m>).
+  </p>
+  <p>
+    On notera par ailleurs que si <m>P\subset A</m> est un idéal premier, alors <m>IJ\subset P</m> implique que <m>I\subset P</m> ou <m>J\subset P</m>; si ce n'était pas le cas, on pourrait trouver <m>i\in I\setminus P</m> et <m>j\in J\setminus P</m> tels que <m>ij\in IJ\subset P</m>, ce qui contredirait la primalité de <m>P</m>.
   </p>
 
   <proposition xml:id="prop-composition-classe">
@@ -620,7 +645,11 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   <p>
     Ce qui manque à <m>\mathrm{Cl}(A)</m> pour être un groupe est l'existence d'inverses. Remarquons qu'un idéal <m>I</m> est tel que <m>[I]</m> est inversible dans <m>\mathrm{Cl}(A)</m> si, et seulement si, il existe un idéal <m>J</m> tel que <m>IJ</m> est principal. Nous dirons alors que <m>I</m> est <em>inversible</em>.
   </p>
-
+  <remark>
+    <p>
+      On note généralement <m>\mathrm{Pic}(A)</m> le goupe obtenu comme le sous-ensemble de <m>\mathrm{Cl}(A)</m> formé des classes inversibles. C'est le <em>groupe de Picard de <m>A</m></em>.
+    </p>
+  </remark>
   <p>
     Soit <m>K</m> un corps de nombres. Nous allons montrer deux théorèmes fondamentaux : d'abord que <m>\mathrm{Cl}(\mathcal{O}_K)</m> est fini, puis que c'est un groupe. 
   </p>
@@ -635,7 +664,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   </theorem>
   <proof>
     <p>
-      Soit <m>N</m> la partie entière de <m>C(r_2,n)\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}</m> où <m>C(r_2,n)</m> est la constante de Minkowski (<em>cf.</em> <xref ref="thm-minkowski"/>). Nous allons montrer que tout idéal non nul de <m>\mathcal{O}_K</m> est équivalent à un idéal contenant l'un des entiers <m>\{1,\ldots,,N\}</m> et qu'il n'y a qu'un nombre fini d'idéaux de <m>\mathcal{O}_K</m> contenant un entier donné. 
+      Soit <m>N</m> la partie entière de <m>C(r_2,n)\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}</m> où <m>C(r_2,n)</m> est la constante de Minkowski (<em>cf.</em> <xref ref="thm-minkowski"/>). Nous allons montrer que tout idéal non nul de <m>\mathcal{O}_K</m> est équivalent à un idéal contenant l'un des entiers <m>\{1,\ldots,N\}</m> et qu'il n'y a qu'un nombre fini d'idéaux de <m>\mathcal{O}_K</m> contenant un entier donné. 
     </p>
     <p>
       Soit <m>I</m> un idéal non nul de <m>\mathcal{O}_K</m>. D'après le <xref ref="thm-minkowski"/>, il existe <m>a\in I</m> tel que <m>c:=|I/(a)|\leq N</m>. Par Lagrange, <m>c\cdot I\subset (a)</m>. On a donc
@@ -644,24 +673,54 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
       (c)= \frac{c}{a}(a)\subset \frac{c}{a}I \subset \mathcal{O}_K.
     </md>
     <p>
-      En posant <m>J:=\frac{c}{a}I</m>, on trouve que <m>J\sim I</m> et que <m>J</m> contient l'entier <m>c\in \{1,\ldots,N\}</m>. 
+      En posant <m>J:=\frac{c}{a}I</m>, on trouve que <m>J\sim I</m> et que <m>J</m> contient l'entier <m>c\in \{1,\ldots ,N\}</m>. 
     </p>
     <p>
       Il reste à montrer qu'il n'y a qu'un nombre fini d'idéaux contenant <m>c</m>. Mais ces idéaux sont en bijection avec les idéaux de <m>\mathcal{O}_K/(c)</m> qui est un anneau fini à <m>|N_K(c)|=c^n</m> éléments.
     </p>
   </proof>
 
+  <example>
+    <title> <m>\mathbb{Z}[\zeta_3]</m> est principal </title>
+    <p>
+      Soit <m>K</m> un corps de nombres. Soit <m>M</m> la constante <m>\frac{n!}{n^n}\left(\frac{4}{\pi}\right)^{r_2}\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}</m>. Si <m>M &lt; 2</m>, alors <m>N=1</m> et la preuve du <xref ref="thm-finitude-nombre-de-classe"/> impose que tout idéal de <m>\mathcal{O}_K</m> est équivalent à un idéal contenant <m>1</m>, soit à un idéal principal. En conséquence, <m>\mathrm{Cl}(\mathcal{O}_K)</m> est réduit à un élément et <m>\mathcal{O}_K</m> est principal.
+    </p>
+    <p>
+      Ce fait s'applique, par exemple, aux quelques corps de nombre suivants <m>\mathbb{Q}(\sqrt{-3})</m>, <m>\mathbb{Q}(\sqrt{-2})</m>, <m>\mathbb{Q}(\sqrt{-1})</m>, <m>\mathbb{Q}(\sqrt{2})</m>, <m>\mathbb{Q}(\sqrt{3})</m>, <em>(mais pas <m>\mathbb{Q}(\sqrt{-5})</m> par exemple)</em>, mais aussi à certains corps de nombres de degré <m>3</m> tel que le corps plastique <m>\mathbb{Q}(\psi)</m> (<em>cf. <xref ref="exemple-nombre-plastique"/></em>). En particulier, leur anneau d'entiers, à savoir : 
+    </p>
+    <md>
+      \mathbb{Z}[\zeta_3],~\mathbb{Z}[\sqrt{-2}],~\mathbb{Z}[i],~\mathbb{Z}[\sqrt{2}],~\mathbb{Z}[\sqrt{3}],~\mathbb{Z}[\psi],
+    </md>
+    <p>
+    sont principaux. 
+    </p>
+  </example>
+
+  <remark>
+    <p>
+      Les corps de nombres <m>K</m> de <em>nombre de classe <m>1</m></em>, c-à-d ceux pour lesquels <m>|\mathrm{Cl}(\mathcal{O}_K)|=1</m>, restent très mystérieux. Le théorème de Stark-Heegner énonce que si <m>d &lt; 0</m> est sans facteur carré, alors <m>\mathbb{Q}(\sqrt{d})</m> est de nombre de classe <m>1</m> si, et seulement si
+    </p>
+    <md>
+      d\in \{-1,-2,-3,-7,-11,-19,-43,-67,-163\}.
+    </md>
+    <p>
+      Une conjecture de Gauss, toujours ouverte, stipule qu'il existe une infinité de <m>d &gt; 1</m> sans facteur carré tel que <m>\mathbb{Q}(\sqrt{d})</m> ait nombre de classe <m>1</m>
+    </p>
+    <p>
+      Plus modestement, on ne sait même pas s'il existe une infinité de corps de nombres <m>K</m> de nombre de classe <m>1</m>. Celui de plus grand degré observé ayant cette propriété est de degré <m>120</m> (voir l'article de <url href="https://arxiv.org/abs/1606.09320?utm_source=chatgpt.com" visual="Kim et Miller"/>). 
+    </p>
+  </remark>
 
   <theorem xml:id="thm-classe-groupe">
     <statement>
       <p>
-        Soit <m>K</m> un corps de nombres. Alors <m>\mathrm{Cl}(\mathcal{O}_K)</m> est un groupe abélien fini. 
+        Soit <m>K</m> un corps de nombres. Alors tout idéal non nul de <m>\mathcal{O}_K</m> est inversible; autrement dit, <m>\mathrm{Cl}(\mathcal{O}_K)</m> est un groupe abélien fini. 
       </p>
     </statement>
   </theorem>
   <proof>
     <p>
-      On commence par une application du lemme de Nakayama: 
+      On commence par montrer que la multiplication des idéaux est simplifiable dans un sens faible : 
     </p>
     <lemma xml:id="lem-bebe-thm-classe-groupe">
       <statement>
@@ -672,15 +731,52 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     </lemma>
     <proof>
       <p>
-        Montrons que <m>\frac{1}{a}J\subset \mathcal{O}_K</m>. Soit <m>j\in J</m>, de sorte que <m>\frac{j}{a}J'\subset J'</m>.On sait que <m>J'</m> est un <m>\mathbb{Z}</m>-module libre de rang fini, et si l'on fixe une base de <m>J'</m>, alors l'élément <m>\frac{j}{a}</m> agit par multiplication sur cette base comme une matrice à coefficients entiers. Par Cayley-Hamilton, le polynôme caractéristique de cette matrice annule <m>\frac{j}{a}</m>, et comme ses coefficients sont entiers, on en déduit que <m>\frac{j}{a}\in \overline{\mathbb{Z}}\cap K=\mathcal{O}_K</m>. Par conséquent, <m>J\subset (a)</m>.
+        Nous allons d'abord montrer comment ramener le problème au cas où <m>a=1</m>. 
       </p>
       <p>
-        Soit alors <m>J'':=\frac{1}{a}J</m>. On a alors <m>J'' J'=J'</m>, et le lemme de Nakayam permet de conclure que <m>J''=\mathcal{O}_K</m>, soit <m>J=(a)</m>.
+        Pour cela, montrons que <m>\frac{1}{a}J\subset \mathcal{O}_K</m>. Soit <m>j\in J</m>, de sorte que <m>\frac{j}{a}J'\subset J'</m>.On sait que <m>J'</m> est un <m>\mathbb{Z}</m>-module libre de rang fini, et si l'on fixe une base de <m>J'</m>, alors l'élément <m>\frac{j}{a}</m> agit par multiplication sur cette base comme une matrice à coefficients entiers. Par Cayley-Hamilton, le polynôme caractéristique de cette matrice annule <m>\frac{j}{a}</m>, et comme ses coefficients sont entiers, on en déduit que <m>\frac{j}{a}\in \overline{\mathbb{Z}}\cap K=\mathcal{O}_K</m>. Par conséquent, <m>J\subset (a)</m>.
+      </p>
+      <p>
+        Soit alors <m>J'':=\frac{1}{a}J</m>. On a alors <m>J'' J'=J'</m>, et le lemme de Nakayama (<em>e.g.</em> <xref ref="lem-nakayama"/>) permet de conclure que <m>J''=\mathcal{O}_K</m>, soit <m>J=(a)</m>.
       </p>
     </proof>
 
     <p>
-      Soit <m>I</m> un idéal non nul de <m>\mathcal{O}_K</m>. Pour montrer qu'il est inversible, il suffit de montrer qu'il existe un entier <m>n\geq 1</m> tel que <m>I^n</m> est principal (car alors la classe de <m>I^{n-1}</m> est l'inverse de la classe de <m>I</m>). Comme <m>|\mathrm{Cl}(A)|</m> est fini, il existe deux entiers <m>0 &lt; i &lt; j</m> tels que <m>I^i\sim I^j</m>. Il existe alors des éléments <m>a,b\in \mathcal{O}_K</m> tels que <m>aI^i=bI^j</m>, soit <m>aI^i=bI^j</m>, et donc <m>(bI^{j-i})I^i=(a)I^i</m>. En appliquant le <xref ref="lem-bebe-thm-classe-groupe"/>, on trouve <m>bI^{j-i}=(a)</m> puis que <m>I^{j-i}</m> est principal d'après la <xref ref="prop-principal-classetrivial"/>. 
+      Soit <m>I</m> un idéal non nul de <m>\mathcal{O}_K</m>. Pour montrer qu'il est inversible, il suffit de montrer qu'il existe un entier <m>n\geq 1</m> tel que <m>I^n</m> est principal (car alors la classe de <m>I^{n-1}</m> est l'inverse de la classe de <m>I</m>). Comme <m>|\mathrm{Cl}(A)|</m> est fini, il existe deux entiers <m>0 &lt; i &lt; j</m> tels que <m>I^i\sim I^j</m>. Il existe alors des éléments <m>a,b\in \mathcal{O}_K</m> tels que <m>aI^i=bI^j</m> et donc <m>(bI^{j-i})I^i=(a)I^i</m>. En appliquant le <xref ref="lem-bebe-thm-classe-groupe"/>, on trouve <m>bI^{j-i}=(a)</m> puis que <m>I^{j-i}</m> est principal d'après la <xref ref="prop-principal-classetrivial"/>. 
+    </p>
+  </proof>
+
+  <corollary xml:id="cor-contenir-cest-diviser">
+    <statement>
+      <p>
+        Soient <m>I,J,K</m> trois idéaux non nuls de <m>\mathcal{O}_K</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            (Simplification) Si <m>IK=JK</m>, alors <m>I=J</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            (Contenir c'est diviser) Si <m>I\subset J</m>, alors il existe un idéal <m>L</m> tel que <m>I=JL</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      Pour démontrer la simplification, prenons <m>K'</m> un idéal de <m>\mathcal{O}_K</m> tel que <m>KK'</m> soit un principal, mettons <m>(a)</m>  (l'existence de <m>K'</m> est assurée par le <xref ref="thm-classe-groupe"/>). Alors
+    </p>
+    <md>
+      I(a)=IKK'=JKK'=J(a),
+    </md>
+    <p>
+      soit : <m>\{ai|i\in I\}=\{aj|j\in J\}</m>, à savoir <m>I=J</m>.
+    </p>
+    <p>
+      De même, soit <m>a\in \mathcal{O}_K</m> et <m>J'</m> tels que <m>JJ'=(a)</m>. Posons <m>L:=a^{-1}IJ'</m>. C'est bien un idéal de <m>\mathcal{O}_K</m> car <m>IJ'\subset JJ'=(a)</m>. On vérifie alors que <m>JL=I</m>. 
     </p>
   </proof>
   

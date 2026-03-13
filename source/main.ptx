@@ -34,6 +34,8 @@
 
     <xi:include href="./ch-integer-rings.ptx" />
 
+    <xi:include href="./ch-factorization-of-ideals.ptx" />
+
     <!-- Include Appendice -->
     <xi:include href="./appendice.ptx" />
 

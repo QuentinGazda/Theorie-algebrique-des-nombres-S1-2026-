@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-factorization-of-ideals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Factorisation des idéaux</title>
+
+<section xml:id="sec-Dedekind">
+  <title><m>\mathcal{O}_K</m> est de Dedekind</title>
+
+<subsection xml:id="subsec-produits-dideaux-premiers">
+    <title>Produits d'idéaux premier</title>
+    
+ <p>
+    Soit <m>K</m> un corps de nombres. Très souvent, l'anneau <m>\mathcal{O}_K</m> n'est pas factoriel (typiquement, si <m>\mathrm{Cl}(\mathcal{O}_K)</m> n'est pas réduit à un élément). Il existe nénamoins une version faible de la factorisation en irréductible au niveau des idéaux de <m>\mathcal{O}_K</m>. Dans cette sections, nous allons montrer que les idéaux de <m>\mathcal{O}_K</m> se factorisent de manière unique en produits d'idéaux premiers. 
+ </p>
+
+ <theorem xml:id="thm-factorisation">
+    <title>Dedekind</title>
+    <statement>
+        <p>
+            Soit <m>I</m> un idéal strict non nul de <m>\mathcal{O}_K</m>. Alors il existe des idéaux premiers<fn>On rappelle qu'un idéal <m>P</m> d'un anneau <m>A</m> est dit <em>premier</em> si, étant donné <m>a,b\in A</m> avec <m>b\notin P</m>, <m>ab\in P</m> implique <m>a\in P</m>. De manière équivalente, <m>P</m> est premier si, et seulement si le quotient <m>A/P</m> est intègre. Dans la situation où <m>A=\mathcal{O}_K</m> et si <m>P\subset \mathcal{O}_K</m> est un idéal non nul, alors <m>\mathcal{O}_K/P</m> est un anneau fini. Comme tout anneau fini intègre est un corps, les idéaux premiers non nuls de <m>\mathcal{O}_K</m> sont exactement ses idéaux maximaux.</fn> <m>P_1, \ldots, P_r</m> de <m>\mathcal{O}_K</m> tels que <m>I = P_1 \cdots P_r</m>. De plus, cette factorisation est unique à l'ordre près.
+        </p>
+    </statement>
+ </theorem>
+ <proof>
+    <p>
+        Démontrons l'existence de cette décomposition. Supposons par l'absurde qu'il existe <m>I</m> un idéal strict non nul qui n'admet pas une telle décomposition, et choisissons-le de norme minimale. En particulier, <m>I</m> n'est pas un idéal premier. Il est néanmoins inclus dans un idéal maximal <m>P</m>, qui est lui-même premier. On a donc <m>I\subset P</m> et, puisque contenir c'est diviser (<em>cf.</em> <xref ref="cor-contenir-cest-diviser"/>), il existe un idéal strict <m>L</m> tel que <m>I=PL</m>. Notons que <m>L</m> n'admet pas non plus une telle décomposition (car, sinon, <m>I</m> en posséderait une), et que la norme de <m>L</m> est strictement inférieure à celle de <m>I</m> (<em>cf.</em> <xref ref="lem-inclusion-ideaux-normes"/>). C'est une contradiction avec le choix de <m>I</m>.
+    </p>
+    <p>
+        Montrons à présent l'unicité. Si deux telles décompositions sont égales, <m>P_1\cdots P_r=Q_1\cdots Q_s</m>, alors <m>Q_1\cdots Q_s</m> est en particulier inclus dans <m>P_1</m>. Puisque <m>P_1</m> est premier, il existe <m>i\in\{1,\ldots,s\}</m> tel que<fn>On utilise ici que si <m>I,J</m> sont deux idéaux tels que <m>IJ\subset P</m> avec <m>P</m> premier et <m>J\not\subset P</m>, alors <m>I\subset P</m>; en effet, si <m>i\in I</m> et <m>j\in J</m> mais <m>j\notin P</m>, alors <m>ij\in IJ\subset P</m> puis <m>i\in P</m> par primalité de <m>P</m>.</fn> <m>Q_i\subset P_1</m>. Par conséquent, <m>P_1=Q_i</m>. En simplifiant par <m>P_1</m>, on trouve <m>P_2\cdots P_r=Q_1\cdots Q_{i-1}Q_{i+1}\cdots Q_s</m>. En répétant ce raisonnement, on trouve que les deux décompositions sont égales à l'ordre près.
+    </p>
+ </proof>
+ 
+<remark>
+    <p>
+        Un anneau intégre et noethérien possédant cette propriété de factorisation des idéaux est appelé un anneau de Dedekind. 
+    </p>
+</remark>
+
+ <p>
+    Les corollaires de ce théorème sont nombreux. On en déduit par exemple la multiplicativité de la norme des idéaux :
+ </p>
+ <corollary xml:id="cor-multiplicativite-norme">
+    <statement>
+        <p>
+            Soient <m>I,J</m> deux idéaux non nuls de <m>\mathcal{O}_K</m>. Alors <m>N(IJ)=N(I)N(J)</m>.
+        </p>
+    </statement>
+ </corollary>
+ <proof>
+    <p>
+        D'après le <xref ref="thm-factorisation"/>, il suffit de montrer que <m>N(IP)=N(I)N(P)</m> pour <m>I</m> un idéal strict et <m>P</m> un idéal premier. Comme <m>IP\subset P</m>, on a d'après le <xref ref="lem-inclusion-ideaux-normes"/> que <m>N(IP)=N(I)|I/IP|</m>. Il suffit donc de montrer que <m>|I/IP|=N(P)</m>.
+    </p>
+    <p>
+        Notons que, par simplification et puisque <m>P</m> est maximal, les seuls idéaux qui contiennent <m>IP</m> et contenus dans <m>P</m> sont <m>IP</m> et <m>P</m>. En particulier, si <m>x\in I\setminus IP</m> est un élément de <m>I</m> qui n'est pas dans <m>IP</m>, alors <m>I=(x)+IP</m>. On dispose alors d'un morphisme de groupes abéliens surjectif :
+    </p>
+    <md>
+        \mathcal{O}_K/P\longrightarrow I/IP, \quad a\longmapsto ax+IP.
+    </md>
+    <p>
+        de noyau égal à <m>S:=\{a\in\mathcal{O}_K : ax\in IP\}</m>. Ce noyau est un idéal de <m>\mathcal{O}_K</m> qui contient <m>P</m>, et donc égal à l'un ou l'autre car <m>P</m> est maximal.  Or, <m>1\notin S</m> puisque <m>x\notin IP</m>, et donc <m>S=P</m>. L'application ci-dessus se factorise alors en un isomorphisme <m>\mathcal{O}_K/P\cong I/IP</m>. D'où <m>N(P)=|I/IP|</m>. 
+    </p>
+ </proof>
+
+ </subsection>
+
+ <subsection xml:id="subsec-factoriser-un-nombre-premier">
+    <title>Factoriser un nombre premier</title>
+    
+ </subsection>
+
+    <p>
+        Soit <m>p</m> un nombre premier. L'idéal <m>(p)=p\mathcal{O}_K</m> n'est en général pas premier. Nous présentons ici une méthode pour décomposer cet idéal en produit d'idéaux premiers dans le cas où <m>\mathcal{O}_K</m> est monogène. 
+    </p>
+    <definition xml:id="def-ideaux-I">
+        <statement>
+            <p>
+                Soit <m>\alpha\in K</m> tel que <m>\mathcal{O}_K=\mathbb{Z}[\alpha]</m>. Soit <m>\bar{\Pi}_{\alpha}(X)</m> la réduction de <m>\Pi_{\alpha}(X)</m> modulo <m>p</m>. Soit <m>Q(X)\in \mathbb{F}_p[X]</m> un diviseur de <m>\bar{\Pi}_{\alpha}(X)</m>. On note
+            </p>
+            <md>
+                I_p(Q):=(p,\tilde{Q}(\alpha))=p\mathcal{O}_K+\tilde{Q}(\alpha)\mathcal{O}_K
+            </md>
+            <p>
+                où <m>\tilde{Q}(X)\in \mathbb{Z}[X]</m> est un relevé de <m>Q(X)</m>.
+            </p>
+        </statement>
+    </definition>
+    <remark>
+        <p>
+            L'idéal <m>I_p(Q)</m> ne dépend pas du relevé choisi. En effet, si <m>\tilde{Q}'(X)\in \mathbb{Z}[X]</m> est un autre relevé de <m>Q(X)</m>, alors <m>\tilde{Q}'(X)-\tilde{Q}(X)\in p\mathbb{Z}[X]</m>, et donc <m>\tilde{Q}'(\alpha)-\tilde{Q}(\alpha)\in p\mathcal{O}_K</m>. Par conséquent, <m>(p,\tilde{Q}'(\alpha))=(p,\tilde{Q}(\alpha))</m>.
+        </p>
+    </remark>
+
+    <p>
+        Ces idéaux sont les seuls idéaux de <m>\mathcal{O}_K</m> qui contiennent <m>p</m> d'après la proposition suivante.
+    </p>
+
+    <proposition xml:id="prop-proprietes-I">
+        <statement>
+                <p>
+                    L'application <m>Q\mapsto I_p(Q)</m> induit une bijection entre les facteurs unitaires de <m>\bar{\Pi}_{\alpha}(X)</m> et les idéaux de <m>\mathcal{O}_K</m> contenant <m>p</m>. De plus, 
+                </p>
+            <ol>
+            <li>
+                <p>
+                    <m>Q</m> divise <m>Q'</m> si, et seulement si <m>I_p(Q')\subset I_p(Q)</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    L'idéal <m>I_p(Q)</m> est premier si, et seulement si <m>Q(X)</m> est irréductible dans <m>\mathbb{F}_p[X]</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    La norme de <m>I_p(Q)</m> vaut <m>p^{\deg(Q)}</m>.
+                </p>
+            </li>
+           </ol>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Par hypothèse, on dispose de l'isomorphisme d'anneaux <m>\mathbb{Z}[X]/(\Pi_{\alpha}(X))\xrightarrow{\sim} \mathcal{O}_K</m> qui envoie la classe de <m>X</m> sur <m>\alpha</m>. En réduisant modulo <m>p</m>, on trouve alors un autre isomorphisme
+        </p>
+        <md>
+            \mathbb{F}_p[X]/(\bar{\Pi}_{\alpha}(X))\xrightarrow{\sim} \mathcal{O}_K/p\mathcal{O}_K.
+        </md>
+        <p>
+            Rappelons que si <m>A</m> est un anneau et <m>I\subset A</m> un idéal, alors les idéaux de <m>A/I</m> sont en bijection avec ceux de <m>A</m> contenant <m>I</m> : à un idéal <m>J</m> de <m>A</m> contenant <m>I</m>, on associe l'idéal <m>J/I</m> de <m>A/I</m>; réciproquement, à un idéal <m>\bar{J}\subset A/I</m>, on associe l'image inverse <m>\pi^{-1}(\bar{J})</m> par le morphisme quotient <m>\pi:A\to A/I</m> qui est un idéal de <m>A</m> contenant <m>I</m>. Notons que cette bijection préserve les anneaux quotients, c-à-d <m>A/J\cong (A/I)/(J/I)</m>, et donc préserve la primalité et la maximalité.
+        </p>
+        <p>
+          Les facteurs unitaires de <m>\bar{\Pi}_{\alpha}(X)</m> sont en bijection avec les idéaux de <m>\mathbb{F}_p[X]</m> contenant <m>\bar{\Pi}_{\alpha}(X)</m>, eux-mêmes en bijection avec les idéaux de <m>\mathbb{F}_p[X]/(\bar{\Pi}_{\alpha}(X))</m>. Par l'isomorphisme ci-dessus, ils sont eux-mêmes en bijection avec idéaux de <m>\mathcal{O}_K/p\mathcal{O}_K</m> qui sont enfin en bijection avec les idéaux de <m>\mathcal{O}_K</m> contenant <m>p</m>. Il suffit de remarquer que la composition de ces bijections est donnée par <m>Q\mapsto I_p(Q)</m>. Cette application, par construction, préserve l'inclusion des idéaux, d'où le premier point, et la primalité, d'où le second point. Enfin, on a 
+        </p>
+        <md>
+            \mathcal{O}_K/I_p(Q)\cong \mathbb{F}_p[X]/(Q(X))
+        </md>
+        <p>
+            d'où le troisième point.
+        </p>
+    </proof>
+
+
+    <theorem xml:id="thm-factorisation-de-p">
+        <statement>
+            <p>
+                Soit <m>\bar{\Pi}_{\alpha}(X)=Q_1(X)^{e_1}\cdots Q_r(X)^{e_r}</m> la décomposition de <m>\bar{\Pi}_{\alpha}(X)</m> en facteurs unitaires irréductibles dans <m>\mathbb{F}_p[X]</m>. Alors on a
+            </p>
+            <md>
+                (p)=I_p(Q_1)^{e_1}\cdots I_p(Q_r)^{e_r}
+            </md>
+            <p>
+                qui correspond la décomposition en idéaux premiers de <m>(p)=p\mathcal{O}_K</m>.
+            </p>
+        </statement>
+    </theorem>
+    <proof>
+        <p>
+            Si <m>P</m> est un idéal premier qui apparaît dans la décomposition de <m>(p)</m>, alors en particulier il contient <m>p</m> et on déduit de la <xref ref="prop-proprietes-I"/> qu'il est de la forme <m>I_p(Q_i)</m>. Par la propriété de Dedekind, on peut trouver des entiers <m>n_1,\ldots,n_r</m> tels que
+        </p>
+        <md>
+            (p)=I_p(Q_1)^{n_1}\cdots I_p(Q_r)^{n_r}.
+        </md>
+        <p>
+            Il reste à montrer que <m>n_i=e_i</m> pour tout <m>i\in\{1,\ldots,r\}</m>. Pour ce faire, on considère, pour <m>i\in \{1,\ldots,r\}</m>, le sous-ensemble <m>X_i</m> des ideaux de <m>\mathcal{O}_K</m> qui contiennent <m>p</m> mais qui ne sont pas contenu dans <m>I_p(Q_j)</m> si <m>j\neq i</m>.
+        </p>
+        <p>
+            D'une part, la propriété de Dedekind assure que <m>X_i</m> est formé des puissances de <m>I_p(Q_i)</m>: <m>X_i=\{I_p(Q_i)^{n_i},\ldots, I_p(Q_i)\}</m>. D'autre part, la <xref ref="prop-proprietes-I"/> assure que <m>X_i</m> égale l'image des puissances de <m>Q_i(X)</m> qui divisent <m>\bar{\Pi}_{\alpha}(X)</m>, à savoir <m>\{Q_i^{e_i},\ldots,Q_i\}</m>, par <m>I_p</m>. On en déduit
+        </p>
+        <md>
+            I_p(Q_i^{k})=I_p(Q_i)^k
+        </md>
+        <p>
+            et <m>n_i=e_i</m>.
+        </p>
+    </proof>
+
+    <example>
+        <p>
+        Cherchons les idéaux de <m>\mathbb{Z}[\sqrt{-5}]</m> contenant <m>2</m>. Comme <m>\Pi_{\sqrt{-5}}(X)=X^2+5</m> qui se réduit à <m>(X+1)^2</m> modulo <m>2</m>, on trouve
+        </p>
+        <md>
+            (2)=I_2(X+1)^2=(2,\sqrt{-5}+1)^2.
+        </md>
+    </example>
+    
+
+</section>
+
+<section xml:id="sec-application-a-la-determination-de-ClOK">
+    <title>Application à la détermination de <m>\mathrm{Cl}(\mathcal{O}_K)</m></title>
+
+    <p>
+        Soit <m>K</m> un corps de nombres. Nous donnons ici une méthode pour déterminer le groupe abélien fini <m>\mathrm{Cl}(\mathcal{O}_K)</m> dans le cas où <m>\mathcal{O}_K</m> est de la forme <m>\mathbb{Z}[\alpha]</m> pour un entier algébrique <m>\alpha</m>. 
+    </p>
+    
+    <p>
+        <ol>
+            <li>
+                <p>
+                    On détermine les constantes de <m>K</m> à savoir <em>son degré</em> <m>n=[K:\mathbb{Q}]</m>, <em>son nombre de plongement complexes à conjugaison près</em> <m>r_2</m> et <em>son discriminant</em> <m>\mathrm{disc}(\mathcal{O}_K)</m>.
+                </p>
+                <p>
+                    Rappelons que ces données se lisent sur le polynôme minimal de <m>\alpha</m> :
+                    <ol>
+                        <li>
+                            <p>
+                                Le degré <m>n</m> coincide avec le degré de <m>\Pi_{\alpha}(X)</m>,
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Le nombre <m>r_2</m> coincide aux nombres de facteurs irréductibles de degré <m>2</m> dans la factorisation de <m>\Pi_{\alpha}(X)</m> vu dans <m>\mathbb{R}[X]</m> (le nombre de facteurs linéaires correspond à <m>r_1</m>), 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Le discriminant <m>\mathrm{disc}(\mathcal{O}_K)</m> correspond au discriminant de <m>\Pi_{\alpha}(X)</m>. 
+                            </p>
+                        </li>
+                    </ol> 
+                </p>
+                <p>
+                    Cela nous permet de déterminer l'entier <m>N:=\lfloor C(r_2,n)\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}\rfloor</m>, où <m>C(r,n)=\frac{n!}{n^n}\left(\frac{4}{\pi}\right)^r</m> est la constante de Minkowski.
+                </p>
+                <p>
+                    On sait (d'après la preuve du <xref ref="thm-finitude-nombre-de-classe"/>) que tout idéal non nul de <m>\mathcal{O}_K</m> est équivalent à un idéal contenant un entier <m>c\in \{1,\ldots,N\}</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    D'après le <xref ref="thm-factorisation"/>, <m>\mathrm{Cl}(\mathcal{O}_K)</m> est engendré par les classes des idéaux premiers. Pour <m>c\in \{1,\ldots,N\}</m> il suffit donc de déterminer les idéaux premiers contenant <m>c</m> et, puisque ceux-ci contiennent nécessairement un diviseur premier de <m>c</m>, il suffit de déterminer les idéaux premiers de <m>\mathcal{O}_K</m> contenant un nombre premier <m>p\leq N</m>. 
+                </p>
+                <p>
+                    Soit <m>p</m> un nombre premier <m>\leq N</m>. Soit <m>\bar{\Pi}_{\alpha}(X)</m> la réduction modulo <m>p</m> du polynôme minimal de <m>\alpha</m>. Les idéaux premiers contenant <m>p</m> ont été décrits par la <xref ref="prop-proprietes-I"/> : il s'agit des <m>I_p(Q)</m> où <m>Q(X)</m> est un facteur unitaire irréductible de <m>\bar{\Pi}_{\alpha}(X)</m>.  
+                </p>
+                <p>
+                    On dispose alors d'un ensemble de générateurs du groupe <m>\mathrm{Cl}(\mathcal{O}_K)</m>, à savoir l'ensemble formé des classes <m>[I_p(Q)]</m> où <m>p</m> est un nombre premier <m>\leq N</m> et <m>Q</m> un facteur unitaire irréductible de <m>\Pi_{\alpha}(X)\pmod{p}</m>.  
+                </p>
+            </li>
+            <li>
+                <p>
+                    Il nous reste à déterminer les relations entre ces générateurs; c'est en général l'étape qui nécessite plus d'ingéniosité. Par exemple, le <xref ref="thm-factorisation-de-p"/> en donne une :
+                </p>
+                <md>
+                    [I_p(Q_1)]^{e_1}\cdots [I_p(Q_r)]^{e_r}=1 \quad \text{dans}\quad \mathrm{Cl}(\mathcal{O}_K)
+                </md>
+                <p>
+                    si <m>\bar{\Pi}_{\alpha}(X)</m> se factorise en irréductibles comme <m>Q_1(X)^{e_1}\cdots Q_r(X)^{e_r}</m>. 
+                </p>
+                <p>
+                    La méthode dite <em>des éléments de petite norme</em> suggère de chercher des éléments <m>a\in \mathcal{O}_K</m> dont la norme est supportée aux premiers <m>p\leq N</m>, puis de chercher la factorisation de l'idéal principal <m>(a)</m> en produit d'idéaux premiers : si <m>a\in \mathcal{O}_K</m> est de norme supportée en un ensemble de premiers <m>\{p_1,\ldots,p_s\}</m>, alors les idéaux premiers qui apparaissent dans la factorisation de <m>(a)</m> sont les <m>I_{p_i}(Q_j)</m>. En particulier, les ideaux premiers qui apparaissent en facteurs sont dans l'ensemble de générateurs précédemment construit et on trouve ainsi une nouvelle relation.
+                </p>
+            </li>
+        </ol>
+    </p>
+    
+    <example>
+        <title>Pour <m>K=\mathbb{Q}(\sqrt{-47})</m>, <m>\mathrm{Cl}(\mathcal{O}_K)\cong \mathbb{Z}/5\mathbb{Z}</m></title>
+        
+    <p>
+        Comme <m>-47</m> est sans facteur carré et est <m>\equiv 1\pmod{4}</m>, on a d'après le <xref ref="cor-entiers-quadratiques-base"/> : 
+    </p>
+    <md>
+        \mathcal{O}_K=\mathbb{Z}\left[\frac{1+\sqrt{-47}}{2}\right].
+    </md>
+    <p>
+        C'est bien un anneau d'entiers monogène, on peut donc appliquer la recette précédente pour déterminer son groupe des classes.
+    </p>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    En première étape, on calcule les constantes de <m>\mathbb{Q}(\sqrt{-47})</m>. On trouve alors <m>n=2</m>, <m>r_2=1</m> et <m>\mathrm{disc}(\mathcal{O}_K)=-47</m>, puis
+                </p>
+                <md>
+                    N=\lfloor C(1,2)\sqrt{47}\rfloor=4
+                </md>
+            </li>
+            <li>
+                <p>
+                    Le groupe <m>\mathrm{Cl}(\mathcal{O}_K)</m> est donc engendré par les idéaux premiers de <m>\mathcal{O}_K</m> qui contiennent <m>2</m> ou <m>3</m>. 
+                </p>
+                <p>
+                    Soit <m>\alpha:=\frac{1+\sqrt{-47}}{2}</m> de polynôme minimal <m>X^2-X+12</m>.
+                </p>
+                <p>
+                    Comme <m>X^2-X+12\equiv X(X-1)\pmod{2,3}</m>, les idéaux premiers de <m>\mathcal{O}_K</m> contenant <m>2</m> sont
+                </p>
+                <md>I_2(X)=(2,\alpha) \quad \text{et}\quad I_2(X-1)=(2,\alpha-1),</md>
+                <p>
+                    et ceux contenant <m>3</m> sont
+                </p>
+                <md>
+                    I_3(X)=(3,\alpha)\quad \text{et}\quad I_3(X-1)=(3,\alpha-1).
+                </md>
+                <p>
+                    On notera leur classe <m>D:=[I_2(X)]</m>, <m>D':=[I_2(X-1)]</m>, <m>T:=[I_3(X)]</m> et <m>T':=[I_3(X-1)]</m>. On a donc trouvé un ensemble de générateurs du groupe <m>\mathrm{Cl}(\mathcal{O}_K)</m>, à savoir :
+                </p>
+                <md>
+                    \{D,D',T,T'\}.
+                </md>
+            </li>
+            <li>
+                <p>
+                    Reste à déterminer leurs relations. Comme <m>(2)=I_2(X)I_2(X-1)</m> et <m>(3)=I_3(X)I_3(X-1)</m> d'après le <xref ref="thm-factorisation-de-p"/>, on trouve
+                </p>
+                <md>
+                    DD'=1, \quad \text{et} \quad TT'=1.
+                </md>
+                <p>
+                    En particulier, <m>D'</m> est l'inverse de <m>D</m>, et de même <m>T'</m> est l'inverse de <m>T</m>. On a donc réduit l'ensemble de générateurs à <m>\{D,T\}</m>. 
+                </p>
+                <p>
+                    Pour déterminer les relations entre <m>D</m> et <m>T</m>, on constate par exemple que <m>N_K(\alpha)=12</m>. Comme <m>\alpha\in I_2(X)</m> et <m>\alpha \in I_3(X)</m> (mais <m>\alpha\notin I_2(X-1)</m>, car sinon on aurait <m>I_2(X-1)\subset I_2(X)</m> ce qui contredirait <xref ref="prop-proprietes-I"/>, et de même pour <m>3</m>), la factorisation de l'idéal <m>(\alpha)</m> en idéaux premiers est de la forme <m>I_2(X)^aI_3(X)^b</m>. En considérant les normes, on trouve <m>a=2</m> et <m>b=1</m>. D'où une nouvelle relation
+                </p>
+                <md>
+                    D^2T=1.
+                </md>
+                <p>
+                    On a alors réduit notre ensemble de générateur au singleton <m>\{D\}</m>.
+                </p>
+                <p>
+                    Il reste enfin à déterminer l'ordre de <m>D</m>. Pour cela, on constate que <m>N_K(\alpha+4)=32</m>. En général, <m>N_K</m> se calcule par la forme quadratique
+                </p>
+                <md>
+                    N_K(x+\alpha y)=x^2+xy+12y^2.
+                </md>
+                <p>
+                    Comme <m>(4+\alpha)</m> est supporté en l'idéal premier <m>I_2(X)</m> (si <m>\alpha+4\in I_2(X-1)=(3,\alpha-1)</m>, alors <m>5=\alpha+4-(\alpha-1)\in I_2(X-1)</m> et donc <m>1=2\times 3-5\in I_2(X-1)</m> ce qui est une contradiction !), en comparant les normes on trouve <m>(4+\alpha)=I_2(X)^5</m>, soit
+                </p>
+                <md>
+                    D^5=1.
+                </md>
+                <p>
+                    Ainsi l'ordre de <m>D</m> vaut <m>1</m> ou <m>5</m> mais, comme <m>I_2(X)</m> n'est pas principal (sinon il y aurait un élément de norme <m>2</m>, ce que l'on exclut), l'ordre de <m>D</m> est <m>5</m>. 
+                </p>
+            </li>
+        </ol>
+    </p>
+    <p>
+        Ainsi, la classe de <m>I_2(X)=(2,\alpha)</m> engendre <m>\mathcal{Cl}(\mathcal{O}_K)</m> et l'on trouve : 
+    </p>
+    <md>
+        \mathrm{Cl}\left(\mathbb{Z}\left[\frac{1+\sqrt{-47}}{2}\right]\right)\cong \mathbb{Z}/5\mathbb{Z}.
+    </md>
+    </example>
+
+</section>
+
+
+</chapter>

@@ -154,6 +154,26 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
         Nous rappelons ici quelques définitions et résultats de base sur les anneaux commutatifs avec unité qui seront utilisés dans ce cours.
       </p>
 
+      <lemma xml:id="lem-nakayama">
+        <title>Nakayama</title>
+        <statement>
+          <p>
+            Soit <m>M</m> un <m>A</m>-module libre de rang fini non nul et <m>I</m> un idéal de <m>A</m> tel que <m>M=IM</m>. Alors <m>I=A</m>.
+          </p>
+        </statement>
+      </lemma>
+      <proof>
+        <p>
+          Soit <m>(e_1,\ldots,e_n)</m> une base de <m>M</m>. Puisque <m>M=IM</m>, on peut écrire chaque <m>e_i</m> comme une combinaison linéaire à coefficients dans <m>I</m> des éléments de la base, c'est-à-dire :
+        </p>
+        <md>
+          e_i = \sum_{j=1}^n a_{ij} e_j \quad \text{avec } a_{ij} \in I.
+        </md>
+        <p>
+          En particulier, l'identité agit comme la matrice <m>A=(a_{ij})\in \mathrm{Mat}_n(I)</m> et donc <m>A=I_n</m>. Ainsi <m>1\in I</m>.
+        </p>
+      </proof>
+
   </section>
 
 
