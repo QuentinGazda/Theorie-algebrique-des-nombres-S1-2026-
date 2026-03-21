@@ -612,7 +612,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     Si <m>I</m> est principal, disons <m>I=(c)</m>, alors <m>1\cdot I=c\cdot A</m> et donc <m>[I]=[A]</m>.
     </p>
     <p>
-      Si <m>I\sim A</m>, alors il existe <m>a,b\in A</m> tels que <m>aI=b A</m>, soit <m>I=\frac{a}{b}A</m>. En particulier <m>\frac{a}{b} A\subset A</m> et donc <m>c:=\frac{a}{b}\in A</m> et <m>I=(c)</m>.
+      Si <m>I\sim A</m>, alors il existe <m>a,b\in A</m> tels que <m>aI=b A</m>, soit <m>I=\frac{b}{a}A</m>. En particulier <m>\frac{b}{a} A\subset A</m> et donc <m>c:=\frac{b}{a}\in A</m> et <m>I=(c)</m>.
     </p>
   </proof>
   

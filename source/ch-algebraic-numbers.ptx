@@ -355,7 +355,7 @@ Le polynôme caractéristique de la matrice
 
   <p>Dans cette section, on démontre le théorème de Cantor qui stipule que l'ensemble des nombres algébriques est dénombrable. Pour ``compter'' les nombres algébriques, on utilise leur <em>taille</em>; dans cette section, ce sera donc la taille qui compte.</p>
 
-  <definition>
+  <definition xml:id="def-taille">
     <title> Taille d'un nombre algébrique</title>
     <statement>
       <p>Soit <m>z</m> un nombre algébrique de degré <m>n</m> et <m>z_1,\ldots,z_n</m> ses conjugués. On appelle <em>dénominateur de <m>z</m></em> et l'on note <m>\mathrm{den}(z)</m> le plus petit entier <m>d\geq 1</m> tel que <m>dz\in \overline{\mathbb{Z}}</m>. On appelle <em>taille de <m>z</m></em> le nombre réel:</p>

@@ -36,6 +36,8 @@
 
     <xi:include href="./ch-factorization-of-ideals.ptx" />
 
+    <xi:include href="./ch-regulator.ptx" />
+
     <!-- Include Appendice -->
     <xi:include href="./appendice.ptx" />
 

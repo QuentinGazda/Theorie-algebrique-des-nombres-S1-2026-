@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-regulator" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Régulateur de Dirichlet</title>
+
+  <section xml:id="sec-theoreme-des-unites">
+    <title>Théorème des unités</title>
+    
+    <p>
+        Les <em>unités</em> d'un corps de nombres <m>K</m> sont les éléments du groupe abélien <m>\mathcal{O}_K^{\times}</m>. On l'appelle <em>groupe des unités de <m>K</m></em>. L'enjeu de cette section est de déterminer sa structure : nous allons voir que   
+    </p>
+    <men xml:id="eq-structure-unite">
+        \mathcal{O}_K\cong \mu(K)\times \mathbb{Z}^{r_1+r_2-1}
+    </men>
+    <p>
+        où <m>\mu(K)</m> désigne le groupe fini des racines de l'unité dans <m>K</m>. Cet énoncé découle du <em>théorème des unités de Dirichlet</em> que nous démontrons ici. 
+    </p>
+    <p>
+        Soit <m>\Sigma_1</m> l'ensemble des plongements réels et <m>\Sigma_2</m> un ensemble de représentant de plongements complexes à conjugaison près. On consière le morphisme de groupes
+    </p>
+    <md>
+        <mrow> \ell:~ K^{\times} \amp \longrightarrow \mathbb{R}^{r_1+r_2} </mrow>
+        <mrow> x \amp \longmapsto ((\log|\sigma(x)|)_{\sigma\in \Sigma_1}, (\log|\sigma(x)|^2)_{\sigma\in \Sigma_2}) </mrow>
+    </md>
+    <theorem xml:id="thm-unite-dirichlet">
+        <title>des unités</title>
+        <statement>
+            <p>
+                L'image <m>\ell(\mathcal{O}_K^{\times})</m> est un réseau de l'hyperlan <m>H\subset \mathbb{R}^{r_1+r_2}</m> d'équation
+            </p>
+            <md>
+                x_1+\ldots+x_{r_1+r_2}=0.
+            </md>
+        </statement>
+    </theorem>
+    
+    <p>
+        Justifions d'ores et déjà pourquoi l'image de <m>\mathcal{O}_K^{\times}</m> par <m>\ell</m> tombe dans l'hyperplan <m>H</m>. Cela se déduit de la proposition suivante.
+    </p>
+    <proposition xml:id="prop-norme-unite">
+        <statement>
+            <md>
+                \mathcal{O}_K^{\times}=\{x\in K~|~|N_K(x)|=1\}. 
+            </md>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            <m>x\in K</m> est une unité si, et seulement si l'idéal qu'il engendre <m>(x)</m> est égal à <m>\mathcal{O}_K</m> si, et seulement si <m>N((x))=1</m>. Or, d'après la <xref ref="prop-norme-ideal-element"/>, <m>N((x))=|N_K(x)|</m>.
+        </p>
+    </proof>
+    <p>
+        Comme <m>|N_K(x)|=\prod_{\sigma\in \Sigma_1}{|\sigma(x)|}\prod_{\sigma\in \Sigma_2}{|\sigma(x)|^2}</m>, on trouve bien que <m>\ell(\mathcal{O}_K^{\times})\subset H</m>. 
+    </p>
+    <p>
+        Vérifions maintenant que le théorème des unités de Dirichlet implique la décomposition <xref ref="eq-structure-unite"/>. Par la <xref ref="prop-base-reseau"/>, <m>\ell(\mathcal{O}_K^{\times})</m> admet une <m>\mathbb{Z}</m>-base à <m>m:=r_1+r_2-1</m> éléments : soient donc <m>\varepsilon_1,\ldots,\varepsilon_{m}</m> des éléments de <m>\mathcal{O}_K^{\times}</m> tels que <m>(\ell(\varepsilon_1),\ldots,\ell(\varepsilon_m))</m> soit une <m>\mathbb{Z}</m>-base de <m>\ell(\mathcal{O}_K^{\times})</m>. On considère le morphisme
+    </p>
+    <md>
+        <mrow> f:~\mu(K)\times \mathbb{Z}^{m} \amp \longrightarrow \mathcal{O}_K^{\times}</mrow>
+        <mrow> (\zeta,n_1,\ldots,n_m) \amp \longmapsto \zeta \varepsilon_1^{n_1}\cdots \varepsilon_m^{n_m}</mrow>
+    </md>
+    <p>
+        On prétend que <m>f</m> est bijective. D'abord, <m>f</m> est <em>injective</em> : si <m>(\zeta,n_1,\ldots,n_m)</m> est dans son noyau, alors <m>\varepsilon_1^{n_1}\cdots \varepsilon_m^{n_m}</m> est une racine de l'unité, et donc son image par <m>\ell</m> est nulle. Comme son image est  
+    </p>
+    <md>
+        n_1\ell(\varepsilon_1)+\ldots+n_m\ell(\varepsilon_m)=0
+    </md>
+    <p>
+        et que les <m>\ell(\varepsilon_i)</m> sont linéairement indépendants, on trouve <m>n_1=\cdots=n_m=0</m>. 
+    </p>
+    <p>
+        Puis, on montre que <m>f</m> est <em>surjective</em> : si <m>u\in \mathcal{O}_K^{\times}</m>, on peut trouver <m>(n_1,\ldots,n_m)\in \mathbb{Z}^m</m> tel que <m>\ell(u)=n_1\ell(\varepsilon_1)+\ldots+n_m\ell(\varepsilon_m)</m>. En particulier, <m>\varepsilon_1^{n_1}\cdots \varepsilon_m^{n_m}u^{-1}\in \mathcal{O}_K^{\times}</m> appartient à <m>\ker(\ell)\cap \mathcal{O}_K^{\times}</m>. On conclut alors avec le lemme qui suit :
+    </p>
+    <lemma xml:id="lem-ker-ell">
+        <statement>
+            <p>
+                L'inclusion <m>\mu(K)\subset \ker(\ell)\cap \mathcal{O}_K^{\times}</m> est une égalité.
+            </p>
+        </statement>
+    </lemma>
+    <proof>
+        <p>
+            Les éléments de <m>\ker(\ell)\cap \mathcal{O}_K^{\times}</m> sont de taille <m>1</m> (<em>cf.</em> <xref ref="def-taille"/>). D'après la <xref ref="prop-taille-compte"/>, l'ensemble <m>\ker(\ell)\cap \mathcal{O}_K^{\times}</m> est fini, c'est donc un groupe fini. Tout élément admet un ordre et donc est une racine de l'unité dans <m>K</m>. 
+        </p>
+    </proof>
+
+    <p>
+        Nous sommes à présent en position de démontrer le <xref ref="thm-unite-dirichlet"/>.
+    </p>
+    <proof>
+        <title>Preuve du <xref ref="thm-unite-dirichlet"/></title>
+        <p>
+            Démontrons d'abord que <m>\ell(\mathcal{O}_K^{\times})</m> est un sous-groupe discret de <m>\mathbb{R}^{r_1+r_2}</m> (et donc de <m>H</m>). Pour cela, il suffit de vérifier qu'étant donné <m>r>0</m>, il n'y a qu'un nombre fini d'unités <m>u</m> telles que <m>\log|\sigma(u)|\leq r</m> pour tout <m>\sigma\in \Sigma(K)</m>. Mais une telle unité est de taille <m>\leq e^r</m> (<em>cf.</em> <xref ref="def-taille"/>), et il n'y a qu'un nombre fini d'éléments de <m>\mathcal{O}_K</m> de taille bornée (<em>cf.</em> <xref ref="prop-taille-compte"/>). Cela montre que <m>\ell(\mathcal{O}_K^{\times})</m> est discret. 
+        </p>
+        <p>
+            L'enjeu de la preuve repose alors sur l'existence d'une base de <m>H</m> contenue dans <m>\ell(\mathcal{O}_K^{\times})</m>, ce qui nécessite de construire des unités multiplicativement indépendantes. Pour cela, on va encore une fois faire appel au lemme du corps convexe de Minkowski.
+        </p>
+        <proposition xml:id="prop-construction-dunites">
+            <statement>
+                <p>
+                    Soit <m>\tau\in \Sigma_1\sqcup \Sigma_2</m>. On peut trouver <m>u_{\tau}\in \mathcal{O}_K^{\times}</m> telle que <m>\log|\sigma(u_{\tau})|&lt; 0</m> pour tout plongement <m>\sigma\neq \tau</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Soit <m>T:=2^{r_1+r_2}\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}</m>. Dans un premier temps, nous allons montrer qu'il existe une suite <m>(a_n)_{n\geq 0}</m> d'éléments de <m>\mathcal{O}_K\setminus\{0\}</m> de norme <m>\leq T</m> et telle que <m>|\tau(a_n)|\to 0</m> (quand <m>n\to \infty</m>) pour tout <m>\sigma\neq \tau</m>.
+            </p>
+            <p>    
+                Pour ce faire, soit <m>t>0</m> un nombre réel positif et soit <m>C_t\subset \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> le corps convexe symétrique et compact formé des <m>(x_{\sigma})_{\sigma \in \Sigma_1\sqcup \Sigma_2}\in \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>, avec <m>x_\sigma\in \mathbb{R},\mathbb{C}</m> en fonction de si <m>\sigma</m> est réel ou complexe, tels que <m>|x_\sigma|\leq t/2,\sqrt{t/\pi}</m> pour <m>\sigma\neq \tau</m> réel ou complexe, et <m>|x_{\tau}|\leq T/2t^{r_1+r_2-1}, \sqrt{T/\pi t^{r_1+r_2-1}}</m> en fonction de si <m>\tau</m> est réel ou complexe. 
+            </p>
+            <p>
+                Le nombre réel <m>T</m> fut choisi de sorte que le volume<fn>Dans le calcul du volume de <m>C_t</m>, les places réels <m>\neq \tau</m> contribuent à un facteur <m>2(t/2)=t</m> et celles complexes <m>\neq \tau</m> à un facteur <m>\pi \sqrt{t/\pi}^2=t</m>. On trouve alors <m>\lambda(C_t)=t^{r_1+r_2-1}\cdot T/t^{r_1+r_2-1}=T</m>. </fn> de <m>C_t</m> soit exactement <m>T=2^n\mathrm{covol}(\sigma(\mathcal{O}_K))</m>. Par Minkowski (<em>cf.</em> <xref ref="lem-corps-convexe"/>) il existe un élément non nul de <m>C_t\cap \sigma(\mathcal{O}_K)</m>. On trouve donc <m>a\in \mathcal{O}_K\setminus \{0\}</m> tel que <m>|\sigma(a)| &lt; t</m> pour tout <m>\sigma\neq \tau</m> et tel que <m>|N_K(a)|\leq T</m>. En faisant tendre <m>t\to 0</m>, on construit une suite d'éléments <m>(a_n)_{n\geq 0}</m> ayant la propriété recherchée.
+            </p>
+            <p>
+                On peut ensuite extraire une sous-suite de <m>(a_n)_{n\geq 0}</m> d'éléments de même norme <m>N</m>. Comme <m>\mathcal{O}_K/N\mathcal{O}_K</m> est fini, on peut extraire à nouveau une sous-suite de d'éléments de même norme <m>N</m> et deux-à-deux congrus modulo <m>N</m>; on la note <m>(a_{n_m})_{m\geq 0}</m>. On invoque ensuite un lemme qui permet de construire des unités à partir de telles sous-suites :
+            </p>
+            <lemma xml:id="lem-construction-unite">
+                <statement>
+                    <p>
+                        Soient <m>a,b\in \mathcal{O}_K</m> tels que <m>N_K(a)=N_K(b)=N</m> et <m>a-b\in N\mathcal{O}_K</m>. Alors <m>a/b\in \mathcal{O}_K^{\times}</m>.
+                    </p>
+                </statement>
+            </lemma>
+            <proof>
+                <p>
+                    Posons <m>u:=a/b</m>. Soit <m>c\in \mathcal{O}_K</m> tel que <m>a=b+Nc</m>. Comme <m>N_K(b)=N</m>, on peut trouver <m>b'\in \mathcal{O}_K</m> tel que <m>N=bb'</m>. Alors <m>a=b+bb'c=b(1+b'c)</m> et, en particulier, <m>u=1+b'c</m>. On en déduit que <m>u\in \mathcal{O}_K</m>. Le même argument en inversant les rôles de <m>a,b</m> montre que <m>b/a\in \mathcal{O}_K</m>. 
+                </p>
+            </proof>
+            <p>
+                Pour <m>m\geq 0</m>, on pose alors <m>u_m:=a_{n_m}/a_{n_0}</m> qui est une unité de <m>\mathcal{O}_K</m> d'après le lemme précédent. On a de plus <m>|\sigma(u_m)|\to 0</m> pour tout plongement <m>\sigma\neq \tau</m>, lorsque <m>m\to \infty</m>. En particulier, on peut trouver une unité <m>u_{\tau}</m> telle que <m>|\sigma(u_{\tau})| &lt; 1</m> pour tout <m>\sigma\neq \tau</m>, comme annoncé (prendre pour <m>u_{\tau}</m> un élément <m>u_m</m> de la suite pour <m>m</m> assez grand).
+            </p>     
+        </proof>
+        <p>
+            Notons que nous avons nécessairement <m>\log |\sigma(u_{\sigma})| &gt; 0</m> car <m>|N_K(u_{\sigma})|=1</m>.
+        </p>
+        <p>
+            Pour conclure la démonstration du théorème des unités, il suffit de montrer que l'image par <m>\ell</m> de <m>r_1+r_2-1</m> unités choisies parmi les <m>r_1+r_2</m> construites dans la <xref ref="prop-construction-dunites"/> (donc toutes, sauf une) sont linéairement indépendantes dans <m>H</m>. Pour ce faire, on considère la base <m>(b_1,\ldots,b_{r_1+r_2-1})</m> de <m>H\subset \mathbb{R}^{r_1+r_2}</m> avec <m>b_i:=e_i-e_{r_1+r_2}</m> (où la famille <m>(e_1,\ldots,e_{r_1+r_2})</m> désigne la base canonique de <m>\mathbb{R}^{r_1+r_2}</m>). Dans cette base, <m>\log(u_{\sigma})</m> s'écrit<fn>En effet, on a <md><mrow>\ell(u_{\sigma})\amp = \sum_{i=1}^{r_1+r_2}{\log|\sigma_i(u_{\sigma})|^{*_i}e_i}</mrow><mrow> \amp =\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}\cdot e_i}-\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}\cdot e_{r_1+r_2}}</mrow> <mrow>\amp =\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}}\cdot b_i</mrow> </md> où <m>*_i=1,2</m> en fonction de si <m>\sigma_i</m> est réel ou complexe, et où l'on a utilisé que <m>\log|\sigma_{r_1+r_2}(u_{\sigma})|=-\sum_{i=1}^{r_1+r_2-1}{\log|\sigma(u_{\sigma_i})|}</m>.</fn>
+        </p>
+        <md>
+            \ell(u_{\sigma})=\sum_{i=1}^{r_1}{\log |\sigma_i(u_{\sigma})|}\cdot b_i+\sum_{i=r_1+1}^{r_2-1}{\log |\sigma_i(u_{\sigma})|^{2}}\cdot b_i
+        </md>
+        <p>
+            où l'on a numéroté <m>\{\sigma_1,\ldots,\sigma_{r_1},\sigma_{r_1+1},\ldots,\sigma_{r_1+r_2}\}</m> les éléments de <m>\Sigma_1\sqcup \Sigma_2</m>.
+        </p> 
+        <p>
+            Soit <m>m_{ij}:=\log |\sigma_i(u_{\sigma_j})|^{*_i}</m> avec <m>*_i=1,2</m> en fonction de si <m>\sigma_i</m> est réel ou complexe. D'après la formule précédente, la matrice <m>M=(m_{ij})_{i,j}\in \mathrm{Mat}_{r_1+r_2-1}(\mathbb{R})</m> est celle des éléments <m>(\ell(u_{\sigma_i}))_{1\leq i\leq r_1+r_2-1}</m> écrits dans la base <m>(b_1,\ldots,b_{r_1+r_2-1})</m> de <m>H</m>. La matrice <m>M</m> vérifie donc les deux propriétés suivantes :
+        </p>
+            <ul>
+                <li>
+                    <p>
+                        ses coefficients extra-diagonaux <m>m_{ij}</m> (pour <m>i\neq j</m>) sont strictement négatifs, </p>
+                </li>
+                <li>
+                    <p>
+                        la somme des coefficients de chacune de ses colonnes, à savoir <m>\sum_{1\leq i &lt; r_1+r_2}^{r_1+r_2-1}{m_{ij}}=-m_{r_1+r_2,j} &gt; 0</m> pour tout <m>j\in \{1,\ldots,r_1+r_2-1\}</m>, est strictement positive.
+                    </p>
+                </li>
+            </ul>
+        <p>
+            En vertu du lemme qui suit, une telle matrice est nécessairement inversible, ce qui conclut que <m>(\ell(u_{\sigma_i}))_{1\leq i &lt; r_1+r_2}</m> est une base de <m>H</m>. 
+        </p>
+        <lemma xml:id="lem-critere-inversibilite-matrice">
+            <statement>
+                <p>
+                    Soit <m>M=(m_{ij})\in \mathrm{Mat}_n(\mathbb{R})</m> une matrice ayant la propriété que ses coefficients extra-diagonaux sont <m>&lt; 0</m> et que la somme des coefficients de chaqune de ses colonnes est <m>&gt; 0</m>. Alors <m>M</m> est inversible. 
+                </p>
+            </statement>
+        </lemma>
+        <proof>
+            <p>
+               Considérons une relations de dépendance linéaire entre les lignes de <m>M</m> et montrons que cette relation est nulle. Soit <m>(x_1,\ldots,x_n)</m> une famille de nombres réels tels que, pour tout <m>j\in \{1,\ldots,n\}</m>, on ait
+            </p>
+            <md>
+                \sum_{i=1}^n{x_i m_{ij}}=0.
+            </md>
+            <p>
+                Soit <m>j</m> tel que <m>x_j=\max\{x_1,\ldots,x_n\}</m>. Alors cette relation pour la <m>j</m>ème colone donne :
+            </p>
+            <md>
+                0=\sum_{i=1}^n{x_i m_{ij}}=\sum_{i=1}^n{(x_i-x_j)m_{ij}}+x_j\sum_{i=1}^n{m_{ij}}\geq x_j\sum_{i=1}^n{m_{ij}}
+            </md>
+            <p>
+                puisque <m>(x_i-x_j)m_{ij}</m> est positif ou nul par hypothèse. Comme <m>\sum_{i=1}^n{m_{ij}}>0</m>, on trouve <m>x_j\leq 0</m>. En conséquence, tous les <m>x_i</m> sont négatifs ou nuls. Le même argument appliqué à leur opposé montre que <m>x_1=\cdots=x_n=0</m>. 
+            </p>
+        </proof>
+    </proof>
+
+
+  </section>
+
+
+</chapter>

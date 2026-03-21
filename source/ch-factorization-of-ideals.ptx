@@ -347,5 +347,133 @@
 
 </section>
 
+<section>
+    <title>Application à la résolution d'équations diophantiennes</title>
+
+<p>
+    Dans cette section, on explique comment la propriété de factorisation des idéaux et la connaissance de <m>\mathrm{Cl}(\mathcal{O}_K)</m> permet la résolution de certaines équations diophantiennes sur <m>\mathbb{Z}</m>.  
+</p>
+<p>
+    Soit <m>k\in \mathbb{Z}</m>. Nous allons étudier les solutions de l'équation suivante, étudiée par Mordell et Fermat :
+</p>
+<men xml:id="eq-mordell">
+    y^2=x^3+k
+</men>
+<p>
+    Mordell a démontré que, si <m>k\neq 0</m>, cette équation n'admet qu'un nombre fini de solutions. Nous allons le vérifier sous certaines hypothèses sur <m>k</m> :
+</p>
+<ul>
+    <li>
+        <p>
+            <m>k &lt; 0</m> et est sans facteur carré,
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>k</m> est congru à <m>2</m> ou <m>3</m> modulo <m>4</m>, 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>|\mathrm{Cl}(\mathcal{O}_{\mathbb{Q}(\sqrt{k})})|</m> n'est pas multiple de <m>3</m>.
+        </p>
+    </li>
+</ul>
+<p>
+    Les quelques premières valeurs de <m>k</m> acceptables sont alors
+</p>
+<md>
+    k\in \{-1,-2,-5,-6,-10,-13,-14,-17,-21,-22,-30,-33,-34,-37,-41,-42,-45,-46,-49,\ldots\}.
+</md>
+
+<theorem xml:id="thm-mordell">
+    <statement>
+        <p>
+            Sous les hypothèses précédentes, l'équation <m>y^2=x^3+k</m> n'admet qu'un nombre fini de solutions entières.
+        </p>
+    </statement>
+</theorem>
+
+<p>
+    Pour démontrer le théorème, on travail avec le corps <m>K=\mathbb{Q}(\sqrt{k})</m> dont l'anneau des entiers est <m>\mathcal{O}_K=\mathbb{Z}[\sqrt{k}]</m>, d'après notre hypothèse <m>k\not\equiv 1\pmod{4}</m> (<em>cf.</em> <xref ref="cor-entiers-quadratiques-base"/>). 
+</p>
+<p>
+    Soit <m>(x,y)\in \mathbb{Z}^2</m> une solution entière de <xref ref="eq-mordell"/>. Comme première observation, on remarque que, puisque <m>k</m> est supposé sans facteur carré, <m>x,y</m> et <m>k</m> sont premiers entre eux. Dans <m>\mathcal{O}_K</m>, on a de plus
+</p>
+<men xml:id="eq-factorisee">
+    (y+\sqrt{k})(y-\sqrt{k})=x^3.
+</men>
+<p>
+    Cette forme factorisée est la première étape de notre argument.
+</p>
+<fact xml:id="fact-coprime">
+    <statement>
+        <p>
+            Les éléments <m>y+\sqrt{k}</m> et <m>y-\sqrt{k}</m> sont premiers entre eux dans <m>\mathcal{O}_K</m>.
+        </p>
+    </statement>
+</fact>
+<proof>
+    <p>
+        Soient <m>I</m> et <m>I'</m> les idéaux engendrés par <m>y+\sqrt{k}</m> et <m>y-\sqrt{k}</m> respectivement, et soit <m>D:=I+I'</m> l'idéal pgcd. Il nous faut montrer qu'il existe une relation de Bezout entre <m>y+\sqrt{k}</m> et <m>y-\sqrt{k}</m>, à savoir <m>D=\mathcal{O}_K</m>. <m>D</m> contient en particulier
+    </p>
+    <md>
+        2y=(y+\sqrt{k})+(y-\sqrt{k}), \quad \text{et} \quad 2k=\sqrt{k}\cdot((y+\sqrt{k})-(y-\sqrt{k}))
+    </md>
+    <p>
+        et, comme <m>y</m> et <m>k</m> sont premiers entre eux, <m>D</m> contient <m>2</m>.
+    </p>
+    <p>
+        D'après la <xref ref="prop-proprietes-I"/>, <m>D</m> est de la forme <m>I_2(Q)</m> où <m>Q(X)</m> est un diviseur de <m>X^2-k\in \mathbb{F}_2[X]</m>. Comme <m>k^2=k</m> dans <m>\mathbb{F}_2</m>, ce polynôme se factorise comme <m>(X-k)^2</m>. En conséquence, <m>D</m> est l'un des idéaux <m>\mathcal{O}_K</m> (pour <m>Q=1</m>), l'idéal premier <m>I_2(X-k)</m> ou l'idéal principal <m>(2)</m> (pour <m>Q(X)=X^2-k</m>). 
+    </p>
+    <p>
+        Le dernier cas est à exclure car <m>y+ \sqrt{k}\notin (2)</m> (les éléments de <m>\mathcal{O}_K=\mathbb{Z}[\sqrt{k}]</m> qui sont multiples de <m>2</m> ont des coordonnées dans la base <m>(1,\sqrt{k})</m> paires !). Par l'absurde, supposons alors que <m>D</m> est l'idéal premier <m>P:=I_2(X-k)</m>. 
+    </p>
+    <p>
+        Comme <m>P^2=(2)</m> (par exemple, d'après le <xref ref="thm-factorisation-de-p"/>) et <m>y\pm \sqrt{k}\notin (2)</m>, on a<fn>D'après le <xref ref="thm-factorisation"/>, étant donné <m>I</m> un idéal non nul et <m>P</m> un idéal premier non nul on peut parler de la <em>valuation <m>P</m>-adique de <m>I</m></em> comme l'exposant de <m>P</m> dans la factorisation de <m>I</m> en idéaux premiers.</fn> <m>v_P(I)=v_P(I')=1</m>. On trouve alors
+    </p>
+    <md>
+        2=v_P(II')=v_P((x^3))=3v_P((x))
+    </md>
+    <p>
+        ce qui est absurde. Donc <m>D=\mathcal{O}_K</m>. 
+    </p>
+</proof>
+
+<p>
+    Si <m>\mathbb{Z}[\sqrt{k}]</m> était factoriel, on pourrait en conclure de <xref ref="eq-factorisee"/> que <m>y+\sqrt{k}</m> est un cube. Ce n'est pas toujours le cas, mais on peut contourner le défaut de factorialité en utilisant la propriété de Dedekind.    
+</p>
+<p>
+    Soient <m>I</m> et <m>I'</m> les idéaux engendrés par <m>y+\sqrt{k}</m> et <m>y-\sqrt{k}</m> respectivement. Comme <m>II'</m> est le cube d'un idéal et que <m>I</m> et <m>I'</m> sont premiers entre eux, <m>I</m> est lui-même le cube d'un idéal, mettons <m>J</m>. Mais comme <m>I</m> est principal et que <m>3</m> est premier à <m>|\mathrm{Cl}(\mathcal{O}_K)|</m>, la classe de <m>J</m> est triviale dans <m>\mathrm{Cl}(\mathcal{O}_K)</m> et donc <m>J</m> est aussi principal. 
+</p>
+<p>
+    On en déduit que <m>y+\sqrt{k}</m> est, à une unité de <m>\mathcal{O}_K</m> près, le cube d'un élément de <m>\mathcal{O}_K</m>. Mais comme tout unité de <m>\mathcal{O}_K</m> est un cube (ici <m>k\neq 3</m>), on peut retirer la mention <em>à une unité de <m>\mathcal{O}_K</m> près</em>.
+</p>
+<p>
+    Soient donc <m>a,b\in \mathbb{Z}</m> tels que <m>y+\sqrt{k}=(a+b\sqrt{k})^3</m>. On développe :
+</p>
+<md>
+    y+\sqrt{k}=(a+b\sqrt{k})^3=(a^3+3kab^2)+(3a^2 b+kb^3)\sqrt{k}.
+</md>
+<p>
+    En comparant les secondes coordonnées dans la base <m>(1,\sqrt{k})</m>, on trouve <m>1=b(3a^2+kb^2)</m> puis <m>b=\pm 1</m> et <m>-k=3a^2-b</m>.
+</p>
+<p>
+    Il n'y a donc pas de solutions si <m>-k</m> n'est pas de la forme <m>3a^2\pm 1</m>. S'il est de cette forme, alors <m>b=\pm 1</m> et il existe deux tels <m>a</m> vérifiant cette relation. On trouve alors <m>y=\pm (a^3 + 3ka)</m>, puis on en déduit les deux seules solutions à l'équation de Mordell :
+</p>
+<md>
+    (x,y) = (a^2-k,\pm (a^3 + 3ka)).
+</md>
+
+</section>
+
+<section xml:id="sec-equation-de-Pell">
+    <title>Équation de Pell</title>
+    
+
+
+    
+</section>
+
 
 </chapter>
