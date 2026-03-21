@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-FR" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Théorème des unités</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Théorie algébrique des nombres">
+<meta property="book:author" content="Quentin Gazda">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.19';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Sauter au contenu</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Théorie algébrique des nombres</span> <span class="subtitle">UM4MA234 - Sorbonne Université</span></a></h1>
+<p class="byline">Quentin Gazda</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Table des matières"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Table des matières</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Résultats de la recherche: </h2>
+<div id="searchempty" class="searchempty"><span>Aucun résultat.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-regulator.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="up-button button" href="ch-regulator.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Avant-propos</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="front-preface.html" class="internal"><span class="title">Préface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-algebraic-numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Nombres algébriques et entiers algébriques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nombres algébriques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynome-minimal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Polynôme minimal d’un nombre algébrique</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Théorème de Cantor</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Nombres algébriques de degré deux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-number-fields.html" class="internal"><span class="codenumber">2</span> <span class="title">Corps de nombres</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-number-fields-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Structure des corps de nombres</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-normes-traces.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Traces et Normes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminants.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Discriminants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integer-rings.html" class="internal"><span class="codenumber">3</span> <span class="title">Anneaux d’entiers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-OK.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Structure de <span class="process-math">\(\mathcal{O}_K\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminant-de-K.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Discriminant de <span class="process-math">\(K\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-norme-ideaux.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Norme d’un idéal</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-groupe-des-classes.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Groupe des classes d’idéaux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-factorization-of-ideals.html" class="internal"><span class="codenumber">4</span> <span class="title">Factorisation des idéaux</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Dedekind.html" class="internal"><span class="codenumber">4.1</span> <span class="title"><span class="process-math">\(\mathcal{O}_K\)</span> est de Dedekind</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Dedekind.html#subsec-produits-dideaux-premiers" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Produits d’idéaux premier</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Dedekind.html#subsec-factoriser-un-nombre-premier" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Factoriser un nombre premier</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-application-a-la-determination-de-ClOK.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Application à la détermination de <span class="process-math">\(\mathrm{Cl}(\mathcal{O}_K)\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-factorization-of-ideals-4.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Application à la résolution d’équations diophantiennes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-equation-de-Pell.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Équation de Pell</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-regulator.html" class="internal"><span class="codenumber">5</span> <span class="title">Régulateur de Dirichlet</span></a></div>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-theoreme-des-unites.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Théorème des unités</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="app-irreducibilite-polynome.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Démontrer l’irréductibilité d’un polynôme</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rappels-sur-les-anneaux.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Rappels sur les anneaux</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-reseaux.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Théorie des réseaux</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-structure-des-reseaux" class="internal"><span class="codenumber">A.3.1</span> <span class="title">Structure des réseaux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-minkowski" class="internal"><span class="codenumber">A.3.2</span> <span class="title">Lemme du corps convexe</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-applications" class="internal"><span class="codenumber">A.3.3</span> <span class="title">Applications en théorie des nombres</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="references.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-theoreme-des-unites"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Théorème des unités</span>
+</h2>
+<div class="para" id="sec-theoreme-des-unites-2">Les <em class="emphasis">unités</em> d’un corps de nombres <span class="process-math">\(K\)</span> sont les éléments du groupe abélien <span class="process-math">\(\mathcal{O}_K^{\times}\text{.}\)</span> On l’appelle <em class="emphasis">groupe des unités de <span class="process-math">\(K\)</span></em>. L’enjeu de cette section est de déterminer sa structure : nous allons voir que<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-norme-ideal-element.html ./knowl/xref/eq-structure-unite.html ./knowl/xref/prop-base-reseau.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/lem-corps-convexe.html ./knowl/xref/prop-construction-dunites.html" id="eq-structure-unite">
+\begin{equation}
+\mathcal{O}_K\cong \mu(K)\times \mathbb{Z}^{r_1+r_2-1}\tag{5.1.1}
+\end{equation}
+</div>
+<div class="para" id="sec-theoreme-des-unites-4">où <span class="process-math">\(\mu(K)\)</span> désigne le groupe fini des racines de l’unité dans <span class="process-math">\(K\text{.}\)</span> Cet énoncé découle du <em class="emphasis">théorème des unités de Dirichlet</em> que nous démontrons ici.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-5">Soit <span class="process-math">\(\Sigma_1\)</span> l’ensemble des plongements réels et <span class="process-math">\(\Sigma_2\)</span> un ensemble de représentant de plongements complexes à conjugaison près. On consière le morphisme de groupes<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-norme-ideal-element.html ./knowl/xref/eq-structure-unite.html ./knowl/xref/prop-base-reseau.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/lem-corps-convexe.html ./knowl/xref/prop-construction-dunites.html" id="sec-theoreme-des-unites-6">
+\begin{align*}
+\ell:~ K^{\times} \amp \longrightarrow \mathbb{R}^{r_1+r_2} \\
+x \amp \longmapsto ((\log|\sigma(x)|)_{\sigma\in \Sigma_1}, (\log|\sigma(x)|^2)_{\sigma\in \Sigma_2}) 
+\end{align*}
+</div>
+<article class="theorem theorem-like" id="thm-unite-dirichlet"><h3 class="heading">
+<span class="type">Théorème</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">des unités.</span>
+</h3>
+<div class="para" id="thm-unite-dirichlet-2-1">L’image <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\)</span> est un réseau de l’hyperlan <span class="process-math">\(H\subset \mathbb{R}^{r_1+r_2}\)</span> d’équation<div class="autopermalink" data-description="Paragraphe"><a href="#thm-unite-dirichlet-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-unite-dirichlet-2-2">
+\begin{equation*}
+x_1+\ldots+x_{r_1+r_2}=0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Théorème 5.1.1: des unités"><a href="#thm-unite-dirichlet" title="Permalien Théorème 5.1.1: des unités" aria-label="Permalien Théorème 5.1.1: des unités">🔗</a></div></article><div class="para" id="sec-theoreme-des-unites-8">Justifions d’ores et déjà pourquoi l’image de <span class="process-math">\(\mathcal{O}_K^{\times}\)</span> par <span class="process-math">\(\ell\)</span> tombe dans l’hyperplan <span class="process-math">\(H\text{.}\)</span> Cela se déduit de la proposition suivante.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-8" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-norme-unite"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="displaymath process-math" id="prop-norme-unite-1-1">
+\begin{equation*}
+\mathcal{O}_K^{\times}=\{x\in K~|~|N_K(x)|=1\}. 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proposition 5.1.2"><a href="#prop-norme-unite" title="Permalien Proposition 5.1.2" aria-label="Permalien Proposition 5.1.2">🔗</a></div></article><details id="sec-theoreme-des-unites-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-theoreme-des-unites-10-1">
+<span class="process-math">\(x\in K\)</span> est une unité si, et seulement si l’idéal qu’il engendre <span class="process-math">\((x)\)</span> est égal à <span class="process-math">\(\mathcal{O}_K\)</span> si, et seulement si <span class="process-math">\(N((x))=1\text{.}\)</span> Or, d’après la <a href="sec-norme-ideaux.html#prop-norme-ideal-element" class="xref" data-knowl="./knowl/xref/prop-norme-ideal-element.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 3.3.2">Proposition 3.3.2</a>, <span class="process-math">\(N((x))=|N_K(x)|\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-10-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.1.1"><a href="#sec-theoreme-des-unites-10" title="Permalien Démonstration 5.1.1" aria-label="Permalien Démonstration 5.1.1">🔗</a></div></article></details><div class="para" id="sec-theoreme-des-unites-11">Comme <span class="process-math">\(|N_K(x)|=\prod_{\sigma\in \Sigma_1}{|\sigma(x)|}\prod_{\sigma\in \Sigma_2}{|\sigma(x)|^2}\text{,}\)</span> on trouve bien que <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\subset H\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-11" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-12">Vérifions maintenant que le théorème des unités de Dirichlet implique la décomposition <a href="sec-theoreme-des-unites.html#eq-structure-unite" class="xref" data-knowl="./knowl/xref/eq-structure-unite.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 5.1.1">(5.1.1)</a>. Par la <a href="sec-reseaux.html#prop-base-reseau" class="xref" data-knowl="./knowl/xref/prop-base-reseau.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition A.3.3: Base d’un réseau">Proposition A.3.3</a>, <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\)</span> admet une <span class="process-math">\(\mathbb{Z}\)</span>-base à <span class="process-math">\(m:=r_1+r_2-1\)</span> éléments : soient donc <span class="process-math">\(\varepsilon_1,\ldots,\varepsilon_{m}\)</span> des éléments de <span class="process-math">\(\mathcal{O}_K^{\times}\)</span> tels que <span class="process-math">\((\ell(\varepsilon_1),\ldots,\ell(\varepsilon_m))\)</span> soit une <span class="process-math">\(\mathbb{Z}\)</span>-base de <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\text{.}\)</span> On considère le morphisme<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-12" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-norme-ideal-element.html ./knowl/xref/eq-structure-unite.html ./knowl/xref/prop-base-reseau.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/lem-corps-convexe.html ./knowl/xref/prop-construction-dunites.html" id="sec-theoreme-des-unites-13">
+\begin{align*}
+f:~\mu(K)\times \mathbb{Z}^{m} \amp \longrightarrow \mathcal{O}_K^{\times}\\
+(\zeta,n_1,\ldots,n_m) \amp \longmapsto \zeta \varepsilon_1^{n_1}\cdots \varepsilon_m^{n_m}
+\end{align*}
+</div>
+<div class="para" id="sec-theoreme-des-unites-14">On prétend que <span class="process-math">\(f\)</span> est bijective. D’abord, <span class="process-math">\(f\)</span> est <em class="emphasis">injective</em> : si <span class="process-math">\((\zeta,n_1,\ldots,n_m)\)</span> est dans son noyau, alors <span class="process-math">\(\varepsilon_1^{n_1}\cdots \varepsilon_m^{n_m}\)</span> est une racine de l’unité, et donc son image par <span class="process-math">\(\ell\)</span> est nulle. Comme son image est<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-14" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-norme-ideal-element.html ./knowl/xref/eq-structure-unite.html ./knowl/xref/prop-base-reseau.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/lem-corps-convexe.html ./knowl/xref/prop-construction-dunites.html" id="sec-theoreme-des-unites-15">
+\begin{equation*}
+n_1\ell(\varepsilon_1)+\ldots+n_m\ell(\varepsilon_m)=0
+\end{equation*}
+</div>
+<div class="para" id="sec-theoreme-des-unites-16">et que les <span class="process-math">\(\ell(\varepsilon_i)\)</span> sont linéairement indépendants, on trouve <span class="process-math">\(n_1=\cdots=n_m=0\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-16" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-17">Puis, on montre que <span class="process-math">\(f\)</span> est <em class="emphasis">surjective</em> : si <span class="process-math">\(u\in \mathcal{O}_K^{\times}\text{,}\)</span> on peut trouver <span class="process-math">\((n_1,\ldots,n_m)\in \mathbb{Z}^m\)</span> tel que <span class="process-math">\(\ell(u)=n_1\ell(\varepsilon_1)+\ldots+n_m\ell(\varepsilon_m)\text{.}\)</span> En particulier, <span class="process-math">\(\varepsilon_1^{n_1}\cdots \varepsilon_m^{n_m}u^{-1}\in \mathcal{O}_K^{\times}\)</span> appartient à <span class="process-math">\(\ker(\ell)\cap \mathcal{O}_K^{\times}\text{.}\)</span> On conclut alors avec le lemme qui suit :<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-17" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-ker-ell"><h3 class="heading">
+<span class="type">Lemme</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-ker-ell-1-1">L’inclusion <span class="process-math">\(\mu(K)\subset \ker(\ell)\cap \mathcal{O}_K^{\times}\)</span> est une égalité.<div class="autopermalink" data-description="Paragraphe"><a href="#lem-ker-ell-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemme 5.1.3"><a href="#lem-ker-ell" title="Permalien Lemme 5.1.3" aria-label="Permalien Lemme 5.1.3">🔗</a></div></article><details id="sec-theoreme-des-unites-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-theoreme-des-unites-19-1">Les éléments de <span class="process-math">\(\ker(\ell)\cap \mathcal{O}_K^{\times}\)</span> sont de taille <span class="process-math">\(1\)</span> (<em class="emphasis">cf.</em> <a href="ch-algebraic-numbers-5.html#def-taille" class="xref" data-knowl="./knowl/xref/def-taille.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Définition 1.3.1: Taille d’un nombre algébrique">Définition 1.3.1</a>). D’après la <a href="ch-algebraic-numbers-5.html#prop-taille-compte" class="xref" data-knowl="./knowl/xref/prop-taille-compte.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 1.3.2">Proposition 1.3.2</a>, l’ensemble <span class="process-math">\(\ker(\ell)\cap \mathcal{O}_K^{\times}\)</span> est fini, c’est donc un groupe fini. Tout élément admet un ordre et donc est une racine de l’unité dans <span class="process-math">\(K\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-19-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.1.2"><a href="#sec-theoreme-des-unites-19" title="Permalien Démonstration 5.1.2" aria-label="Permalien Démonstration 5.1.2">🔗</a></div></article></details><div class="para" id="sec-theoreme-des-unites-20">Nous sommes à présent en position de démontrer le <a href="sec-theoreme-des-unites.html#thm-unite-dirichlet" class="xref" data-knowl="./knowl/xref/thm-unite-dirichlet.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Théorème 5.1.1: des unités">Théorème 5.1.1</a>.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-20" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<details id="sec-theoreme-des-unites-21" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Preuve du Théorème 5.1.1.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-theoreme-des-unites-21-2">Démontrons d’abord que <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\)</span> est un sous-groupe discret de <span class="process-math">\(\mathbb{R}^{r_1+r_2}\)</span> (et donc de <span class="process-math">\(H\)</span>). Pour cela, il suffit de vérifier qu’étant donné <span class="process-math">\(r&gt;0\text{,}\)</span> il n’y a qu’un nombre fini d’unités <span class="process-math">\(u\)</span> telles que <span class="process-math">\(\log|\sigma(u)|\leq r\)</span> pour tout <span class="process-math">\(\sigma\in \Sigma(K)\text{.}\)</span> Mais une telle unité est de taille <span class="process-math">\(\leq e^r\)</span> (<em class="emphasis">cf.</em> <a href="ch-algebraic-numbers-5.html#def-taille" class="xref" data-knowl="./knowl/xref/def-taille.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Définition 1.3.1: Taille d’un nombre algébrique">Définition 1.3.1</a>), et il n’y a qu’un nombre fini d’éléments de <span class="process-math">\(\mathcal{O}_K\)</span> de taille bornée (<em class="emphasis">cf.</em> <a href="ch-algebraic-numbers-5.html#prop-taille-compte" class="xref" data-knowl="./knowl/xref/prop-taille-compte.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 1.3.2">Proposition 1.3.2</a>). Cela montre que <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\)</span> est discret.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-3">L’enjeu de la preuve repose alors sur l’existence d’une base de <span class="process-math">\(H\)</span> contenue dans <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\text{,}\)</span> ce qui nécessite de construire des unités multiplicativement indépendantes. Pour cela, on va encore une fois faire appel au lemme du corps convexe de Minkowski.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-construction-dunites"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-construction-dunites-1-1">Soit <span class="process-math">\(\tau\in \Sigma_1\sqcup \Sigma_2\text{.}\)</span> On peut trouver <span class="process-math">\(u_{\tau}\in \mathcal{O}_K^{\times}\)</span> telle que <span class="process-math">\(\log|\sigma(u_{\tau})|&lt; 0\)</span> pour tout plongement <span class="process-math">\(\sigma\neq \tau\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop-construction-dunites-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 5.1.4"><a href="#prop-construction-dunites" title="Permalien Proposition 5.1.4" aria-label="Permalien Proposition 5.1.4">🔗</a></div></article><details id="sec-theoreme-des-unites-21-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-theoreme-des-unites-21-5-1">Soit <span class="process-math">\(T:=2^{r_1+r_2}\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}\text{.}\)</span> Dans un premier temps, nous allons montrer qu’il existe une suite <span class="process-math">\((a_n)_{n\geq 0}\)</span> d’éléments de <span class="process-math">\(\mathcal{O}_K\setminus\{0\}\)</span> de norme <span class="process-math">\(\leq T\)</span> et telle que <span class="process-math">\(|\tau(a_n)|\to 0\)</span> (quand <span class="process-math">\(n\to \infty\)</span>) pour tout <span class="process-math">\(\sigma\neq \tau\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-5-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-5-2">Pour ce faire, soit <span class="process-math">\(t&gt;0\)</span> un nombre réel positif et soit <span class="process-math">\(C_t\subset \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}\)</span> le corps convexe symétrique et compact formé des <span class="process-math">\((x_{\sigma})_{\sigma \in \Sigma_1\sqcup \Sigma_2}\in \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}\text{,}\)</span> avec <span class="process-math">\(x_\sigma\in \mathbb{R},\mathbb{C}\)</span> en fonction de si <span class="process-math">\(\sigma\)</span> est réel ou complexe, tels que <span class="process-math">\(|x_\sigma|\leq t/2,\sqrt{t/\pi}\)</span> pour <span class="process-math">\(\sigma\neq \tau\)</span> réel ou complexe, et <span class="process-math">\(|x_{\tau}|\leq T/2t^{r_1+r_2-1}, \sqrt{T/\pi t^{r_1+r_2-1}}\)</span> en fonction de si <span class="process-math">\(\tau\)</span> est réel ou complexe.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-5-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-5-3">Le nombre réel <span class="process-math">\(T\)</span> fut choisi de sorte que le volume<details class="ptx-footnote" aria-live="polite" id="sec-theoreme-des-unites-21-5-3-2"><summary class="ptx-footnote__number" title="Note 5.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec-theoreme-des-unites-21-5-3-2">Dans le calcul du volume de <span class="process-math">\(C_t\text{,}\)</span> les places réels <span class="process-math">\(\neq \tau\)</span> contribuent à un facteur <span class="process-math">\(2(t/2)=t\)</span> et celles complexes <span class="process-math">\(\neq \tau\)</span> à un facteur <span class="process-math">\(\pi \sqrt{t/\pi}^2=t\text{.}\)</span> On trouve alors <span class="process-math">\(\lambda(C_t)=t^{r_1+r_2-1}\cdot T/t^{r_1+r_2-1}=T\text{.}\)</span>
+</div></details> de <span class="process-math">\(C_t\)</span> soit exactement <span class="process-math">\(T=2^n\mathrm{covol}(\sigma(\mathcal{O}_K))\text{.}\)</span> Par Minkowski (<em class="emphasis">cf.</em> <a href="sec-reseaux.html#lem-corps-convexe" class="xref" data-knowl="./knowl/xref/lem-corps-convexe.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Lemme A.3.11: Lemme du corps convexe">Lemme A.3.11</a>) il existe un élément non nul de <span class="process-math">\(C_t\cap \sigma(\mathcal{O}_K)\text{.}\)</span> On trouve donc <span class="process-math">\(a\in \mathcal{O}_K\setminus \{0\}\)</span> tel que <span class="process-math">\(|\sigma(a)| &lt; t\)</span> pour tout <span class="process-math">\(\sigma\neq \tau\)</span> et tel que <span class="process-math">\(|N_K(a)|\leq T\text{.}\)</span> En faisant tendre <span class="process-math">\(t\to 0\text{,}\)</span> on construit une suite d’éléments <span class="process-math">\((a_n)_{n\geq 0}\)</span> ayant la propriété recherchée.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-5-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-5-4">On peut ensuite extraire une sous-suite de <span class="process-math">\((a_n)_{n\geq 0}\)</span> d’éléments de même norme <span class="process-math">\(N\text{.}\)</span> Comme <span class="process-math">\(\mathcal{O}_K/N\mathcal{O}_K\)</span> est fini, on peut extraire à nouveau une sous-suite de d’éléments de même norme <span class="process-math">\(N\)</span> et deux-à-deux congrus modulo <span class="process-math">\(N\text{;}\)</span> on la note <span class="process-math">\((a_{n_m})_{m\geq 0}\text{.}\)</span> On invoque ensuite un lemme qui permet de construire des unités à partir de telles sous-suites :<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-5-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-construction-unite"><h3 class="heading">
+<span class="type">Lemme</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-construction-unite-1-1">Soient <span class="process-math">\(a,b\in \mathcal{O}_K\)</span> tels que <span class="process-math">\(N_K(a)=N_K(b)=N\)</span> et <span class="process-math">\(a-b\in N\mathcal{O}_K\text{.}\)</span> Alors <span class="process-math">\(a/b\in \mathcal{O}_K^{\times}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#lem-construction-unite-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemme 5.1.5"><a href="#lem-construction-unite" title="Permalien Lemme 5.1.5" aria-label="Permalien Lemme 5.1.5">🔗</a></div></article><details id="sec-theoreme-des-unites-21-5-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-theoreme-des-unites-21-5-6-1">Posons <span class="process-math">\(u:=a/b\text{.}\)</span> Soit <span class="process-math">\(c\in \mathcal{O}_K\)</span> tel que <span class="process-math">\(a=b+Nc\text{.}\)</span> Comme <span class="process-math">\(N_K(b)=N\text{,}\)</span> on peut trouver <span class="process-math">\(b'\in \mathcal{O}_K\)</span> tel que <span class="process-math">\(N=bb'\text{.}\)</span> Alors <span class="process-math">\(a=b+bb'c=b(1+b'c)\)</span> et, en particulier, <span class="process-math">\(u=1+b'c\text{.}\)</span> On en déduit que <span class="process-math">\(u\in \mathcal{O}_K\text{.}\)</span> Le même argument en inversant les rôles de <span class="process-math">\(a,b\)</span> montre que <span class="process-math">\(b/a\in \mathcal{O}_K\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-5-6-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.1.3.1.1"><a href="#sec-theoreme-des-unites-21-5-6" title="Permalien Démonstration 5.1.3.1.1" aria-label="Permalien Démonstration 5.1.3.1.1">🔗</a></div></article></details><div class="para" id="sec-theoreme-des-unites-21-5-7">Pour <span class="process-math">\(m\geq 0\text{,}\)</span> on pose alors <span class="process-math">\(u_m:=a_{n_m}/a_{n_0}\)</span> qui est une unité de <span class="process-math">\(\mathcal{O}_K\)</span> d’après le lemme précédent. On a de plus <span class="process-math">\(|\sigma(u_m)|\to 0\)</span> pour tout plongement <span class="process-math">\(\sigma\neq \tau\text{,}\)</span> lorsque <span class="process-math">\(m\to \infty\text{.}\)</span> En particulier, on peut trouver une unité <span class="process-math">\(u_{\tau}\)</span> telle que <span class="process-math">\(|\sigma(u_{\tau})| &lt; 1\)</span> pour tout <span class="process-math">\(\sigma\neq \tau\text{,}\)</span> comme annoncé (prendre pour <span class="process-math">\(u_{\tau}\)</span> un élément <span class="process-math">\(u_m\)</span> de la suite pour <span class="process-math">\(m\)</span> assez grand).<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-5-7" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.1.3.1"><a href="#sec-theoreme-des-unites-21-5" title="Permalien Démonstration 5.1.3.1" aria-label="Permalien Démonstration 5.1.3.1">🔗</a></div></article></details><div class="para" id="sec-theoreme-des-unites-21-6">Notons que nous avons nécessairement <span class="process-math">\(\log |\sigma(u_{\sigma})| &gt; 0\)</span> car <span class="process-math">\(|N_K(u_{\sigma})|=1\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-6" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-7">Pour conclure la démonstration du théorème des unités, il suffit de montrer que l’image par <span class="process-math">\(\ell\)</span> de <span class="process-math">\(r_1+r_2-1\)</span> unités choisies parmi les <span class="process-math">\(r_1+r_2\)</span> construites dans la <a href="sec-theoreme-des-unites.html#prop-construction-dunites" class="xref" data-knowl="./knowl/xref/prop-construction-dunites.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 5.1.4">Proposition 5.1.4</a> (donc toutes, sauf une) sont linéairement indépendantes dans <span class="process-math">\(H\text{.}\)</span> Pour ce faire, on considère la base <span class="process-math">\((b_1,\ldots,b_{r_1+r_2-1})\)</span> de <span class="process-math">\(H\subset \mathbb{R}^{r_1+r_2}\)</span> avec <span class="process-math">\(b_i:=e_i-e_{r_1+r_2}\)</span> (où la famille <span class="process-math">\((e_1,\ldots,e_{r_1+r_2})\)</span> désigne la base canonique de <span class="process-math">\(\mathbb{R}^{r_1+r_2}\)</span>). Dans cette base, <span class="process-math">\(\log(u_{\sigma})\)</span> s’écrit<details class="ptx-footnote" aria-live="polite" id="sec-theoreme-des-unites-21-7-12"><summary class="ptx-footnote__number" title="Note 5.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="sec-theoreme-des-unites-21-7-12">En effet, on a<div class="displaymath process-math" id="sec-theoreme-des-unites-21-7-12-1">
+\begin{align*}
+\ell(u_{\sigma})\amp = \sum_{i=1}^{r_1+r_2}{\log|\sigma_i(u_{\sigma})|^{*_i}e_i}\\
+\amp =\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}\cdot e_i}-\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}\cdot e_{r_1+r_2}}\\
+\amp =\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}}\cdot b_i
+\end{align*}
+</div>où <span class="process-math">\(*_i=1,2\)</span> en fonction de si <span class="process-math">\(\sigma_i\)</span> est réel ou complexe, et où l’on a utilisé que <span class="process-math">\(\log|\sigma_{r_1+r_2}(u_{\sigma})|=-\sum_{i=1}^{r_1+r_2-1}{\log|\sigma(u_{\sigma_i})|}\text{.}\)</span>
+</div></details><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-7" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-unite-dirichlet.html ./knowl/xref/def-taille.html ./knowl/xref/prop-taille-compte.html ./knowl/xref/lem-corps-convexe.html ./knowl/xref/prop-construction-dunites.html" id="sec-theoreme-des-unites-21-8">
+\begin{equation*}
+\ell(u_{\sigma})=\sum_{i=1}^{r_1}{\log |\sigma_i(u_{\sigma})|}\cdot b_i+\sum_{i=r_1+1}^{r_2-1}{\log |\sigma_i(u_{\sigma})|^{2}}\cdot b_i
+\end{equation*}
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-9">où l’on a numéroté <span class="process-math">\(\{\sigma_1,\ldots,\sigma_{r_1},\sigma_{r_1+1},\ldots,\sigma_{r_1+r_2}\}\)</span> les éléments de <span class="process-math">\(\Sigma_1\sqcup \Sigma_2\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-9" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-10">Soit <span class="process-math">\(m_{ij}:=\log |\sigma_i(u_{\sigma_j})|^{*_i}\)</span> avec <span class="process-math">\(*_i=1,2\)</span> en fonction de si <span class="process-math">\(\sigma_i\)</span> est réel ou complexe. D’après la formule précédente, la matrice <span class="process-math">\(M=(m_{ij})_{i,j}\in \mathrm{Mat}_{r_1+r_2-1}(\mathbb{R})\)</span> est celle des éléments <span class="process-math">\((\ell(u_{\sigma_i}))_{1\leq i\leq r_1+r_2-1}\)</span> écrits dans la base <span class="process-math">\((b_1,\ldots,b_{r_1+r_2-1})\)</span> de <span class="process-math">\(H\text{.}\)</span> La matrice <span class="process-math">\(M\)</span> vérifie donc les deux propriétés suivantes :<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-10" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<ul class="disc" id="sec-theoreme-des-unites-21-11">
+<li id="sec-theoreme-des-unites-21-11-1">
+<div class="para" id="sec-theoreme-des-unites-21-11-1-1">ses coefficients extra-diagonaux <span class="process-math">\(m_{ij}\)</span> (pour <span class="process-math">\(i\neq j\)</span>) sont strictement négatifs,<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-11-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#sec-theoreme-des-unites-21-11-1" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="sec-theoreme-des-unites-21-11-2">
+<div class="para" id="sec-theoreme-des-unites-21-11-2-1">la somme des coefficients de chacune de ses colonnes, à savoir <span class="process-math">\(\sum_{1\leq i &lt; r_1+r_2}^{r_1+r_2-1}{m_{ij}}=-m_{r_1+r_2,j} &gt; 0\)</span> pour tout <span class="process-math">\(j\in \{1,\ldots,r_1+r_2-1\}\text{,}\)</span> est strictement positive.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-11-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#sec-theoreme-des-unites-21-11-2" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="sec-theoreme-des-unites-21-12">En vertu du lemme qui suit, une telle matrice est nécessairement inversible, ce qui conclut que <span class="process-math">\((\ell(u_{\sigma_i}))_{1\leq i &lt; r_1+r_2}\)</span> est une base de <span class="process-math">\(H\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-12" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-critere-inversibilite-matrice"><h3 class="heading">
+<span class="type">Lemme</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-critere-inversibilite-matrice-1-1">Soit <span class="process-math">\(M=(m_{ij})\in \mathrm{Mat}_n(\mathbb{R})\)</span> une matrice ayant la propriété que ses coefficients extra-diagonaux sont <span class="process-math">\(&lt; 0\)</span> et que la somme des coefficients de chaqune de ses colonnes est <span class="process-math">\(&gt; 0\text{.}\)</span> Alors <span class="process-math">\(M\)</span> est inversible.<div class="autopermalink" data-description="Paragraphe"><a href="#lem-critere-inversibilite-matrice-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemme 5.1.6"><a href="#lem-critere-inversibilite-matrice" title="Permalien Lemme 5.1.6" aria-label="Permalien Lemme 5.1.6">🔗</a></div></article><details id="sec-theoreme-des-unites-21-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-theoreme-des-unites-21-14-1">Considérons une relations de dépendance linéaire entre les lignes de <span class="process-math">\(M\)</span> et montrons que cette relation est nulle. Soit <span class="process-math">\((x_1,\ldots,x_n)\)</span> une famille de nombres réels tels que, pour tout <span class="process-math">\(j\in \{1,\ldots,n\}\text{,}\)</span> on ait<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-14-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-theoreme-des-unites-21-14-2">
+\begin{equation*}
+\sum_{i=1}^n{x_i m_{ij}}=0.
+\end{equation*}
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-14-3">Soit <span class="process-math">\(j\)</span> tel que <span class="process-math">\(x_j=\max\{x_1,\ldots,x_n\}\text{.}\)</span> Alors cette relation pour la <span class="process-math">\(j\)</span>ème colone donne :<div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-14-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-theoreme-des-unites-21-14-4">
+\begin{equation*}
+0=\sum_{i=1}^n{x_i m_{ij}}=\sum_{i=1}^n{(x_i-x_j)m_{ij}}+x_j\sum_{i=1}^n{m_{ij}}\geq x_j\sum_{i=1}^n{m_{ij}}
+\end{equation*}
+</div>
+<div class="para" id="sec-theoreme-des-unites-21-14-5">puisque <span class="process-math">\((x_i-x_j)m_{ij}\)</span> est positif ou nul par hypothèse. Comme <span class="process-math">\(\sum_{i=1}^n{m_{ij}}&gt;0\text{,}\)</span> on trouve <span class="process-math">\(x_j\leq 0\text{.}\)</span> En conséquence, tous les <span class="process-math">\(x_i\)</span> sont négatifs ou nuls. Le même argument appliqué à leur opposé montre que <span class="process-math">\(x_1=\cdots=x_n=0\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-theoreme-des-unites-21-14-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.1.3.2"><a href="#sec-theoreme-des-unites-21-14" title="Permalien Démonstration 5.1.3.2" aria-label="Permalien Démonstration 5.1.3.2">🔗</a></div></article></details><div class="autopermalink" data-description="Démonstration 5.1.3: Preuve du Théorème 5.1.1"><a href="#sec-theoreme-des-unites-21" title="Permalien Démonstration 5.1.3: Preuve du Théorème 5.1.1" aria-label="Permalien Démonstration 5.1.3: Preuve du Théorème 5.1.1">🔗</a></div></article></details><div class="autopermalink" data-description="Section 5.1: Théorème des unités"><a href="#sec-theoreme-des-unites" title="Permalien Section 5.1: Théorème des unités" aria-label="Permalien Section 5.1: Théorème des unités">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-regulator.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

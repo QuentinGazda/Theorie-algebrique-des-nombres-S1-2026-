@@ -217,9 +217,9 @@ var ptx_lunr_docs = [
   "body": " Théorème de Cantor  Dans cette section, on démontre le théorème de Cantor qui stipule que l'ensemble des nombres algébriques est dénombrable. Pour ``compter'' les nombres algébriques, on utilise leur taille ; dans cette section, ce sera donc la taille qui compte.   Taille d'un nombre algébrique   Soit un nombre algébrique de degré et ses conjugués. On appelle dénominateur de et l'on note le plus petit entier tel que . On appelle taille de le nombre réel:     L'assertion suivante énonce qu'il n'y a qu'un nombre fini de nombres algébriques de degré et taille fixés.    Soit un nombre réel positif. L'ensemble des nombres algébriques de degré et de taille est fini.     Soit un nombre algébrique de degré et de taille . On note son dénominateur et ses conjugués. Alors . Le polynôme minimal de l'entier algébrique s'écrit dans :   En développant le terme de gauche, on trouve   puis, en utilisant l'inégalité triangulaire sur cette somme à parmi termes,   Comme , il n'y a qu'un nombre fini tels polynômes. On note l'ensemble fini des racines complexes polynômes unitaires dont les coefficients sont entiers et vérifient les inégalités . Comme pour un certain entier (prendre pour c le dénominateur de ), on trouve:   qui est un ensemble fini indépendant de .   Le Théorème de Cantor s'obtient comme un corollaire de la proposition précédente.   Théorème de Cantor   L'ensemble des nombres algébriques est dénombrable.     Comme une union dénombrable d'ensembles dénombrables est dénombrable, il suffit de montrer que l'ensemble des nombres algébriques de degré est dénombrable. Pour cela, on écrit:   Or chaque terme de l'union est un ensemble dénombrable : on peut l'écrire comme l'union d'ensembles finis d'après la Proposition ; s'écrit donc comme une union dénombrable d'ensembles dénombrables et est donc dénombrable.     Les nombres complexes qui n'appartiennent pas à sont dits transcendants . Puisque est indénombrable, le théorème de Georg Cantor permet de démontrer l'existence de nombres transcendants sans même en construire un seul !  Notez qu'il est réputé difficile de démontrer qu'un nombre donné est transcendant. C'est Joseph Liouville qui, vers 1844, construit le premier nombre transcendant connu :   Charles Hermite (1873) démontrera que le ``nombre d'Euler'' est transcendant, puis Ferdinand von Lindemann (1882) généralisera sa méthode pour démontrer la transcendance de .    "
 },
 {
-  "id": "ch-algebraic-numbers-5-3",
+  "id": "def-taille",
   "level": "2",
-  "url": "ch-algebraic-numbers-5.html#ch-algebraic-numbers-5-3",
+  "url": "ch-algebraic-numbers-5.html#def-taille",
   "type": "Définition",
   "number": "1.3.1",
   "title": "Taille d’un nombre algébrique.",
@@ -1250,6 +1250,114 @@ var ptx_lunr_docs = [
   "number": "4.2.1",
   "title": "Pour <span class=\"process-math\">\\(K=\\mathbb{Q}(\\sqrt{-47})\\text{,}\\)<\/span> <span class=\"process-math\">\\(\\mathrm{Cl}(\\mathcal{O}_K)\\cong \\mathbb{Z}\/5\\mathbb{Z}\\)<\/span>.",
   "body": " Pour ,  Comme est sans facteur carré et est , on a d'après le :   C'est bien un anneau d'entiers monogène, on peut donc appliquer la recette précédente pour déterminer son groupe des classes.     En première étape, on calcule les constantes de . On trouve alors , et , puis     Le groupe est donc engendré par les idéaux premiers de qui contiennent ou .  Soit de polynôme minimal .  Comme , les idéaux premiers de contenant sont   et ceux contenant sont   On notera leur classe , , et . On a donc trouvé un ensemble de générateurs du groupe , à savoir :     Reste à déterminer leurs relations. Comme et d'après le , on trouve   En particulier, est l'inverse de , et de même est l'inverse de . On a donc réduit l'ensemble de générateurs à .  Pour déterminer les relations entre et , on constate par exemple que . Comme et (mais , car sinon on aurait ce qui contredirait , et de même pour ), la factorisation de l'idéal en idéaux premiers est de la forme . En considérant les normes, on trouve et . D'où une nouvelle relation   On a alors réduit notre ensemble de générateur au singleton .  Il reste enfin à déterminer l'ordre de . Pour cela, on constate que . En général, se calcule par la forme quadratique   Comme est supporté en l'idéal premier (si , alors et donc ce qui est une contradiction !), en comparant les normes on trouve , soit   Ainsi l'ordre de vaut ou mais, comme n'est pas principal (sinon il y aurait un élément de norme , ce que l'on exclut), l'ordre de est .     Ainsi, la classe de engendre et l'on trouve :   "
+},
+{
+  "id": "ch-factorization-of-ideals-4",
+  "level": "1",
+  "url": "ch-factorization-of-ideals-4.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Application à la résolution d’équations diophantiennes",
+  "body": " Application à la résolution d'équations diophantiennes  Dans cette section, on explique comment la propriété de factorisation des idéaux et la connaissance de permet la résolution de certaines équations diophantiennes sur .  Soit . Nous allons étudier les solutions de l'équation suivante, étudiée par Mordell et Fermat :   Mordell a démontré que, si , cette équation n'admet qu'un nombre fini de solutions. Nous allons le vérifier sous certaines hypothèses sur :     et est sans facteur carré,     est congru à ou modulo ,     n'est pas multiple de .    Les quelques premières valeurs de acceptables sont alors     Sous les hypothèses précédentes, l'équation n'admet qu'un nombre fini de solutions entières.    Pour démontrer le théorème, on travail avec le corps dont l'anneau des entiers est , d'après notre hypothèse ( cf.  ).  Soit une solution entière de . Comme première observation, on remarque que, puisque est supposé sans facteur carré, et sont premiers entre eux. Dans , on a de plus   Cette forme factorisée est la première étape de notre argument.    Les éléments et sont premiers entre eux dans .     Soient et les idéaux engendrés par et respectivement, et soit l'idéal pgcd. Il nous faut montrer qu'il existe une relation de Bezout entre et , à savoir . contient en particulier   et, comme et sont premiers entre eux, contient .  D'après la , est de la forme où est un diviseur de . Comme dans , ce polynôme se factorise comme . En conséquence, est l'un des idéaux (pour ), l'idéal premier ou l'idéal principal (pour ).  Le dernier cas est à exclure car (les éléments de qui sont multiples de ont des coordonnées dans la base paires !). Par l'absurde, supposons alors que est l'idéal premier .  Comme (par exemple, d'après le ) et , on a D'après le , étant donné un idéal non nul et un idéal premier non nul on peut parler de la valuation -adique de comme l'exposant de dans la factorisation de en idéaux premiers.  . On trouve alors   ce qui est absurde. Donc .   Si était factoriel, on pourrait en conclure de que est un cube. Ce n'est pas toujours le cas, mais on peut contourner le défaut de factorialité en utilisant la propriété de Dedekind.  Soient et les idéaux engendrés par et respectivement. Comme est le cube d'un idéal et que et sont premiers entre eux, est lui-même le cube d'un idéal, mettons . Mais comme est principal et que est premier à , la classe de est triviale dans et donc est aussi principal.  On en déduit que est, à une unité de près, le cube d'un élément de . Mais comme tout unité de est un cube (ici ), on peut retirer la mention à une unité de près .  Soient donc tels que . On développe :   En comparant les secondes coordonnées dans la base , on trouve puis et .  Il n'y a donc pas de solutions si n'est pas de la forme . S'il est de cette forme, alors et il existe deux tels vérifiant cette relation. On trouve alors , puis on en déduit les deux seules solutions à l'équation de Mordell :   "
+},
+{
+  "id": "thm-mordell",
+  "level": "2",
+  "url": "ch-factorization-of-ideals-4.html#thm-mordell",
+  "type": "Théorème",
+  "number": "4.3.1",
+  "title": "",
+  "body": "  Sous les hypothèses précédentes, l'équation n'admet qu'un nombre fini de solutions entières.   "
+},
+{
+  "id": "fact-coprime",
+  "level": "2",
+  "url": "ch-factorization-of-ideals-4.html#fact-coprime",
+  "type": "Fait",
+  "number": "4.3.2",
+  "title": "",
+  "body": "  Les éléments et sont premiers entre eux dans .   "
+},
+{
+  "id": "ch-factorization-of-ideals-4-15",
+  "level": "2",
+  "url": "ch-factorization-of-ideals-4.html#ch-factorization-of-ideals-4-15",
+  "type": "Démonstration",
+  "number": "4.3.1",
+  "title": "",
+  "body": " Soient et les idéaux engendrés par et respectivement, et soit l'idéal pgcd. Il nous faut montrer qu'il existe une relation de Bezout entre et , à savoir . contient en particulier   et, comme et sont premiers entre eux, contient .  D'après la , est de la forme où est un diviseur de . Comme dans , ce polynôme se factorise comme . En conséquence, est l'un des idéaux (pour ), l'idéal premier ou l'idéal principal (pour ).  Le dernier cas est à exclure car (les éléments de qui sont multiples de ont des coordonnées dans la base paires !). Par l'absurde, supposons alors que est l'idéal premier .  Comme (par exemple, d'après le ) et , on a D'après le , étant donné un idéal non nul et un idéal premier non nul on peut parler de la valuation -adique de comme l'exposant de dans la factorisation de en idéaux premiers.  . On trouve alors   ce qui est absurde. Donc .  "
+},
+{
+  "id": "sec-equation-de-Pell",
+  "level": "1",
+  "url": "sec-equation-de-Pell.html",
+  "type": "Section",
+  "number": "4.4",
+  "title": "Équation de Pell",
+  "body": " Équation de Pell  "
+},
+{
+  "id": "sec-theoreme-des-unites",
+  "level": "1",
+  "url": "sec-theoreme-des-unites.html",
+  "type": "Section",
+  "number": "5.1",
+  "title": "Théorème des unités",
+  "body": " Théorème des unités  Les unités d'un corps de nombres sont les éléments du groupe abélien . On l'appelle groupe des unités de . L'enjeu de cette section est de déterminer sa structure : nous allons voir que   où désigne le groupe fini des racines de l'unité dans . Cet énoncé découle du théorème des unités de Dirichlet que nous démontrons ici.  Soit l'ensemble des plongements réels et un ensemble de représentant de plongements complexes à conjugaison près. On consière le morphisme de groupes    des unités   L'image est un réseau de l'hyperlan d'équation     Justifions d'ores et déjà pourquoi l'image de par tombe dans l'hyperplan . Cela se déduit de la proposition suivante.         est une unité si, et seulement si l'idéal qu'il engendre est égal à si, et seulement si . Or, d'après la , .   Comme , on trouve bien que .  Vérifions maintenant que le théorème des unités de Dirichlet implique la décomposition . Par la , admet une -base à éléments : soient donc des éléments de tels que soit une -base de . On considère le morphisme   On prétend que est bijective. D'abord, est injective : si est dans son noyau, alors est une racine de l'unité, et donc son image par est nulle. Comme son image est   et que les sont linéairement indépendants, on trouve .  Puis, on montre que est surjective : si , on peut trouver tel que . En particulier, appartient à . On conclut alors avec le lemme qui suit :    L'inclusion est une égalité.     Les éléments de sont de taille ( cf.  ). D'après la , l'ensemble est fini, c'est donc un groupe fini. Tout élément admet un ordre et donc est une racine de l'unité dans .   Nous sommes à présent en position de démontrer le .   Preuve du  Démontrons d'abord que est un sous-groupe discret de (et donc de ). Pour cela, il suffit de vérifier qu'étant donné , il n'y a qu'un nombre fini d'unités telles que pour tout . Mais une telle unité est de taille ( cf.  ), et il n'y a qu'un nombre fini d'éléments de de taille bornée ( cf.  ). Cela montre que est discret.  L'enjeu de la preuve repose alors sur l'existence d'une base de contenue dans , ce qui nécessite de construire des unités multiplicativement indépendantes. Pour cela, on va encore une fois faire appel au lemme du corps convexe de Minkowski.    Soit . On peut trouver telle que pour tout plongement .     Soit . Dans un premier temps, nous allons montrer qu'il existe une suite d'éléments de de norme et telle que (quand ) pour tout .  Pour ce faire, soit un nombre réel positif et soit le corps convexe symétrique et compact formé des , avec en fonction de si est réel ou complexe, tels que pour réel ou complexe, et en fonction de si est réel ou complexe.  Le nombre réel fut choisi de sorte que le volume Dans le calcul du volume de , les places réels contribuent à un facteur et celles complexes à un facteur . On trouve alors . de soit exactement . Par Minkowski ( cf.  ) il existe un élément non nul de . On trouve donc tel que pour tout et tel que . En faisant tendre , on construit une suite d'éléments ayant la propriété recherchée.  On peut ensuite extraire une sous-suite de d'éléments de même norme . Comme est fini, on peut extraire à nouveau une sous-suite de d'éléments de même norme et deux-à-deux congrus modulo ; on la note . On invoque ensuite un lemme qui permet de construire des unités à partir de telles sous-suites :    Soient tels que et . Alors .     Posons . Soit tel que . Comme , on peut trouver tel que . Alors et, en particulier, . On en déduit que . Le même argument en inversant les rôles de montre que .   Pour , on pose alors qui est une unité de d'après le lemme précédent. On a de plus pour tout plongement , lorsque . En particulier, on peut trouver une unité telle que pour tout , comme annoncé (prendre pour un élément de la suite pour assez grand).   Notons que nous avons nécessairement car .  Pour conclure la démonstration du théorème des unités, il suffit de montrer que l'image par de unités choisies parmi les construites dans la (donc toutes, sauf une) sont linéairement indépendantes dans . Pour ce faire, on considère la base de avec (où la famille désigne la base canonique de ). Dans cette base, s'écrit En effet, on a où en fonction de si est réel ou complexe, et où l'on a utilisé que .    où l'on a numéroté les éléments de .  Soit avec en fonction de si est réel ou complexe. D'après la formule précédente, la matrice est celle des éléments écrits dans la base de . La matrice vérifie donc les deux propriétés suivantes :    ses coefficients extra-diagonaux (pour ) sont strictement négatifs,    la somme des coefficients de chacune de ses colonnes, à savoir pour tout , est strictement positive.    En vertu du lemme qui suit, une telle matrice est nécessairement inversible, ce qui conclut que est une base de .    Soit une matrice ayant la propriété que ses coefficients extra-diagonaux sont et que la somme des coefficients de chaqune de ses colonnes est . Alors est inversible.     Considérons une relations de dépendance linéaire entre les lignes de et montrons que cette relation est nulle. Soit une famille de nombres réels tels que, pour tout , on ait   Soit tel que . Alors cette relation pour la ème colone donne :   puisque est positif ou nul par hypothèse. Comme , on trouve . En conséquence, tous les sont négatifs ou nuls. Le même argument appliqué à leur opposé montre que .    "
+},
+{
+  "id": "thm-unite-dirichlet",
+  "level": "2",
+  "url": "sec-theoreme-des-unites.html#thm-unite-dirichlet",
+  "type": "Théorème",
+  "number": "5.1.1",
+  "title": "des unités.",
+  "body": " des unités   L'image est un réseau de l'hyperlan d'équation    "
+},
+{
+  "id": "prop-norme-unite",
+  "level": "2",
+  "url": "sec-theoreme-des-unites.html#prop-norme-unite",
+  "type": "Proposition",
+  "number": "5.1.2",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "sec-theoreme-des-unites-10",
+  "level": "2",
+  "url": "sec-theoreme-des-unites.html#sec-theoreme-des-unites-10",
+  "type": "Démonstration",
+  "number": "5.1.1",
+  "title": "",
+  "body": "  est une unité si, et seulement si l'idéal qu'il engendre est égal à si, et seulement si . Or, d'après la , .  "
+},
+{
+  "id": "lem-ker-ell",
+  "level": "2",
+  "url": "sec-theoreme-des-unites.html#lem-ker-ell",
+  "type": "Lemme",
+  "number": "5.1.3",
+  "title": "",
+  "body": "  L'inclusion est une égalité.   "
+},
+{
+  "id": "sec-theoreme-des-unites-19",
+  "level": "2",
+  "url": "sec-theoreme-des-unites.html#sec-theoreme-des-unites-19",
+  "type": "Démonstration",
+  "number": "5.1.2",
+  "title": "",
+  "body": " Les éléments de sont de taille ( cf.  ). D'après la , l'ensemble est fini, c'est donc un groupe fini. Tout élément admet un ordre et donc est une racine de l'unité dans .  "
+},
+{
+  "id": "sec-theoreme-des-unites-21",
+  "level": "2",
+  "url": "sec-theoreme-des-unites.html#sec-theoreme-des-unites-21",
+  "type": "Démonstration",
+  "number": "5.1.3",
+  "title": "Preuve du Théorème 5.1.1.",
+  "body": " Preuve du  Démontrons d'abord que est un sous-groupe discret de (et donc de ). Pour cela, il suffit de vérifier qu'étant donné , il n'y a qu'un nombre fini d'unités telles que pour tout . Mais une telle unité est de taille ( cf.  ), et il n'y a qu'un nombre fini d'éléments de de taille bornée ( cf.  ). Cela montre que est discret.  L'enjeu de la preuve repose alors sur l'existence d'une base de contenue dans , ce qui nécessite de construire des unités multiplicativement indépendantes. Pour cela, on va encore une fois faire appel au lemme du corps convexe de Minkowski.    Soit . On peut trouver telle que pour tout plongement .     Soit . Dans un premier temps, nous allons montrer qu'il existe une suite d'éléments de de norme et telle que (quand ) pour tout .  Pour ce faire, soit un nombre réel positif et soit le corps convexe symétrique et compact formé des , avec en fonction de si est réel ou complexe, tels que pour réel ou complexe, et en fonction de si est réel ou complexe.  Le nombre réel fut choisi de sorte que le volume Dans le calcul du volume de , les places réels contribuent à un facteur et celles complexes à un facteur . On trouve alors . de soit exactement . Par Minkowski ( cf.  ) il existe un élément non nul de . On trouve donc tel que pour tout et tel que . En faisant tendre , on construit une suite d'éléments ayant la propriété recherchée.  On peut ensuite extraire une sous-suite de d'éléments de même norme . Comme est fini, on peut extraire à nouveau une sous-suite de d'éléments de même norme et deux-à-deux congrus modulo ; on la note . On invoque ensuite un lemme qui permet de construire des unités à partir de telles sous-suites :    Soient tels que et . Alors .     Posons . Soit tel que . Comme , on peut trouver tel que . Alors et, en particulier, . On en déduit que . Le même argument en inversant les rôles de montre que .   Pour , on pose alors qui est une unité de d'après le lemme précédent. On a de plus pour tout plongement , lorsque . En particulier, on peut trouver une unité telle que pour tout , comme annoncé (prendre pour un élément de la suite pour assez grand).   Notons que nous avons nécessairement car .  Pour conclure la démonstration du théorème des unités, il suffit de montrer que l'image par de unités choisies parmi les construites dans la (donc toutes, sauf une) sont linéairement indépendantes dans . Pour ce faire, on considère la base de avec (où la famille désigne la base canonique de ). Dans cette base, s'écrit En effet, on a où en fonction de si est réel ou complexe, et où l'on a utilisé que .    où l'on a numéroté les éléments de .  Soit avec en fonction de si est réel ou complexe. D'après la formule précédente, la matrice est celle des éléments écrits dans la base de . La matrice vérifie donc les deux propriétés suivantes :    ses coefficients extra-diagonaux (pour ) sont strictement négatifs,    la somme des coefficients de chacune de ses colonnes, à savoir pour tout , est strictement positive.    En vertu du lemme qui suit, une telle matrice est nécessairement inversible, ce qui conclut que est une base de .    Soit une matrice ayant la propriété que ses coefficients extra-diagonaux sont et que la somme des coefficients de chaqune de ses colonnes est . Alors est inversible.     Considérons une relations de dépendance linéaire entre les lignes de et montrons que cette relation est nulle. Soit une famille de nombres réels tels que, pour tout , on ait   Soit tel que . Alors cette relation pour la ème colone donne :   puisque est positif ou nul par hypothèse. Comme , on trouve . En conséquence, tous les sont négatifs ou nuls. Le même argument appliqué à leur opposé montre que .   "
 },
 {
   "id": "app-irreducibilite-polynome",
