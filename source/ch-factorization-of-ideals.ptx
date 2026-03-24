@@ -332,13 +332,13 @@
                     D^5=1.
                 </md>
                 <p>
-                    Ainsi l'ordre de <m>D</m> vaut <m>1</m> ou <m>5</m> mais, comme <m>I_2(X)</m> n'est pas principal (sinon il y aurait un élément de norme <m>2</m>, ce que l'on exclut), l'ordre de <m>D</m> est <m>5</m>. 
+                    Ainsi l'ordre de <m>D</m> vaut <m>1</m> ou <m>5</m> mais, comme <m>I_2(X)</m> n'est pas principal (sinon il y aurait un élément de norme <m>2</m>, ce que l'on exclut en montrant que l'équation <m>|N_K(z)|=2</m> n'a pas de solution), l'ordre de <m>D</m> est <m>5</m>. 
                 </p>
             </li>
         </ol>
     </p>
     <p>
-        Ainsi, la classe de <m>I_2(X)=(2,\alpha)</m> engendre <m>\mathcal{Cl}(\mathcal{O}_K)</m> et l'on trouve : 
+        Ainsi, la classe de <m>I_2(X)=(2,\alpha)</m> engendre <m>\mathrm{Cl}(\mathcal{O}_K)</m> et l'on trouve : 
     </p>
     <md>
         \mathrm{Cl}\left(\mathbb{Z}\left[\frac{1+\sqrt{-47}}{2}\right]\right)\cong \mathbb{Z}/5\mathbb{Z}.
@@ -398,7 +398,7 @@
     Pour démontrer le théorème, on travail avec le corps <m>K=\mathbb{Q}(\sqrt{k})</m> dont l'anneau des entiers est <m>\mathcal{O}_K=\mathbb{Z}[\sqrt{k}]</m>, d'après notre hypothèse <m>k\not\equiv 1\pmod{4}</m> (<em>cf.</em> <xref ref="cor-entiers-quadratiques-base"/>). 
 </p>
 <p>
-    Soit <m>(x,y)\in \mathbb{Z}^2</m> une solution entière de <xref ref="eq-mordell"/>. Comme première observation, on remarque que, puisque <m>k</m> est supposé sans facteur carré, <m>x,y</m> et <m>k</m> sont premiers entre eux. Dans <m>\mathcal{O}_K</m>, on a de plus
+    Supposons qu'il existe <m>(x,y)\in \mathbb{Z}^2</m> une solution entière de <xref ref="eq-mordell"/>. Comme première observation, on remarque que, puisque <m>k</m> est supposé sans facteur carré, <m>x,y</m> et <m>k</m> sont premiers entre eux. Dans <m>\mathcal{O}_K</m>, on a de plus
 </p>
 <men xml:id="eq-factorisee">
     (y+\sqrt{k})(y-\sqrt{k})=x^3.
@@ -447,33 +447,57 @@
     Soient <m>I</m> et <m>I'</m> les idéaux engendrés par <m>y+\sqrt{k}</m> et <m>y-\sqrt{k}</m> respectivement. Comme <m>II'</m> est le cube d'un idéal et que <m>I</m> et <m>I'</m> sont premiers entre eux, <m>I</m> est lui-même le cube d'un idéal, mettons <m>J</m>. Mais comme <m>I</m> est principal et que <m>3</m> est premier à <m>|\mathrm{Cl}(\mathcal{O}_K)|</m>, la classe de <m>J</m> est triviale dans <m>\mathrm{Cl}(\mathcal{O}_K)</m> et donc <m>J</m> est aussi principal. 
 </p>
 <p>
-    On en déduit que <m>y+\sqrt{k}</m> est, à une unité de <m>\mathcal{O}_K</m> près, le cube d'un élément de <m>\mathcal{O}_K</m>. Mais comme tout unité de <m>\mathcal{O}_K</m> est un cube (ici <m>k\neq 3</m>), on peut retirer la mention <em>à une unité de <m>\mathcal{O}_K</m> près</em>.
+    On en déduit que <m>y+\sqrt{k}</m> est, à une unité de <m>\mathcal{O}_K</m> près, le cube d'un élément de <m>\mathcal{O}_K</m>. Mais comme tout unité de <m>\mathcal{O}_K</m> est un cube (ici <m>k\neq 3</m>), on peut retirer la mention <em>à une unité de <m>\mathcal{O}_K</m> près</em>. Cela nous permet de conclure :
 </p>
+<fact xml:id="fact-resolution">
+    <statement>
+        <p>
+            <m>-k</m> est de la forme <m>3a^2\pm 1</m> pour <m>a\in \mathbb{Z}</m>. De plus, <md>(x,y)\in \{(a^2-k,-(a^3+3ka)),(a^2-k,a^3+3ka)\}.</md>
+        </p>
+    </statement>
+</fact>
+<proof>
 <p>
-    Soient donc <m>a,b\in \mathbb{Z}</m> tels que <m>y+\sqrt{k}=(a+b\sqrt{k})^3</m>. On développe :
+    On a montré que <m>y+\sqrt{k}</m> est un cube dans <m>\mathbb{Z}[\sqrt{k}]</m>. Soient donc <m>a,b\in \mathbb{Z}</m> tels que <m>y+\sqrt{k}=(a+b\sqrt{k})^3</m>. On développe :
 </p>
 <md>
     y+\sqrt{k}=(a+b\sqrt{k})^3=(a^3+3kab^2)+(3a^2 b+kb^3)\sqrt{k}.
 </md>
 <p>
-    En comparant les secondes coordonnées dans la base <m>(1,\sqrt{k})</m>, on trouve <m>1=b(3a^2+kb^2)</m> puis <m>b=\pm 1</m> et <m>-k=3a^2-b</m>.
+    En comparant les secondes coordonnées dans la base <m>(1,\sqrt{k})</m>, on trouve <m>1=b(3a^2+kb^2)</m> puis <m>b=\pm 1</m> et <m>-k=3a^2-b</m>. <m>-k</m> est donc de la forme indiquée.
 </p>
 <p>
-    Il n'y a donc pas de solutions si <m>-k</m> n'est pas de la forme <m>3a^2\pm 1</m>. S'il est de cette forme, alors <m>b=\pm 1</m> et il existe deux tels <m>a</m> vérifiant cette relation. On trouve alors <m>y=\pm (a^3 + 3ka)</m>, puis on en déduit les deux seules solutions à l'équation de Mordell :
+    On trouve alors <m>y=\pm (a^3 + 3ka)</m> ainsi que <m>x^3=(a+b\sqrt{k})^3(a-b\sqrt{k})^3=(a^2-k)^3</m> et enfin<fn>La fonction <m>x\mapsto x^3</m> est une bijection de <m>\mathbb{R}\to \mathbb{R}</m>.</fn> <m>x=a^2-k</m>. On en déduit ainsi les deux seules solutions à l'équation de Mordell :
 </p>
 <md>
     (x,y) = (a^2-k,\pm (a^3 + 3ka)).
 </md>
+</proof>
+
+<p>
+    En conclusion, on a montré que l'équation de Mordell, pour ces valeurs de <m>k</m>, n'admet au plus que <m>2</m> solutions.
+</p>
+
+
+<remark>
+    <title>L'équation de Fermat <m>z^p=x^p+y^p</m></title>
+    <p>
+        Ces mêmes techniques ont permis à Kummer de résoudre certains cas du dernier théorème de Fermat. Si <m>p</m> est un nombre premier et <m>(x,y,z)</m> est une solution de l'équation <m>z^p=x^p+y^p</m>, alors on dispose de la factorsation suivante dans le <m>p</m>ième corps cyclotomique
+    </p>
+    <md>
+        y^p=\prod_{i=0}^{p-1}{(z-\zeta_p^i x)}.
+    </md>
+    <p>
+        Cette première étape est similaire à la factorisation <xref ref="eq-factorisee"/> de l'équation de Mordell que nous avons exploitée plus haut. Sous l'hypothèse que <m>p</m> ne divise pas <m>|\mathrm{Cl}(\mathbb{Z}[\zeta_p])|</m> - un tel <m>p</m> est appelé <em>nombre premier régulier</em> - on peut alors espérer pouvoir trouver une contradiction. C'est ce que démontrer Kummer en 1850 (mais la démonstration de Kummer ne rentre pas non plus dans la marge de ce cours...).
+    </p>
+    <p>
+        Les nombres premiers réguliers <m>&lt; 200</m> sont <m>37,59,67,101,103,131,149</m> et <m>157</m>. Si l'on sait qu'il en existe une infinité, on ignore toujours s'il existe une infinité de nombres premiers qui ne sont pas réguliers. 
+    </p>
+</remark>
 
 </section>
 
-<section xml:id="sec-equation-de-Pell">
-    <title>Équation de Pell</title>
-    
 
-
-    
-</section>
 
 
 </chapter>
