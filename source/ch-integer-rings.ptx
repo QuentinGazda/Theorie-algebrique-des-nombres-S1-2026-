@@ -433,7 +433,7 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
   <lemma xml:id="lem-inclusion-ideaux-normes">
     <statement>
       <p>
-        Soit <m>I\subset J\subset \mathcal{O}_K</m>, une inclusion d'idéaux non nuls. Alors <m>N(I)=N(J)|I/J|</m>. En particulier, <m>I=J</m> si et seulement si <m>N(J)=N(I)</m>.
+        Soit <m>I\subset J\subset \mathcal{O}_K</m>, une inclusion d'idéaux non nuls. Alors <m>N(I)=N(J)|J/I|</m>. En particulier, <m>I=J</m> si et seulement si <m>N(J)=N(I)</m>.
       </p>
     </statement>
   </lemma>

@@ -10,7 +10,7 @@
         Les <em>unités</em> d'un corps de nombres <m>K</m> sont les éléments du groupe abélien <m>\mathcal{O}_K^{\times}</m>. On l'appelle <em>groupe des unités de <m>K</m></em>. L'enjeu de cette section est de déterminer sa structure : nous allons voir que   
     </p>
     <men xml:id="eq-structure-unite">
-        \mathcal{O}_K\cong \mu(K)\times \mathbb{Z}^{r_1+r_2-1}
+        \mathcal{O}_K^{\times}\cong \mu(K)\times \mathbb{Z}^{r_1+r_2-1}
     </men>
     <p>
         où <m>\mu(K)</m> désigne le groupe fini des racines de l'unité dans <m>K</m>. Cet énoncé découle du <em>théorème des unités de Dirichlet</em> que nous démontrons ici. 
@@ -104,11 +104,15 @@
         </proposition>
         <proof>
             <p>
-                Soit <m>T:=2^{r_1+r_2}\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}</m>. Dans un premier temps, nous allons montrer qu'il existe une suite <m>(a_n)_{n\geq 0}</m> d'éléments de <m>\mathcal{O}_K\setminus\{0\}</m> de norme <m>\leq T</m> et telle que <m>|\tau(a_n)|\to 0</m> (quand <m>n\to \infty</m>) pour tout <m>\sigma\neq \tau</m>.
+                Soit <m>T:=2^{r_1+r_2}\sqrt{|\mathrm{disc}(\mathcal{O}_K)|}</m>. Dans un premier temps, nous allons montrer qu'il existe une suite <m>(a_n)_{n\geq 0}</m> d'éléments de <m>\mathcal{O}_K\setminus\{0\}</m> de norme <m>\leq T</m> et telle que <m>|\sigma(a_n)|\to 0</m> (quand <m>n\to \infty</m>) pour tout <m>\sigma\neq \tau</m>.
             </p>
             <p>    
-                Pour ce faire, soit <m>t>0</m> un nombre réel positif et soit <m>C_t\subset \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> le corps convexe symétrique et compact formé des <m>(x_{\sigma})_{\sigma \in \Sigma_1\sqcup \Sigma_2}\in \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>, avec <m>x_\sigma\in \mathbb{R},\mathbb{C}</m> en fonction de si <m>\sigma</m> est réel ou complexe, tels que <m>|x_\sigma|\leq t/2,\sqrt{t/\pi}</m> pour <m>\sigma\neq \tau</m> réel ou complexe, et <m>|x_{\tau}|\leq T/2t^{r_1+r_2-1}, \sqrt{T/\pi t^{r_1+r_2-1}}</m> en fonction de si <m>\tau</m> est réel ou complexe. 
+                Pour ce faire, soit <m>t>0</m> un nombre réel positif et soit <m>C_t\subset \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> le corps convexe symétrique et compact formé des <m>(x_{\sigma})_{\sigma \in \Sigma_1\sqcup \Sigma_2}\in \mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m>, avec <m>x_\sigma\in \mathbb{R}</m>, respectivement <m>x_{\sigma}\in \mathbb{C}</m>, en fonction de si <m>\sigma</m> est réel ou complexe, tels que <m>|x_\sigma|\leq t/2</m>, respectivement <m>|x_{\sigma}|\leq \sqrt{t/\pi}</m> pour <m>\sigma\neq \tau</m> réel ou complexe, et <m>|x_{\tau}|\leq T/2t^{r_1+r_2-1}</m>, respectivement <m>|x_{\tau}|\leq \sqrt{T/\pi t^{r_1+r_2-1}}</m> en fonction de si <m>\tau</m> est réel ou complexe. 
             </p>
+            <p>
+                <em>En image, supposant <m>t</m> petit, <m>C_t</m> est très resséré le long de l'axe <m>x_\sigma=0</m> pour <m>\sigma\neq \tau</m> et plutôt élargi le long de <m>x_\tau=0</m>. Il a néanmoins un volume indépendant du choix de <m>t</m>.</em>
+            </p>
+
             <p>
                 Le nombre réel <m>T</m> fut choisi de sorte que le volume<fn>Dans le calcul du volume de <m>C_t</m>, les places réels <m>\neq \tau</m> contribuent à un facteur <m>2(t/2)=t</m> et celles complexes <m>\neq \tau</m> à un facteur <m>\pi \sqrt{t/\pi}^2=t</m>. On trouve alors <m>\lambda(C_t)=t^{r_1+r_2-1}\cdot T/t^{r_1+r_2-1}=T</m>. </fn> de <m>C_t</m> soit exactement <m>T=2^n\mathrm{covol}(\sigma(\mathcal{O}_K))</m>. Par Minkowski (<em>cf.</em> <xref ref="lem-corps-convexe"/>) il existe un élément non nul de <m>C_t\cap \sigma(\mathcal{O}_K)</m>. On trouve donc <m>a\in \mathcal{O}_K\setminus \{0\}</m> tel que <m>|\sigma(a)| &lt; t</m> pour tout <m>\sigma\neq \tau</m> et tel que <m>|N_K(a)|\leq T</m>. En faisant tendre <m>t\to 0</m>, on construit une suite d'éléments <m>(a_n)_{n\geq 0}</m> ayant la propriété recherchée.
             </p>
@@ -132,19 +136,20 @@
             </p>     
         </proof>
         <p>
-            Notons que nous avons nécessairement <m>\log |\sigma(u_{\sigma})| &gt; 0</m> car <m>|N_K(u_{\sigma})|=1</m>.
+            Notons que nous avons nécessairement <m>\log |\tau(u_{\tau})| &gt; 0</m> car <m>|N_K(u_{\tau})|=1</m>.
         </p>
         <p>
-            Pour conclure la démonstration du théorème des unités, il suffit de montrer que l'image par <m>\ell</m> de <m>r_1+r_2-1</m> unités choisies parmi les <m>r_1+r_2</m> construites dans la <xref ref="prop-construction-dunites"/> (donc toutes, sauf une) sont linéairement indépendantes dans <m>H</m>. Pour ce faire, on considère la base <m>(b_1,\ldots,b_{r_1+r_2-1})</m> de <m>H\subset \mathbb{R}^{r_1+r_2}</m> avec <m>b_i:=e_i-e_{r_1+r_2}</m> (où la famille <m>(e_1,\ldots,e_{r_1+r_2})</m> désigne la base canonique de <m>\mathbb{R}^{r_1+r_2}</m>). Dans cette base, <m>\log(u_{\sigma})</m> s'écrit<fn>En effet, on a <md><mrow>\ell(u_{\sigma})\amp = \sum_{i=1}^{r_1+r_2}{\log|\sigma_i(u_{\sigma})|^{*_i}e_i}</mrow><mrow> \amp =\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}\cdot e_i}-\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}\cdot e_{r_1+r_2}}</mrow> <mrow>\amp =\sum_{i=1}^{r_1+r_2-1}{\log |\sigma_i(u_{\sigma})|^{*_i}}\cdot b_i</mrow> </md> où <m>*_i=1,2</m> en fonction de si <m>\sigma_i</m> est réel ou complexe, et où l'on a utilisé que <m>\log|\sigma_{r_1+r_2}(u_{\sigma})|=-\sum_{i=1}^{r_1+r_2-1}{\log|\sigma(u_{\sigma_i})|}</m>.</fn>
+            Pour conclure la démonstration du théorème des unités, il suffit de montrer que l'image par <m>\ell</m> de <m>r_1+r_2-1</m> unités choisies parmi les <m>r_1+r_2</m> construites dans la <xref ref="prop-construction-dunites"/> (donc toutes, sauf une) sont linéairement indépendantes dans <m>H</m>. Pour ce faire, on considère la base <m>(b_1,\ldots,b_{r_1+r_2-1})</m> de <m>H\subset \mathbb{R}^{r_1+r_2}</m> avec <m>b_i:=e_i-e_{r_1+r_2}</m> (où la famille <m>(e_1,\ldots,e_{r_1+r_2})</m> désigne la base canonique de <m>\mathbb{R}^{r_1+r_2}</m>). Dans cette base, un élément <m>h\in H</m> qui s'écrit <m>\sum_{i=1}^{r_1+r_2}{h_i e_i}</m> dans la base canonique de <m>\mathbb{R}^{r_1+r_2}</m> s'écrit<fn>En effet, <md> <mrow> h \amp = \sum_{i=1}^{r_1+r_2}{h_i e_i} </mrow> <mrow> \amp = \sum_{i=1}^{r_1+r_2-1}{h_i e_i}+h_{r_1+r_2}e_{r_1+r_2} </mrow> <mrow> \amp = \sum_{i=1}^{r_1+r_2-1}{h_i e_i}-(h_1+\cdots h_{r_1+r_2-1})e_{r_1+r_2} </mrow> <mrow> \amp = \sum_{i=1}^{r_1+r_2-1}{h_i b_i}. </mrow> </md> </fn> <m>\sum_{i=1}^{r_1+r_2-1}{h_i b_i}</m>.
+            En particulier, dans cette base, <m>\log(u_{\tau})</m> s'écrit
         </p>
         <md>
-            \ell(u_{\sigma})=\sum_{i=1}^{r_1}{\log |\sigma_i(u_{\sigma})|}\cdot b_i+\sum_{i=r_1+1}^{r_2-1}{\log |\sigma_i(u_{\sigma})|^{2}}\cdot b_i
+            \ell(u_{\tau})=\sum_{i=1}^{r_1}{\log |\sigma_i(u_{\tau})|}\cdot b_i+\sum_{i=r_1+1}^{r_2-1}{\log |\sigma_i(u_{\tau})|^{2}}\cdot b_i
         </md>
         <p>
-            où l'on a numéroté <m>\{\sigma_1,\ldots,\sigma_{r_1},\sigma_{r_1+1},\ldots,\sigma_{r_1+r_2}\}</m> les éléments de <m>\Sigma_1\sqcup \Sigma_2</m>.
+            où l'on a numéroté <m>\{\sigma_1,\ldots,\sigma_{r_1}\}</m> les éléments de <m>\Sigma_1</m> et <m>\{\sigma_{r_1+1},\ldots,\sigma_{r_1+r_2}\}</m> les éléments de <m>\Sigma_2</m>.
         </p> 
         <p>
-            Soit <m>m_{ij}:=\log |\sigma_i(u_{\sigma_j})|^{*_i}</m> avec <m>*_i=1,2</m> en fonction de si <m>\sigma_i</m> est réel ou complexe. D'après la formule précédente, la matrice <m>M=(m_{ij})_{i,j}\in \mathrm{Mat}_{r_1+r_2-1}(\mathbb{R})</m> est celle des éléments <m>(\ell(u_{\sigma_i}))_{1\leq i\leq r_1+r_2-1}</m> écrits dans la base <m>(b_1,\ldots,b_{r_1+r_2-1})</m> de <m>H</m>. La matrice <m>M</m> vérifie donc les deux propriétés suivantes :
+            Soit <m>m_{ij}:=\log |\sigma_i(u_{\sigma_j})|^{*_i}</m> avec <m>*_i=1,2</m> en fonction de si <m>\sigma_i</m> est réel ou complexe. D'après la formule précédente, la matrice <m>M=(m_{ij})_{i,j}\in \mathrm{Mat}_{r_1+r_2-1}(\mathbb{R})</m> est celle des éléments <m>(\ell(u_{\sigma_i}))_{1\leq i\leq r_1+r_2-1}</m> écrits dans la base <m>(b_1,\ldots,b_{r_1+r_2-1})</m> de <m>H</m>. La matrice <m>M</m> vérifie alors les deux propriétés suivantes :
         </p>
             <ul>
                 <li>
@@ -153,7 +158,7 @@
                 </li>
                 <li>
                     <p>
-                        la somme des coefficients de chacune de ses colonnes, à savoir <m>\sum_{1\leq i &lt; r_1+r_2}^{r_1+r_2-1}{m_{ij}}=-m_{r_1+r_2,j} &gt; 0</m> pour tout <m>j\in \{1,\ldots,r_1+r_2-1\}</m>, est strictement positive.
+                        la somme des coefficients de chacune de ses colonnes, à savoir <m>\sum_{1\leq i &lt; r_1+r_2}{m_{ij}}=-m_{r_1+r_2,j} &gt; 0</m> pour tout <m>j\in \{1,\ldots,r_1+r_2-1\}</m>, est strictement positive, comme indiqué.
                     </p>
                 </li>
             </ul>
