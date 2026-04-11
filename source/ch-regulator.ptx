@@ -194,13 +194,333 @@
 
   </section>
 
-  <section xml:id="sec-equation-de-Pell">
-    <title>Équation de Pell</title>
+  <section xml:id="sec-regulateur">
+    <title>Régulateur des corps quadratiques réels</title>
     
+    <p>
+        Dans la section précédente, nous avons démontré que <m>\ell(\mathcal{O}_K^{\times})</m> est un réseau de l'hyperplan <m>H\subset \mathbb{R}^{r_1+r_2}</m> d'équation <m>x_1+\cdots+x_{r_1+r_2}=0</m>. Cet hyperplan admet un autre réseau, à savoir celui des points à coordonnées entières <m>H_{\mathbb{Z}}:=H\cap \mathbb{Z}^{r_1+r_2}</m>. Le <em>régulateur de <m>K</m></em> est alors défini comme le rapport entre les covolumes de ces deux réseaux :
+    </p>
 
+    <definition xml:id="def-regulateur">
+        <title>Régulateur</title>
+        <statement>
+            <p>
+                Le <em>régulateur de <m>K</m></em> est le nombre réel positif <m>R_K:=[\ell(\mathcal{O}_K^{\times}):H_{\mathbb{Z}}]</m>.
+            </p>
+        </statement>
+    </definition>
 
+    <p>
+        Soit <m>m=r_1+r_2-1</m>. Le régulateur de <m>K</m> se calcule ainsi : on connaît déjà une base de <m>H_{\mathbb{Z}}</m>, à savoir <m>(b_1,\ldots,b_{m})</m> avec <m>b_i=e_i-e_{r_1+r_2}</m>. Du côté unités, on fixe une famille <m>(\varepsilon_1,\ldots,\varepsilon_{m})</m> de <m>\mathcal{O}_K^{\times}</m> telle que <m>(\ell(\varepsilon_1),\ldots,\ell(\varepsilon_{m}))</m> soit une base de <m>\ell(\mathcal{O}_K^{\times})</m>. Alors le régulateur de <m>K</m> est égal à la valeur absolue du déterminant de la matrice <m>M=(m_{ij})\in \mathrm{Mat}_{m}(\mathbb{R})</m> avec <m>m_{ij}=\log |\sigma_i(\varepsilon_j)|^{*_i}</m> où <m>*_i=1,2</m> en fonction de si <m>\sigma_i</m> est réel ou complexe.
+    </p>
     
+    <p>
+        L'enjeu du calcul du régulateur réside donc dans la détermination d'une base de <m>\mathcal{O}_K^{\times}</m> (modulo torsion). Nous allons montrer comment procéder dans le cas des corps quadratiques réels.
+    </p>
+
+    <p>
+        Soit <m>K=\mathbb{Q}(\sqrt{d})</m> un corps quadratique réel, où <m>d</m> est un entier positif sans facteur carré. Les seules racines de l'unité dans <m>K</m> sont <m>1</m> et <m>-1</m> et, comme <m>r_1=2</m>, le théorème des unités de Dirichlet assure que <m>\mathcal{O}_K^{\times}\cong \{\pm 1\}\times \mathbb{Z}</m>. En particulier, il existe une unité fondamentale <m>\varepsilon\in \mathcal{O}_K^{\times}</m> telle que <m>\mathcal{O}_K^{\times}=\{\pm \varepsilon^n~|~n\in \mathbb{Z}\}</m>. Le régulateur de <m>K</m> est alors égal à <m>|\log (|\sigma_1(\varepsilon)|)|</m> où <m>\sigma_1</m> désigne l'un des deux plongements réels de <m>K</m>. Pour déterminer des unités fondamentales <m>\varepsilon</m>, on a la proposition suivante : 
+    </p>
+    <proposition xml:id="prop-unite-fondamentale-quadratique-reel">
+        <statement>
+            <p>
+                Soit <m>(x,y)\in \mathbb{N}^2</m> une solution de l'équation de Pell-Fermat
+            </p>
+            <md>x^2-dy^2=\pm 4.</md>     
+            <p>
+                Si <m>(x,y)</m> est tel que <m>\varepsilon:=\frac{x}{2}+\frac{y}{2}\sqrt{d} &gt; 1</m> est minimal pour cette propriété, alors <m>\varepsilon</m> est une unité fondamentale de <m>K</m>.</p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Soit <m>u\in \mathcal{O}_K^{\times}</m> telle que <m>u>1</m> et minimal pour cette propriété. On prétend que <m>u</m> est une unité fondamentale. Pour le démontrer, soit <m>g\in \mathcal{O}_K^{\times}</m>. Quitte à remplacer <m>g</m> pour son opposé, on peut supposer que <m>g>0</m> et quitte à le remplacer par son inverse on peut supposer <m>g\geq 1</m>. Comme la suite <m>(gu^{-n})_{n\geq 0}</m> est strictent décroissante de limite nulle, il existe <m>k\geq 0</m> tel que <m>gu^{-k} &lt; u</m>, puis <m>gu^{-k}\leq 1</m> par minimalité. En choisissant <m>k</m> minimal pour cette propriété, on a aussi <m>gu^{-(k-1)}\geq u</m>, soit <m>gu^{-k}\geq 1</m>. En particulier, <m>gu^{-k} =1</m> puis <m>g=u^k</m>.
+        </p>
+        <p>
+            On considère l'application
+        </p>
+        <md>
+            <mrow> p:~\{(x,y)\in \mathbb{N}^2| x^2-dy^2=\pm 4\} \amp \longrightarrow \mathcal{O}_K^{\times}\cap \mathbb{R}_{\geq 1} </mrow>
+            <mrow> (x,y) \amp \longmapsto \frac{x}{2}+\frac{y}{2}\sqrt{d} </mrow>
+        </md>
+        <p>
+            Cette application est bien définie : on vérifiera que <m>p(x,y)</m> est dans <m>\mathcal{O}_K^{\times}\cap \mathbb{R}_{\geq 1}</m> -- quelque soit la congruence de <m>d</m> mod <m>4</m> -- car <m>x</m> et <m>y</m> ont la même parité et que <m>(x,y)\neq (0,0)</m>. Elle est injective, mais aussi surjective : si <m>g=\frac{x}{2}+\frac{y}{2}\sqrt{d}</m> est une unité <m>\geq 1</m>, avec <m>x,y\in \mathbb{Z}</m>, l'équation <m>N_K(g)=\pm 1</m> est satisfaite et est équivalente à <m>(x,y)</m> solution de Pell-Fermat; reste à montrer que <m>x,y\geq 0</m>. L'inverse de <m>g</m> vérifie <m>1\geq g^{-1} &gt;0</m>.
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Si <m>N_K(g)=1</m>, alors <m>g^{-1}=\frac{x}{2}-\frac{y}{2}\sqrt{d}</m> et donc <m>x=g+g^{-1} &gt; 1</m>, soit <m>x\geq 2</m>, puis <m>\frac{y}{\sqrt{d}}\geq \frac{x}{2}-1\geq 0</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Si <m>N_K(g)=-1</m>, alors <m>g^{-1}=-\frac{x}{2}+\frac{y}{2}\sqrt{d}</m> et donc <m>y\sqrt{d}=g+g^{-1}\geq 1</m>, soit <m>y &gt; 0</m>, puis <m>\frac{x}{2}\geq \frac{y}{2}\sqrt{d}-1 &gt; 0</m>.
+                </p>
+            </li>
+        </ul>
+        <p>
+            Enfin, vérifions que <m>p</m> est croissante : si <m>(x_1,y_1)</m> et <m>(x_2,y_2)</m> sont tels que <m>x_1\geq x_2</m> et <m>y_1\geq y_2</m>, alors il est clair que <m>p(x_1,y_1) \geq p(x_2,y_2)</m>.
+        </p>
+    </proof>
+
+    <example>
+        <title>Régulateur de quelques corps quadratiques réels</title>
+        <p>
+            Soit <m>K=\mathbb{Q}(\sqrt{2})</m>. L'équation de Pell-Fermat associée est <m>x^2-2y^2=\pm 4</m>. La plus petite solution entière de cette équation est <m>(x,y)=(2,2)</m>. En conséquence, une unité fondamentale de <m>\mathbb{Q}(\sqrt{2})</m> est <m>1+\sqrt{2}</m>. Le régulateur de <m>K</m> est alors égal à <m>R_{\mathbb{Q}(\sqrt{2})}=\log(1+\sqrt{2})\approx 0.881</m>.
+        </p>
+        <p>
+            Soit <m>K=\mathbb{Q}(\sqrt{3})</m>. L'équation de Pell-Fermat associée est <m>x^2-3y^2=\pm 4</m>. La plus petite solution de cette équation est <m>(x,y)=(2,4)</m>. En conséquence, une unité fondamentale de <m>\mathbb{Q}(\sqrt{3})</m> est <m>1+2\sqrt{3}</m>. Le régulateur de <m>K</m> est alors égal à <m>R_{\mathbb{Q}(\sqrt{3})}=\log(1+2\sqrt{3})\approx 1.496</m>.
+        </p>
+        <p>
+            Soit <m>K=\mathbb{Q}(\sqrt{5})</m>. L'équation de Pell-Fermat associée est <m>x^2-5y^2=\pm 4</m>. La plus petite solution entière de cette équation est <m>(x,y)=(1,1)</m>. En conséquence, une unité fondamentale de <m>\mathbb{Q}(\sqrt{5})</m> est <m>\frac{1+\sqrt{5}}{2}</m>. Le régulateur de <m>K</m> est alors égal à <m>R_{\mathbb{Q}(\sqrt{5})}=\log\left(\frac{1+\sqrt{5}}{2}\right)\approx 0.174</m>.
+        </p>
+    </example>
 </section>
 
+<section xml:id="sec-zeta-dedekind">
+    <title>Fonction zêta de Dedekind</title>
+    
+    <p>
+        Soit <m>K</m> un corps de nombres. La <em>fonction zêta de Dedekind de <m>K</m></em> en <m>s</m> est la série 
+    </p>
+    <md>
+        \zeta_K(s)=\sum_{I\subset \mathcal{O}_K}{\frac{1}{N(I)^s}}
+    </md>
+    <p>
+    où la somme porte sur les idéaux non nuls de <m>\mathcal{O}_K</m> et <m>s</m> est une nombre complexe de partie réelle <m>&gt; 1</m>. La convergence sera démontrée plus bas, mais rappelons le critère de convergence des séries de Dirichlet.
+    </p>
+
+    <remark xml:id="rem-convergence-series-dirichlet">
+        <title>Convergence des séries de Dirichlet</title>
+        <p>
+            Soit <m>(a_n)_{n\geq 1}</m> une suite de nombres complexes. Si les sommes partielles <m>\sum_{n=1}^N{a_n}</m> sont <m>O(N^c)</m> pour un nombre réel <m>c</m>, alors la série de Dirichlet correspondante
+        </p>
+        <md>
+            \sum_{n=1}^{\infty}{\frac{a_n}{n^s}}
+        </md>
+        <p>
+            converge vers une fonction holomorphe sur le demi-plan <m>\mathrm{Re}(s) &gt; c</m>.
+        </p>
+    </remark>
+
+    <theorem xml:id="thm-formule-nombre-classes">
+        <title>Formule du nombre de classes</title>
+        <statement>
+            <p>
+                La fonction <m>\zeta_K</m> s'étend méromorphiquement au demi-plan <m>\mathrm{Re}(s) &gt; \frac{1}{2}</m> avec un pôle simple en <m>s=1</m>. Son résidu se calcule par la formule :
+            </p>
+            <md>
+                \lim_{s\to 1}~(s-1)\zeta_K(s)=\frac{2^{r_1}(2\pi)^{r_2}h_K R_K}{w_K \sqrt{|\Delta_K|}}.
+            </md>
+            <p>
+                où <m>h_K=|\mathrm{Cl}(\mathcal{O}_K)|</m> est le nombre de classes de <m>K</m>, <m>R_K</m> son régulateur, <m>w_K</m> désigne le nombre de racines de l'unité de <m>K</m> et <m>\Delta_K=\mathrm{disc}(\mathcal{O}_K)</m> la discriminant de <m>K</m>.
+            </p>
+        </statement>
+    </theorem>
+    
+    <remark xml:id="rem-equation-fonctionnelle-zeta-dedekind">
+        <p>
+            On doit le théorème ci-dessus à Dirichlet dans le cas des corps quadratiques. Hecke a en fait démontré que <m>\zeta_K</m> s'étend méromorphiquement à l'ensemble du plan complexe, avec un unique pôle simple en <m>s=1</m>. Hecke a également démontré l'équation fonctionnelle : si <m>\Lambda_K(s):=|\Delta_K|^{\frac{s}{2}}\Gamma_{\mathbb{R}}(s)^{r_1}\Gamma_{\mathbb{C}}(s)^{r_2}\zeta_K(s)</m> où <m>\Gamma_{\mathbb{R}}(s):=\pi^{-\frac{s}{2}}\Gamma\left(\frac{s}{2}\right)</m> et <m>\Gamma_{\mathbb{C}}(s):=(2\pi)^{-s}\Gamma(s)</m>, alors
+        </p>    
+        <md>
+            \Lambda_K(s)=\Lambda_K(1-s).
+        </md>
+    </remark>
+
+    <p>
+        Si ce théorème est accessible au niveau de ce cours, nous nous contenterons de le démontrer dans le cas où <m>K</m> est un corps quadratique imaginaire.
+    </p>
+    <proof>
+        <title>Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires</title>
+        <p>
+            Soit <m>K=\mathbb{Q}(\sqrt{d})</m> un corps quadratique imaginaire, où <m>d &lt; 0</m> est un entier négatif sans facteur carré. On interprète alors <m>\mathcal{O}_K</m> et ses idéaux comme des réseaux de <m>\mathbb{C}</m> vu comme <m>\mathbb{R}</m>-espace vectoriel de dimension <m>2</m>. De plus <m>r_1=0</m>, <m>r_2=1</m> et donc <m>R_K=1</m>. En particulier, <m>\mathcal{O}_K^{\times}=\mu(K)</m>.
+        </p>
+        <p>    
+            Soit <m>C</m> une classe de <m>\mathrm{Cl}(\mathcal{O}_K)</m> et désignons par <m>a_{n,C}</m> le nombre de idéaux de norme <m>n</m> dans la classe <m>C</m>. En partitionant les ideaux selon leur classe dans <m>\mathrm{Cl}(\mathcal{O}_K)</m>, on trouve :
+        </p>
+        <md>
+            \zeta_K(s)=\sum_{C\in \mathrm{Cl}(\mathcal{O}_K)}{\sum_{n=1}^{\infty}{\frac{a_{n,C}}{n^s}}}.
+        </md>
+        <p>    
+            Le prolongement de la série <m>\zeta_K</m> ainsi que le calcule de son résidu découlent alors de l'estimation suivante :
+        </p>
+        <men xml:id="eqn-compte-ideaux">
+            \sum_{n=1}^N{a_{n,C}}=\frac{2\pi N}{w_K\sqrt{|\Delta_K|}}+O(\sqrt{N}).
+        </men>
+        <p>
+            En effet, en posant <m>b_n=\sum_{C\in \mathrm{Cl}(\mathcal{O}_K)}{a_{n,C}}-\frac{2\pi n}{w_K\sqrt{|\Delta_K|}}</m>, en sommant sur les <m>h_K</m> classes de <m>\mathrm{Cl}(\mathcal{O}_K)</m> on obtiendrait
+        </p>
+        <men xml:id="eqn-zeta-pole">
+            \zeta_K(s)-\frac{2\pi h_K}{w_K\sqrt{|\Delta_K|}}\zeta(s)=\sum_{n=1}^{\infty}{\frac{b_n}{n^s}}
+        </men>
+        <p>
+            avec <m>\sum_{n=1}^{N}{b_n}=O(\sqrt{N})</m>. Comme la série <m>\sum_{n=1}^{\infty}{\frac{b_n}{n^s}}</m> converge uniformément sur le domaine <m>\mathrm{Re}(s) &lt; \frac{1}{2}</m> d'après la <xref ref="rem-convergence-series-dirichlet"/> et que <m>\lim_{s\to 1}\zeta(s)=1</m>, le théorème s'en déduit.
+        </p>
+        <p>
+            Démontrer l'estimation <xref ref="eqn-compte-ideaux"/> revient à compter les idéaux de norme donnée dans une classe donnée. Le lemme suivant permet de se ramener au comptage d'idéaux principaux.
+        </p>
+        <lemma xml:id="lem-compte-ideaux-classe-triviale">
+            <statement>
+                <p>
+                    Soit <m>C\in \mathrm{Cl}(\mathcal{O}_K)</m> et <m>J</m> un idéal de <m>\mathcal{O}_K</m> dans la classe inverse de <m>C</m>. L'application <m>I\mapsto IJ</m> induit une bijection entre les idéaux de norme <m>n</m> dans la classe <m>C</m> et les idéaux principaux inclus dans <m>J</m> de norme <m>nN(J)</m>.
+                </p>
+            </statement>
+        </lemma>
+        <proof>
+            <p>
+                L'application est bien définie car, pour <m>I</m> dans la classe <m>C</m>, <m>[IJ]=[I][J]=1</m> et donc <m>IJ</m> est principal (<em>c.f.</em> <xref ref="prop-principal-classetrivial"/>). Que <m>IJ</m> soit de norme <m>nN(J)</m> si <m>I</m> est de norme <m>n</m> découle de la multiplicativté de la norme (<em>c.f.</em> <xref ref="cor-multiplicativite-norme"/>). Elle est injective par simplification (<em>c.f.</em> <xref ref="cor-contenir-cest-diviser"/>). Enfin, elle est aussi surjective : si <m>I'\subset J</m> désigne un idéal principal de norme <m>nN(J)</m>, alors comme contenir c'est diviser (<em>c.f.</em> <xref ref="cor-contenir-cest-diviser"/>) il existe <m>I</m> tel que <m>I'=IJ</m>. Comme <m>I</m> est principal, on trouve que <m>I\in C^{-1}</m>; par multiplicativité de la norme, <m>N(I)=n</m>.
+            </p>
+        </proof>
+
+        <p>
+            Démontrons enfin l'estimation <xref ref="eqn-compte-ideaux"/>. Soit <m>J</m> un idéal dans la classe <m>C^{-1}</m>. D'après le lemme précédent, la quantité <m>\sum_{n=1}^N{a_{n,C}}</m> est égale à au nombre d'idéaux principaux inclus dans <m>J</m> de norme <m>\leq N\cdot N(J)</m>. Il revient au même de compter les générateurs à unités près - c-à-d à <m>\mu(K)</m> près - à savoir les <m>z\in J \subset \mathbb{C}</m> dans la boule <m>B_{\sqrt{N \cdot N(J)}}\subset \mathbb{C}</m> de centre <m>0</m> et de rayon <m>\sqrt{N \cdot N(J)}</m>. On trouve alors
+        </p>
+        <md>
+            \sum_{n=1}^N{a_{n,C}}=\frac{|J\cap B_{\sqrt{N \cdot N(J)}}|}{w_K}.
+        </md>
+        <p>
+            On déduit alors <xref ref="eqn-compte-ideaux"/> du <xref ref="lem-comptage-points"/> démontré en appendice (dans les notations du lemme, <m>v(r)=\pi r^2</m> et donc <m>v'(r)=O(r)</m>).
+        </p>
+    </proof>
+
+    <subsection xml:id="subsec-">
+        <title>Produits eulériens</title>
+        
+        <p>
+            Puisque la norme est multiplicative, la fonction zêta de Dedekind admet un produit eulérien sur les idéaux premiers de <m>\mathcal{O}_K</m> :
+        </p>
+        <md>
+            \zeta_K(s)=\prod_{P\subset \mathcal{O}_K}{\left(1-\frac{1}{N(P)^s}\right)^{-1}}.
+        </md>
+        <p>
+            La convergence de ce produit vaut aussi pour <m>\mathrm{Re}(s) &gt; 1</m>. Le produit eulérien de <m>\zeta_K</m> permet, pour certains corps de nombres <m>K</m>, de la décomposer en produit de fonctions <m>L</m> de Dirichlet. Nous allons expliquer ce phénomène dans le cas où <m>K</m> est une extension quadratique. 
+        </p>
+        <p>
+            Soit <m>d</m> un entier sans facteur carré et <m>K=\mathbb{Q}(\sqrt{d})</m>. On rappelle que si <m>p</m> est un nombre premier impair, le symbole de Legendre <m>\left(\frac{a}{p}\right)</m> est égal à <m>0</m> si <m>p</m> divise <m>a</m>, à <m>1</m> si <m>a</m> est un carré modulo <m>p</m>, et à <m>-1</m> sinon. Lorsque <m>p=2</m>, on définit plutôt
+        </p>
+        <men xml:id="eqn-symbole-Kronecker">
+            \left(\frac{a}{2}\right)=\begin{cases} 0 \amp \text{si }a\text{ pair} \\ 1 \amp \text{si }a\equiv \pm 1 \pmod{8} \\ -1 \amp \text{si }a \equiv \pm 3 \pmod{8} \end{cases}
+        </men>
+        <p>
+            Enfin, suivant Kronecker, on étend la notation <m>\left(\frac{a}{n}\right)</m> multiplicativement par <m>\prod_{i}{\left(\frac{a}{p_i}\right)^{c_i}}</m> si <m>n=\prod_{i}{p_i^{c_i}}</m> est la décomposition en facteurs premiers de <m>n</m>.
+        </p>
+        <p>
+            Le symbole de Kronecker reflète la décomposition des nombres premiers dans <m>\mathcal{O}_K</m>.
+        </p>
+        <proposition xml:id="prop-decomposition-Kronecker">
+            <statement>
+                <p>
+                    Soit <m>p</m> un nombre premier. Alors :
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            (<em>Cas inerte</em>) <m>(p)</m> est premier dans <m>\mathcal{O}_K</m> si et seulement si <m>\left(\frac{\Delta_K}{p}\right)=-1</m>,
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            (<em>Cas décomposé</em>) <m>(p)=PP'</m> avec <m>P\neq P'</m> premiers de <m>\mathcal{O}_K</m> si et seulement si <m>\left(\frac{\Delta_K}{p}\right)=1</m>,
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            (<em>Cas ramifié</em>) <m>(p)=P^2</m> avec <m>P</m> premier de <m>\mathcal{O}_K</m> si et seulement si <m>\left(\frac{\Delta_K}{p}\right)=0</m>.
+                        </p>
+                    </li>
+                </ul>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Soit <m>\alpha\in \mathcal{O}_K</m> tel que <m>\mathcal{O}_K=\mathbb{Z}[\alpha]</m> et soit <m>\Pi_{\alpha}(X)=X^2+aX+b</m> son polynôme minimal. Son discriminant est égale à <m>a^2-4b=\Delta_K</m>. 
+            </p>
+            <p>
+                L'idéal <m>(p)</m> est égal à <m>I_p(X^2+aX+b)</m> et la décomposition de <m>(p)</m> dépend de celle du polynôme <m>\Pi_{\alpha}(X)</m> modulo <m>p</m>. Si <m>p\neq 2</m>, alors la relation <m>4\Pi_{\alpha}(X)=(2X+a)^2-\Delta_K</m> donne :
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        <m>\Pi_{\alpha}(X)</m> est irréductible modulo <m>p</m> si et seulement si <m>\Delta_K</m> n'est pas un carré modulo <m>p</m>,
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\Pi_{\alpha}(X)</m> est scindé à racines distinctes modulo <m>p</m> si et seulement si <m>\Delta_K</m> est un carré non nul modulo <m>p</m>,
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\Pi_{\alpha}(X)</m> est scindé à racines doubles modulo <m>p</m> si et seulement si <m>\Delta_K\equiv 0\pmod{p}</m>.
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Cela conclut le cas <m>p</m> impair. Le cas <m>p=2</m> se traite à la main : les polynômes de degré <m>2</m> dans <m>\mathbb{F}_2[X]</m> sont
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        L'unique polynôme irréductible est <m>X^2+X+1</m>, de discriminant <m>\Delta_K=-3</m>,
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        L'unique polynôme scindé à racines disctinctes <m>X(X+1)</m>, de discriminant <m>\Delta_K=1</m>,
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Les deux polynômes à racines doubles<m>X^2</m> et <m>(X+1)^2</m>, de discriminant respectifs <m>\Delta_K=0</m> et <m>\Delta_K=-4</m>.
+                    </p>
+                </li>
+            </ul>
+            <p>
+                On conclut en comparant avec <xref ref="eqn-symbole-Kronecker"/>.
+            </p>
+        </proof>
+
+        <p>
+            On en déduit le corollaire suivant qui exprime la fonction zêta de <m>K</m> en termes de séries <m>L</m> de Dirichlet. 
+        </p>
+        <corollary xml:id="cor-">
+            <statement>
+                <md>
+                \zeta_K(s)=\zeta(s)L(\left(\frac{\Delta_K}{\cdot}\right),s).
+                </md>
+            </statement>
+        </corollary>
+        <proof>
+            <p>
+                On prend comme point de départ le produit eulérien de <m>\zeta_K</m> et on le partitionne selon les trois types de nombres premiers. On trouve :
+            </p>
+            <md>
+                <mrow> \zeta_K(s) \amp =\prod_{P\subset \mathcal{O}_K}{\left(1-N(P)^{-s}\right)^{-1}} </mrow>
+                <mrow> \amp =\prod_{\left(\frac{\Delta_K}{p}\right)=-1}{(1-p^{-2s})}^{-1} \prod_{\left(\frac{\Delta_K}{p}\right)=1}{(1-p^{-s})}^{-2} \prod_{\left(\frac{\Delta_K}{p}\right)=0}{(1-p^{-s})}^{-1}  </mrow>
+                <mrow> \amp =\prod_{\left(\frac{\Delta_K}{p}\right)=-1}{(1-p^{-s})^{-1}(1+p^{-s})}^{-1} \prod_{\left(\frac{\Delta_K}{p}\right)=1}{(1-p^{-s})^{-2}} \prod_{p|\Delta_K}{(1-p^{-s})}^{-1}</mrow>
+                <mrow> \amp =\zeta(s)L(\left(\frac{\Delta_K}{\cdot}\right),s) </mrow>
+            </md>
+            <p>
+                en utilisant les produits eulériens de <m>\zeta</m> et de <m>L(\left(\frac{\Delta_K}{\cdot}\right))</m>.
+            </p>
+        </proof>
+
+        <remark>
+            <p>
+                Si <m>\chi:(\mathbb{Z}/D\mathbb{Z})^{\times} \to \{\pm 1\}</m> est un caractère de Dirichlet réel modulo <m>D</m> impair (<em>c-à-d</em> <m>\chi(-1)=-1</m>), alors il existe une formule close pour <m>L(\chi,1)</m> : 
+            </p>
+            <md>
+                L(\chi,1)=\frac{\pi}{\sqrt{D}(2-\chi(2))}\sum_{1\leq k &lt; -\frac{D}{2}}{\left( \chi(k)\right)}.
+            </md>
+            <p>
+                Combiné à la formule du nombre de classes, cela permet de calculer le cardinal du groupe de classes <m>h_K</m> lorsque <m>K</m> est un corps quadratique imaginaire de discriminant <m>\Delta_K</m>. On a alors :
+            </p>
+            <md>
+                h_K=\frac{w_K}{2(2-\left(\frac{\Delta_K}{2}\right))}\sum_{1\leq k &lt; -\frac{\Delta_K}{2}}{\left(\frac{\Delta_K}{2}\right)}.
+            </md>
+            
+        </remark>
+    </subsection>
+
+</section>
 
 </chapter>

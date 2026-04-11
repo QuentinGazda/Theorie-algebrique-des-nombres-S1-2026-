@@ -188,7 +188,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
         <title>Structure des réseaux</title>
         
       <p>
-        Soit <m>V</m> un espace vectoriel réel de dimension finie muni d'une base fixe <m>b=(b_1,\ldots,b_n)</m> ainsi que d'une norme fixée quelconque notée <m>\|\cdot\|</m>. On peut supposer, sans perte de généralité, que <m>V=\mathbb{R}^n</m> et que <m>b</m> est la base canonique; le fait de fixer une base nous permettra de pouvoir considérer le déterminant de familles de vecteurs de <m>V</m> relativement à cette base.
+        Soit <m>V</m> un espace vectoriel réel de dimension finie muni d'une norme fixée quelconque notée <m>\|\cdot\|</m>. On peut supposer, sans perte de généralité, que <m>V=\mathbb{R}^n</m> et que <m>b</m> est la base canonique; le fait de fixer une base nous permettra de pouvoir considérer le déterminant de familles de vecteurs de <m>V</m> relativement à cette base.
       </p>
       <definition xml:id="def-reseau">
         <statement>
@@ -280,7 +280,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
         </proof>
 
         <p>
-          Notons <m>B_L</m> le sous-ensemble de <m>\mathbb{R}_{>0}</m> formé des <m>|\det_b(f_1,\ldots,f_n)|</m> où <m>(f_1,\ldots,f_n)</m> parcourt les bases de <m>V</m> contenues dans <m>L</m>. Cette ensemble est non vide par définition d'un réseau. D'après le <xref ref="lem-L-commensure-Le"/>, il est aussi discret : comme tout élément de <m>L</m> s'écrit comme combinaison linéaire à coefficients entiers de la base <m>(N^{-1}e_1,\ldots,N^{-1}e_n)</m>, on a <m>B_L\subset N^{-n}|\det(e_1,\ldots,e_n)|\mathbb{Z}_{>0}</m> pour un certain entier <m>N\geq 1</m>. En conséquence, <m>B_L</m> admet un plus petit élément. Il nous reste alors à démontrer le lemme suivant.
+          Soit <m>b=(b_1,\ldots,b_n)</m> une base de <m>V</m>. Notons <m>B_L</m> le sous-ensemble de <m>\mathbb{R}_{>0}</m> formé des <m>|\det_b(f_1,\ldots,f_n)|</m> -- <m>\det_b</m> désigne le déterminant pris dans la base <m>b</m> -- où <m>(f_1,\ldots,f_n)</m> parcourt les bases de <m>V</m> contenues dans <m>L</m>. Cette ensemble est non vide par définition d'un réseau. D'après le <xref ref="lem-L-commensure-Le"/>, il est aussi discret : comme tout élément de <m>L</m> s'écrit comme combinaison linéaire à coefficients entiers de la base <m>(N^{-1}e_1,\ldots,N^{-1}e_n)</m>, on a <m>B_L\subset N^{-n}|\det_b(e_1,\ldots,e_n)|\mathbb{Z}_{>0}</m> pour un certain entier <m>N\geq 1</m>. En conséquence, <m>B_L</m> admet un plus petit élément. Il nous reste alors à démontrer le lemme suivant.
         </p>
         <lemma xml:id="lem-base-de-det-minimal">
           <statement>
@@ -300,11 +300,11 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
             En particulier, il suffit de montrer que <m>\Pi(f)\cap L</m> est réduit à zéro. Supposons par l'absurde qu'il existe un élément non nul <m>v\in \Pi(f)\cap L</m>. Soient <m>v_i\in [0,1[</m>, <m>i\in \{1,\ldots,n\}</m>, les coordonnées de <m>v</m> dans la base <m>(f_1,\ldots,f_n)</m> et soit <m>j</m> tel que <m>v_j\neq 0</m>. Alors <m>(f_1,\ldots,f_{j-1},v,f_{j+1},\ldots,f_n)</m> est une base de <m>V</m> dans <m>L</m>. Son déterminant se calcule ainsi:
           </p>
           <md>
-            <mrow> |\det_b(f_1,\ldots,f_{j-1},v,f_{j+1},\ldots,f_n)| \amp =v_j\cot |\det_b(f_1,\ldots,f_n)| </mrow>
-            <mrow> \amp &lt; |\det_b(f_1,\ldots,f_n)| </mrow>
+            <mrow> |\mathrm{det}_b(f_1,\ldots,f_{j-1},v,f_{j+1},\ldots,f_n)| \amp =v_j\cdot |\mathrm{det}_b(f_1,\ldots,f_n)| </mrow>
+            <mrow> \amp &lt; |\mathrm{det}_b(f_1,\ldots,f_n)| </mrow>
           </md>
             <p>
-              ce qui contredit la minimalité de <m>|\det_b(f_1,\ldots,f_n)|</m>.
+              ce qui contredit la minimalité de <m>|\mathrm{det}_b(f_1,\ldots,f_n)|</m>.
             </p>
         </proof>
       </proof>
@@ -314,7 +314,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
   </p>  
      <md>L(e) = \left\{ \sum_{i=1}^n a_i e_i ~|~ a_i \in \mathbb{Z} \right\}</md>
   <p>  
-    où <m>(e_1,\ldots,e_n)</m> est une base de <m>V</m> contenue dans <m>L</m>. Une famille <m>(e_1,\ldots,e_n)</m> qui réalise l'égalité ci-dessus est appelée <em>base de <m>L</m></em>. Puisque les bases de <m>L</m> diffèrent d'un changement de base dans
+    où <m>(e_1,\ldots,e_n)</m> est une base de <m>V</m> contenue dans <m>L</m>. Une famille <m>(e_1,\ldots,e_n)</m> qui réalise l'égalité ci-dessus est appelée <em>base de <m>L</m></em>. Puisque les bases de <m>L</m> diffèrent d'une matrice de passage dans
   </p>
     <md>
       \mathrm{GL}_n(\mathbb{Z})=\{A\in M_n(\mathbb{Z})~|~\det(A)=\pm 1\},
@@ -327,21 +327,38 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
     <title>Covolume d'un réseau</title>
     <statement>
       <p>
-        On appelle <em>covolume</em> du réseau <m>L\subset V</m> (relativement à <m>b</m>) la mesure commune d'un pavé fondamental, à savoir le nombre réel positif
-      </p>  
-      <md>
-        \mathrm{covol}(L)=|\mathrm{det}_b(e_1,\ldots,e_n)|.
-      </md>
-    </statement>
+        Soient <m>L</m> et <m>L'</m> deux réseaux de <m>V</m>. On appelle <em>covolume de <m>L</m> relativement à <m>L'</m></em> le nombre <m>|\det(P)|\in \mathbb{R}_{&gt; 0}</m> où <m>P\in \mathrm{Mat}_n(\mathbb{R})</m> est la matrice d'une base de <m>L</m> écrite dans une base de <m>L'</m>.  On le note <m>\mathrm{covol}_{L'}(L)</m>, ou encore <m>[L:L']</m>.
+      </p>
+      <p>
+        <em>On notera que <m>\mathrm{covol}_{L'}(L)</m> est bien indépendant du choix des bases de <m>L</m> et <m>L'</m>, car des choix différents donnerait une matrice de passage de la forme <m>UPV</m> où <m>U,V\in \mathrm{GL}_n(\mathbb{Z})</m>.</em>
+      </p>
+     </statement>
   </definition>
+
+    <remark>
+      <p>
+        Lorsqu'une base <m>b</m> de <m>V</m> est fixée, on notera aussi <m>\mathrm{covol}(L)</m> au lieu de <m>\mathrm{covol}_{L(b)}(L)</m>.
+      </p>
+    </remark>
+
+
+      <p>
+        La notation <m>[L:L']</m> entre en clash avec celle des degrés d'extensions de corps, mais elle reste très pratique pour énoncer les formules de multiplicativité. Si <m>L,L',L''</m> désignent trois réseaux de <m>V</m>, on a alors
+      </p>
+      <md>
+        [L:L'']=[L:L']\cdot [L':L''].
+      </md>
+      <p>
+        On a aussi <m>[L:L]=1</m> et <m>[L:L']=1/[L':L]</m>. La notation étend aussi celle de l'indice d'un sous-groupe abélien grâce à la proposition suivante.
+      </p>
 
   <proposition xml:id="prop-comparaison-covolumes">
     <statement>
       <p>
-        Soit <m>L'\subset L</m> une inclusion de réseaux dans <m>V=\mathbb{R}^n</m>. Alors
+        Soit <m>L'\subset L</m> une inclusion de réseaux. Alors
       </p>
       <md>  
-        \mathrm{covol}(L') =|L/L'|\cdot \mathrm{covol}(L).
+        [L:L']=|L/L'|.
       </md>
     </statement>
   </proposition>
@@ -349,11 +366,14 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
   <p>
     Soient <m>(e_1,\ldots,e_n)</m> une base de <m>L</m> et <m>(e_1',\ldots,e_n')</m> une base de <m>L'</m>. Comme <m>L'\subset L</m>, on peut écrire <m>e_i'=\sum_{j=1}^n a_{ij} e_j</m> pour des entiers <m>a_{ij}\in \mathbb{Z}</m>. Posons <md>A=(a_{ij})\in M_n(\mathbb{Z})</md>, de sorte que <m>(e_1',\ldots,e_n')=(e_1,\ldots,e_n)A</m>. Par le théorème des facteurs invariants dans l'anneau principal <m>\mathbb{Z}</m>, il existe des matrices inversibles <m>U,V\in \mathrm{GL}_n(\mathbb{Z})</m> telles que <m>UAV</m> soit une matrice diagonale, disons <m>\mathrm{diag}(d_1,\ldots,d_n)</m> où <m>d_1,\ldots,d_n\in \mathbb{Z}_{\geq 0}</m> sont les facteurs invariants de <m>A</m>. Quitte à changer les base <m>e</m> et <m>e'</m> en <m>(e_1,\ldots,e_n)U</m> et <m>(e'_1,\ldots,e'_n)V^{-1}</m>, on a
   </p>
-  <md>
+  <men xml:id="eq-e-eprime-diag">
     (e_1',\ldots,e_n')=(e_1,\ldots,e_n)\mathrm{diag}(d_1,\ldots,d_n).
-  </md>
+  </men>
   <p>
-    En particulier, on a <m>\mathrm{covol}(L')=|d_1\cdots d_n|\cdot \mathrm{covol}(L)</m>. Par ailleurs, cette même formule donne
+    En particulier, on a <m>[L:L']=|d_1\cdots d_n|</m>.
+  </p>
+  <p>
+    Par ailleurs, cette même formule <xref ref="eq-e-eprime-diag"/> donne
   </p>
   <md>
     L/L'\cong \bigoplus_{i=1}^n \mathbb{Z}/d_i\mathbb{Z}
@@ -366,7 +386,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
   <example>
     <title>Calcul de covolume</title>
     <p>
-      On peut utiliser la proposition précédente pourcalculer le covolume du réseau <m>L=\{(a,b)\in \mathbb{Z}^2~|~a\equiv 2b \pmod{3}\}</m> de <m>\mathbb{R}^2</m> sans avoir à en trouver une base.
+      On peut utiliser la proposition précédente pourcalculer le covolume du réseau <m>L=\{(a,b)\in \mathbb{Z}^2~|~a\equiv 2b \pmod{3}\}</m> de <m>\mathbb{R}^2</m> relativement au réseau <m>\mathbb{Z}^2</m> sans avoir à en trouver une base.
       En effet, <m>L</m> s'identifie au noyau de l'application surjective 
     </p>
       <md>
@@ -374,10 +394,10 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
         <mrow> \amp (a,b) \longmapsto a-2b \pmod{3}</mrow>
       </md>
     <p>
-      On a donc <m>|\mathbb{Z}^2/L|=3</m> et, comme le covolume de <m>\mathbb{Z}^2</m> est égal à 1, on en déduit que le covolume de <m>L</m> est égal à 3.
+      On a donc <m>|\mathbb{Z}^2/L|=3</m> et, par la <xref ref="prop-comparaison-covolumes"/>, on en déduit que <m>[L:\mathbb{Z}^2]=3</m>.
     </p>
     <p>
-      On peut maintenant en déduire une base: les vecteurs <m>f_1=(3,0)</m> et <m>f_2=(2,1)</m> sont dans <m>L</m> et
+      On peut maintenant en déduire une base : les vecteurs <m>f_1=(3,0)</m> et <m>f_2=(2,1)</m> sont dans <m>L</m> et
     </p>
       <md>
         |\mathrm{det}_{(e_1,e_2)}(f_1,f_2)|=|\det\begin{pmatrix}3 \amp 2\\0 \amp 1\end{pmatrix}|=|3\cdot 1 - 2\cdot 0|=3.
@@ -615,9 +635,45 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
         Un entier positif est somme de trois carrés si et seulement s'il n'est pas de la forme <m>4^i(8k+7)</m>.
       </p>
     </remark>
-
   </subsection>
 
+  <subsection xml:id="subsec-comptage-points">
+    <title>Comptage de points d'un réseau</title>
+    
+    <p>
+      Comme ci-dessus, soit <m>V</m> un espace vectoriel réel de dimension finie muni d'une base <m>b</m> fixée ainsi que d'une norme <m>\|\cdot\|</m>. On équippe <m>V</m> de la mesure de Lebesgue <m>\lambda</m> relative à la base <m>b</m>.
+    </p>
+    <p>
+      Soit <m>L</m> un réseau de <m>V</m>. On donne ici une estimation du nombre de points de <m>L</m> dans une boule de rayon <m>r\to \infty</m>.
+    </p>
+    <lemma xml:id="lem-comptage-points">
+      <statement>
+        <p>
+          Soit <m>\|\cdot \|</m> une norme sur <m>V</m> et <m>B_r\subset V</m> la boule de rayon <m>r</m> pour cette norme. Soit <m>v(r):=\lambda(B_r)</m> et <m>v'(r)</m> sa dérivée. Alors
+        </p>
+        <md>
+          |L\cap B_r|=\frac{v(r)}{\mathrm{covol}(L)}+O(v'(r)).
+        </md>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        Soit <m>\Pi</m> un pavé fondamental de <m>L</m> et soit <m>\delta &gt; 0</m> tel que <m>\Pi\subsetneq B_{\delta}</m> (inclusion stricte). Soit <m>U_r\subset L</m> l'ensemble des <m>\ell \in L</m> tels que <m>\ell+\Pi\subsetneq B_r</m>; comme <m>B_r</m> est compacte et que <m>B_r=\sqcup_{\ell\in L}{B_r\cap (\ell+\Pi)}</m>, l'ensemble <m>U_r</m> est fini et on note <m>n(r)</m> son cardinal. Les inclusions :  
+      </p>
+      <md>
+        U_r \subset L\cap B_r \subset U_{r+\delta}, \quad \text{et}\quad  \bigsqcup_{\ell\in U_r}{(\ell+\Pi)} \subset B_r \subset \bigsqcup_{\ell\in U_{r+\delta}}{(\ell+\Pi)},
+      </md>
+      <p>
+        donnent <m>n(r)\leq |L\cap B_r|\leq n(r+\delta)</m> ainsi que <m>n(r)\mathrm{covol}(L)\leq v(r) \leq n(r+\delta)\mathrm{covol}(L)</m>. Ces inégalités combinées impliquent
+      </p>
+      <md>
+        \frac{v(r)}{\mathrm{covol}(L)} \leq |L\cap B_r| \leq \frac{v(r+\delta)}{\mathrm{covol}(L)}.
+      </md>
+      <p>
+        Cela conclut, en remarquant que, comme <m>v(r)</m> est à croissance polynomiale, on a <m>v(r+\delta)=v(r)+O(v'(r))</m>. 
+      </p>
+    </proof>
+  </subsection>
 
 
 
