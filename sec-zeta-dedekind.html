@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-FR" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fonction zêta de Dedekind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Théorie algébrique des nombres">
+<meta property="book:author" content="Quentin Gazda">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Sauter au contenu</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Théorie algébrique des nombres</span> <span class="subtitle">UM4MA234 - Sorbonne Université</span></a></h1>
+<p class="byline">Quentin Gazda</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Table des matières"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Table des matières</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Résultats de la recherche: </h2>
+<div id="searchempty" class="searchempty"><span>Aucun résultat.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-regulateur.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="up-button button" href="ch-regulator.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Avant-propos</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="front-preface.html" class="internal"><span class="title">Préface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-algebraic-numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Nombres algébriques et entiers algébriques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nombres algébriques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynome-minimal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Polynôme minimal d’un nombre algébrique</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Théorème de Cantor</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Nombres algébriques de degré deux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-number-fields.html" class="internal"><span class="codenumber">2</span> <span class="title">Corps de nombres</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-number-fields-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Structure des corps de nombres</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-normes-traces.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Traces et Normes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminants.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Discriminants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integer-rings.html" class="internal"><span class="codenumber">3</span> <span class="title">Anneaux d’entiers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-OK.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Structure de <span class="process-math">\(\mathcal{O}_K\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminant-de-K.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Discriminant de <span class="process-math">\(K\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-norme-ideaux.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Norme d’un idéal</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-groupe-des-classes.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Groupe des classes d’idéaux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-factorization-of-ideals.html" class="internal"><span class="codenumber">4</span> <span class="title">Factorisation des idéaux</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Dedekind.html" class="internal"><span class="codenumber">4.1</span> <span class="title"><span class="process-math">\(\mathcal{O}_K\)</span> est de Dedekind</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Dedekind.html#subsec-produits-dideaux-premiers" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Produits d’idéaux premier</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Dedekind.html#subsec-factoriser-un-nombre-premier" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Factoriser un nombre premier</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-application-a-la-determination-de-ClOK.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Application à la détermination de <span class="process-math">\(\mathrm{Cl}(\mathcal{O}_K)\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-factorization-of-ideals-4.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Application à la résolution d’équations diophantiennes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-regulator.html" class="internal"><span class="codenumber">5</span> <span class="title">Régulateur de Dirichlet</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-theoreme-des-unites.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Théorème des unités</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-regulateur.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Régulateur des corps quadratiques réels</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-zeta-dedekind.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Fonction zêta de Dedekind</span></a></div>
+<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-zeta-dedekind.html#subsec-" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Produits eulériens</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="app-irreducibilite-polynome.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Démontrer l’irréductibilité d’un polynôme</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rappels-sur-les-anneaux.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Rappels sur les anneaux</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-reseaux.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Théorie des réseaux</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-structure-des-reseaux" class="internal"><span class="codenumber">A.3.1</span> <span class="title">Structure des réseaux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-minkowski" class="internal"><span class="codenumber">A.3.2</span> <span class="title">Lemme du corps convexe</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-applications" class="internal"><span class="codenumber">A.3.3</span> <span class="title">Applications en théorie des nombres</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-comptage-points" class="internal"><span class="codenumber">A.3.4</span> <span class="title">Comptage de points d’un réseau</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="references.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-zeta-dedekind"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fonction zêta de Dedekind</span>
+</h2>
+<div class="para" id="sec-zeta-dedekind-2">Soit <span class="process-math">\(K\)</span> un corps de nombres. La <em class="emphasis">fonction zêta de Dedekind de <span class="process-math">\(K\)</span></em> en <span class="process-math">\(s\)</span> est la série<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-formule-nombre-classes.html ./knowl/xref/rem-convergence-series-dirichlet.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/prop-principal-classetrivial.html ./knowl/xref/cor-multiplicativite-norme.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/lem-comptage-points.html ./knowl/xref/eqn-symbole-Kronecker.html" id="sec-zeta-dedekind-3">
+\begin{equation*}
+\zeta_K(s)=\sum_{I\subset \mathcal{O}_K}{\frac{1}{N(I)^s}}
+\end{equation*}
+</div>
+<div class="para" id="sec-zeta-dedekind-4">où la somme porte sur les idéaux non nuls de <span class="process-math">\(\mathcal{O}_K\)</span> et <span class="process-math">\(s\)</span> est une nombre complexe de partie réelle <span class="process-math">\(&gt; 1\text{.}\)</span> La convergence sera démontrée plus bas, mais rappelons d’ores et déjà le critère de convergence des séries de Dirichlet.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="remark remark-like" id="rem-convergence-series-dirichlet"><h3 class="heading">
+<span class="type">Remarque</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Convergence des séries de Dirichlet.</span>
+</h3>
+<div class="para" id="rem-convergence-series-dirichlet-2">Soit <span class="process-math">\((a_n)_{n\geq 1}\)</span> une suite de nombres complexes. Si les sommes partielles <span class="process-math">\(\sum_{n=1}^N{a_n}\)</span> sont <span class="process-math">\(O(N^c)\)</span> pour un nombre réel <span class="process-math">\(c\text{,}\)</span> alors la série de Dirichlet correspondante<div class="autopermalink" data-description="Paragraphe"><a href="#rem-convergence-series-dirichlet-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="rem-convergence-series-dirichlet-3">
+\begin{equation*}
+L((a_n)_n,s)=\sum_{n=1}^{\infty}{\frac{a_n}{n^s}}
+\end{equation*}
+</div>
+<div class="para" id="rem-convergence-series-dirichlet-4">converge vers une fonction holomorphe sur le demi-plan <span class="process-math">\(\mathrm{Re}(s) &gt; c\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#rem-convergence-series-dirichlet-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remarque 5.3.1: Convergence des séries de Dirichlet"><a href="#rem-convergence-series-dirichlet" title="Permalien Remarque 5.3.1: Convergence des séries de Dirichlet" aria-label="Permalien Remarque 5.3.1: Convergence des séries de Dirichlet">🔗</a></div></article><article class="theorem theorem-like" id="thm-formule-nombre-classes"><h3 class="heading">
+<span class="type">Théorème</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Formule du nombre de classes.</span>
+</h3>
+<div class="para" id="thm-formule-nombre-classes-2-1">La fonction <span class="process-math">\(\zeta_K\)</span> s’étend méromorphiquement au demi-plan <span class="process-math">\(\mathrm{Re}(s) &gt; \frac{1}{2}\)</span> avec un pôle simple en <span class="process-math">\(s=1\text{.}\)</span> Son résidu se calcule par la formule :<div class="autopermalink" data-description="Paragraphe"><a href="#thm-formule-nombre-classes-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-formule-nombre-classes-2-2">
+\begin{equation*}
+\lim_{s\to 1}~(s-1)\zeta_K(s)=\frac{2^{r_1}(2\pi)^{r_2}h_K R_K}{w_K \sqrt{|\Delta_K|}}.
+\end{equation*}
+</div>
+<div class="para" id="thm-formule-nombre-classes-2-3">où <span class="process-math">\(h_K=|\mathrm{Cl}(\mathcal{O}_K)|\)</span> est le nombre de classes de <span class="process-math">\(K\text{,}\)</span> <span class="process-math">\(R_K\)</span> son régulateur, <span class="process-math">\(w_K\)</span> désigne le nombre de racines de l’unité de <span class="process-math">\(K\)</span> et <span class="process-math">\(\Delta_K=\mathrm{disc}(\mathcal{O}_K)\)</span> son discriminant.<div class="autopermalink" data-description="Paragraphe"><a href="#thm-formule-nombre-classes-2-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Théorème 5.3.2: Formule du nombre de classes"><a href="#thm-formule-nombre-classes" title="Permalien Théorème 5.3.2: Formule du nombre de classes" aria-label="Permalien Théorème 5.3.2: Formule du nombre de classes">🔗</a></div></article><article class="remark remark-like" id="rem-equation-fonctionnelle-zeta-dedekind"><h3 class="heading">
+<span class="type">Remarque</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="rem-equation-fonctionnelle-zeta-dedekind-1">On doit le théorème ci-dessus à Dirichlet dans le cas des corps quadratiques. Hecke a en fait démontré que <span class="process-math">\(\zeta_K\)</span> s’étend méromorphiquement à l’ensemble du plan complexe, avec un unique pôle simple en <span class="process-math">\(s=1\text{.}\)</span> Hecke a également démontré l’équation fonctionnelle : si <span class="process-math">\(\Lambda_K(s):=|\Delta_K|^{\frac{s}{2}}\Gamma_{\mathbb{R}}(s)^{r_1}\Gamma_{\mathbb{C}}(s)^{r_2}\zeta_K(s)\)</span> est la fonction zêta dite <em class="emphasis">complète</em>,où <span class="process-math">\(\Gamma_{\mathbb{R}}(s):=\pi^{-\frac{s}{2}}\Gamma\left(\frac{s}{2}\right)\)</span> et <span class="process-math">\(\Gamma_{\mathbb{C}}(s):=(2\pi)^{-s}\Gamma(s)\text{,}\)</span> alors<div class="autopermalink" data-description="Paragraphe"><a href="#rem-equation-fonctionnelle-zeta-dedekind-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="rem-equation-fonctionnelle-zeta-dedekind-2">
+\begin{equation*}
+\Lambda_K(s)=\Lambda_K(1-s).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Remarque 5.3.3"><a href="#rem-equation-fonctionnelle-zeta-dedekind" title="Permalien Remarque 5.3.3" aria-label="Permalien Remarque 5.3.3">🔗</a></div></article><div class="para" id="sec-zeta-dedekind-8">Si le <a href="sec-zeta-dedekind.html#thm-formule-nombre-classes" class="xref" data-knowl="./knowl/xref/thm-formule-nombre-classes.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Théorème 5.3.2: Formule du nombre de classes">Théorème 5.3.2</a> est accessible au niveau de ce cours, nous nous contenterons de le démontrer dans le cas où <span class="process-math">\(K\)</span> est un corps quadratique imaginaire.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-8" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<details id="sec-zeta-dedekind-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-zeta-dedekind-9-2">Soit <span class="process-math">\(K=\mathbb{Q}(\sqrt{d})\)</span> un corps quadratique imaginaire, où <span class="process-math">\(d &lt; 0\)</span> est un entier négatif sans facteur carré. On interprète alors <span class="process-math">\(\mathcal{O}_K\)</span> et ses idéaux comme des réseaux de <span class="process-math">\(\mathbb{C}\)</span> vu comme <span class="process-math">\(\mathbb{R}\)</span>-espace vectoriel de dimension <span class="process-math">\(2\text{.}\)</span> De plus <span class="process-math">\(r_1=0\text{,}\)</span> <span class="process-math">\(r_2=1\)</span> et donc <span class="process-math">\(R_K=1\text{.}\)</span> En particulier, <span class="process-math">\(\mathcal{O}_K^{\times}=\mu(K)\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-zeta-dedekind-9-3">Soit <span class="process-math">\(C\)</span> une classe de <span class="process-math">\(\mathrm{Cl}(\mathcal{O}_K)\)</span> et désignons par <span class="process-math">\(a_{n,C}\)</span> le nombre de idéaux de norme <span class="process-math">\(n\)</span> dans la classe <span class="process-math">\(C\text{.}\)</span> En partitionant les ideaux selon leur classe dans <span class="process-math">\(\mathrm{Cl}(\mathcal{O}_K)\text{,}\)</span> on trouve :<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-convergence-series-dirichlet.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/prop-principal-classetrivial.html ./knowl/xref/cor-multiplicativite-norme.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/lem-comptage-points.html" id="sec-zeta-dedekind-9-4">
+\begin{equation*}
+\zeta_K(s)=\sum_{C\in \mathrm{Cl}(\mathcal{O}_K)}{\sum_{n=1}^{\infty}{\frac{a_{n,C}}{n^s}}}.
+\end{equation*}
+</div>
+<div class="para" id="sec-zeta-dedekind-9-5">Le prolongement de la série <span class="process-math">\(\zeta_K\)</span> ainsi que le calcule de son résidu découlent alors de l’estimation suivante :<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-convergence-series-dirichlet.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/prop-principal-classetrivial.html ./knowl/xref/cor-multiplicativite-norme.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/lem-comptage-points.html" id="eqn-compte-ideaux">
+\begin{equation}
+\sum_{n=1}^N{a_{n,C}}=\frac{2\pi N}{w_K\sqrt{|\Delta_K|}}+O(\sqrt{N}).\tag{5.3.1}
+\end{equation}
+</div>
+<div class="para" id="sec-zeta-dedekind-9-7">En effet, en posant <span class="process-math">\(b_n=\sum_{C\in \mathrm{Cl}(\mathcal{O}_K)}{a_{n,C}}-\frac{2\pi h_K}{w_K\sqrt{|\Delta_K|}} n\text{,}\)</span> en sommant sur les <span class="process-math">\(h_K\)</span> classes de <span class="process-math">\(\mathrm{Cl}(\mathcal{O}_K)\)</span> on obtiendrait<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-7" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-convergence-series-dirichlet.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/prop-principal-classetrivial.html ./knowl/xref/cor-multiplicativite-norme.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/lem-comptage-points.html" id="eqn-zeta-pole">
+\begin{equation}
+\zeta_K(s)-\frac{2\pi h_K}{w_K\sqrt{|\Delta_K|}}\zeta(s)=\sum_{n=1}^{\infty}{\frac{b_n}{n^s}}\tag{5.3.2}
+\end{equation}
+</div>
+<div class="para" id="sec-zeta-dedekind-9-9">avec <span class="process-math">\(\sum_{n=1}^{N}{b_n}=O(\sqrt{N})\text{.}\)</span> Comme la série <span class="process-math">\(\sum_{n=1}^{\infty}{\frac{b_n}{n^s}}\)</span> converge uniformément sur le domaine <span class="process-math">\(\mathrm{Re}(s) &lt; \frac{1}{2}\)</span> d’après la <a href="sec-zeta-dedekind.html#rem-convergence-series-dirichlet" class="xref" data-knowl="./knowl/xref/rem-convergence-series-dirichlet.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Remarque 5.3.1: Convergence des séries de Dirichlet">Remarque 5.3.1</a> et que <span class="process-math">\(\lim_{s\to 1}(s-1)\zeta(s)=1\text{,}\)</span> le théorème s’en déduit.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-9" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-zeta-dedekind-9-10">Démontrer l’estimation <a href="sec-zeta-dedekind.html#eqn-compte-ideaux" class="xref" data-knowl="./knowl/xref/eqn-compte-ideaux.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 5.3.1">(5.3.1)</a> revient à compter les idéaux de norme donnée dans une classe donnée. Le lemme suivant permet de se ramener au comptage d’idéaux principaux.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-10" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-compte-ideaux-classe-triviale"><h3 class="heading">
+<span class="type">Lemme</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-compte-ideaux-classe-triviale-1-1">Soit <span class="process-math">\(C\in \mathrm{Cl}(\mathcal{O}_K)\)</span> et <span class="process-math">\(J\)</span> un idéal de <span class="process-math">\(\mathcal{O}_K\)</span> dans la classe inverse de <span class="process-math">\(C\text{.}\)</span> L’application <span class="process-math">\(I\mapsto IJ\)</span> induit une bijection entre les idéaux de norme <span class="process-math">\(n\)</span> dans la classe <span class="process-math">\(C\)</span> et les idéaux principaux inclus dans <span class="process-math">\(J\)</span> de norme <span class="process-math">\(nN(J)\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#lem-compte-ideaux-classe-triviale-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemme 5.3.4"><a href="#lem-compte-ideaux-classe-triviale" title="Permalien Lemme 5.3.4" aria-label="Permalien Lemme 5.3.4">🔗</a></div></article><details id="sec-zeta-dedekind-9-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-zeta-dedekind-9-12-1">L’application est bien définie car, pour <span class="process-math">\(I\)</span> dans la classe <span class="process-math">\(C\text{,}\)</span> <span class="process-math">\([IJ]=[I][J]=1\)</span> et donc <span class="process-math">\(IJ\)</span> est principal (<em class="emphasis">c.f.</em> <a href="sec-groupe-des-classes.html#prop-principal-classetrivial" class="xref" data-knowl="./knowl/xref/prop-principal-classetrivial.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Proposition 3.4.2">Proposition 3.4.2</a>). Que <span class="process-math">\(IJ\)</span> soit de norme <span class="process-math">\(nN(J)\)</span> si <span class="process-math">\(I\)</span> est de norme <span class="process-math">\(n\)</span> découle de la multiplicativté de la norme (<em class="emphasis">c.f.</em> <a href="sec-Dedekind.html#cor-multiplicativite-norme" class="xref" data-knowl="./knowl/xref/cor-multiplicativite-norme.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Corollaire 4.1.3">Corollaire 4.1.3</a>). Elle est injective par simplification (<em class="emphasis">c.f.</em> <a href="sec-groupe-des-classes.html#cor-contenir-cest-diviser" class="xref" data-knowl="./knowl/xref/cor-contenir-cest-diviser.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Corollaire 3.4.10">Corollaire 3.4.10</a>). Enfin, elle est aussi surjective : si <span class="process-math">\(I'\subset J\)</span> désigne un idéal principal de norme <span class="process-math">\(nN(J)\text{,}\)</span> alors comme contenir c’est diviser (<em class="emphasis">c.f.</em> <a href="sec-groupe-des-classes.html#cor-contenir-cest-diviser" class="xref" data-knowl="./knowl/xref/cor-contenir-cest-diviser.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Corollaire 3.4.10">Corollaire 3.4.10</a>) il existe <span class="process-math">\(I\)</span> tel que <span class="process-math">\(I'=IJ\text{.}\)</span> Comme <span class="process-math">\(I\)</span> est principal, on trouve que <span class="process-math">\(I\in C^{-1}\text{;}\)</span> par multiplicativité de la norme, <span class="process-math">\(N(I)=n\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-12-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.3.1.1"><a href="#sec-zeta-dedekind-9-12" title="Permalien Démonstration 5.3.1.1" aria-label="Permalien Démonstration 5.3.1.1">🔗</a></div></article></details><div class="para" id="sec-zeta-dedekind-9-13">Démontrons enfin l’estimation <a href="sec-zeta-dedekind.html#eqn-compte-ideaux" class="xref" data-knowl="./knowl/xref/eqn-compte-ideaux.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 5.3.1">(5.3.1)</a>. Soit <span class="process-math">\(J\)</span> un idéal dans la classe <span class="process-math">\(C^{-1}\text{.}\)</span> D’après le lemme précédent, la quantité <span class="process-math">\(\sum_{n=1}^N{a_{n,C}}\)</span> est égale à au nombre d’idéaux principaux inclus dans <span class="process-math">\(J\)</span> de norme <span class="process-math">\(\leq N\cdot N(J)\text{.}\)</span> Il revient au même de compter les générateurs à unités près - c-à-d à <span class="process-math">\(\mu(K)\)</span> près - à savoir les <span class="process-math">\(z\in J \subset \mathbb{C}\)</span> dans la boule <span class="process-math">\(B_{\sqrt{N \cdot N(J)}}\subset \mathbb{C}\)</span> de centre <span class="process-math">\(0\)</span> et de rayon <span class="process-math">\(\sqrt{N \cdot N(J)}\text{.}\)</span> On trouve alors<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-13" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-convergence-series-dirichlet.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/prop-principal-classetrivial.html ./knowl/xref/cor-multiplicativite-norme.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/cor-contenir-cest-diviser.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/eqn-compte-ideaux.html ./knowl/xref/lem-comptage-points.html" id="sec-zeta-dedekind-9-14">
+\begin{equation*}
+\sum_{n=1}^N{a_{n,C}}=\frac{|J\cap B_{\sqrt{N \cdot N(J)}}|}{w_K}.
+\end{equation*}
+</div>
+<div class="para" id="sec-zeta-dedekind-9-15">On déduit alors <a href="sec-zeta-dedekind.html#eqn-compte-ideaux" class="xref" data-knowl="./knowl/xref/eqn-compte-ideaux.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 5.3.1">(5.3.1)</a> du <a href="sec-reseaux.html#lem-comptage-points" class="xref" data-knowl="./knowl/xref/lem-comptage-points.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Lemme A.3.18">Lemme A.3.18</a> démontré en appendice (dans les notations du lemme, <span class="process-math">\(v(r)=\pi r^2\)</span> et donc <span class="process-math">\(v'(r)=O(r)\)</span>).<div class="autopermalink" data-description="Paragraphe"><a href="#sec-zeta-dedekind-9-15" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.3.1: Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires"><a href="#sec-zeta-dedekind-9" title="Permalien Démonstration 5.3.1: Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires" aria-label="Permalien Démonstration 5.3.1: Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires">🔗</a></div></article></details><section class="subsection" id="subsec-"><h3 class="heading hide-type">
+<span class="type">Sous-section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Produits eulériens</span>
+</h3>
+<div class="para" id="subsec--2">Puisque la norme est multiplicative, la fonction zêta de Dedekind admet un produit eulérien indéxé sur les idéaux premiers de <span class="process-math">\(\mathcal{O}_K\)</span> :<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-symbole-Kronecker.html" id="subsec--3">
+\begin{equation*}
+\zeta_K(s)=\prod_{P\subset \mathcal{O}_K}{\left(1-\frac{1}{N(P)^s}\right)^{-1}}.
+\end{equation*}
+</div>
+<div class="para" id="subsec--4">La convergence de ce produit vaut aussi pour <span class="process-math">\(\mathrm{Re}(s) &gt; 1\text{.}\)</span> Le produit eulérien de <span class="process-math">\(\zeta_K\)</span> permet, pour certains corps de nombres <span class="process-math">\(K\text{,}\)</span> de la décomposer en produit de fonctions <span class="process-math">\(L\)</span> de Dirichlet. Nous allons expliquer ce phénomène dans le cas où <span class="process-math">\(K\)</span> est une extension quadratique.<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="subsec--5">Soit <span class="process-math">\(d\)</span> un entier sans facteur carré et <span class="process-math">\(K=\mathbb{Q}(\sqrt{d})\text{.}\)</span> On rappelle que si <span class="process-math">\(p\)</span> est un nombre premier impair, le symbole de Legendre <span class="process-math">\(\left(\frac{a}{p}\right)\)</span> est égal à <span class="process-math">\(0\)</span> si <span class="process-math">\(p\)</span> divise <span class="process-math">\(a\text{,}\)</span> à <span class="process-math">\(1\)</span> si <span class="process-math">\(a\)</span> est un carré modulo <span class="process-math">\(p\text{,}\)</span> et à <span class="process-math">\(-1\)</span> sinon. Lorsque <span class="process-math">\(p=2\text{,}\)</span> on définit plutôt<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-symbole-Kronecker.html" id="eqn-symbole-Kronecker">
+\begin{equation}
+\left(\frac{a}{2}\right)=\begin{cases} 0 \amp \text{si }a\text{ pair} \\ 1 \amp \text{si }a\equiv \pm 1 \pmod{8} \\ -1 \amp \text{si }a \equiv \pm 3 \pmod{8} \end{cases}\tag{5.3.3}
+\end{equation}
+</div>
+<div class="para" id="subsec--7">Enfin, suivant Kronecker, on étend la notation <span class="process-math">\(\left(\frac{a}{n}\right)\)</span> multiplicativement par <span class="process-math">\(\prod_{i}{\left(\frac{a}{p_i}\right)^{c_i}}\)</span> si <span class="process-math">\(n=\prod_{i}{p_i^{c_i}}\)</span> est la décomposition en facteurs premiers de <span class="process-math">\(n\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--7" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="subsec--8">Le symbole de Kronecker reflète la décomposition des nombres premiers dans <span class="process-math">\(\mathcal{O}_K\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--8" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-decomposition-Kronecker"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="prop-decomposition-Kronecker-1-1">Soit <span class="process-math">\(p\)</span> un nombre premier. Alors :<div class="autopermalink" data-description="Paragraphe"><a href="#prop-decomposition-Kronecker-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div> <ul class="disc" id="prop-decomposition-Kronecker-1-2">
+<li id="prop-decomposition-Kronecker-1-2-1">
+<div class="para" id="prop-decomposition-Kronecker-1-2-1-1">(<em class="emphasis">Cas inerte</em>) <span class="process-math">\((p)\)</span> est premier dans <span class="process-math">\(\mathcal{O}_K\)</span> si et seulement si <span class="process-math">\(\left(\frac{\Delta_K}{p}\right)=-1\text{,}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop-decomposition-Kronecker-1-2-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#prop-decomposition-Kronecker-1-2-1" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="prop-decomposition-Kronecker-1-2-2">
+<div class="para" id="prop-decomposition-Kronecker-1-2-2-1">(<em class="emphasis">Cas décomposé</em>) <span class="process-math">\((p)=PP'\)</span> avec <span class="process-math">\(P\neq P'\)</span> premiers de <span class="process-math">\(\mathcal{O}_K\)</span> si et seulement si <span class="process-math">\(\left(\frac{\Delta_K}{p}\right)=1\text{,}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop-decomposition-Kronecker-1-2-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#prop-decomposition-Kronecker-1-2-2" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="prop-decomposition-Kronecker-1-2-3">
+<div class="para" id="prop-decomposition-Kronecker-1-2-3-1">(<em class="emphasis">Cas ramifié</em>) <span class="process-math">\((p)=P^2\)</span> avec <span class="process-math">\(P\)</span> premier de <span class="process-math">\(\mathcal{O}_K\)</span> si et seulement si <span class="process-math">\(\left(\frac{\Delta_K}{p}\right)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop-decomposition-Kronecker-1-2-3-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#prop-decomposition-Kronecker-1-2-3" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Proposition 5.3.5"><a href="#prop-decomposition-Kronecker" title="Permalien Proposition 5.3.5" aria-label="Permalien Proposition 5.3.5">🔗</a></div></article><details id="subsec--10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec--10-1">Soit <span class="process-math">\(\alpha\in \mathcal{O}_K\)</span> tel que <span class="process-math">\(\mathcal{O}_K=\mathbb{Z}[\alpha]\)</span> et soit <span class="process-math">\(\Pi_{\alpha}(X)=X^2+aX+b\)</span> son polynôme minimal. Son discriminant est égale à <span class="process-math">\(a^2-4b=\Delta_K\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="subsec--10-2">L’idéal <span class="process-math">\((p)\)</span> est égal à <span class="process-math">\(I_p(X^2+aX+b)\)</span> et la décomposition de <span class="process-math">\((p)\)</span> dépend de celle du polynôme <span class="process-math">\(\Pi_{\alpha}(X)\)</span> modulo <span class="process-math">\(p\text{.}\)</span> Si <span class="process-math">\(p\neq 2\text{,}\)</span> alors la relation <span class="process-math">\(4\Pi_{\alpha}(X)=(2X+a)^2-\Delta_K\)</span> donne :<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<ul class="disc" id="subsec--10-3">
+<li id="subsec--10-3-1">
+<div class="para" id="subsec--10-3-1-1">
+<span class="process-math">\(\Pi_{\alpha}(X)\)</span> est irréductible modulo <span class="process-math">\(p\)</span> si et seulement si <span class="process-math">\(\Delta_K\)</span> n’est pas un carré modulo <span class="process-math">\(p\text{,}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-3-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#subsec--10-3-1" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="subsec--10-3-2">
+<div class="para" id="subsec--10-3-2-1">
+<span class="process-math">\(\Pi_{\alpha}(X)\)</span> est scindé à racines distinctes modulo <span class="process-math">\(p\)</span> si et seulement si <span class="process-math">\(\Delta_K\)</span> est un carré non nul modulo <span class="process-math">\(p\text{,}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-3-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#subsec--10-3-2" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="subsec--10-3-3">
+<div class="para" id="subsec--10-3-3-1">
+<span class="process-math">\(\Pi_{\alpha}(X)\)</span> est scindé à racines doubles modulo <span class="process-math">\(p\)</span> si et seulement si <span class="process-math">\(\Delta_K\equiv 0\pmod{p}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-3-3-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#subsec--10-3-3" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec--10-4">Cela conclut le cas <span class="process-math">\(p\)</span> impair. Le cas <span class="process-math">\(p=2\)</span> se traite à la main : les polynômes de degré <span class="process-math">\(2\)</span> dans <span class="process-math">\(\mathbb{F}_2[X]\)</span> sont<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<ul class="disc" id="subsec--10-5">
+<li id="subsec--10-5-1">
+<div class="para" id="subsec--10-5-1-1">L’unique polynôme irréductible est <span class="process-math">\(X^2+X+1\text{,}\)</span> de discriminant <span class="process-math">\(\Delta_K=-3\text{,}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-5-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#subsec--10-5-1" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="subsec--10-5-2">
+<div class="para" id="subsec--10-5-2-1">L’unique polynôme scindé à racines disctinctes <span class="process-math">\(X(X+1)\text{,}\)</span> de discriminant <span class="process-math">\(\Delta_K=1\text{,}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-5-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#subsec--10-5-2" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="subsec--10-5-3">
+<div class="para" id="subsec--10-5-3-1">Les deux polynômes à racines doubles<span class="process-math">\(X^2\)</span> et <span class="process-math">\((X+1)^2\text{,}\)</span> de discriminant respectifs <span class="process-math">\(\Delta_K=0\)</span> et <span class="process-math">\(\Delta_K=-4\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-5-3-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#subsec--10-5-3" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec--10-6">On conclut en comparant avec <a href="sec-zeta-dedekind.html#eqn-symbole-Kronecker" class="xref" data-knowl="./knowl/xref/eqn-symbole-Kronecker.html" data-reveal-label="Dévoiler" data-close-label="Fermer" title="Équation 5.3.3">(5.3.3)</a>.<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--10-6" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.3.1.1"><a href="#subsec--10" title="Permalien Démonstration 5.3.1.1" aria-label="Permalien Démonstration 5.3.1.1">🔗</a></div></article></details><div class="para" id="subsec--11">On en déduit le corollaire suivant qui exprime la fonction zêta de <span class="process-math">\(K\)</span> en termes de séries <span class="process-math">\(L\)</span> de Dirichlet.<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--11" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-"><h4 class="heading">
+<span class="type">Corollaire</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="displaymath process-math" id="cor--1-1">
+\begin{equation*}
+\zeta_K(s)=\zeta(s)L(\left(\frac{\Delta_K}{\cdot}\right),s).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Corollaire 5.3.6"><a href="#cor-" title="Permalien Corollaire 5.3.6" aria-label="Permalien Corollaire 5.3.6">🔗</a></div></article><details id="subsec--13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec--13-1">On prend comme point de départ le produit eulérien de <span class="process-math">\(\zeta_K\)</span> et on le partitionne selon les trois types de nombres premiers. On trouve :<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--13-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec--13-2">
+\begin{align*}
+\zeta_K(s) \amp =\prod_{P\subset \mathcal{O}_K}{\left(1-N(P)^{-s}\right)^{-1}} \\
+\amp =\prod_{\left(\frac{\Delta_K}{p}\right)=-1}{(1-p^{-2s})}^{-1} \prod_{\left(\frac{\Delta_K}{p}\right)=1}{(1-p^{-s})}^{-2} \prod_{\left(\frac{\Delta_K}{p}\right)=0}{(1-p^{-s})}^{-1}  \\
+\amp =\prod_{\left(\frac{\Delta_K}{p}\right)=-1}{(1-p^{-s})^{-1}(1+p^{-s})}^{-1} \prod_{\left(\frac{\Delta_K}{p}\right)=1}{(1-p^{-s})^{-2}} \prod_{p|\Delta_K}{(1-p^{-s})}^{-1}\\
+\amp =\zeta(s)L(\left(\frac{\Delta_K}{\cdot}\right),s) 
+\end{align*}
+</div>
+<div class="para" id="subsec--13-3">en utilisant les produits eulériens de <span class="process-math">\(\zeta\)</span> et de <span class="process-math">\(L(\left(\frac{\Delta_K}{\cdot}\right))\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec--13-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.3.1.2"><a href="#subsec--13" title="Permalien Démonstration 5.3.1.2" aria-label="Permalien Démonstration 5.3.1.2">🔗</a></div></article></details><article class="remark remark-like" id="subsec--14"><h4 class="heading">
+<span class="type">Remarque</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsec--14-1">Si <span class="process-math">\(\chi:(\mathbb{Z}/D\mathbb{Z})^{\times} \to \{\pm 1\}\)</span> est un caractère de Dirichlet réel modulo <span class="process-math">\(D\)</span> impair (<em class="emphasis">c-à-d</em> <span class="process-math">\(\chi(-1)=-1\)</span>), alors il existe une formule close pour <span class="process-math">\(L(\chi,1)\)</span> :<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--14-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec--14-2">
+\begin{equation*}
+L(\chi,1)=\frac{\pi}{\sqrt{D}(2-\chi(2))}\sum_{1\leq k &lt; -\frac{D}{2}}{ \chi(k)}.
+\end{equation*}
+</div>
+<div class="para" id="subsec--14-3">Combiné à la formule du nombre de classes, cela permet de calculer le cardinal du groupe de classes <span class="process-math">\(h_K\)</span> lorsque <span class="process-math">\(K\)</span> est un corps quadratique imaginaire de discriminant <span class="process-math">\(\Delta_K\text{.}\)</span> On a alors :<div class="autopermalink" data-description="Paragraphe"><a href="#subsec--14-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec--14-4">
+\begin{equation*}
+h_K=\frac{w_K}{2(2-\left(\frac{\Delta_K}{2}\right))}\sum_{1\leq k &lt; -\frac{\Delta_K}{2}}{\left(\frac{\Delta_K}{k}\right)}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Remarque 5.3.7"><a href="#subsec--14" title="Permalien Remarque 5.3.7" aria-label="Permalien Remarque 5.3.7">🔗</a></div></article><div class="autopermalink" data-description="Sous-section 5.3.1: Produits eulériens"><a href="#subsec-" title="Permalien Sous-section 5.3.1: Produits eulériens" aria-label="Permalien Sous-section 5.3.1: Produits eulériens">🔗</a></div></section><div class="autopermalink" data-description="Section 5.3: Fonction zêta de Dedekind"><a href="#sec-zeta-dedekind" title="Permalien Section 5.3: Fonction zêta de Dedekind" aria-label="Permalien Section 5.3: Fonction zêta de Dedekind">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-regulateur.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="app-A.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-FR" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Régulateur des corps quadratiques réels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Théorie algébrique des nombres">
+<meta property="book:author" content="Quentin Gazda">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Évaluer (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Sauter au contenu</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Théorie algébrique des nombres</span> <span class="subtitle">UM4MA234 - Sorbonne Université</span></a></h1>
+<p class="byline">Quentin Gazda</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Table des matières"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Table des matières</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Résultats de la recherche: </h2>
+<div id="searchempty" class="searchempty"><span>Aucun résultat.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-theoreme-des-unites.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="up-button button" href="ch-regulator.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="sec-zeta-dedekind.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Avant-propos</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="front-preface.html" class="internal"><span class="title">Préface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-algebraic-numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Nombres algébriques et entiers algébriques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nombres algébriques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynome-minimal.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Polynôme minimal d’un nombre algébrique</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Théorème de Cantor</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-algebraic-numbers-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Nombres algébriques de degré deux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-number-fields.html" class="internal"><span class="codenumber">2</span> <span class="title">Corps de nombres</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-number-fields-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Structure des corps de nombres</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-normes-traces.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Traces et Normes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminants.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Discriminants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integer-rings.html" class="internal"><span class="codenumber">3</span> <span class="title">Anneaux d’entiers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-OK.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Structure de <span class="process-math">\(\mathcal{O}_K\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-discriminant-de-K.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Discriminant de <span class="process-math">\(K\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-norme-ideaux.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Norme d’un idéal</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-groupe-des-classes.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Groupe des classes d’idéaux</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-factorization-of-ideals.html" class="internal"><span class="codenumber">4</span> <span class="title">Factorisation des idéaux</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Dedekind.html" class="internal"><span class="codenumber">4.1</span> <span class="title"><span class="process-math">\(\mathcal{O}_K\)</span> est de Dedekind</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Dedekind.html#subsec-produits-dideaux-premiers" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Produits d’idéaux premier</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Dedekind.html#subsec-factoriser-un-nombre-premier" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Factoriser un nombre premier</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-application-a-la-determination-de-ClOK.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Application à la détermination de <span class="process-math">\(\mathrm{Cl}(\mathcal{O}_K)\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-factorization-of-ideals-4.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Application à la résolution d’équations diophantiennes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-regulator.html" class="internal"><span class="codenumber">5</span> <span class="title">Régulateur de Dirichlet</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-theoreme-des-unites.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Théorème des unités</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-regulateur.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Régulateur des corps quadratiques réels</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-zeta-dedekind.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Fonction zêta de Dedekind</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-zeta-dedekind.html#subsec-" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Produits eulériens</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-A.html" class="internal"><span class="codenumber">A</span> <span class="title">Compléments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="app-irreducibilite-polynome.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Démontrer l’irréductibilité d’un polynôme</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rappels-sur-les-anneaux.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Rappels sur les anneaux</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-reseaux.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Théorie des réseaux</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-structure-des-reseaux" class="internal"><span class="codenumber">A.3.1</span> <span class="title">Structure des réseaux</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-minkowski" class="internal"><span class="codenumber">A.3.2</span> <span class="title">Lemme du corps convexe</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-applications" class="internal"><span class="codenumber">A.3.3</span> <span class="title">Applications en théorie des nombres</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-reseaux.html#subsec-comptage-points" class="internal"><span class="codenumber">A.3.4</span> <span class="title">Comptage de points d’un réseau</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="references.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-regulateur"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Régulateur des corps quadratiques réels</span>
+</h2>
+<div class="para" id="sec-regulateur-2">Dans la section précédente, nous avons démontré que <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\)</span> est un réseau de l’hyperplan <span class="process-math">\(H\subset \mathbb{R}^{r_1+r_2}\)</span> d’équation <span class="process-math">\(x_1+\cdots+x_{r_1+r_2}=0\text{.}\)</span> Cet hyperplan admet un autre réseau, à savoir celui des points à coordonnées entières <span class="process-math">\(H_{\mathbb{Z}}:=H\cap \mathbb{Z}^{r_1+r_2}\text{.}\)</span> Le <em class="emphasis">régulateur de <span class="process-math">\(K\)</span></em> est alors défini comme le rapport entre les covolumes de ces deux réseaux :<div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-regulateur"><h3 class="heading">
+<span class="type">Définition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Régulateur.</span>
+</h3>
+<div class="para" id="def-regulateur-2-1">Le <em class="emphasis">régulateur de <span class="process-math">\(K\)</span></em> est le nombre réel positif <span class="process-math">\(R_K:=[\ell(\mathcal{O}_K^{\times}):H_{\mathbb{Z}}]\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#def-regulateur-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Définition 5.2.1: Régulateur"><a href="#def-regulateur" title="Permalien Définition 5.2.1: Régulateur" aria-label="Permalien Définition 5.2.1: Régulateur">🔗</a></div></article><div class="para" id="sec-regulateur-4">Soit <span class="process-math">\(m=r_1+r_2-1\text{.}\)</span> Le régulateur de <span class="process-math">\(K\)</span> se calcule ainsi : on connaît déjà une base de <span class="process-math">\(H_{\mathbb{Z}}\text{,}\)</span> à savoir <span class="process-math">\((b_1,\ldots,b_{m})\)</span> avec <span class="process-math">\(b_i=e_i-e_{r_1+r_2}\text{.}\)</span> Du côté unités, on fixe une famille <span class="process-math">\((\varepsilon_1,\ldots,\varepsilon_{m})\)</span> de <span class="process-math">\(\mathcal{O}_K^{\times}\)</span> telle que <span class="process-math">\((\ell(\varepsilon_1),\ldots,\ell(\varepsilon_{m}))\)</span> soit une base de <span class="process-math">\(\ell(\mathcal{O}_K^{\times})\text{.}\)</span> Alors le régulateur de <span class="process-math">\(K\)</span> est égal à la valeur absolue du déterminant de la matrice <span class="process-math">\(M=(m_{ij})\in \mathrm{Mat}_{m}(\mathbb{R})\)</span> avec <span class="process-math">\(m_{ij}=\log |\sigma_i(\varepsilon_j)|^{*_i}\)</span> où <span class="process-math">\(*_i=1,2\)</span> en fonction de si <span class="process-math">\(\sigma_i\)</span> est réel ou complexe.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-regulateur-5">L’enjeu du calcul du régulateur réside donc dans la détermination d’une base de <span class="process-math">\(\mathcal{O}_K^{\times}\)</span> (modulo torsion). Nous allons montrer comment procéder dans le cas des corps quadratiques réels.<div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-regulateur-6">Soit <span class="process-math">\(K=\mathbb{Q}(\sqrt{d})\)</span> un corps quadratique réel, où <span class="process-math">\(d\)</span> est un entier positif sans facteur carré. Les seules racines de l’unité dans <span class="process-math">\(K\)</span> sont <span class="process-math">\(1\)</span> et <span class="process-math">\(-1\)</span> et, comme <span class="process-math">\(r_1=2\text{,}\)</span> le théorème des unités de Dirichlet assure que <span class="process-math">\(\mathcal{O}_K^{\times}\cong \{\pm 1\}\times \mathbb{Z}\text{.}\)</span> En particulier, il existe une unité fondamentale <span class="process-math">\(\varepsilon\in \mathcal{O}_K^{\times}\)</span> telle que <span class="process-math">\(\mathcal{O}_K^{\times}=\{\pm \varepsilon^n~|~n\in \mathbb{Z}\}\text{.}\)</span> Le régulateur de <span class="process-math">\(K\)</span> est alors égal à <span class="process-math">\(|\log (|\sigma_1(\varepsilon)|)|\)</span> où <span class="process-math">\(\sigma_1\)</span> désigne l’un des deux plongements réels de <span class="process-math">\(K\text{.}\)</span> Pour déterminer des unités fondamentales <span class="process-math">\(\varepsilon\text{,}\)</span> on a la proposition suivante :<div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-6" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-unite-fondamentale-quadratique-reel"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-unite-fondamentale-quadratique-reel-1-1">Soit <span class="process-math">\((x,y)\in \mathbb{N}^2\)</span> une solution de l’équation de Pell-Fermat<div class="autopermalink" data-description="Paragraphe"><a href="#prop-unite-fondamentale-quadratique-reel-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="prop-unite-fondamentale-quadratique-reel-1-2">
+\begin{equation*}
+x^2-dy^2=\pm 4.
+\end{equation*}
+</div>
+<div class="para" id="prop-unite-fondamentale-quadratique-reel-1-3">Si <span class="process-math">\((x,y)\)</span> est tel que <span class="process-math">\(\varepsilon:=\frac{x}{2}+\frac{y}{2}\sqrt{d} &gt; 1\)</span> est minimal pour cette propriété, alors <span class="process-math">\(\varepsilon\)</span> est une unité fondamentale de <span class="process-math">\(K\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#prop-unite-fondamentale-quadratique-reel-1-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 5.2.2"><a href="#prop-unite-fondamentale-quadratique-reel" title="Permalien Proposition 5.2.2" aria-label="Permalien Proposition 5.2.2">🔗</a></div></article><details id="sec-regulateur-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-regulateur-8-1">Soit <span class="process-math">\(u\in \mathcal{O}_K^{\times}\)</span> telle que <span class="process-math">\(u&gt;1\)</span> et minimal pour cette propriété. On prétend que <span class="process-math">\(u\)</span> est une unité fondamentale. Pour le démontrer, soit <span class="process-math">\(g\in \mathcal{O}_K^{\times}\text{.}\)</span> Quitte à remplacer <span class="process-math">\(g\)</span> pour son opposé, on peut supposer que <span class="process-math">\(g&gt;0\)</span> et quitte à le remplacer par son inverse on peut supposer <span class="process-math">\(g\geq 1\text{.}\)</span> Comme la suite <span class="process-math">\((gu^{-n})_{n\geq 0}\)</span> est strictent décroissante de limite nulle, il existe <span class="process-math">\(k\geq 0\)</span> tel que <span class="process-math">\(gu^{-k} &lt; u\text{,}\)</span> puis <span class="process-math">\(gu^{-k}\leq 1\)</span> par minimalité. En choisissant <span class="process-math">\(k\)</span> minimal pour cette propriété, on a aussi <span class="process-math">\(gu^{-(k-1)}\geq u\text{,}\)</span> soit <span class="process-math">\(gu^{-k}\geq 1\text{.}\)</span> En particulier, <span class="process-math">\(gu^{-k} =1\)</span> puis <span class="process-math">\(g=u^k\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-8-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-regulateur-8-2">On considère l’application<div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-8-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-regulateur-8-3">
+\begin{align*}
+p:~\{(x,y)\in \mathbb{N}^2| x^2-dy^2=\pm 4\} \amp \longrightarrow \mathcal{O}_K^{\times}\cap \mathbb{R}_{\geq 1} \\
+(x,y) \amp \longmapsto \frac{x}{2}+\frac{y}{2}\sqrt{d} 
+\end{align*}
+</div>
+<div class="para" id="sec-regulateur-8-4">Cette application est bien définie : on vérifiera que <span class="process-math">\(p(x,y)\)</span> est dans <span class="process-math">\(\mathcal{O}_K^{\times}\cap \mathbb{R}_{\geq 1}\)</span> -- quelque soit la congruence de <span class="process-math">\(d\)</span> mod <span class="process-math">\(4\)</span> -- car <span class="process-math">\(x\)</span> et <span class="process-math">\(y\)</span> ont la même parité et que <span class="process-math">\((x,y)\neq (0,0)\text{.}\)</span> Elle est injective, mais aussi surjective : si <span class="process-math">\(g=\frac{x}{2}+\frac{y}{2}\sqrt{d}\)</span> est une unité <span class="process-math">\(\geq 1\text{,}\)</span> avec <span class="process-math">\(x,y\in \mathbb{Z}\text{,}\)</span> l’équation <span class="process-math">\(N_K(g)=\pm 1\)</span> est satisfaite et est équivalente à <span class="process-math">\((x,y)\)</span> solution de Pell-Fermat; reste à montrer que <span class="process-math">\(x,y\geq 0\text{.}\)</span> L’inverse de <span class="process-math">\(g\)</span> vérifie <span class="process-math">\(1\geq g^{-1} &gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-8-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<ul class="disc" id="sec-regulateur-8-5">
+<li id="sec-regulateur-8-5-1">
+<div class="para" id="sec-regulateur-8-5-1-1">Si <span class="process-math">\(N_K(g)=1\text{,}\)</span> alors <span class="process-math">\(g^{-1}=\frac{x}{2}-\frac{y}{2}\sqrt{d}\)</span> et donc <span class="process-math">\(x=g+g^{-1} &gt; 1\text{,}\)</span> soit <span class="process-math">\(x\geq 2\text{,}\)</span> puis <span class="process-math">\(\frac{y}{\sqrt{d}}\geq \frac{x}{2}-1\geq 0\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-8-5-1-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#sec-regulateur-8-5-1" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+<li id="sec-regulateur-8-5-2">
+<div class="para" id="sec-regulateur-8-5-2-1">Si <span class="process-math">\(N_K(g)=-1\text{,}\)</span> alors <span class="process-math">\(g^{-1}=-\frac{x}{2}+\frac{y}{2}\sqrt{d}\)</span> et donc <span class="process-math">\(y\sqrt{d}=g+g^{-1}\geq 1\text{,}\)</span> soit <span class="process-math">\(y &gt; 0\text{,}\)</span> puis <span class="process-math">\(\frac{x}{2}\geq \frac{y}{2}\sqrt{d}-1 &gt; 0\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-8-5-2-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assertion"><a href="#sec-regulateur-8-5-2" title="Permalien Assertion" aria-label="Permalien Assertion">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="sec-regulateur-8-6">Enfin, vérifions que <span class="process-math">\(p\)</span> est croissante : si <span class="process-math">\((x_1,y_1)\)</span> et <span class="process-math">\((x_2,y_2)\)</span> sont tels que <span class="process-math">\(x_1\geq x_2\)</span> et <span class="process-math">\(y_1\geq y_2\text{,}\)</span> alors il est clair que <span class="process-math">\(p(x_1,y_1) \geq p(x_2,y_2)\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-8-6" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Démonstration 5.2.1"><a href="#sec-regulateur-8" title="Permalien Démonstration 5.2.1" aria-label="Permalien Démonstration 5.2.1">🔗</a></div></article></details><details id="sec-regulateur-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Exemple</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Régulateur de quelques corps quadratiques réels.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-regulateur-9-2">Soit <span class="process-math">\(K=\mathbb{Q}(\sqrt{2})\text{.}\)</span> L’équation de Pell-Fermat associée est <span class="process-math">\(x^2-2y^2=\pm 4\text{.}\)</span> La plus petite solution entière de cette équation est <span class="process-math">\((x,y)=(2,2)\text{.}\)</span> En conséquence, une unité fondamentale de <span class="process-math">\(\mathbb{Q}(\sqrt{2})\)</span> est <span class="process-math">\(1+\sqrt{2}\text{.}\)</span> Le régulateur de <span class="process-math">\(K\)</span> est alors égal à <span class="process-math">\(R_{\mathbb{Q}(\sqrt{2})}=\log(1+\sqrt{2})\approx 0.881\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-9-2" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-regulateur-9-3">Soit <span class="process-math">\(K=\mathbb{Q}(\sqrt{3})\text{.}\)</span> L’équation de Pell-Fermat associée est <span class="process-math">\(x^2-3y^2=\pm 4\text{.}\)</span> La plus petite solution de cette équation est <span class="process-math">\((x,y)=(2,4)\text{.}\)</span> En conséquence, une unité fondamentale de <span class="process-math">\(\mathbb{Q}(\sqrt{3})\)</span> est <span class="process-math">\(1+2\sqrt{3}\text{.}\)</span> Le régulateur de <span class="process-math">\(K\)</span> est alors égal à <span class="process-math">\(R_{\mathbb{Q}(\sqrt{3})}=\log(1+2\sqrt{3})\approx 1.496\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-9-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="para" id="sec-regulateur-9-4">Soit <span class="process-math">\(K=\mathbb{Q}(\sqrt{5})\text{.}\)</span> L’équation de Pell-Fermat associée est <span class="process-math">\(x^2-5y^2=\pm 4\text{.}\)</span> La plus petite solution entière de cette équation est <span class="process-math">\((x,y)=(1,1)\text{.}\)</span> En conséquence, une unité fondamentale de <span class="process-math">\(\mathbb{Q}(\sqrt{5})\)</span> est <span class="process-math">\(\frac{1+\sqrt{5}}{2}\text{.}\)</span> Le régulateur de <span class="process-math">\(K\)</span> est alors égal à <span class="process-math">\(R_{\mathbb{Q}(\sqrt{5})}=\log\left(\frac{1+\sqrt{5}}{2}\right)\approx 0.174\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#sec-regulateur-9-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exemple 5.2.3: Régulateur de quelques corps quadratiques réels"><a href="#sec-regulateur-9" title="Permalien Exemple 5.2.3: Régulateur de quelques corps quadratiques réels" aria-label="Permalien Exemple 5.2.3: Régulateur de quelques corps quadratiques réels">🔗</a></div></article></details><div class="autopermalink" data-description="Section 5.2: Régulateur des corps quadratiques réels"><a href="#sec-regulateur" title="Permalien Section 5.2: Régulateur des corps quadratiques réels" aria-label="Permalien Section 5.2: Régulateur des corps quadratiques réels">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-theoreme-des-unites.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Préc.</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-zeta-dedekind.html" title="Suivant"><span class="name">Suiv.</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
