@@ -102,7 +102,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.3';
+eBookConfig.runestone_version = '7.13.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -633,21 +633,23 @@ C:=\{(w,x,y,z)\in \mathbb{R}^4~|~w^2+x^2+y^2+z^2 &lt; 2n\},
 |L\cap B_r|=\frac{v(r)}{\mathrm{covol}(L)}+O(v'(r)).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Lemme A.3.18"><a href="#lem-comptage-points" title="Permalien Lemme A.3.18" aria-label="Permalien Lemme A.3.18">🔗</a></div></article><details id="subsec-comptage-points-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-comptage-points-5-1">Soit <span class="process-math">\(\Pi\)</span> un pavé fondamental de <span class="process-math">\(L\)</span> et soit <span class="process-math">\(\delta &gt; 0\)</span> tel que <span class="process-math">\(\Pi\subsetneq B_{\delta}\)</span> (inclusion stricte). Soit <span class="process-math">\(U_r\subset L\)</span> l’ensemble des <span class="process-math">\(\ell \in L\)</span> tels que <span class="process-math">\(\ell+\Pi\subsetneq B_r\text{;}\)</span> comme <span class="process-math">\(B_r\)</span> est compacte et que <span class="process-math">\(B_r=\sqcup_{\ell\in L}{B_r\cap (\ell+\Pi)}\text{,}\)</span> l’ensemble <span class="process-math">\(U_r\)</span> est fini et on note <span class="process-math">\(n(r)\)</span> son cardinal. Les inclusions :<div class="autopermalink" data-description="Paragraphe"><a href="#subsec-comptage-points-5-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+<div class="autopermalink" data-description="Lemme A.3.18"><a href="#lem-comptage-points" title="Permalien Lemme A.3.18" aria-label="Permalien Lemme A.3.18">🔗</a></div></article><details id="subsec-comptage-points-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Démonstration<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-comptage-points-5-1">Soit <span class="process-math">\(\Pi\)</span> un pavé fondamental de <span class="process-math">\(L\)</span> et soit <span class="process-math">\(\delta &gt; 0\)</span> tel que <span class="process-math">\(\Pi\subsetneq B_{\delta}\)</span> (inclusion stricte). Soit <span class="process-math">\(U_r\subset L\)</span> l’ensemble des <span class="process-math">\(\ell \in L\)</span> tels que <span class="process-math">\(\ell+\Pi\subsetneq B_r\text{;}\)</span> comme <span class="process-math">\(B_r\)</span> est compacte et que <span class="process-math">\(B_r=\sqcup_{\ell\in L}{B_r\cap (\ell+\Pi)}\text{,}\)</span> l’ensemble <span class="process-math">\(U_r\)</span> est fini et on note <span class="process-math">\(n(r)\)</span> son cardinal. On dispose des inclusions :<div class="autopermalink" data-description="Paragraphe"><a href="#subsec-comptage-points-5-1" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
 </div>
 <div class="displaymath process-math" id="subsec-comptage-points-5-2">
 \begin{equation*}
-U_r \subset L\cap B_r \subset U_{r+\delta}, \quad \text{et}\quad  \bigsqcup_{\ell\in U_r}{(\ell+\Pi)} \subset B_r \subset \bigsqcup_{\ell\in U_{r+\delta}}{(\ell+\Pi)},
+U_r \subset L\cap B_r \subset U_{r+\delta}, \quad \text{et}\quad  \bigsqcup_{\ell\in U_r}{(\ell+\Pi)} \subset B_r \subset \bigsqcup_{\ell\in U_{r+\delta}}{(\ell+\Pi)};
 \end{equation*}
 </div>
-<div class="para" id="subsec-comptage-points-5-3">donnent <span class="process-math">\(n(r)\leq |L\cap B_r|\leq n(r+\delta)\)</span> ainsi que <span class="process-math">\(n(r)\mathrm{covol}(L)\leq v(r) \leq n(r+\delta)\mathrm{covol}(L)\text{.}\)</span> Ces inégalités combinées impliquent<div class="autopermalink" data-description="Paragraphe"><a href="#subsec-comptage-points-5-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+<div class="para" id="subsec-comptage-points-5-3">la dernière se déduit ainsi : <span class="process-math">\(b\in B_r\)</span> s’écrit de manière unique comme <span class="process-math">\(b=\ell+\pi\text{,}\)</span> <span class="process-math">\(\ell \in L\)</span> et <span class="process-math">\(\pi\in \Pi\text{,}\)</span> puis, si <span class="process-math">\(\pi'\in \Pi\text{,}\)</span> alors <span class="process-math">\(\ell+\pi'=b+(\pi'-\pi)\subsetneq B_r+B_{\delta}\subset B_{r+\delta}\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec-comptage-points-5-3" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="subsec-comptage-points-5-4">
+<div class="para" id="subsec-comptage-points-5-4">Ces inclusions donnent <span class="process-math">\(n(r)\leq |L\cap B_r|\leq n(r+\delta)\)</span> ainsi que <span class="process-math">\(n(r)\mathrm{covol}(L)\leq v(r) \leq n(r+\delta)\mathrm{covol}(L)\text{.}\)</span> Ces inégalités combinées impliquent<div class="autopermalink" data-description="Paragraphe"><a href="#subsec-comptage-points-5-4" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-comptage-points-5-5">
 \begin{equation*}
-\frac{v(r)}{\mathrm{covol}(L)} \leq |L\cap B_r| \leq \frac{v(r+\delta)}{\mathrm{covol}(L)}.
+\frac{v(r)}{\mathrm{covol}(L)} \leq |L\cap B_r| \leq \frac{v(r+2\delta)}{\mathrm{covol}(L)}.
 \end{equation*}
 </div>
-<div class="para" id="subsec-comptage-points-5-5">Cela conclut, en remarquant que, comme <span class="process-math">\(v(r)\)</span> est à croissance polynomiale, on a <span class="process-math">\(v(r+\delta)=v(r)+O(v'(r))\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec-comptage-points-5-5" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
+<div class="para" id="subsec-comptage-points-5-6">Cela conclut, en remarquant que, comme <span class="process-math">\(v(r)\)</span> est à croissance polynomiale, on a <span class="process-math">\(v(r+2\delta)=v(r)+O(v'(r))\text{.}\)</span><div class="autopermalink" data-description="Paragraphe"><a href="#subsec-comptage-points-5-6" title="Permalien Paragraphe" aria-label="Permalien Paragraphe">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Démonstration A.3.4.1"><a href="#subsec-comptage-points-5" title="Permalien Démonstration A.3.4.1" aria-label="Permalien Démonstration A.3.4.1">🔗</a></div></article></details><div class="autopermalink" data-description="Sous-section A.3.4: Comptage de points d’un réseau"><a href="#subsec-comptage-points" title="Permalien Sous-section A.3.4: Comptage de points d’un réseau" aria-label="Permalien Sous-section A.3.4: Comptage de points d’un réseau">🔗</a></div></section><div class="autopermalink" data-description="Section A.3: Théorie des réseaux"><a href="#sec-reseaux" title="Permalien Section A.3: Théorie des réseaux" aria-label="Permalien Section A.3: Théorie des réseaux">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
