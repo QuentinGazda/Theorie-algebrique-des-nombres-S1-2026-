@@ -880,7 +880,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Norme d’un idéal",
-  "body": " Norme d'un idéal  Soit un idéal non nul de . Si désigne le plongement canonique, on a vu que est une inclusion de réseaux de . Son indice est alors fini.   Norme d'un idéal   On appelle norme de et on note l'indice de dans .    La terminologie norme est justifiée par la relation qu'elle entretient avec la norme d'un élément de .    Soit et un idéal non nul. Alors . En particulier, .     Notons que : en effet, si est une base de , alors est une base de et alors   De plus, comme et sont des sous-réseaux de dans de covolumes respectifs et d'après le , on a par la que   et la comparaison de ces formules donne le résultat.    Nous verrons plus loin que la norme d'un idéal est multiplicative : si sont des idéaux non nuls, alors .     Soit , une inclusion d'idéaux non nuls. Alors . En particulier, si et seulement si .     On dispose d'une application surjective entre groupes finis de noyau . On conclut par le théorème de Lagrange.   Il suit de la que si est principal, alors coincide avec la norme (en valeur absolue) d'un élémént de . Ce n'est pas le cas si n'est pas principal, mais le théorème de Minkowski assure que l'on peut trouver un élément de dont la \"distance\" à est contrôlée par le discriminant. On pose    Minkowski   Soit un idéal non nul de . Alors il existe tel que      On considère l'espace muni de la norme   La boule de rayon est un convexe symétrique et son volume se calcule par le lemme qui suit.    Soit la mesure de Lebesgue sur . Alors      Notons . Par homotétie, on a donc il suffit de déterminer .  Si , par Fubini en intégrant le long de la coordonnée , on trouve   Par récurrence, si , on trouve  . Si , en écrivant sous la forme avec et , on trouve   Par récurrence, si ,on trouve   On conclut en utilisant soit , soit .   Le choix de cette norme vient de l'inégalité arithmetico-géométrique qui découle de la convexité de la fonction exponentielle réelle. :   qui entraîne pour tout . Enfin, on choisit de sorte que . Comme est compact, le du corps convexe assure que contient un élément non nul de . En notant cet élément, alors on a que est tel que     Minkowski   Si , alors . En particulier, on a .     Comme tout élément non nul de est de norme en valeur absolue, le donne   où la seconde inégalité découle du fait que et .  De plus, si par hypothèse. En posant pour le terme de droite, on a qui est une suite strictement croissante pour . On a donc     Ce corollaire est remarquable en bien des aspects. Par exemple, on en déduit qu'étant donné un polynôme irréductible unitaire à coefficients entiers de degré , il existe nécessairement un nombre premier tel que admette une racine double.  En effet, le corps s'identifie à un corps de nombre de la forme où est une racine complexe de , puis   Comme , on en déduit qu'il est divisible par un nombre premier . Or la réduction modulo du discriminant de , qui est nulle, coincide au discriminant de la réduction de modulo .   "
+  "body": " Norme d'un idéal  Soit un idéal non nul de . Si désigne le plongement canonique, on a vu que est une inclusion de réseaux de . Son indice est alors fini.   Norme d'un idéal   On appelle norme de et on note l'indice de dans .     Tout idéal contient sa norme. En effet, si est un idéal non nul, alors est un group abélien fini de cardinal . Par Lagrange, l'ordre de chacun de ses éléments - par exemple celui de la classe - est un diviseur de . Par conséquent est égal à la classe nulle , autrement dit .   La terminologie norme est justifiée par la relation qu'elle entretient avec la norme d'un élément de .    Soit et un idéal non nul. Alors . En particulier, .     Notons que : en effet, si est une base de , alors est une base de et alors   De plus, comme et sont des sous-réseaux de dans de covolumes respectifs et d'après le , on a par la que   et la comparaison de ces formules donne le résultat.    Nous verrons plus loin que la norme d'un idéal est multiplicative : si sont des idéaux non nuls, alors .     Soit , une inclusion d'idéaux non nuls. Alors . En particulier, si et seulement si .     On dispose d'une application surjective entre groupes finis de noyau . On conclut par le théorème de Lagrange.   Il suit de la que si est principal, alors coincide avec la norme (en valeur absolue) d'un élémént de . Ce n'est pas le cas si n'est pas principal, mais le théorème de Minkowski assure que l'on peut trouver un élément de dont la \"distance\" à est contrôlée par le discriminant. On pose    Minkowski   Soit un idéal non nul de . Alors il existe tel que      On considère l'espace muni de la norme   La boule de rayon est un convexe symétrique et son volume se calcule par le lemme qui suit.    Soit la mesure de Lebesgue sur . Alors      Notons . Par homotétie, on a donc il suffit de déterminer .  Si , par Fubini en intégrant le long de la coordonnée , on trouve   Par récurrence, si , on trouve  . Si , en écrivant sous la forme avec et , on trouve   Par récurrence, si ,on trouve   On conclut en utilisant soit , soit .   Le choix de cette norme vient de l'inégalité arithmetico-géométrique qui découle de la convexité de la fonction exponentielle réelle. :   qui entraîne pour tout . Enfin, on choisit de sorte que . Comme est compact, le du corps convexe assure que contient un élément non nul de . En notant cet élément, alors on a que est tel que     Minkowski   Si , alors . En particulier, on a .     Comme tout élément non nul de est de norme en valeur absolue, le donne   où la seconde inégalité découle du fait que et .  De plus, si par hypothèse. En posant pour le terme de droite, on a qui est une suite strictement croissante pour . On a donc     Ce corollaire est remarquable en bien des aspects. Par exemple, on en déduit qu'étant donné un polynôme irréductible unitaire à coefficients entiers de degré , il existe nécessairement un nombre premier tel que admette une racine double.  En effet, le corps s'identifie à un corps de nombre de la forme où est une racine complexe de , puis   Comme , on en déduit qu'il est divisible par un nombre premier . Or la réduction modulo du discriminant de , qui est nulle, coincide au discriminant de la réduction de modulo .   "
 },
 {
   "id": "def-norme-ideal",
@@ -892,29 +892,38 @@ var ptx_lunr_docs = [
   "body": " Norme d'un idéal   On appelle norme de et on note l'indice de dans .   "
 },
 {
+  "id": "sec-norme-ideaux-4",
+  "level": "2",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-4",
+  "type": "Remarque",
+  "number": "3.3.2",
+  "title": "",
+  "body": " Tout idéal contient sa norme. En effet, si est un idéal non nul, alors est un group abélien fini de cardinal . Par Lagrange, l'ordre de chacun de ses éléments - par exemple celui de la classe - est un diviseur de . Par conséquent est égal à la classe nulle , autrement dit .  "
+},
+{
   "id": "prop-norme-ideal-element",
   "level": "2",
   "url": "sec-norme-ideaux.html#prop-norme-ideal-element",
   "type": "Proposition",
-  "number": "3.3.2",
+  "number": "3.3.3",
   "title": "",
   "body": "  Soit et un idéal non nul. Alors . En particulier, .   "
 },
 {
-  "id": "sec-norme-ideaux-6",
+  "id": "sec-norme-ideaux-7",
   "level": "2",
-  "url": "sec-norme-ideaux.html#sec-norme-ideaux-6",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-7",
   "type": "Démonstration",
   "number": "3.3.1",
   "title": "",
   "body": " Notons que : en effet, si est une base de , alors est une base de et alors   De plus, comme et sont des sous-réseaux de dans de covolumes respectifs et d'après le , on a par la que   et la comparaison de ces formules donne le résultat.  "
 },
 {
-  "id": "sec-norme-ideaux-7",
+  "id": "sec-norme-ideaux-8",
   "level": "2",
-  "url": "sec-norme-ideaux.html#sec-norme-ideaux-7",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-8",
   "type": "Remarque",
-  "number": "3.3.3",
+  "number": "3.3.4",
   "title": "",
   "body": " Nous verrons plus loin que la norme d'un idéal est multiplicative : si sont des idéaux non nuls, alors .  "
 },
@@ -923,14 +932,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-norme-ideaux.html#lem-inclusion-ideaux-normes",
   "type": "Lemme",
-  "number": "3.3.4",
+  "number": "3.3.5",
   "title": "",
   "body": "  Soit , une inclusion d'idéaux non nuls. Alors . En particulier, si et seulement si .   "
 },
 {
-  "id": "sec-norme-ideaux-9",
+  "id": "sec-norme-ideaux-10",
   "level": "2",
-  "url": "sec-norme-ideaux.html#sec-norme-ideaux-9",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-10",
   "type": "Démonstration",
   "number": "3.3.2",
   "title": "",
@@ -941,14 +950,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-norme-ideaux.html#thm-minkowski",
   "type": "Théorème",
-  "number": "3.3.5",
+  "number": "3.3.6",
   "title": "Minkowski.",
   "body": " Minkowski   Soit un idéal non nul de . Alors il existe tel que    "
 },
 {
-  "id": "sec-norme-ideaux-13",
+  "id": "sec-norme-ideaux-14",
   "level": "2",
-  "url": "sec-norme-ideaux.html#sec-norme-ideaux-13",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-14",
   "type": "Démonstration",
   "number": "3.3.3",
   "title": "",
@@ -959,25 +968,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-norme-ideaux.html#cor-minkowski",
   "type": "Corollaire",
-  "number": "3.3.7",
+  "number": "3.3.8",
   "title": "Minkowski.",
   "body": " Minkowski   Si , alors . En particulier, on a .   "
 },
 {
-  "id": "sec-norme-ideaux-15",
+  "id": "sec-norme-ideaux-16",
   "level": "2",
-  "url": "sec-norme-ideaux.html#sec-norme-ideaux-15",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-16",
   "type": "Démonstration",
   "number": "3.3.4",
   "title": "",
   "body": " Comme tout élément non nul de est de norme en valeur absolue, le donne   où la seconde inégalité découle du fait que et .  De plus, si par hypothèse. En posant pour le terme de droite, on a qui est une suite strictement croissante pour . On a donc   "
 },
 {
-  "id": "sec-norme-ideaux-16",
+  "id": "sec-norme-ideaux-17",
   "level": "2",
-  "url": "sec-norme-ideaux.html#sec-norme-ideaux-16",
+  "url": "sec-norme-ideaux.html#sec-norme-ideaux-17",
   "type": "Remarque",
-  "number": "3.3.8",
+  "number": "3.3.9",
   "title": "",
   "body": " Ce corollaire est remarquable en bien des aspects. Par exemple, on en déduit qu'étant donné un polynôme irréductible unitaire à coefficients entiers de degré , il existe nécessairement un nombre premier tel que admette une racine double.  En effet, le corps s'identifie à un corps de nombre de la forme où est une racine complexe de , puis   Comme , on en déduit qu'il est divisible par un nombre premier . Or la réduction modulo du discriminant de , qui est nulle, coincide au discriminant de la réduction de modulo .  "
 },
@@ -1429,7 +1438,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "Fonction zêta de Dedekind",
-  "body": " Fonction zêta de Dedekind  Soit un corps de nombres. La fonction zêta de Dedekind de en est la série   où la somme porte sur les idéaux non nuls de et est une nombre complexe de partie réelle . La convergence sera démontrée plus bas, mais rappelons d'ores et déjà le critère de convergence des séries de Dirichlet.   Convergence des séries de Dirichlet  Soit une suite de nombres complexes. Si les sommes partielles sont pour un nombre réel , alors la série de Dirichlet correspondante   converge vers une fonction holomorphe sur le demi-plan .  Pour le voir, on peut utiliser le critère de Cauchy uniforme en montrant que les sommes partielles tendent vers zéro uniformément sur le domaine pour . En posant , la formule de sommation par parties (ou transformation d'Abel ) donne   On majore ensuite par , puis par qui tend vers zéro lorsque tend vers l'infini.    Formule du nombre de classes   La fonction converge uniformément vers une fonction holomorphe sur le demi-plan et s'étend méromorphiquement au demi-plan avec un pôle simple en . Son résidu se calcule par la formule :   où est le nombre de classes de , son régulateur, désigne le nombre de racines de l'unité de et son discriminant.     On doit le théorème ci-dessus à Dirichlet dans le cas des corps quadratiques. Hecke a en fait démontré que s'étend méromorphiquement à l'ensemble du plan complexe, avec un unique pôle simple en . Hecke a également démontré l'équation fonctionnelle : si est la fonction zêta dite complète ,où et , alors    Si le est accessible au niveau de ce cours, nous nous contenterons de le démontrer dans le cas où est un corps quadratique imaginaire.   Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires  Soit un corps quadratique imaginaire, où est un entier négatif sans facteur carré. On interprète alors et ses idéaux comme des réseaux de vu comme -espace vectoriel de dimension . De plus , et donc . En particulier, .  Soit une classe de et désignons par le nombre de idéaux de norme dans la classe . On pose alors   de sorte que en partitionant les ideaux selon leur classe dans . Le prolongement de la série ainsi que le calcule de son résidu découlent alors de l'estimation suivante :   En effet, en posant , on obtiendrait   et comme , la série converge uniformément vers une fonction holomorphe sur le domaine d'après la . Comme , le théorème s'en déduit.  Démontrer l'estimation revient à compter les idéaux de norme donnée dans une classe donnée. Le lemme suivant permet de se ramener au comptage d'idéaux principaux.    Soit et un idéal de dans la classe inverse de . L'application induit une bijection entre les idéaux de norme dans la classe et les idéaux principaux inclus dans de norme .     L'application est bien définie car, pour dans la classe , et donc est principal ( c.f.  ). Que soit de norme si est de norme découle de la multiplicativté de la norme ( c.f.  ). Elle est injective par simplification ( c.f.  ). Enfin, elle est aussi surjective : si désigne un idéal principal de norme , alors comme contenir c'est diviser ( c.f.  ) il existe tel que . Comme est principal, on trouve que ; par multiplicativité de la norme, .   Démontrons enfin l'estimation . Soit un idéal dans la classe . D'après le lemme précédent, la quantité est égale à au nombre d'idéaux principaux inclus dans de norme . Il revient au même de compter les générateurs à unités près - c-à-d à près - à savoir les dans la boule de centre et de rayon . On trouve alors   On déduit alors du démontré en appendice (dans les notations du lemme, et donc ).    Produits eulériens  Puisque la norme est multiplicative, la fonction zêta de Dedekind admet un produit eulérien indéxé sur les idéaux premiers de :   La convergence de ce produit vaut aussi pour . Le produit eulérien de permet, pour certains corps de nombres , de la décomposer en produit de fonctions de Dirichlet. Nous allons expliquer ce phénomène dans le cas où est une extension quadratique.  Soit un entier sans facteur carré et . On rappelle que si est un nombre premier impair, le symbole de Legendre est égal à si divise , à si est un carré modulo , et à sinon. Lorsque , on définit plutôt   Enfin, suivant Kronecker, on étend la notation multiplicativement par si est la décomposition en facteurs premiers de .  Le symbole de Kronecker reflète la décomposition des nombres premiers dans .    Soit un nombre premier. Alors :    ( Cas inerte ) est premier dans si et seulement si ,    ( Cas décomposé ) avec premiers de si et seulement si ,    ( Cas ramifié ) avec premier de si et seulement si .       Soit tel que et soit son polynôme minimal. Son discriminant est égale à .  L'idéal est égal à et la décomposition de dépend de celle du polynôme modulo . Si , alors la relation donne :     est irréductible modulo si et seulement si n'est pas un carré modulo ,     est scindé à racines distinctes modulo si et seulement si est un carré non nul modulo ,     est scindé à racines doubles modulo si et seulement si .    Cela conclut le cas impair. Le cas se traite à la main : les polynômes de degré dans sont    L'unique polynôme irréductible est , de discriminant ,    L'unique polynôme scindé à racines disctinctes , de discriminant ,    Les deux polynômes à racines doubles et , de discriminant respectifs et .    On conclut en comparant avec .   On en déduit le corollaire suivant qui exprime la fonction zêta de en termes de séries de Dirichlet.        On prend comme point de départ le produit eulérien de et on le partitionne selon les trois types de nombres premiers. On trouve :   en utilisant les produits eulériens de et de .    Si est un caractère de Dirichlet réel modulo impair ( c-à-d  ), alors il existe une formule close pour :   Combiné à la formule du nombre de classes, elle permet de calculer le cardinal du groupe de classes lorsque est un corps quadratique imaginaire de discriminant . On a alors :     "
+  "body": " Fonction zêta de Dedekind  Soit un corps de nombres. La fonction zêta de Dedekind de en est la série   où la somme porte sur les idéaux non nuls de et est une nombre complexe de partie réelle . La convergence sera démontrée plus bas, mais rappelons d'ores et déjà le critère de convergence des séries de Dirichlet.   Convergence des séries de Dirichlet  Soit une suite de nombres complexes. Si les sommes partielles sont pour un nombre réel , alors la série de Dirichlet correspondante   converge vers une fonction holomorphe sur le demi-plan .  Pour le voir, on peut utiliser le critère de Cauchy uniforme en montrant que les sommes partielles tendent vers zéro uniformément sur les compacts du domaine pour . En posant , la formule de sommation par parties (ou transformation d'Abel ) donne   On majore ensuite par , puis par pour une certaine constante , expression qui tend vers zéro uniformément sur les compacts du domaine lorsque tend vers l'infini.    Formule du nombre de classes   La fonction converge uniformément vers une fonction holomorphe sur le demi-plan et s'étend méromorphiquement au demi-plan avec un pôle simple en . Son résidu se calcule par la formule :   où est le nombre de classes de , son régulateur, désigne le nombre de racines de l'unité de et son discriminant.     On doit le théorème ci-dessus à Dirichlet dans le cas des corps quadratiques. Hecke a en fait démontré que s'étend méromorphiquement à l'ensemble du plan complexe, avec un unique pôle simple en . Hecke a également démontré l'équation fonctionnelle : si est la fonction zêta dite complète ,où et , alors    Si le est accessible au niveau de ce cours, nous nous contenterons de le démontrer dans le cas où est un corps quadratique imaginaire.   Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires  Soit un corps quadratique imaginaire, où est un entier négatif sans facteur carré. On interprète alors et ses idéaux comme des réseaux de vu comme -espace vectoriel de dimension . De plus , et donc . En particulier, .  Soit une classe de et désignons par le nombre de idéaux de norme dans la classe . On pose alors   de sorte que en partitionant les ideaux selon leur classe dans . Le prolongement de la série ainsi que le calcule de son résidu découlent alors de l'estimation suivante :   En effet, en posant , on obtiendrait   et, comme , la série converge uniformément vers une fonction holomorphe sur le domaine d'après la . Comme , le théorème s'en déduit.  Démontrer l'estimation revient à compter les idéaux de norme donnée dans une classe donnée. Le lemme suivant permet de se ramener au comptage d'idéaux principaux.    Soit et un idéal de dans la classe inverse de . L'application induit une bijection entre les idéaux de norme dans la classe et les idéaux principaux inclus dans de norme .     L'application est bien définie car, pour dans la classe , et donc est principal ( c.f.  ). Que soit de norme si est de norme découle de la multiplicativté de la norme ( c.f.  ). Elle est injective par simplification ( c.f.  ). Enfin, elle est aussi surjective : si désigne un idéal principal de norme , alors comme contenir c'est diviser ( c.f.  ) il existe tel que . Comme est principal, on trouve que ; par multiplicativité de la norme, .   Démontrons enfin l'estimation . Soit un idéal dans la classe . D'après le lemme précédent, la quantité est égale à au nombre d'idéaux principaux inclus dans de norme . Il revient au même de compter les générateurs à unités près - c-à-d à près - à savoir les dans la boule de centre et de rayon . On trouve alors   On déduit alors du démontré en appendice (dans les notations du lemme, et donc ).    Produits eulériens  Puisque la norme est multiplicative, la fonction zêta de Dedekind admet un produit eulérien indéxé sur les idéaux premiers de :   La convergence de ce produit vaut aussi pour . Le produit eulérien de permet, pour certains corps de nombres , de la décomposer en produit de fonctions de Dirichlet. Nous allons expliquer ce phénomène dans le cas où est une extension quadratique.  Soit un entier sans facteur carré et . On rappelle que si est un nombre premier impair, le symbole de Legendre est égal à si divise , à si est un carré modulo , et à sinon. Lorsque , on définit plutôt   Enfin, suivant Kronecker, on étend la notation multiplicativement par si est la décomposition en facteurs premiers de .  Le symbole de Kronecker reflète la décomposition des nombres premiers dans .    Soit un nombre premier. Alors :    ( Cas inerte ) est premier dans si et seulement si ,    ( Cas décomposé ) avec premiers de si et seulement si ,    ( Cas ramifié ) avec premier de si et seulement si .       Soit tel que et soit son polynôme minimal. Son discriminant est égale à .  L'idéal est égal à et la décomposition de dépend de celle du polynôme modulo . Si , alors la relation donne :     est irréductible modulo si et seulement si n'est pas un carré modulo ,     est scindé à racines distinctes modulo si et seulement si est un carré non nul modulo ,     est scindé à racines doubles modulo si et seulement si .    Cela conclut le cas impair. Le cas se traite à la main : les polynômes de degré dans sont    L'unique polynôme irréductible est , de discriminant ,    L'unique polynôme scindé à racines disctinctes , de discriminant ,    Les deux polynômes à racines doubles et , de discriminant respectifs et .    On conclut en comparant avec .   On en déduit le corollaire suivant qui exprime la fonction zêta de en termes de séries de Dirichlet.        On prend comme point de départ le produit eulérien de et on le partitionne selon les trois types de nombres premiers. On trouve :   en utilisant les produits eulériens de et de .    Si est un caractère de Dirichlet réel modulo impair ( c-à-d  ), alors il existe une formule close pour :   Combiné à la formule du nombre de classes, elle permet de calculer le cardinal du groupe de classes lorsque est un corps quadratique imaginaire de discriminant . On a alors :     "
 },
 {
   "id": "rem-convergence-series-dirichlet",
@@ -1438,7 +1447,7 @@ var ptx_lunr_docs = [
   "type": "Remarque",
   "number": "5.3.1",
   "title": "Convergence des séries de Dirichlet.",
-  "body": " Convergence des séries de Dirichlet  Soit une suite de nombres complexes. Si les sommes partielles sont pour un nombre réel , alors la série de Dirichlet correspondante   converge vers une fonction holomorphe sur le demi-plan .  Pour le voir, on peut utiliser le critère de Cauchy uniforme en montrant que les sommes partielles tendent vers zéro uniformément sur le domaine pour . En posant , la formule de sommation par parties (ou transformation d'Abel ) donne   On majore ensuite par , puis par qui tend vers zéro lorsque tend vers l'infini.  "
+  "body": " Convergence des séries de Dirichlet  Soit une suite de nombres complexes. Si les sommes partielles sont pour un nombre réel , alors la série de Dirichlet correspondante   converge vers une fonction holomorphe sur le demi-plan .  Pour le voir, on peut utiliser le critère de Cauchy uniforme en montrant que les sommes partielles tendent vers zéro uniformément sur les compacts du domaine pour . En posant , la formule de sommation par parties (ou transformation d'Abel ) donne   On majore ensuite par , puis par pour une certaine constante , expression qui tend vers zéro uniformément sur les compacts du domaine lorsque tend vers l'infini.  "
 },
 {
   "id": "thm-formule-nombre-classes",
@@ -1465,7 +1474,7 @@ var ptx_lunr_docs = [
   "type": "Démonstration",
   "number": "5.3.1",
   "title": "Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires.",
-  "body": " Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires  Soit un corps quadratique imaginaire, où est un entier négatif sans facteur carré. On interprète alors et ses idéaux comme des réseaux de vu comme -espace vectoriel de dimension . De plus , et donc . En particulier, .  Soit une classe de et désignons par le nombre de idéaux de norme dans la classe . On pose alors   de sorte que en partitionant les ideaux selon leur classe dans . Le prolongement de la série ainsi que le calcule de son résidu découlent alors de l'estimation suivante :   En effet, en posant , on obtiendrait   et comme , la série converge uniformément vers une fonction holomorphe sur le domaine d'après la . Comme , le théorème s'en déduit.  Démontrer l'estimation revient à compter les idéaux de norme donnée dans une classe donnée. Le lemme suivant permet de se ramener au comptage d'idéaux principaux.    Soit et un idéal de dans la classe inverse de . L'application induit une bijection entre les idéaux de norme dans la classe et les idéaux principaux inclus dans de norme .     L'application est bien définie car, pour dans la classe , et donc est principal ( c.f.  ). Que soit de norme si est de norme découle de la multiplicativté de la norme ( c.f.  ). Elle est injective par simplification ( c.f.  ). Enfin, elle est aussi surjective : si désigne un idéal principal de norme , alors comme contenir c'est diviser ( c.f.  ) il existe tel que . Comme est principal, on trouve que ; par multiplicativité de la norme, .   Démontrons enfin l'estimation . Soit un idéal dans la classe . D'après le lemme précédent, la quantité est égale à au nombre d'idéaux principaux inclus dans de norme . Il revient au même de compter les générateurs à unités près - c-à-d à près - à savoir les dans la boule de centre et de rayon . On trouve alors   On déduit alors du démontré en appendice (dans les notations du lemme, et donc ).  "
+  "body": " Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires  Soit un corps quadratique imaginaire, où est un entier négatif sans facteur carré. On interprète alors et ses idéaux comme des réseaux de vu comme -espace vectoriel de dimension . De plus , et donc . En particulier, .  Soit une classe de et désignons par le nombre de idéaux de norme dans la classe . On pose alors   de sorte que en partitionant les ideaux selon leur classe dans . Le prolongement de la série ainsi que le calcule de son résidu découlent alors de l'estimation suivante :   En effet, en posant , on obtiendrait   et, comme , la série converge uniformément vers une fonction holomorphe sur le domaine d'après la . Comme , le théorème s'en déduit.  Démontrer l'estimation revient à compter les idéaux de norme donnée dans une classe donnée. Le lemme suivant permet de se ramener au comptage d'idéaux principaux.    Soit et un idéal de dans la classe inverse de . L'application induit une bijection entre les idéaux de norme dans la classe et les idéaux principaux inclus dans de norme .     L'application est bien définie car, pour dans la classe , et donc est principal ( c.f.  ). Que soit de norme si est de norme découle de la multiplicativté de la norme ( c.f.  ). Elle est injective par simplification ( c.f.  ). Enfin, elle est aussi surjective : si désigne un idéal principal de norme , alors comme contenir c'est diviser ( c.f.  ) il existe tel que . Comme est principal, on trouve que ; par multiplicativité de la norme, .   Démontrons enfin l'estimation . Soit un idéal dans la classe . D'après le lemme précédent, la quantité est égale à au nombre d'idéaux principaux inclus dans de norme . Il revient au même de compter les générateurs à unités près - c-à-d à près - à savoir les dans la boule de centre et de rayon . On trouve alors   On déduit alors du démontré en appendice (dans les notations du lemme, et donc ).  "
 },
 {
   "id": "prop-decomposition-Kronecker",
