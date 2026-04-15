@@ -286,19 +286,28 @@
         \zeta_K(s)=\sum_{I\subset \mathcal{O}_K}{\frac{1}{N(I)^s}}
     </md>
     <p>
-    où la somme porte sur les idéaux non nuls de <m>\mathcal{O}_K</m> et <m>s</m> est une nombre complexe de partie réelle <m>&gt; 1</m>. La convergence sera démontrée plus bas, mais rappelons le critère de convergence des séries de Dirichlet.
+    où la somme porte sur les idéaux non nuls de <m>\mathcal{O}_K</m> et <m>s</m> est une nombre complexe de partie réelle <m>&gt; 1</m>. La convergence sera démontrée plus bas, mais rappelons d'ores et déjà le critère de convergence des séries de Dirichlet.
     </p>
 
     <remark xml:id="rem-convergence-series-dirichlet">
         <title>Convergence des séries de Dirichlet</title>
         <p>
-            Soit <m>(a_n)_{n\geq 1}</m> une suite de nombres complexes. Si les sommes partielles <m>\sum_{n=1}^N{a_n}</m> sont <m>O(N^c)</m> pour un nombre réel <m>c</m>, alors la série de Dirichlet correspondante
+            Soit <m>(a_n)_{n\geq 1}</m> une suite de nombres complexes. Si les sommes partielles <m>\sum_{N &gt; n\geq 1}{a_n}</m> sont <m>O(N^c)</m> pour un nombre réel <m>c</m>, alors la série de Dirichlet correspondante
         </p>
         <md>
-            \sum_{n=1}^{\infty}{\frac{a_n}{n^s}}
+            L((a_n)_n,s)=\sum_{n=1}^{\infty}{\frac{a_n}{n^s}}
         </md>
         <p>
             converge vers une fonction holomorphe sur le demi-plan <m>\mathrm{Re}(s) &gt; c</m>.
+        </p>
+        <p>
+            Pour le voir, on peut utiliser le critère de Cauchy uniforme en montrant que les sommes partielles <m>\sum_{N &gt; n\geq M}{a_n n^{-s}}</m> tendent vers zéro uniformément sur les compacts du domaine <m>\mathrm{Re}(s)\geq \sigma</m> pour <m>\sigma &gt; c</m>. En posant <m>A_N:=\sum_{N &gt; n\geq 1}{a_n}</m>, la formule de sommation par parties (ou <em>transformation d'Abel</em>) donne
+        </p>
+        <md>
+            \sum_{N &gt; n\geq M}{\frac{a_n}{n^s}}=\frac{A_N}{N^s}-\frac{A_M}{M^s}+\sum_{N &gt; n\geq M}{A_{n+1}\left(\frac{1}{n^s}-\frac{1}{(n+1)^s}\right)}.
+        </md>
+        <p>
+            On majore ensuite <m>n^{-s}-(n+1)^{-s}=s\int_{n}^{n+1}{t^{-s-1}dt}</m> par <m>|s|n^{-\sigma-1}</m>, puis <m>|s|\sum_{N &gt; n\geq M}{|A_n|n^{-\sigma-1}}</m> par <m>\frac{C |s|}{\sigma-c}N^{c-\sigma}</m> pour une certaine constante <m>C &gt; 0</m>, expression qui tend vers zéro uniformément sur les compacts du domaine <m>\mathrm{Re}(s)\geq \sigma</m> lorsque <m>N</m> tend vers l'infini. 
         </p>
     </remark>
 
@@ -306,20 +315,20 @@
         <title>Formule du nombre de classes</title>
         <statement>
             <p>
-                La fonction <m>\zeta_K</m> s'étend méromorphiquement au demi-plan <m>\mathrm{Re}(s) &gt; \frac{1}{2}</m> avec un pôle simple en <m>s=1</m>. Son résidu se calcule par la formule :
+                La fonction <m>\zeta_K</m> converge uniformément vers une fonction holomorphe sur le demi-plan <m>\mathrm{Re}(s) &gt; 1</m> et s'étend méromorphiquement au demi-plan <m>\mathrm{Re}(s) &gt; \frac{1}{2}</m> avec un pôle simple en <m>s=1</m>. Son résidu se calcule par la formule :
             </p>
             <md>
                 \lim_{s\to 1}~(s-1)\zeta_K(s)=\frac{2^{r_1}(2\pi)^{r_2}h_K R_K}{w_K \sqrt{|\Delta_K|}}.
             </md>
             <p>
-                où <m>h_K=|\mathrm{Cl}(\mathcal{O}_K)|</m> est le nombre de classes de <m>K</m>, <m>R_K</m> son régulateur, <m>w_K</m> désigne le nombre de racines de l'unité de <m>K</m> et <m>\Delta_K=\mathrm{disc}(\mathcal{O}_K)</m> la discriminant de <m>K</m>.
+                où <m>h_K=|\mathrm{Cl}(\mathcal{O}_K)|</m> est le nombre de classes de <m>K</m>, <m>R_K</m> son régulateur, <m>w_K</m> désigne le nombre de racines de l'unité de <m>K</m> et <m>\Delta_K=\mathrm{disc}(\mathcal{O}_K)</m> son discriminant.
             </p>
         </statement>
     </theorem>
     
     <remark xml:id="rem-equation-fonctionnelle-zeta-dedekind">
         <p>
-            On doit le théorème ci-dessus à Dirichlet dans le cas des corps quadratiques. Hecke a en fait démontré que <m>\zeta_K</m> s'étend méromorphiquement à l'ensemble du plan complexe, avec un unique pôle simple en <m>s=1</m>. Hecke a également démontré l'équation fonctionnelle : si <m>\Lambda_K(s):=|\Delta_K|^{\frac{s}{2}}\Gamma_{\mathbb{R}}(s)^{r_1}\Gamma_{\mathbb{C}}(s)^{r_2}\zeta_K(s)</m> où <m>\Gamma_{\mathbb{R}}(s):=\pi^{-\frac{s}{2}}\Gamma\left(\frac{s}{2}\right)</m> et <m>\Gamma_{\mathbb{C}}(s):=(2\pi)^{-s}\Gamma(s)</m>, alors
+            On doit le théorème ci-dessus à Dirichlet dans le cas des corps quadratiques. Hecke a en fait démontré que <m>\zeta_K</m> s'étend méromorphiquement à l'ensemble du plan complexe, avec un unique pôle simple en <m>s=1</m>. Hecke a également démontré l'équation fonctionnelle : si <m>\Lambda_K(s):=|\Delta_K|^{\frac{s}{2}}\Gamma_{\mathbb{R}}(s)^{r_1}\Gamma_{\mathbb{C}}(s)^{r_2}\zeta_K(s)</m> est la fonction zêta dite <em>complète</em>,où <m>\Gamma_{\mathbb{R}}(s):=\pi^{-\frac{s}{2}}\Gamma\left(\frac{s}{2}\right)</m> et <m>\Gamma_{\mathbb{C}}(s):=(2\pi)^{-s}\Gamma(s)</m>, alors
         </p>    
         <md>
             \Lambda_K(s)=\Lambda_K(1-s).
@@ -327,7 +336,7 @@
     </remark>
 
     <p>
-        Si ce théorème est accessible au niveau de ce cours, nous nous contenterons de le démontrer dans le cas où <m>K</m> est un corps quadratique imaginaire.
+        Si le <xref ref="thm-formule-nombre-classes"/> est accessible au niveau de ce cours, nous nous contenterons de le démontrer dans le cas où <m>K</m> est un corps quadratique imaginaire.
     </p>
     <proof>
         <title>Preuve de la formule du nombre de classes pour les corps quadratiques imaginaires</title>
@@ -335,25 +344,25 @@
             Soit <m>K=\mathbb{Q}(\sqrt{d})</m> un corps quadratique imaginaire, où <m>d &lt; 0</m> est un entier négatif sans facteur carré. On interprète alors <m>\mathcal{O}_K</m> et ses idéaux comme des réseaux de <m>\mathbb{C}</m> vu comme <m>\mathbb{R}</m>-espace vectoriel de dimension <m>2</m>. De plus <m>r_1=0</m>, <m>r_2=1</m> et donc <m>R_K=1</m>. En particulier, <m>\mathcal{O}_K^{\times}=\mu(K)</m>.
         </p>
         <p>    
-            Soit <m>C</m> une classe de <m>\mathrm{Cl}(\mathcal{O}_K)</m> et désignons par <m>a_{n,C}</m> le nombre de idéaux de norme <m>n</m> dans la classe <m>C</m>. En partitionant les ideaux selon leur classe dans <m>\mathrm{Cl}(\mathcal{O}_K)</m>, on trouve :
+            Soit <m>C</m> une classe de <m>\mathrm{Cl}(\mathcal{O}_K)</m> et désignons par <m>a_{n,C}</m> le nombre de idéaux de norme <m>n</m> dans la classe <m>C</m>. On pose alors
         </p>
         <md>
-            \zeta_K(s)=\sum_{C\in \mathrm{Cl}(\mathcal{O}_K)}{\sum_{n=1}^{\infty}{\frac{a_{n,C}}{n^s}}}.
+            \zeta_C(s):=\sum_{\substack{I\subset \mathcal{O}_K \\ I\in C}}{\frac{1}{N(I)^s}}=\sum_{n=1}^{\infty}{\frac{a_{n,C}}{n^s}},
         </md>
-        <p>    
-            Le prolongement de la série <m>\zeta_K</m> ainsi que le calcule de son résidu découlent alors de l'estimation suivante :
+        <p>
+           de sorte que <m>\zeta_K(s)=\sum_{C\in \mathrm{Cl}(\mathcal{O}_K)}{\zeta_C(s)}</m> en partitionant les ideaux selon leur classe dans <m>\mathrm{Cl}(\mathcal{O}_K)</m>.  Le prolongement de la série <m>\zeta_K</m> ainsi que le calcule de son résidu découlent alors de l'estimation suivante :
         </p>
         <men xml:id="eqn-compte-ideaux">
-            \sum_{n=1}^N{a_{n,C}}=\frac{2\pi N}{w_K\sqrt{|\Delta_K|}}+O(\sqrt{N}).
+            \zeta_C(s)=\frac{2\pi N}{w_K\sqrt{|\Delta_K|}}+O(\sqrt{N}).
         </men>
         <p>
-            En effet, en posant <m>b_n=\sum_{C\in \mathrm{Cl}(\mathcal{O}_K)}{a_{n,C}}-\frac{2\pi n}{w_K\sqrt{|\Delta_K|}}</m>, en sommant sur les <m>h_K</m> classes de <m>\mathrm{Cl}(\mathcal{O}_K)</m> on obtiendrait
+            En effet, en posant <m>b_n=a_{n,C}-\frac{2\pi}{w_K\sqrt{|\Delta_K|}} n</m>, on obtiendrait
         </p>
         <men xml:id="eqn-zeta-pole">
-            \zeta_K(s)-\frac{2\pi h_K}{w_K\sqrt{|\Delta_K|}}\zeta(s)=\sum_{n=1}^{\infty}{\frac{b_n}{n^s}}
+            L((b_n)_{n},s)=\zeta_C(s)-\frac{2\pi}{w_K\sqrt{|\Delta_K|}}\zeta(s)
         </men>
         <p>
-            avec <m>\sum_{n=1}^{N}{b_n}=O(\sqrt{N})</m>. Comme la série <m>\sum_{n=1}^{\infty}{\frac{b_n}{n^s}}</m> converge uniformément sur le domaine <m>\mathrm{Re}(s) &lt; \frac{1}{2}</m> d'après la <xref ref="rem-convergence-series-dirichlet"/> et que <m>\lim_{s\to 1}\zeta(s)=1</m>, le théorème s'en déduit.
+            et, comme <m>\sum_{n=1}^{N}{b_n}=O(\sqrt{N})</m>, la série <m>L((b_n)_n,s)</m> converge uniformément vers une fonction holomorphe sur le domaine <m>\mathrm{Re}(s) &gt; \frac{1}{2}</m> d'après la <xref ref="rem-convergence-series-dirichlet"/>. Comme <m>\lim_{s\to 1}(s-1)\zeta(s)=1</m>, le théorème s'en déduit.
         </p>
         <p>
             Démontrer l'estimation <xref ref="eqn-compte-ideaux"/> revient à compter les idéaux de norme donnée dans une classe donnée. Le lemme suivant permet de se ramener au comptage d'idéaux principaux.
@@ -386,7 +395,7 @@
         <title>Produits eulériens</title>
         
         <p>
-            Puisque la norme est multiplicative, la fonction zêta de Dedekind admet un produit eulérien sur les idéaux premiers de <m>\mathcal{O}_K</m> :
+            Puisque la norme est multiplicative, la fonction zêta de Dedekind admet un produit eulérien indéxé sur les idéaux premiers de <m>\mathcal{O}_K</m> :
         </p>
         <md>
             \zeta_K(s)=\prod_{P\subset \mathcal{O}_K}{\left(1-\frac{1}{N(P)^s}\right)^{-1}}.
@@ -509,13 +518,13 @@
                 Si <m>\chi:(\mathbb{Z}/D\mathbb{Z})^{\times} \to \{\pm 1\}</m> est un caractère de Dirichlet réel modulo <m>D</m> impair (<em>c-à-d</em> <m>\chi(-1)=-1</m>), alors il existe une formule close pour <m>L(\chi,1)</m> : 
             </p>
             <md>
-                L(\chi,1)=\frac{\pi}{\sqrt{D}(2-\chi(2))}\sum_{1\leq k &lt; -\frac{D}{2}}{\left( \chi(k)\right)}.
+                L(\chi,1)=\frac{\pi}{\sqrt{D}(2-\chi(2))}\sum_{1\leq k &lt; -\frac{D}{2}}{ \chi(k)}.
             </md>
             <p>
-                Combiné à la formule du nombre de classes, cela permet de calculer le cardinal du groupe de classes <m>h_K</m> lorsque <m>K</m> est un corps quadratique imaginaire de discriminant <m>\Delta_K</m>. On a alors :
+                Combiné à la formule du nombre de classes, elle permet de calculer le cardinal du groupe de classes <m>h_K</m> lorsque <m>K</m> est un corps quadratique imaginaire de discriminant <m>\Delta_K</m>. On a alors :
             </p>
             <md>
-                h_K=\frac{w_K}{2(2-\left(\frac{\Delta_K}{2}\right))}\sum_{1\leq k &lt; -\frac{\Delta_K}{2}}{\left(\frac{\Delta_K}{2}\right)}.
+                h_K=\frac{w_K}{2(2-\left(\frac{\Delta_K}{2}\right))}\sum_{1\leq k &lt; -\frac{\Delta_K}{2}}{\left(\frac{\Delta_K}{k}\right)}.
             </md>
             
         </remark>

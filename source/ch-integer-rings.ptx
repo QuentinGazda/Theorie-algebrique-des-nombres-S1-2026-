@@ -394,6 +394,12 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
     </statement>
   </definition>
 
+  <remark>
+    <p>
+      Tout idéal contient sa norme. En effet, si <m>I\subset \mathcal{O}_K</m> est un idéal non nul, alors <m>\mathcal{O}_K/I</m> est un group abélien fini de cardinal <m>N(I)</m>. Par Lagrange, l'ordre de chacun de ses éléments - par exemple celui de la classe <m>1+I</m> - est un diviseur de <m>N(I)</m>. Par conséquent <m>N(I)\cdot (1+I)= N(I)+I</m> est égal à la classe nulle <m>I</m>, autrement dit <m>N(I)\in I</m>.
+    </p>
+  </remark>
+
   <p>
     La terminologie <em>norme</em> est justifiée par la relation qu'elle entretient avec la norme d'un élément de <m>K</m>.
   </p>

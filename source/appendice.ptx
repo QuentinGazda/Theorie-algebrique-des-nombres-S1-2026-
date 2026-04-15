@@ -658,19 +658,22 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
     </lemma>
     <proof>
       <p>
-        Soit <m>\Pi</m> un pavé fondamental de <m>L</m> et soit <m>\delta &gt; 0</m> tel que <m>\Pi\subsetneq B_{\delta}</m> (inclusion stricte). Soit <m>U_r\subset L</m> l'ensemble des <m>\ell \in L</m> tels que <m>\ell+\Pi\subsetneq B_r</m>; comme <m>B_r</m> est compacte et que <m>B_r=\sqcup_{\ell\in L}{B_r\cap (\ell+\Pi)}</m>, l'ensemble <m>U_r</m> est fini et on note <m>n(r)</m> son cardinal. Les inclusions :  
+        Soit <m>\Pi</m> un pavé fondamental de <m>L</m> et soit <m>\delta &gt; 0</m> tel que <m>\Pi\subsetneq B_{\delta}</m> (inclusion stricte). Soit <m>U_r\subset L</m> l'ensemble des <m>\ell \in L</m> tels que <m>\ell+\Pi\subsetneq B_r</m>; comme <m>B_r</m> est compacte et que <m>B_r=\sqcup_{\ell\in L}{B_r\cap (\ell+\Pi)}</m>, l'ensemble <m>U_r</m> est fini et on note <m>n(r)</m> son cardinal. On dispose des inclusions :  
       </p>
       <md>
-        U_r \subset L\cap B_r \subset U_{r+\delta}, \quad \text{et}\quad  \bigsqcup_{\ell\in U_r}{(\ell+\Pi)} \subset B_r \subset \bigsqcup_{\ell\in U_{r+\delta}}{(\ell+\Pi)},
+        U_r \subset L\cap B_r \subset U_{r+\delta}, \quad \text{et}\quad  \bigsqcup_{\ell\in U_r}{(\ell+\Pi)} \subset B_r \subset \bigsqcup_{\ell\in U_{r+\delta}}{(\ell+\Pi)};
       </md>
       <p>
-        donnent <m>n(r)\leq |L\cap B_r|\leq n(r+\delta)</m> ainsi que <m>n(r)\mathrm{covol}(L)\leq v(r) \leq n(r+\delta)\mathrm{covol}(L)</m>. Ces inégalités combinées impliquent
+        la dernière se déduit ainsi : <m>b\in B_r</m> s'écrit de manière unique comme <m>b=\ell+\pi</m>, <m>\ell \in L</m> et <m>\pi\in \Pi</m>, puis, si <m>\pi'\in \Pi</m>, alors <m>\ell+\pi'=b+(\pi'-\pi)\subsetneq B_r+B_{\delta}\subset B_{r+\delta}</m>.
+      </p>
+      <p>
+        Ces inclusions donnent <m>n(r)\leq |L\cap B_r|\leq n(r+\delta)</m> ainsi que <m>n(r)\mathrm{covol}(L)\leq v(r) \leq n(r+\delta)\mathrm{covol}(L)</m>. Ces inégalités combinées impliquent
       </p>
       <md>
-        \frac{v(r)}{\mathrm{covol}(L)} \leq |L\cap B_r| \leq \frac{v(r+\delta)}{\mathrm{covol}(L)}.
+        \frac{v(r-\delta)}{\mathrm{covol}(L)} \leq |L\cap B_r| \leq \frac{v(r+\delta)}{\mathrm{covol}(L)}.
       </md>
       <p>
-        Cela conclut, en remarquant que, comme <m>v(r)</m> est à croissance polynomiale, on a <m>v(r+\delta)=v(r)+O(v'(r))</m>. 
+        Cela conclut, en remarquant que, comme <m>v(r)</m> est à croissance polynomiale, on a <m>v(r\pm \delta)=v(r)+O(v'(r))</m>. 
       </p>
     </proof>
   </subsection>
