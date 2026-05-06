@@ -327,7 +327,7 @@ On dispose également du critère d'Eisenstein, qui permet de prouver l'irréduc
     <title>Covolume d'un réseau</title>
     <statement>
       <p>
-        Soient <m>L</m> et <m>L'</m> deux réseaux de <m>V</m>. On appelle <em>covolume de <m>L</m> relativement à <m>L'</m></em> le nombre <m>|\det(P)|\in \mathbb{R}_{&gt; 0}</m> où <m>P\in \mathrm{Mat}_n(\mathbb{R})</m> est la matrice d'une base de <m>L</m> écrite dans une base de <m>L'</m>.  On le note <m>\mathrm{covol}_{L'}(L)</m>, ou encore <m>[L:L']</m>.
+        Soient <m>L</m> et <m>L'</m> deux réseaux de <m>V</m>. On appelle <em>covolume de <m>L</m> relativement à <m>L'</m></em> le nombre <m>|\det(P)|\in \mathbb{R}_{&gt; 0}</m> où <m>P\in \mathrm{Mat}_n(\mathbb{R})</m> est la matrice d'une base de <m>L'</m> écrite dans une base de <m>L</m>.  On le note <m>\mathrm{covol}_{L'}(L)</m>, ou encore <m>[L:L']</m>.
       </p>
       <p>
         <em>On notera que <m>\mathrm{covol}_{L'}(L)</m> est bien indépendant du choix des bases de <m>L</m> et <m>L'</m>, car des choix différents donnerait une matrice de passage de la forme <m>UPV</m> où <m>U,V\in \mathrm{GL}_n(\mathbb{Z})</m>.</em>
