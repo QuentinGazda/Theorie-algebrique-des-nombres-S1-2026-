@@ -422,8 +422,8 @@ Soit <m>K</m> un corps de nombres de degré <m>n=[K:\mathbb{Q}]</m> et <m>\mathc
       De plus, comme <m>\sigma(aI)</m> et <m>\sigma(I)</m> sont des sous-réseaux de <m>\sigma(\mathcal{O}_K)</m> dans <m>\mathbb{R}^{r_1}\times \mathbb{C}^{r_2}</m> de covolumes respectifs <m>2^{-r_2}\sqrt{|\mathrm{disc}_K(aI)|}</m> et <m>2^{-r_2}\sqrt{|\mathrm{disc}_K(I)|}</m> d'après le <xref ref="lem-covolume-dune-base-dun-corps-de-nombres"/>, on a par la <xref ref="prop-comparaison-covolumes"/> que
     </p>
     <md>
-      <mrow> \sqrt{|\mathrm{disc}_K(\mathcal{O}_K)|} \amp = |\mathcal{O}_K/aI|  \sqrt{|\mathrm{disc}_K(aI)|} </mrow>
-      <mrow> \sqrt{|\mathrm{disc}_K(\mathcal{O}_K)|} \amp = |\mathcal{O}_K/I| \sqrt{|\mathrm{disc}_K(I)|}  </mrow>
+      <mrow> \sqrt{|\mathrm{disc}_K(aI)|} \amp = |\mathcal{O}_K/aI|  \sqrt{|\mathrm{disc}_K(\mathcal{O}_K)|} </mrow>
+      <mrow> \sqrt{|\mathrm{disc}_K(I)|} \amp = |\mathcal{O}_K/I| \sqrt{|\mathrm{disc}_K(\mathcal{O}_K)|}  </mrow>
     </md>
     <p>
       et la comparaison de ces formules donne le résultat.
